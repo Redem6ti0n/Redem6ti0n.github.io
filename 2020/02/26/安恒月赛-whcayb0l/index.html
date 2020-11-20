@@ -1,0 +1,591 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>安恒月赛(whcayb0l) - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="安恒月赛(whcayb0l)">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-02-26 22:34" pubdate>
+        2020年2月26日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      30
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">安恒月赛(whcayb0l)</h1>
+            
+            <div class="markdown-body">
+              <h2 id="EasyFlask"><a href="#EasyFlask" class="headerlink" title="EasyFlask"></a>EasyFlask</h2><p>SSTI 这个payload的构造不会 ，先挖坑</p>
+<h2 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h2><blockquote>
+<p>掘安杯原题：<a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/4741#toc-7">https://xz.aliyun.com/t/4741#toc-7</a></p>
+</blockquote>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+highlight_file(<span class="hljs-keyword">__FILE__</span>);
+<span class="hljs-keyword">include</span>(<span class="hljs-string">&#x27;flag.php&#x27;</span>);
+<span class="hljs-variable">$str1</span> = @<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;str1&#x27;</span>];
+<span class="hljs-variable">$str2</span> = @<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;str2&#x27;</span>];
+<span class="hljs-variable">$str3</span> = @<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;str3&#x27;</span>];
+<span class="hljs-variable">$str4</span> = @<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;str4&#x27;</span>];
+<span class="hljs-variable">$str5</span> = (<span class="hljs-keyword">string</span>)@<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;str5&#x27;</span>];
+<span class="hljs-variable">$str6</span> = (<span class="hljs-keyword">string</span>)@<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;str6&#x27;</span>];
+<span class="hljs-variable">$str7</span> = (<span class="hljs-keyword">string</span>)@<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;str7&#x27;</span>];
+<span class="hljs-keyword">if</span>( <span class="hljs-variable">$str1</span> == <span class="hljs-variable">$str2</span> )&#123;
+    <span class="hljs-keyword">die</span>(<span class="hljs-string">&#x27;str1 OR Sstr2 no no no&#x27;</span>);
+&#125;
+<span class="hljs-keyword">if</span>( md5(<span class="hljs-variable">$str1</span>) != md5(<span class="hljs-variable">$str2</span>) )&#123;
+    <span class="hljs-keyword">die</span>(<span class="hljs-string">&#x27;step 1 fail&#x27;</span>);
+&#125;
+<span class="hljs-keyword">if</span>( <span class="hljs-variable">$str3</span> == <span class="hljs-variable">$str4</span> )&#123;
+    <span class="hljs-keyword">die</span>(<span class="hljs-string">&#x27;str3 OR str4 no no no&#x27;</span>);
+&#125;
+<span class="hljs-keyword">if</span> ( md5(<span class="hljs-variable">$str3</span>) !== md5(<span class="hljs-variable">$str4</span>))&#123;
+    <span class="hljs-keyword">die</span>(<span class="hljs-string">&#x27;step 2 fail&#x27;</span>);
+&#125;
+<span class="hljs-keyword">if</span>( <span class="hljs-variable">$str5</span> == <span class="hljs-variable">$str6</span> || <span class="hljs-variable">$str5</span> == <span class="hljs-variable">$str7</span> || <span class="hljs-variable">$str6</span> == <span class="hljs-variable">$str7</span> )&#123;
+    <span class="hljs-keyword">die</span>(<span class="hljs-string">&#x27;str5 OR str6 OR str7 no no no&#x27;</span>);
+&#125;
+<span class="hljs-keyword">if</span> (md5(<span class="hljs-variable">$str5</span>) !== md5(<span class="hljs-variable">$str6</span>) || md5(<span class="hljs-variable">$str6</span>) !== md5(<span class="hljs-variable">$str7</span>) || md5(<span class="hljs-variable">$str5</span>) !== md5(<span class="hljs-variable">$str7</span>))&#123;
+    <span class="hljs-keyword">die</span>(<span class="hljs-string">&#x27;step 3 fail&#x27;</span>);
+&#125;
+
+<span class="hljs-keyword">if</span>(!(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;a&#x27;</span>]) <span class="hljs-keyword">and</span> !(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;b&#x27;</span>]))
+&#123;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;come on!&quot;</span>;
+    <span class="hljs-keyword">die</span>();
+&#125;
+<span class="hljs-variable">$a</span> = <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;a&#x27;</span>];
+<span class="hljs-variable">$b</span> = <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;b&#x27;</span>];
+<span class="hljs-variable">$m</span> = <span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;m&#x27;</span>];
+<span class="hljs-variable">$n</span> = <span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;n&#x27;</span>];
+
+<span class="hljs-keyword">if</span> (!(ctype_upper(<span class="hljs-variable">$a</span>)) || !(is_numeric(<span class="hljs-variable">$b</span>)) || (strlen(<span class="hljs-variable">$b</span>) &gt; <span class="hljs-number">6</span>)) 
+&#123;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;a OR b fail!&quot;</span>;
+    <span class="hljs-keyword">die</span>();
+&#125;
+
+<span class="hljs-keyword">if</span> ((strlen(<span class="hljs-variable">$m</span>) &gt; <span class="hljs-number">4</span>) || (strlen(<span class="hljs-variable">$n</span>) &gt; <span class="hljs-number">4</span>)) 
+&#123;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;m OR n fail&quot;</span>;
+    <span class="hljs-keyword">die</span>();
+&#125;
+
+<span class="hljs-variable">$str8</span> = hash(<span class="hljs-string">&#x27;md5&#x27;</span>, <span class="hljs-variable">$a</span>, <span class="hljs-literal">false</span>);
+<span class="hljs-variable">$str9</span> = strtr(hash(<span class="hljs-string">&#x27;md5&#x27;</span>, <span class="hljs-variable">$b</span>, <span class="hljs-literal">false</span>), <span class="hljs-variable">$m</span>, <span class="hljs-variable">$n</span>);
+
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;p&gt;str8 : <span class="hljs-subst">$str8</span>&lt;/p&gt;&quot;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;p&gt;str9 : <span class="hljs-subst">$str9</span>&lt;/p&gt;&quot;</span>;
+
+<span class="hljs-keyword">if</span> ((<span class="hljs-variable">$str8</span> == <span class="hljs-variable">$str9</span>) &amp;&amp; !(<span class="hljs-variable">$a</span> === <span class="hljs-variable">$b</span>) &amp;&amp; (strlen(<span class="hljs-variable">$b</span>) === <span class="hljs-number">6</span>))
+&#123;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;You&#x27;re great,give you flag:&quot;</span>;
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$flag</span>;
+&#125;</code></pre>
+
+<ul>
+<li><p>卡在了 5，6，7， 需要三个值不相等，MD5值相等，看writeup得知可以通过构造碰撞实现</p>
+<p>下载<a target="_blank" rel="noopener" href="http://www.win.tue.nl/hashclash/fastcoll_v1.0.0.5.exe.zip">fastcoll_v1.0.0.5.exe</a> 、<a target="_blank" rel="noopener" href="https://www.trisunsoft.com/tail-for-windows.htm">tail.exe</a></p>
+<pre><code class="hljs apache"><span class="hljs-attribute">D</span>:\fastcoll&gt;fastcoll_v<span class="hljs-number">1.0.0.5</span>.exe -o jlzj<span class="hljs-number">0</span> jlzj<span class="hljs-number">1</span>      #-o参数代表随机生成两个相同MD<span class="hljs-number">5</span>的文件
+<span class="hljs-attribute">D</span>:\fastcoll&gt;fastcoll_v<span class="hljs-number">1.0.0.5</span>.exe -p jlzj<span class="hljs-number">1</span> -o jlzj<span class="hljs-number">00</span> jlzj<span class="hljs-number">01</span>  #-p参数代表根据jlzj<span class="hljs-number">1</span>文件随机生成两个相同MD<span class="hljs-number">5</span>的文件，注意：生成的MD<span class="hljs-number">5</span>与jlzj<span class="hljs-number">1</span>不同
+<span class="hljs-attribute">D</span>:\fastcoll&gt;tail.exe -c <span class="hljs-number">128</span> jlzj<span class="hljs-number">00</span> &gt; a                #-c <span class="hljs-number">128</span>代表将jlzj<span class="hljs-number">00</span>的最后<span class="hljs-number">128</span>位写入文件a，这<span class="hljs-number">128</span>位正是jlzj<span class="hljs-number">1</span>与jlzj<span class="hljs-number">00</span>的MD<span class="hljs-number">5</span>不同的原因
+<span class="hljs-attribute">D</span>:\fastcoll&gt;tail.exe -c <span class="hljs-number">128</span> jlzj<span class="hljs-number">01</span> &gt; b                #同理
+<span class="hljs-attribute">D</span>:\fastcoll&gt;type jlzj<span class="hljs-number">0</span> a &gt; jlzj<span class="hljs-number">10</span>                    #这里表示将jlzj<span class="hljs-number">0</span>和a文件的内容合并写入jlzj<span class="hljs-number">10</span>
+<span class="hljs-attribute">D</span>:\fastcoll&gt;type jlzj<span class="hljs-number">0</span> b &gt; jlzj<span class="hljs-number">11</span>                    #同理写入jlzj<span class="hljs-number">11</span></code></pre>
+</li>
+<li><p>验证MD5</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span>  <span class="hljs-title">readmyfile</span>(<span class="hljs-params"><span class="hljs-variable">$path</span></span>)</span>&#123;
+    <span class="hljs-variable">$fh</span> = fopen(<span class="hljs-variable">$path</span>, <span class="hljs-string">&quot;rb&quot;</span>);
+    <span class="hljs-variable">$data</span> = fread(<span class="hljs-variable">$fh</span>, filesize(<span class="hljs-variable">$path</span>));
+    fclose(<span class="hljs-variable">$fh</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$data</span>;
+&#125;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;二进制hash &#x27;</span>. md5( (readmyfile(<span class="hljs-string">&quot;01&quot;</span>)));
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&lt;br&gt;\r\n&quot;</span>;
+<span class="hljs-keyword">echo</span>  <span class="hljs-string">&#x27;URLENCODE &#x27;</span>. urlencode(readmyfile(<span class="hljs-string">&quot;01&quot;</span>));
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&lt;br&gt;\r\n&quot;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;URLENCODE hash &#x27;</span>.md5(urlencode (readmyfile(<span class="hljs-string">&quot;01&quot;</span>)));
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&lt;br&gt;\r\n&quot;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;二进制hash &#x27;</span>.md5( (readmyfile(<span class="hljs-string">&quot;00&quot;</span>)));
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&lt;br&gt;\r\n&quot;</span>;
+<span class="hljs-keyword">echo</span>  <span class="hljs-string">&#x27;URLENCODE &#x27;</span>.  urlencode(readmyfile(<span class="hljs-string">&quot;00&quot;</span>));
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&lt;br&gt;\r\n&quot;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;URLENCODE hash &#x27;</span>.md5( urlencode(readmyfile(<span class="hljs-string">&quot;00&quot;</span>)));
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&lt;br&gt;\r\n&quot;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;二进制hash &#x27;</span>.md5( (readmyfile(<span class="hljs-string">&quot;11&quot;</span>)));
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&lt;br&gt;\r\n&quot;</span>;
+<span class="hljs-keyword">echo</span>  <span class="hljs-string">&#x27;URLENCODE &#x27;</span>.  urlencode(readmyfile(<span class="hljs-string">&quot;11&quot;</span>));
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&lt;br&gt;\r\n&quot;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;URLENCODE hash &#x27;</span>.md5( urlencode(readmyfile(<span class="hljs-string">&quot;11&quot;</span>)));
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&lt;br&gt;\r\n&quot;</span>;
+
+
+<span class="hljs-comment">############输出##############输出#########输出#####################</span>
+二进制hash dad508c9b28f6d659f88215b593345ac&lt;br&gt;&lt;br&gt;
+URLENCODE %<span class="hljs-number">93</span>%FB%<span class="hljs-number">29</span>%<span class="hljs-number">80</span>Xv%B4X%AE%A4%<span class="hljs-number">13</span>i%<span class="hljs-number">1</span>FZj%CA%<span class="hljs-number">8</span>D%<span class="hljs-number">91</span>%<span class="hljs-number">9</span>B_%<span class="hljs-number">22</span>s+%AB%<span class="hljs-number">22</span>%<span class="hljs-number">1</span>A%<span class="hljs-number">40</span>%C6J%<span class="hljs-number">3</span>A%C5%DE%<span class="hljs-number">9</span>F%<span class="hljs-number">0</span>C%D4%CB%CC%<span class="hljs-number">83</span>%<span class="hljs-number">0</span>A%F4oB%C0d%DA%<span class="hljs-number">85</span>%<span class="hljs-number">09</span>cMKt%<span class="hljs-number">8</span>C%<span class="hljs-number">82</span>%<span class="hljs-number">95</span>%FE%A71%<span class="hljs-number">5</span>C%D2JW%<span class="hljs-number">0</span>EN%F4%<span class="hljs-number">97</span>%CD%C1%D0%B3%<span class="hljs-number">08</span>u%<span class="hljs-number">16</span>%<span class="hljs-number">1</span>D%<span class="hljs-number">7</span>E%<span class="hljs-number">96</span>%B1%<span class="hljs-number">3</span>D%FBF%<span class="hljs-number">8</span>AD%A8T%E5%<span class="hljs-number">12</span>x%<span class="hljs-number">00</span>a%CD%<span class="hljs-number">97</span>%F2%C4%D9%<span class="hljs-number">21</span>Y%AE%B7H%<span class="hljs-number">9</span>E%FE%<span class="hljs-number">3</span>E%<span class="hljs-number">1</span>C%<span class="hljs-number">9</span>F%<span class="hljs-number">26</span>%<span class="hljs-number">93</span>%A5%BD%EF%B4%<span class="hljs-number">22</span>d%A8%AD%C4%<span class="hljs-number">02</span>%<span class="hljs-number">94</span>%<span class="hljs-number">10</span>Oh%<span class="hljs-number">2</span>Bz%E1%F4%E0%AE%<span class="hljs-number">9</span>BY%<span class="hljs-number">8</span>B%<span class="hljs-number">29</span>%DAvv%F3_%D9%<span class="hljs-number">3</span>C7%<span class="hljs-number">40</span>sl%<span class="hljs-number">5</span>B%<span class="hljs-number">08</span>%EA%EF%A7%F7%<span class="hljs-number">9</span>E%<span class="hljs-number">9</span>C%<span class="hljs-number">82</span>%<span class="hljs-number">3</span>F%<span class="hljs-number">907</span>%<span class="hljs-number">40</span>r%<span class="hljs-number">82</span>%FEj%A8%A5%<span class="hljs-number">18</span>q%C5%C7%E6%<span class="hljs-number">5</span>E%<span class="hljs-number">0</span>C%F6%<span class="hljs-number">7</span>C%EB%<span class="hljs-number">29</span>%EB%<span class="hljs-number">24</span>%B4%<span class="hljs-number">07</span>%<span class="hljs-number">1</span>D%<span class="hljs-number">3</span>F%<span class="hljs-number">00</span>%E0%F4%<span class="hljs-number">0</span>A%A6%A2%B4%<span class="hljs-number">1</span>B%D9%E80%<span class="hljs-number">19</span>%<span class="hljs-number">10</span>I%F9%FC%<span class="hljs-number">0</span>AyP%DFK%FEL%F22%E9%E2%B4R%<span class="hljs-number">1</span>EY%CC%BB4%<span class="hljs-number">26</span>%<span class="hljs-number">84</span>%<span class="hljs-number">0</span>A%DB%<span class="hljs-number">08</span>%BAn%<span class="hljs-number">99</span>%<span class="hljs-number">93</span>%<span class="hljs-number">5</span>BKLOA%<span class="hljs-number">5</span>C%E4%C0n%<span class="hljs-number">86</span>%A8%<span class="hljs-number">82</span>%<span class="hljs-number">3</span>F%<span class="hljs-number">9</span>D%<span class="hljs-number">93</span>%EB%B8%<span class="hljs-number">9</span>B%<span class="hljs-number">88</span>%E0%<span class="hljs-number">3</span>C%<span class="hljs-number">2</span>A%D1%E4%<span class="hljs-number">84</span>%<span class="hljs-number">1</span>A%AF%<span class="hljs-number">7</span>FB%<span class="hljs-number">2</span>C%<span class="hljs-number">0</span>D%A6%DDS%<span class="hljs-number">882</span>%<span class="hljs-number">25</span>&lt;br&gt;&lt;br&gt;
+URLENCODE hash <span class="hljs-number">00</span>bef5c29b41728f7e2049e748926781&lt;br&gt;&lt;br&gt;
+二进制hash dad508c9b28f6d659f88215b593345ac&lt;br&gt;&lt;br&gt;
+URLENCODE %<span class="hljs-number">93</span>%FB%<span class="hljs-number">29</span>%<span class="hljs-number">80</span>Xv%B4X%AE%A4%<span class="hljs-number">13</span>i%<span class="hljs-number">1</span>FZj%CA%<span class="hljs-number">8</span>D%<span class="hljs-number">91</span>%<span class="hljs-number">9</span>B_%<span class="hljs-number">22</span>s+%AB%<span class="hljs-number">22</span>%<span class="hljs-number">1</span>A%<span class="hljs-number">40</span>%C6J%<span class="hljs-number">3</span>A%C5%DE%<span class="hljs-number">9</span>F%<span class="hljs-number">0</span>C%D4%CB%CC%<span class="hljs-number">83</span>%<span class="hljs-number">0</span>A%F4oB%C0d%DA%<span class="hljs-number">85</span>%<span class="hljs-number">09</span>cMKt%<span class="hljs-number">8</span>C%<span class="hljs-number">82</span>%<span class="hljs-number">95</span>%FE%A71%<span class="hljs-number">5</span>C%D2JW%<span class="hljs-number">0</span>EN%F4%<span class="hljs-number">97</span>%CD%C1%D0%B3%<span class="hljs-number">08</span>u%<span class="hljs-number">16</span>%<span class="hljs-number">1</span>D%<span class="hljs-number">7</span>E%<span class="hljs-number">96</span>%B1%<span class="hljs-number">3</span>D%FBF%<span class="hljs-number">8</span>AD%A8T%E5%<span class="hljs-number">12</span>x%<span class="hljs-number">00</span>a%CD%<span class="hljs-number">97</span>%F2%C4%D9%<span class="hljs-number">21</span>Y%AE%B7H%<span class="hljs-number">9</span>E%FE%<span class="hljs-number">3</span>E%<span class="hljs-number">1</span>C%<span class="hljs-number">9</span>F%<span class="hljs-number">26</span>%<span class="hljs-number">93</span>%A5%BD%EF%B4%<span class="hljs-number">22</span>d%A8%AD%C4%<span class="hljs-number">02</span>%<span class="hljs-number">94</span>%<span class="hljs-number">10</span>Oh%<span class="hljs-number">2</span>Bz%E1%F4%E0%AE%<span class="hljs-number">9</span>BY%<span class="hljs-number">8</span>B%<span class="hljs-number">29</span>%DAvv%F3_%D9%<span class="hljs-number">3</span>C7%<span class="hljs-number">40</span>sl%<span class="hljs-number">5</span>B%<span class="hljs-number">08</span>%EA%EF%A7%F7%<span class="hljs-number">9</span>E%<span class="hljs-number">1</span>C%<span class="hljs-number">82</span>%<span class="hljs-number">3</span>F%<span class="hljs-number">907</span>%<span class="hljs-number">40</span>r%<span class="hljs-number">82</span>%FEj%A8%A5%<span class="hljs-number">18</span>q%C5%C7%E6%<span class="hljs-number">5</span>E%<span class="hljs-number">0</span>C%F6%<span class="hljs-number">7</span>C%EB%<span class="hljs-number">29</span>%EB%<span class="hljs-number">24</span>%B4%<span class="hljs-number">87</span>%<span class="hljs-number">1</span>C%<span class="hljs-number">3</span>F%<span class="hljs-number">00</span>%E0%F4%<span class="hljs-number">0</span>A%A6%A2%B4%<span class="hljs-number">1</span>B%D9%E80%<span class="hljs-number">99</span>%<span class="hljs-number">10</span>I%F9%FC%<span class="hljs-number">0</span>AyP%DFK%FEL%F22%E9%E2%B4R%<span class="hljs-number">1</span>EY%CC%BB4%<span class="hljs-number">26</span>%<span class="hljs-number">04</span>%<span class="hljs-number">0</span>A%DB%<span class="hljs-number">08</span>%BAn%<span class="hljs-number">99</span>%<span class="hljs-number">93</span>%<span class="hljs-number">5</span>BKLOA%<span class="hljs-number">5</span>C%E4%C0n%<span class="hljs-number">86</span>%A8%<span class="hljs-number">82</span>%<span class="hljs-number">3</span>F%<span class="hljs-number">9</span>D%<span class="hljs-number">93</span>%EB%B8%<span class="hljs-number">9</span>B%<span class="hljs-number">08</span>%E1%<span class="hljs-number">3</span>C%<span class="hljs-number">2</span>A%D1%E4%<span class="hljs-number">84</span>%<span class="hljs-number">1</span>A%AF%<span class="hljs-number">7</span>FB%<span class="hljs-number">2</span>C%<span class="hljs-number">0</span>D%A6%<span class="hljs-number">5</span>DS%<span class="hljs-number">882</span>%<span class="hljs-number">25</span>&lt;br&gt;&lt;br&gt;
+URLENCODE hash c67701ddfec51469c8c0e81a212c047c&lt;br&gt;&lt;br&gt;
+二进制hash dad508c9b28f6d659f88215b593345ac&lt;br&gt;&lt;br&gt;
+URLENCODE %<span class="hljs-number">93</span>%FB%<span class="hljs-number">29</span>%<span class="hljs-number">80</span>Xv%B4X%AE%A4%<span class="hljs-number">13</span>i%<span class="hljs-number">1</span>FZj%CA%<span class="hljs-number">8</span>D%<span class="hljs-number">91</span>%<span class="hljs-number">9</span>B%DF%<span class="hljs-number">22</span>s+%AB%<span class="hljs-number">22</span>%<span class="hljs-number">1</span>A%<span class="hljs-number">40</span>%C6J%<span class="hljs-number">3</span>A%C5%DE%<span class="hljs-number">9</span>F%<span class="hljs-number">0</span>C%D4%CB%CC%<span class="hljs-number">83</span>%<span class="hljs-number">0</span>A%F4oB%C0d%DA%<span class="hljs-number">05</span>%<span class="hljs-number">09</span>cMKt%<span class="hljs-number">8</span>C%<span class="hljs-number">82</span>%<span class="hljs-number">95</span>%FE%A71%<span class="hljs-number">5</span>C%D2%CAW%<span class="hljs-number">0</span>EN%F4%<span class="hljs-number">97</span>%CD%C1%D0%B3%<span class="hljs-number">08</span>u%<span class="hljs-number">16</span>%<span class="hljs-number">1</span>D%<span class="hljs-number">7</span>E%<span class="hljs-number">96</span>%B1%<span class="hljs-number">3</span>D%FBF%<span class="hljs-number">8</span>AD%A8Te%<span class="hljs-number">12</span>x%<span class="hljs-number">00</span>a%CD%<span class="hljs-number">97</span>%F2%C4%D9%<span class="hljs-number">21</span>Y%AE%B7H%<span class="hljs-number">9</span>E%FE%<span class="hljs-number">3</span>E%<span class="hljs-number">1</span>C%<span class="hljs-number">9</span>F%<span class="hljs-number">26</span>%<span class="hljs-number">93</span>%A5%BD%EF%B4%A2d%A8%AD%C4%<span class="hljs-number">02</span>%<span class="hljs-number">94</span>%<span class="hljs-number">10</span>Oh%<span class="hljs-number">2</span>Bz%E1%F4%<span class="hljs-number">60</span>%AE%<span class="hljs-number">9</span>BY%<span class="hljs-number">8</span>B%<span class="hljs-number">29</span>%DAvv%F3_%D9%<span class="hljs-number">3</span>C7%<span class="hljs-number">40</span>sl%<span class="hljs-number">5</span>B%<span class="hljs-number">08</span>%EA%EF%A7%F7%<span class="hljs-number">9</span>E%<span class="hljs-number">9</span>C%<span class="hljs-number">82</span>%<span class="hljs-number">3</span>F%<span class="hljs-number">907</span>%<span class="hljs-number">40</span>r%<span class="hljs-number">82</span>%FEj%A8%A5%<span class="hljs-number">18</span>q%C5%C7%E6%<span class="hljs-number">5</span>E%<span class="hljs-number">0</span>C%F6%<span class="hljs-number">7</span>C%EB%<span class="hljs-number">29</span>%EB%<span class="hljs-number">24</span>%B4%<span class="hljs-number">07</span>%<span class="hljs-number">1</span>D%<span class="hljs-number">3</span>F%<span class="hljs-number">00</span>%E0%F4%<span class="hljs-number">0</span>A%A6%A2%B4%<span class="hljs-number">1</span>B%D9%E80%<span class="hljs-number">19</span>%<span class="hljs-number">10</span>I%F9%FC%<span class="hljs-number">0</span>AyP%DFK%FEL%F22%E9%E2%B4R%<span class="hljs-number">1</span>EY%CC%BB4%<span class="hljs-number">26</span>%<span class="hljs-number">84</span>%<span class="hljs-number">0</span>A%DB%<span class="hljs-number">08</span>%BAn%<span class="hljs-number">99</span>%<span class="hljs-number">93</span>%<span class="hljs-number">5</span>BKLOA%<span class="hljs-number">5</span>C%E4%C0n%<span class="hljs-number">86</span>%A8%<span class="hljs-number">82</span>%<span class="hljs-number">3</span>F%<span class="hljs-number">9</span>D%<span class="hljs-number">93</span>%EB%B8%<span class="hljs-number">9</span>B%<span class="hljs-number">88</span>%E0%<span class="hljs-number">3</span>C%<span class="hljs-number">2</span>A%D1%E4%<span class="hljs-number">84</span>%<span class="hljs-number">1</span>A%AF%<span class="hljs-number">7</span>FB%<span class="hljs-number">2</span>C%<span class="hljs-number">0</span>D%A6%DDS%<span class="hljs-number">882</span>%<span class="hljs-number">25</span>&lt;br&gt;&lt;br&gt;
+URLENCODE hash <span class="hljs-number">09</span>efc799c82ce1eb2678ac9689fa0d17&lt;br&gt;&lt;br&gt;</code></pre>
+
+<p>二进制hash都相等</p>
+<p>参考链接： <a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/3161#toc-5">https://xz.aliyun.com/t/3161#toc-5</a></p>
+<p>​                    <a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/2232#toc-2">https://xz.aliyun.com/t/2232#toc-2</a></p>
+</li>
+</ul>
+<ul>
+<li>9，8 的话可以构造a、b使9，80e开头即可，需要注意的是弱相等 0e后面的字符串要全等于数字才行</li>
+</ul>
+<h2 id="commix"><a href="#commix" class="headerlink" title="commix"></a>commix</h2><p>payload: more `ls`</p>
+<p>代替 cat 的命令还有  <a target="_blank" rel="noopener" href="https://blog.csdn.net/x7418520/article/details/81064861">https://blog.csdn.net/x7418520/article/details/81064861</a></p>
+<p>命令注入绕过总结在另一篇文章里。</p>
+<h2 id="web4"><a href="#web4" class="headerlink" title="web4"></a>web4</h2><pre><code class="hljs php"><span class="hljs-comment"># 源码</span>
+<span class="hljs-meta">&lt;?php</span>
+<span class="hljs-variable">$ps</span> = mysql_real_escape_string(<span class="hljs-variable">$ps</span>);
+<span class="hljs-variable">$ps</span> = hash(<span class="hljs-string">&quot;whirlpool&quot;</span>,<span class="hljs-variable">$ps</span>, <span class="hljs-literal">true</span>);
+<span class="hljs-variable">$result</span> = mysql_query(<span class="hljs-string">&quot;select * from users where user_id=&#x27;<span class="hljs-subst">$id</span>&#x27; and user_ps=&#x27;<span class="hljs-subst">$ps</span>&#x27;&quot;</span>);
+<span class="hljs-meta">?&gt;</span></code></pre>
+
+<p>hash(“whirlpool”,$ps, true)，关注到hash函数选为true时使得hash函数返回的是二进制串。任何字符都可能出现在字符串内。如果<code>&#39;=&#39;</code>出现在hash后的字符串内可能导致注入。</p>
+<p><code>where user_ps=&#39;XXXX&#39;=&#39;YYY&#39;</code></p>
+<p>先会执行<code>user_ps=&#39;XXXX&#39;</code>,应该为0，因为不相等，当YYY为字符串，字符串转化为int  0，所以整个判断式为真。</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">payload</span>: admin/<span class="hljs-number">364383</span></code></pre>
+
+
+
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p>比赛的时候第三题挂了，所以整个比赛一题没做出来，tcl，知识面太狭隘了。都是按照大师傅的writeup怼出来的 Qvq.</p>
+<p><a target="_blank" rel="noopener" href="https://www.gem-love.com/ctf/1799.html">https://www.gem-love.com/ctf/1799.html</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5%E7%BB%95%E8%BF%87/">命令注入绕过</a>
+                    
+                      <a class="hover-with-bg" href="/tags/MD5%E7%A2%B0%E6%92%9E/">MD5碰撞</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/03/02/%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5%E7%BB%95%E8%BF%87/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">命令注入绕过</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/02/22/GYCTF2020-Blacklist/">
+                        <span class="hidden-mobile">[GYCTF2020]Blacklist</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

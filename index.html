@@ -181,16 +181,18 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2020/11/20/hello/">hello</a>
+        <a href="/2020/11/15/%E8%A5%BF%E6%B9%96-%E6%B9%96%E6%B9%98%E6%9C%89%E6%84%9F/">西湖&amp;湖湘有感</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/11/20/hello/">
+        <a href="/2020/11/15/%E8%A5%BF%E6%B9%96-%E6%B9%96%E6%B9%98%E6%9C%89%E6%84%9F/">
           
           
             
           
-          
+          总结AWD是这两次来首次接触的，作为躺狗躺的是真的舒服(也很难受，自己没发挥多少作用)，记下流水账，记录下一些暴露的问题。
+13号到杭州与guoke、Y老师、ha1面基，到酒店打卡登记入住，面基了很多师傅。再后面就度过了一晚上，第二天7.30起床前往比赛场地在场地开始了一天的比赛。
+​        比赛没开始前给的靶机就已经可以访问到，是phpcms v9.6.3，没什么cve可以一把梭，到开赛
         </a>
       </p>
 
@@ -198,8 +200,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2020-11-20 23:06" pubdate>
-              2020-11-20
+            <time datetime="2020-11-15 23:08" pubdate>
+              2020-11-15
             </time>
           </div>
         
@@ -215,17 +217,25 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2020/11/20/hello-world/">Hello World</a>
+        <a href="/2020/11/12/%E5%BD%B1%E5%AD%90%E8%B4%A6%E5%8F%B7/">影子账号</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2020/11/20/hello-world/">
+        <a href="/2020/11/12/%E5%BD%B1%E5%AD%90%E8%B4%A6%E5%8F%B7/">
           
           
             
           
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
+          net user Gs$ Gs666 /add
+net localgroup administrators Gs$ /add
+
+
+regedit 复制F值导出注册表
+
+net user Gs$ /del
+导入注册表
+
+
         </a>
       </p>
 
@@ -233,8 +243,287 @@ Quick
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2020-11-20 22:04" pubdate>
-              2020-11-20
+            <time datetime="2020-11-12 09:49" pubdate>
+              2020-11-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/CTF/">CTF</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%9D%B6%E6%9C%BA%E5%A4%8D%E7%8E%B0/">靶机复现</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/11/09/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">linux 常用命令</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/11/09/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+          
+          
+            
+          
+          查看端口netstat -ntulp | grep 80 
+kill -9 pid
+
+挂起程序nohup /root/runoob.sh &amp;
+
+ps -aux | grep &quot;runoob.sh&quot; 
+
+日志
+nohup /root/runoob.sh &gt; runoob.log 2&gt;&amp;1 &amp;
+
+
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-11-09 09:59" pubdate>
+              2020-11-09
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/CTF/">CTF</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/BUUOJ/">BUUOJ</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/11/05/ctfshow1024%E6%9D%AF/">ctfshow1024杯</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/11/05/ctfshow1024%E6%9D%AF/">
+          
+          
+            
+          
+          1024_fastapihttp://71c626ef-731a-43d9-b315-9c7acd313147.chall.ctf.show/docs#/
+可以看到cccalccc接口
+ssti
+
+__builtins__.__dict__[&#x27;__imp&#x27;+&#x27;ort__&#x27;](&#x27;os&#x27;).system(&quot;sleep 3&quot;
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-11-05 22:59" pubdate>
+              2020-11-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/CTF/">CTF</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/ctfshow/">ctfshow</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/11/03/vulnstack-%E4%B8%80/">vulnstack (一)</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/11/03/vulnstack-%E4%B8%80/">
+          
+          
+            
+          
+          外网渗透###phpMyAdmin
+进入phpmyadmin/index.php
+root/root登录
+https://zhuanlan.zhihu.com/p/114184542
+show variables like &#39;%secure%&#39;;显示数据库是否有写权限
+
+
+
+Variable_name
+Value
+
+
+
+secure_auth
+OFF
+
+
+secure_file_p
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-11-03 21:05" pubdate>
+              2020-11-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/CTF/">CTF</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%9D%B6%E6%9C%BA%E5%A4%8D%E7%8E%B0/">靶机复现</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/11/03/%E8%BF%98%E5%8E%9Fmt-rand/">还原mt_rand()</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/11/03/%E8%BF%98%E5%8E%9Fmt-rand/">
+          
+          
+            
+          
+          https://www.anquanke.com/post/id/196831#h3-5
+https://github.com/ambionics/mt_rand-reverse
+
+知道间隔227的两个随机数就能还原出种子
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-11-03 15:08" pubdate>
+              2020-11-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/CTF/">CTF</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/phptrick/">phptrick</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/10/27/ByteCTF2020/">ByteCTF2020</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/10/27/ByteCTF2020/">
+          
+          
+            
+          
+          http://blog.ccreater.top/2020/10/26/2020ByteCTF/
+https://www.anquanke.com/post/id/220810#h2-5
+https://mp.weixin.qq.com/s/4OVC10crL1rBFrNf9wyUTg
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-10-27 23:08" pubdate>
+              2020-10-27
             </time>
           </div>
         
@@ -244,7 +533,187 @@ Quick
     </article>
   </div>
 
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/10/17/N1CTF-2020/">N1CTF 2020</a>
+      </h1>
 
+      <p class="index-excerpt">
+        <a href="/2020/10/17/N1CTF-2020/">
+          
+          
+            
+          
+          web SignIn&lt;?php 
+class ip &#123;
+    public $ip;
+    public function waf($info)&#123;
+    &#125;
+    public function __construct() &#123;
+        if(isset($_SERVER[&#x27;HTTP_X_FORWARDED_FOR&#x27;]
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-10-17 15:14" pubdate>
+              2020-10-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/CTF/">CTF</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/N1CTF/">N1CTF</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/10/08/%E8%A5%BF%E6%B9%96%E8%AE%BA%E5%89%91/">西湖论剑</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/10/08/%E8%A5%BF%E6%B9%96%E8%AE%BA%E5%89%91/">
+          
+          
+            
+          
+          NewUpload前面上传带%就可以绕，上马后有宝塔的waf，三次url编码后就可以正常传东西（比如phpinfo();
+三次url编码后怎么连蚁剑，这就要写编码器了
+/**
+ * php::base64编码器
+ * Create at: 2020/10/08 11:13:29
+ */
+
+&#x27;use strict&#x27;;
+
+/*
+* @param  &#123;String&#125
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-10-08 22:18" pubdate>
+              2020-10-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/CTF/">CTF</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E8%A5%BF%E6%B9%96%E8%AE%BA%E5%89%91/">西湖论剑</a>
+            
+              <a href="/tags/FastCGI/">FastCGI</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/08/12/pwnhub-image-convert/">pwnhub image_convert</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/08/12/pwnhub-image-convert/">
+          
+          
+            
+          
+          题目&lt;?php
+   class WTF &#123;
+       public $var3;
+       function __destruct()&#123;
+           var_dump(md5($this-&gt;var1));
+           var_dump(md5($this-&gt;var2));
+           if( ($this-&gt;var
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-12 20:40" pubdate>
+              2020-08-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/CTF/">CTF</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/pwnhub/">pwnhub</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
 
 
 

